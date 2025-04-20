@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "nombre": "Press Banca",
+        "musculo": "Pecho",
+        "img": "/exercise/press-banca.png"
+    },
+    {
+        "id": "2",
+        "nombre": "Remo",
+        "musculo": "Espalda",
+        "img": "/exercise/remo.png"
+    },
+    {
+        "id": "3",
+        "nombre": "Sentadilla libre",
+        "musculo": "Pierna",
+        "img": "/exercise/sentadilla-libre.png"
+    },
+    {
+        "id": "4",
+        "nombre": "Jalón al pecho",
+        "musculo": "Espalda",
+        "img": "/exercise/jalon.png"
+    }
+]

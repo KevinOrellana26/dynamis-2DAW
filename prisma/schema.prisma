@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id             Int        @id @default(autoincrement())
+  nombre         String
+  email          String
+  password       String
+  rol            Int?
+  fecha_creacion DateTime?  @default(now()) @db.Date //Solo fecha en formato YYYY-MM-DD
+  Progreso       Progreso[]
+  Rutina         Rutina[]
+  Favorito       Favorito[]
+}
+
+model Progreso {
+  id           Int       @id @default(autoincrement())
+  usuario_id   Int
+  ejercicio_id Int
+  fecha        DateTime? @default(now()) @db.Date
+  peso_usado   Float
+  repeticiones Int
+  //relación con el campo usuario_id de la tabla Progreso, que hace referencia a la columna id del modelo Usuario
+  usuario      Usuario   @relation(fields: [usuario_id], references: [id])
+  ejercicio    Ejercicio @relation(fields: [ejercicio_id], references: [id])
+}
+
+model Rutina {
+  id               Int                @id @default(autoincrement())
+  usuario_id       Int
+  nombre           String
+  fecha_creacion   DateTime?          @default(now()) @db.Date
+  usuario          Usuario            @relation(fields: [usuario_id], references: [id])
+  Rutina_ejercicio Rutina_ejercicio[]
+}
+
+model Favorito {
+  id             Int       @id @default(autoincrement())
+  usuario_id     Int
+  ejercicio_id   Int
+  // fecha_creacion DateTime? @default(now()) @db.Date
+  usuario        Usuario   @relation(fields: [usuario_id], references: [id])
+  ejercicio      Ejercicio @relation(fields: [ejercicio_id], references: [id])
+}
+
+model Ejercicio {
+  id               Int                @id @default(autoincrement())
+  nombre           String
+  musculo          String
+  video_img_url    String
+  Progreso         Progreso[]
+  Favorito         Favorito[]
+  Rutina_ejercicio Rutina_ejercicio[]
+}
+
+model Rutina_ejercicio {
+  id           Int       @id @default(autoincrement())
+  rutina_id    Int
+  ejercicio_id Int
+  series       Int
+  repeticiones Int
+  rutina       Rutina    @relation(fields: [rutina_id], references: [id])
+  ejercicio    Ejercicio @relation(fields: [ejercicio_id], references: [id])
+}
