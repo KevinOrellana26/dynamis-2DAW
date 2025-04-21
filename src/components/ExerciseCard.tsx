@@ -31,14 +31,14 @@ export default function ExerciseCard({ nombre, musculo, img }: Exercise) {
               {musculo}
             </Badge>
           </div>
-          <Button
+          {/* <Button
             variant="ghost"
             size="icon"
             className={`h-8 w-8 hover:text-yellow-600`}
           >
             <Star className={`h-5 w-5`} />
             <span className="sr-only">Favorito</span>
-          </Button>
+          </Button> */}
         </div>
 
         {/* <CardTitle>{nombre}</CardTitle>

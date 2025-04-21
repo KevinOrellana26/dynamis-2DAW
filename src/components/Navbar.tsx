@@ -33,7 +33,7 @@ function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-lg font-medium transition-colors hover:text-blue-900 dark:hover:text-blue-400 
+              className={`text-lg font-medium hover:text-blue-900 dark:hover:text-blue-400 
                     ${
                       path === item.href
                         ? "text-blue-900 dark:text-blue-400"

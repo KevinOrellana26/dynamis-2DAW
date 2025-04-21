@@ -63,7 +63,7 @@ function Home() {
             </div>
             <div className="flex items-center justify-center">
               <Button variant="outline" asChild>
-                <Link href="/ejercicio">Ver todos</Link>
+                <Link href="/login">Ver todos</Link>
               </Button>
             </div>
           </div>
@@ -86,7 +86,7 @@ function Home() {
             <div className="flex-1">
               <BenefitsCard
                 title="Biblioteca de Ejercicios"
-                subtitle="Accede a cientos de ejercicios con instrucciones detalladas y videos demostrativos."
+                subtitle="Accede a una lista de ejercicios con instrucciones detalladas y videos demostrativos."
                 icon={<Dumbbell className="h-8 w-8 text-[#2057A9]" />}
               />
             </div>
@@ -113,7 +113,7 @@ function Home() {
             <h1 className="font-semibold text-4xl text-center md:text-left">
               Regístrate para guardar tu progreso
             </h1>
-            <p className="font-light text-gray-300 text-xl py-4">
+            <p className="font-light text-gray-200 text-xl py-4">
               Crea una cuenta gratis para guardar tus ejercicios favoritos y
               hacer seguimiento de tus progreso.
             </p>
