@@ -8,12 +8,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//1-invitado
+//2-usuario
+//3-admin
+enum Rol {
+  INVITADO
+  USER
+  ADMIN
+}
+
 model Usuario {
   id             Int        @id @default(autoincrement())
   nombre         String
-  email          String
+  email          String     @unique
   password       String
-  rol            Int?
+  rol            Rol        @default(USER)
   fecha_creacion DateTime?  @default(now()) @db.Date //Solo fecha en formato YYYY-MM-DD
   Progreso       Progreso[]
   Rutina         Rutina[]
@@ -42,12 +51,12 @@ model Rutina {
 }
 
 model Favorito {
-  id             Int       @id @default(autoincrement())
-  usuario_id     Int
-  ejercicio_id   Int
+  id           Int       @id @default(autoincrement())
+  usuario_id   Int
+  ejercicio_id Int
   // fecha_creacion DateTime? @default(now()) @db.Date
-  usuario        Usuario   @relation(fields: [usuario_id], references: [id])
-  ejercicio      Ejercicio @relation(fields: [ejercicio_id], references: [id])
+  usuario      Usuario   @relation(fields: [usuario_id], references: [id])
+  ejercicio    Ejercicio @relation(fields: [ejercicio_id], references: [id])
 }
 
 model Ejercicio {

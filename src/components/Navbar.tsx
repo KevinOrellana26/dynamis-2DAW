@@ -16,13 +16,13 @@ function Navbar() {
   const path = usePathname();
 
   return (
-    <nav className="border-b border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950">
+    <nav className="border-b border-gray-300 dark:border-gray-800">
       <div className="flex items-center justify-between h-18 px-8 md:px-10 lg:px-12">
         {/* Logo y Nombre */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
             <Dumbbell className="text-[#2057A9]" />
-            <h1 className="text-2xl font-bold text-[#2057A9] dark:text-blue-400">
+            <h1 className="text-2xl font-bold text-[#2057A9] dark:text-[#2057A9]">
               Dýnamis
             </h1>
           </Link>
@@ -33,11 +33,11 @@ function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-lg font-medium hover:text-blue-900 dark:hover:text-blue-400 
+              className={`text-lg font-medium text-[#2057A9] hover:text-[#354966d5] dark:text-[#2057A9] dark:hover:text-[#354966d5]
                     ${
                       path === item.href
-                        ? "text-blue-900 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300"
+                        ? "text-[#2057A9] dark:text-[#2057A9]"
+                        : "text-gray-700 dark:text-[#2057A9]"
                     }`}
             >
               {item.name}

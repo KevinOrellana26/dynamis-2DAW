@@ -18,7 +18,7 @@ function Home() {
           <div className="flex-1 space-y-6 content-center">
             <h1 className="font-semibold text-4xl md:text-6xl">
               Transforma tu cuerpo,{" "}
-              <span className="text-blue-900 dark:text-blue-500">
+              <span className="text-[#2057A9] dark:text-[#2057A9]">
                 transforma tu vida
               </span>
             </h1>
