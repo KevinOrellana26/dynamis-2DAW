@@ -16,3 +16,12 @@ export const UserSchema = z.object({
     }
     )
 })
+
+export const signInSchema = z.object({
+    email: z.string().email({
+        message: "Dirección de correo electrónico inválida."
+    }),
+    password: z.string().min(8, {
+        message: "La contraseña debe ser mayor a 8."
+    }),
+})

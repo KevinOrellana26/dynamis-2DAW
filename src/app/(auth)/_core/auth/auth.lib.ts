@@ -3,11 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/lib/prisma"
 import bcrypt from 'bcryptjs';
-
-interface CredentialsT {
-    email: string,
-    password: string
-}
+import { signInSchema } from './user.types';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     adapter: PrismaAdapter(prisma),
@@ -18,30 +14,29 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 password: {}
             },
             authorize: async (credentials) => {
-                //type assertion para asegurar los tipos
-                const { email, password } = credentials as Partial<CredentialsT>
+                try {
+                    const { email, password } = await signInSchema.parseAsync(credentials)
 
-                if (!email || !password) return null
+                    const user = await prisma.user.findUnique({
+                        where: { email }
+                    })
 
-                const user = await prisma.user.findUnique({
-                    where: { email }
-                })
+                    if (!user) return null;
 
-                if (!user) return null
+                    const isPasswordValid = await bcrypt.compare(password, user.password)
+                    if (!isPasswordValid) return null;
 
-                const passwordMatch = await bcrypt.compare(password, user.password)
-                if (!passwordMatch) return null
-                return user
-                // if (user?.password === credentials?.password) {
-                //     return user;
-                // } else {
-                //     return null;
-                // }
+                    return user
+                } catch (error) {
+                    console.error("Error en autorización: ", error)
+                    return null
+                }
             }
         })
     ],
     pages: {
-        signIn: "/login"
+        signIn: "/login",
+        error: "/login"
     },
     callbacks: {
         authorized: async ({ auth }) => {

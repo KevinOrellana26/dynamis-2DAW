@@ -1,4 +1,4 @@
-//getUser, createUser, deleteUser, updateUser
+//Funciones principales para manejar la autenticación de usuarios.
 "use server";
 
 import { prisma } from "@/lib/prisma";
@@ -7,6 +7,7 @@ import { RegisterFormT } from "@/app/(auth)/_components/RegisterForm"
 import { LoginFormT } from "@/app/(auth)/_components/LoginForm";
 import bcrypt from 'bcryptjs';
 
+//Registrar nuevos usuarios
 export async function registerUser(values: RegisterFormT) {
     try {
         // Verificar si el usuario ya existe
@@ -19,28 +20,28 @@ export async function registerUser(values: RegisterFormT) {
         }
 
         //hashear la contraseña
-        const hashedPassword: string = await bcrypt.hash(values.password, 10)
+        const hashedPassword = await bcrypt.hash(values.password, 10)
 
-        // Crear el nuevo usuario
+        // Creación del usuario
         const user = await prisma.user.create({
             data: {
                 email: values.email,
                 name: values.username,
                 password: hashedPassword,
-                rol: "USER"
+                rol: "USER" //por defecto será usuario
             },
         });
-
-        console.log(user)
 
         // Iniciar sesión automáticamente después del registro
         await signIn("credentials", {
             email: values.email,
             password: values.password, //muestro la contraseña si hashear en la terminal
             username: values.username,
-            redirect: false,
+            redirect: true,
+            redirectTo: "/dashboard"
         });
 
+        //no se ejecutará si redirect: true funciona
         return { success: "Cuenta creada exitosamente" };
     } catch (error) {
         console.error("Error en registro:", error);
@@ -50,31 +51,47 @@ export async function registerUser(values: RegisterFormT) {
 
 export async function loginUser(values: LoginFormT) {
     try {
-        // Buscar el usuario en la base de datos.
-        const user = await prisma.user.findUnique({
-            where: { email: values.email },
-        });
+        //1. Buscar el usuario.
+        // const user = await prisma.user.findUnique({
+        //     where: { email: values.email },
+        // });
 
-        if (!user) {
-            return { error: "Credenciales inválidas" };
-        }
+        // if (!user) {
+        //     return { error: "Credenciales inválidas" };
+        // }
 
-        //comprobar la contraseña que introdujo el usuario con la contraseña hasheada en la base de datos.
-        const passwordHash = await bcrypt.compare(values.password, user.password)
-        if (!passwordHash) return { error: "Credenciales inválidas." }
+        //2. Validar contraseña introducida con contraseña en BD
+        // const passwordHash = await bcrypt.compare(values.password, user.password)
+        // if (!passwordHash) return { error: "Credenciales inválidas." }
 
-        //Iniciar sesión automáticamente después del registro
-        const result = await signIn("credentials", {
+        //Iniciar sesión
+        const user = await signIn("credentials", {
             email: values.email,
             password: values.password,
             redirect: false,
+            redirectTo: "/dashboard"
         });
 
-        if (result?.error) return { error: result.error }
-        
+        if (user?.error) return { error: user.error }
+
+        console.log(user)
         return { success: "Inicio de sesión exitoso" };
     } catch (error) {
         console.error("Error en registro:", error);
         return { error: "Error al crear la cuenta" };
     }
 }
+
+//pasar la contraseña hasheada
+// export async function getUser(email: string, password: string) {
+//     const user = await prisma.user.findUnique({
+//         where: { email }
+//     })
+
+//     if (!user) return null
+//     const passwordMatch = await bcrypt.compare(password, user.password)
+
+//     if (!passwordMatch) return null
+//     console.log(user)
+//     return user
+// }

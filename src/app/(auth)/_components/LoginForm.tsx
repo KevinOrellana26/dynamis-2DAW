@@ -56,7 +56,6 @@ export default function LoginForm() {
         toast.success("Bienvenido", {
           description: "Has iniciado sesión correctamente.",
         });
-        //redirigir al /dashboard después.
       }
     } catch (error) {
       console.error(error);
