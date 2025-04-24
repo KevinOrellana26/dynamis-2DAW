@@ -3,7 +3,6 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,18 +14,23 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { AuthFormSchema } from "./LoginForm";
-import bcrypt from "bcryptjs";
-import prisma from "@/lib/prisma";
+import { useState } from "react";
+import { toast } from "sonner";
+import { RiLoader2Fill } from "react-icons/ri";
+import { registerUser } from "../_core/user/user.action";
 
 //Defino el esquema
-const RegisterFormSchema = AuthFormSchema.extend({
+export const RegisterFormSchema = AuthFormSchema.extend({
   username: z.string().min(3, {
     message: "El nombre de usuario debe tener al menos tres caracteres.",
   }),
 });
-type RegisterFormT = z.infer<typeof RegisterFormSchema>;
+
+export type RegisterFormT = z.infer<typeof RegisterFormSchema>;
 
 export default function RegisterForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
   //defino la forma
   const form = useForm<RegisterFormT>({
     resolver: zodResolver(RegisterFormSchema),
@@ -37,31 +41,34 @@ export default function RegisterForm() {
     },
   });
 
-  //defino como se maneja el envío, aquí es donde se realizaría la consulta a la BD
-  async function onSubmit(values: RegisterFormT) {
-    console.log(values);
+  const handleSubmit = async (values: RegisterFormT) => {
     try {
-      const hashedPassword = await bcrypt.hash(values.password, 10)
-      await prisma.usuario.create({
-        data: {
-          nombre: values.username,
-          email: values.email,
-          password: hashedPassword,
-          rol: "USER"
-        }
-      })
+      setIsLoading(true);
 
-      //redirigir al login tras el registro exitoso
-      //mostrar toast
-    }catch(error){
-      console.error("Error en registro: ", error)
-      //mostrar toast
+      const result = await registerUser(values);
+
+      if (result?.error) {
+        toast.error("Error en registro", {
+          description: result.error,
+        });
+      } else {
+        toast.success("Registro exitoso", {
+          description: "Tu cuenta ha sido creada satisfactoriamente",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Error en registro", {
+        description: "Ocurrió un error al crear tu cuenta",
+      });
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+      <form className="space-y-5" onSubmit={form.handleSubmit(handleSubmit)}>
         <FormField
           control={form.control}
           name="username"
@@ -101,7 +108,13 @@ export default function RegisterForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" variant={"dynamis"} className="w-full">
+        <Button
+          type="submit"
+          variant={"dynamis"}
+          className="w-full"
+          disabled={isLoading}
+        >
+          {isLoading && <RiLoader2Fill className="mr-2 h-4 2-4 animate-spin" />}
           Registrarse
         </Button>
       </form>

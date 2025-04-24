@@ -5,6 +5,11 @@ import { ArrowRight, Dumbbell, ChartLine, ListChecks } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Exercise from "@/mocks/exercise.json";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 function Home() {
   // ! CAMBIAR CUANDO HAGA CONSULTAS A LA BD

@@ -8,9 +8,15 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { useState } from "react";
 import LoginForm from "@/app/(auth)/_components/LoginForm";
 import RegisterForm from "@/app/(auth)/_components/RegisterForm";
-import { useState } from "react";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Login",
+};
 
 type DescriptionType = "iniciar-sesion" | "registrarse";
 

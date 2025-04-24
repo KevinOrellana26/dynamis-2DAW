@@ -117,16 +117,19 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UsuarioScalarFieldEnum = {
+exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  nombre: 'nombre',
+  name: 'name',
   email: 'email',
+  emailVerified: 'emailVerified',
   password: 'password',
-  rol: 'rol',
-  fecha_creacion: 'fecha_creacion'
+  image: 'image',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  rol: 'rol'
 };
 
-exports.Prisma.ProgresoScalarFieldEnum = {
+exports.Prisma.ProgressScalarFieldEnum = {
   id: 'id',
   usuario_id: 'usuario_id',
   ejercicio_id: 'ejercicio_id',
@@ -135,20 +138,20 @@ exports.Prisma.ProgresoScalarFieldEnum = {
   repeticiones: 'repeticiones'
 };
 
-exports.Prisma.RutinaScalarFieldEnum = {
+exports.Prisma.RoutineScalarFieldEnum = {
   id: 'id',
   usuario_id: 'usuario_id',
   nombre: 'nombre',
   fecha_creacion: 'fecha_creacion'
 };
 
-exports.Prisma.FavoritoScalarFieldEnum = {
+exports.Prisma.FavoriteScalarFieldEnum = {
   id: 'id',
   usuario_id: 'usuario_id',
   ejercicio_id: 'ejercicio_id'
 };
 
-exports.Prisma.EjercicioScalarFieldEnum = {
+exports.Prisma.ExerciseScalarFieldEnum = {
   id: 'id',
   nombre: 'nombre',
   musculo: 'musculo',
@@ -184,11 +187,11 @@ exports.Rol = exports.$Enums.Rol = {
 };
 
 exports.Prisma.ModelName = {
-  Usuario: 'Usuario',
-  Progreso: 'Progreso',
-  Rutina: 'Rutina',
-  Favorito: 'Favorito',
-  Ejercicio: 'Ejercicio',
+  User: 'User',
+  Progress: 'Progress',
+  Routine: 'Routine',
+  Favorite: 'Favorite',
+  Exercise: 'Exercise',
   Rutina_ejercicio: 'Rutina_ejercicio'
 };
 

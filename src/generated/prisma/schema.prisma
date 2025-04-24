@@ -1,6 +1,7 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
+  //output = "../node_modules/@prisma/client"
 }
 
 datasource db {
@@ -17,64 +18,80 @@ enum Rol {
   ADMIN
 }
 
-model Usuario {
-  id             Int        @id @default(autoincrement())
-  nombre         String
-  email          String     @unique
-  password       String
-  rol            Rol        @default(USER)
-  fecha_creacion DateTime?  @default(now()) @db.Date //Solo fecha en formato YYYY-MM-DD
-  Progreso       Progreso[]
-  Rutina         Rutina[]
-  Favorito       Favorito[]
+// model Usuario {
+//   id             Int        @id @default(autoincrement())
+//   nombre         String
+//   email          String     @unique
+//   password       String
+//   rol            Rol        @default(USER)
+//   fecha_creacion DateTime?  @default(now()) @db.Date //Solo fecha en formato YYYY-MM-DD
+//   Progreso       Progreso[]
+//   Rutina         Rutina[]
+//   Favorito       Favorito[]
+// }
+
+model User {
+  id            String     @id @default(cuid())
+  name          String?
+  email         String     @unique
+  emailVerified DateTime?
+  password      String
+  image         String?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  rol           Rol        @default(USER)
+  Progress      Progress[]
+  Routine       Routine[]
+  Favorite      Favorite[]
 }
 
-model Progreso {
+model Progress {
   id           Int       @id @default(autoincrement())
-  usuario_id   Int
+  usuario_id   String // Cambiado a String
   ejercicio_id Int
   fecha        DateTime? @default(now()) @db.Date
   peso_usado   Float
   repeticiones Int
-  //relación con el campo usuario_id de la tabla Progreso, que hace referencia a la columna id del modelo Usuario
-  usuario      Usuario   @relation(fields: [usuario_id], references: [id])
-  ejercicio    Ejercicio @relation(fields: [ejercicio_id], references: [id])
+  usuario      User      @relation(fields: [usuario_id], references: [id])
+  ejercicio    Exercise  @relation(fields: [ejercicio_id], references: [id])
 }
 
-model Rutina {
+// Aplicar el mismo cambio a Routine y Favorite
+
+model Routine {
   id               Int                @id @default(autoincrement())
-  usuario_id       Int
+  usuario_id       String
   nombre           String
   fecha_creacion   DateTime?          @default(now()) @db.Date
-  usuario          Usuario            @relation(fields: [usuario_id], references: [id])
+  usuario          User               @relation(fields: [usuario_id], references: [id])
   Rutina_ejercicio Rutina_ejercicio[]
 }
 
-model Favorito {
-  id           Int       @id @default(autoincrement())
-  usuario_id   Int
+model Favorite {
+  id           Int      @id @default(autoincrement())
+  usuario_id   String
   ejercicio_id Int
   // fecha_creacion DateTime? @default(now()) @db.Date
-  usuario      Usuario   @relation(fields: [usuario_id], references: [id])
-  ejercicio    Ejercicio @relation(fields: [ejercicio_id], references: [id])
+  usuario      User     @relation(fields: [usuario_id], references: [id])
+  ejercicio    Exercise @relation(fields: [ejercicio_id], references: [id])
 }
 
-model Ejercicio {
+model Exercise {
   id               Int                @id @default(autoincrement())
   nombre           String
   musculo          String
   video_img_url    String
-  Progreso         Progreso[]
-  Favorito         Favorito[]
+  Progreso         Progress[]
+  Favorito         Favorite[]
   Rutina_ejercicio Rutina_ejercicio[]
 }
 
 model Rutina_ejercicio {
-  id           Int       @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())
   rutina_id    Int
   ejercicio_id Int
   series       Int
   repeticiones Int
-  rutina       Rutina    @relation(fields: [rutina_id], references: [id])
-  ejercicio    Ejercicio @relation(fields: [ejercicio_id], references: [id])
+  rutina       Routine  @relation(fields: [rutina_id], references: [id])
+  ejercicio    Exercise @relation(fields: [ejercicio_id], references: [id])
 }
