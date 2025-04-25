@@ -49,7 +49,7 @@ export type Rutina_ejercicio = $Result.DefaultSelection<Prisma.$Rutina_ejercicio
  */
 export namespace $Enums {
   export const Rol: {
-  INVITADO: 'INVITADO',
+  GUEST: 'GUEST',
   USER: 'USER',
   ADMIN: 'ADMIN'
 };
@@ -1489,7 +1489,7 @@ export namespace Prisma {
     image: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    rol: $Enums.Rol | null
+    role: $Enums.Rol | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1501,7 +1501,7 @@ export namespace Prisma {
     image: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    rol: $Enums.Rol | null
+    role: $Enums.Rol | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1513,7 +1513,7 @@ export namespace Prisma {
     image: number
     createdAt: number
     updatedAt: number
-    rol: number
+    role: number
     _all: number
   }
 
@@ -1527,7 +1527,7 @@ export namespace Prisma {
     image?: true
     createdAt?: true
     updatedAt?: true
-    rol?: true
+    role?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1539,7 +1539,7 @@ export namespace Prisma {
     image?: true
     createdAt?: true
     updatedAt?: true
-    rol?: true
+    role?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1551,7 +1551,7 @@ export namespace Prisma {
     image?: true
     createdAt?: true
     updatedAt?: true
-    rol?: true
+    role?: true
     _all?: true
   }
 
@@ -1636,7 +1636,7 @@ export namespace Prisma {
     image: string | null
     createdAt: Date
     updatedAt: Date
-    rol: $Enums.Rol
+    role: $Enums.Rol
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
@@ -1665,7 +1665,7 @@ export namespace Prisma {
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rol?: boolean
+    role?: boolean
     Progress?: boolean | User$ProgressArgs<ExtArgs>
     Routine?: boolean | User$RoutineArgs<ExtArgs>
     Favorite?: boolean | User$FavoriteArgs<ExtArgs>
@@ -1681,7 +1681,7 @@ export namespace Prisma {
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rol?: boolean
+    role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1693,7 +1693,7 @@ export namespace Prisma {
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rol?: boolean
+    role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1705,10 +1705,10 @@ export namespace Prisma {
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    rol?: boolean
+    role?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "password" | "image" | "createdAt" | "updatedAt" | "rol", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "password" | "image" | "createdAt" | "updatedAt" | "role", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Progress?: boolean | User$ProgressArgs<ExtArgs>
     Routine?: boolean | User$RoutineArgs<ExtArgs>
@@ -1734,7 +1734,7 @@ export namespace Prisma {
       image: string | null
       createdAt: Date
       updatedAt: Date
-      rol: $Enums.Rol
+      role: $Enums.Rol
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -2169,7 +2169,7 @@ export namespace Prisma {
     readonly image: FieldRef<"User", 'String'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
-    readonly rol: FieldRef<"User", 'Rol'>
+    readonly role: FieldRef<"User", 'Rol'>
   }
     
 
@@ -8246,7 +8246,7 @@ export namespace Prisma {
     image: 'image',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    rol: 'rol'
+    role: 'role'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -8418,7 +8418,7 @@ export namespace Prisma {
     image?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    rol?: EnumRolFilter<"User"> | $Enums.Rol
+    role?: EnumRolFilter<"User"> | $Enums.Rol
     Progress?: ProgressListRelationFilter
     Routine?: RoutineListRelationFilter
     Favorite?: FavoriteListRelationFilter
@@ -8433,7 +8433,7 @@ export namespace Prisma {
     image?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    rol?: SortOrder
+    role?: SortOrder
     Progress?: ProgressOrderByRelationAggregateInput
     Routine?: RoutineOrderByRelationAggregateInput
     Favorite?: FavoriteOrderByRelationAggregateInput
@@ -8451,7 +8451,7 @@ export namespace Prisma {
     image?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    rol?: EnumRolFilter<"User"> | $Enums.Rol
+    role?: EnumRolFilter<"User"> | $Enums.Rol
     Progress?: ProgressListRelationFilter
     Routine?: RoutineListRelationFilter
     Favorite?: FavoriteListRelationFilter
@@ -8466,7 +8466,7 @@ export namespace Prisma {
     image?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    rol?: SortOrder
+    role?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
@@ -8484,7 +8484,7 @@ export namespace Prisma {
     image?: StringNullableWithAggregatesFilter<"User"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    rol?: EnumRolWithAggregatesFilter<"User"> | $Enums.Rol
+    role?: EnumRolWithAggregatesFilter<"User"> | $Enums.Rol
   }
 
   export type ProgressWhereInput = {
@@ -8784,7 +8784,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Progress?: ProgressCreateNestedManyWithoutUsuarioInput
     Routine?: RoutineCreateNestedManyWithoutUsuarioInput
     Favorite?: FavoriteCreateNestedManyWithoutUsuarioInput
@@ -8799,7 +8799,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Progress?: ProgressUncheckedCreateNestedManyWithoutUsuarioInput
     Routine?: RoutineUncheckedCreateNestedManyWithoutUsuarioInput
     Favorite?: FavoriteUncheckedCreateNestedManyWithoutUsuarioInput
@@ -8814,7 +8814,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Progress?: ProgressUpdateManyWithoutUsuarioNestedInput
     Routine?: RoutineUpdateManyWithoutUsuarioNestedInput
     Favorite?: FavoriteUpdateManyWithoutUsuarioNestedInput
@@ -8829,7 +8829,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Progress?: ProgressUncheckedUpdateManyWithoutUsuarioNestedInput
     Routine?: RoutineUncheckedUpdateManyWithoutUsuarioNestedInput
     Favorite?: FavoriteUncheckedUpdateManyWithoutUsuarioNestedInput
@@ -8844,7 +8844,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
   }
 
   export type UserUpdateManyMutationInput = {
@@ -8856,7 +8856,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -8868,7 +8868,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
   }
 
   export type ProgressCreateInput = {
@@ -9228,7 +9228,7 @@ export namespace Prisma {
     image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    rol?: SortOrder
+    role?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
@@ -9240,7 +9240,7 @@ export namespace Prisma {
     image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    rol?: SortOrder
+    role?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -9252,7 +9252,7 @@ export namespace Prisma {
     image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    rol?: SortOrder
+    role?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -10352,7 +10352,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Routine?: RoutineCreateNestedManyWithoutUsuarioInput
     Favorite?: FavoriteCreateNestedManyWithoutUsuarioInput
   }
@@ -10366,7 +10366,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Routine?: RoutineUncheckedCreateNestedManyWithoutUsuarioInput
     Favorite?: FavoriteUncheckedCreateNestedManyWithoutUsuarioInput
   }
@@ -10418,7 +10418,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Routine?: RoutineUpdateManyWithoutUsuarioNestedInput
     Favorite?: FavoriteUpdateManyWithoutUsuarioNestedInput
   }
@@ -10432,7 +10432,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Routine?: RoutineUncheckedUpdateManyWithoutUsuarioNestedInput
     Favorite?: FavoriteUncheckedUpdateManyWithoutUsuarioNestedInput
   }
@@ -10474,7 +10474,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Progress?: ProgressCreateNestedManyWithoutUsuarioInput
     Favorite?: FavoriteCreateNestedManyWithoutUsuarioInput
   }
@@ -10488,7 +10488,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Progress?: ProgressUncheckedCreateNestedManyWithoutUsuarioInput
     Favorite?: FavoriteUncheckedCreateNestedManyWithoutUsuarioInput
   }
@@ -10541,7 +10541,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Progress?: ProgressUpdateManyWithoutUsuarioNestedInput
     Favorite?: FavoriteUpdateManyWithoutUsuarioNestedInput
   }
@@ -10555,7 +10555,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Progress?: ProgressUncheckedUpdateManyWithoutUsuarioNestedInput
     Favorite?: FavoriteUncheckedUpdateManyWithoutUsuarioNestedInput
   }
@@ -10596,7 +10596,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Progress?: ProgressCreateNestedManyWithoutUsuarioInput
     Routine?: RoutineCreateNestedManyWithoutUsuarioInput
   }
@@ -10610,7 +10610,7 @@ export namespace Prisma {
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    rol?: $Enums.Rol
+    role?: $Enums.Rol
     Progress?: ProgressUncheckedCreateNestedManyWithoutUsuarioInput
     Routine?: RoutineUncheckedCreateNestedManyWithoutUsuarioInput
   }
@@ -10662,7 +10662,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Progress?: ProgressUpdateManyWithoutUsuarioNestedInput
     Routine?: RoutineUpdateManyWithoutUsuarioNestedInput
   }
@@ -10676,7 +10676,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    rol?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     Progress?: ProgressUncheckedUpdateManyWithoutUsuarioNestedInput
     Routine?: RoutineUncheckedUpdateManyWithoutUsuarioNestedInput
   }

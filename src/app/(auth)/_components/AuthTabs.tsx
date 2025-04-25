@@ -15,18 +15,17 @@ import RegisterForm from "@/app/(auth)/_components/RegisterForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Login",
+  title: "Auth",
 };
 
-type DescriptionType = "iniciar-sesion" | "registrarse";
+type DescriptionType = "login" | "register";
 
-function Login() {
-  const [currentTab, setCurrentTab] =
-    useState<DescriptionType>("iniciar-sesion");
+function AuthTabs() {
+  const [currentTab, setCurrentTab] = useState<DescriptionType>("login");
 
   const descriptions: Record<DescriptionType, string> = {
-    "iniciar-sesion": "Inicia sesión para acceder a tu dashboard personal",
-    registrarse: "Crea una cuenta para comenzar tu entrenamiento",
+    login: "Inicia sesión para acceder a tu dashboard personal",
+    register: "Crea una cuenta para comenzar tu entrenamiento",
   };
 
   return (
@@ -41,29 +40,30 @@ function Login() {
       </CardHeader>
 
       <Tabs
-        defaultValue="iniciar-sesion"
+        defaultValue="login"
         onValueChange={(value) => {
           //! DEBUG
           console.log("valor recibido: ", value);
           setCurrentTab(value as DescriptionType);
         }}
+        value={currentTab}
       >
         <TabsList className="w-full mb-3">
-          <TabsTrigger value="iniciar-sesion">Iniciar sesión</TabsTrigger>
-          <TabsTrigger value="registrarse">Registrarse</TabsTrigger>
+          <TabsTrigger value="login">Iniciar sesión</TabsTrigger>
+          <TabsTrigger value="register">Registrarse</TabsTrigger>
         </TabsList>
 
         {/* Content Login */}
-        <TabsContent value="iniciar-sesion">
+        <TabsContent value="login">
           <CardContent>
             <LoginForm />
           </CardContent>
         </TabsContent>
 
         {/* Content Registro */}
-        <TabsContent value="registrarse">
+        <TabsContent value="register">
           <CardContent>
-            <RegisterForm />
+            <RegisterForm onRegister={() => setCurrentTab("login")} />
           </CardContent>
         </TabsContent>
       </Tabs>
@@ -71,4 +71,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default AuthTabs;

@@ -2,7 +2,7 @@ import { z } from "zod"
 
 export const UserSchema = z.object({
     id: z.string().optional(),
-    nombre: z.string().min(3, {
+    name: z.string().min(3, {
         message: "El nombre de usuario debe tener al menos tres caracteres."
     }),
     email: z.string().email({
@@ -11,17 +11,39 @@ export const UserSchema = z.object({
     password: z.string().min(8, {
         message: "La contraseña debe ser mayor a 8."
     }),
-    rol: z.enum(["ADMIN", "USER", "INVITADO"], {
+    role: z.enum(["ADMIN", "USER", "GUEST"], {
         message: "Rol inválido."
     }
     )
 })
 
-export const signInSchema = z.object({
-    email: z.string().email({
-        message: "Dirección de correo electrónico inválida."
-    }),
-    password: z.string().min(8, {
-        message: "La contraseña debe ser mayor a 8."
-    }),
+// export const SignInSchema = UserSchema.pick({ email: true, password: true });
+// export type SignInT = z.infer<typeof SignInSchema>;
+
+// ESQUEMA Y TIPO PARA REGISTRO
+export const RegisterSchema = UserSchema.pick({
+    email: true,
+    password: true,
+    name: true,
 })
+    .extend({
+        confirmPassword: z.string().min(8, {
+            message: "La contraseña debe ser mayor a 8.",
+        }),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        //En caso de ser falso
+        message: "Las contraseñas no coinciden",
+        path: ["confirmPassword"], // ruta de error
+    });
+
+export type RegisterT = z.infer<typeof RegisterSchema>;
+
+
+// ESQUEMA Y TIPO PARA LOGIN
+export const LoginSchema = UserSchema.pick({
+    email: true,
+    password: true
+})
+
+export type LoginT = z.infer<typeof LoginSchema>;

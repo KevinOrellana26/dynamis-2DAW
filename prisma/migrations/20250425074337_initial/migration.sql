@@ -1,48 +1,5 @@
-/*
-  Warnings:
-
-  - You are about to drop the `Ejercicio` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Favorito` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Progreso` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Rutina` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Usuario` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropForeignKey
-ALTER TABLE "Favorito" DROP CONSTRAINT "Favorito_ejercicio_id_fkey";
-
--- DropForeignKey
-ALTER TABLE "Favorito" DROP CONSTRAINT "Favorito_usuario_id_fkey";
-
--- DropForeignKey
-ALTER TABLE "Progreso" DROP CONSTRAINT "Progreso_ejercicio_id_fkey";
-
--- DropForeignKey
-ALTER TABLE "Progreso" DROP CONSTRAINT "Progreso_usuario_id_fkey";
-
--- DropForeignKey
-ALTER TABLE "Rutina" DROP CONSTRAINT "Rutina_usuario_id_fkey";
-
--- DropForeignKey
-ALTER TABLE "Rutina_ejercicio" DROP CONSTRAINT "Rutina_ejercicio_ejercicio_id_fkey";
-
--- DropForeignKey
-ALTER TABLE "Rutina_ejercicio" DROP CONSTRAINT "Rutina_ejercicio_rutina_id_fkey";
-
--- DropTable
-DROP TABLE "Ejercicio";
-
--- DropTable
-DROP TABLE "Favorito";
-
--- DropTable
-DROP TABLE "Progreso";
-
--- DropTable
-DROP TABLE "Rutina";
-
--- DropTable
-DROP TABLE "Usuario";
+-- CreateEnum
+CREATE TYPE "Rol" AS ENUM ('GUEST', 'USER', 'ADMIN');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -50,9 +7,11 @@ CREATE TABLE "User" (
     "name" TEXT,
     "email" TEXT NOT NULL,
     "emailVerified" TIMESTAMP(3),
+    "password" TEXT NOT NULL,
     "image" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "role" "Rol" NOT NULL DEFAULT 'USER',
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -96,6 +55,17 @@ CREATE TABLE "Exercise" (
     "video_img_url" TEXT NOT NULL,
 
     CONSTRAINT "Exercise_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Rutina_ejercicio" (
+    "id" SERIAL NOT NULL,
+    "rutina_id" INTEGER NOT NULL,
+    "ejercicio_id" INTEGER NOT NULL,
+    "series" INTEGER NOT NULL,
+    "repeticiones" INTEGER NOT NULL,
+
+    CONSTRAINT "Rutina_ejercicio_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

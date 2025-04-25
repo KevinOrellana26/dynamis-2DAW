@@ -13,22 +13,10 @@ datasource db {
 //2-usuario
 //3-admin
 enum Rol {
-  INVITADO
+  GUEST
   USER
   ADMIN
 }
-
-// model Usuario {
-//   id             Int        @id @default(autoincrement())
-//   nombre         String
-//   email          String     @unique
-//   password       String
-//   rol            Rol        @default(USER)
-//   fecha_creacion DateTime?  @default(now()) @db.Date //Solo fecha en formato YYYY-MM-DD
-//   Progreso       Progreso[]
-//   Rutina         Rutina[]
-//   Favorito       Favorito[]
-// }
 
 model User {
   id            String     @id @default(cuid())
@@ -39,7 +27,7 @@ model User {
   image         String?
   createdAt     DateTime   @default(now())
   updatedAt     DateTime   @updatedAt
-  rol           Rol        @default(USER)
+  role          Rol        @default(USER)
   Progress      Progress[]
   Routine       Routine[]
   Favorite      Favorite[]

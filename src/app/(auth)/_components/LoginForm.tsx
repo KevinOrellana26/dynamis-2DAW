@@ -1,9 +1,5 @@
 "use client";
 
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,58 +9,46 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { toast } from "sonner";
-import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 import { RiLoader2Fill } from "react-icons/ri";
-import { loginUser } from "../_core/user/user.action";
+import { toast } from "sonner";
+import { z } from "zod";
+import { useServerAction } from "zsa-react";
+import { LoginSchema } from "../_core/auth/user.types";
+import { loginUserAction } from "../_core/user/user.actions";
 
 //Validación (Esquema)
-export const AuthFormSchema = z.object({
-  email: z.string().email({
-    message: "Dirección de correo electrónico inválida.",
-  }),
-  password: z.string().min(8, {
-    message: "La contraseña debe ser mayor a 8.",
-  }),
-});
-
-export const LoginFormsSchema = AuthFormSchema;
-export type LoginFormT = z.infer<typeof LoginFormsSchema>;
+export const LoginFormSchema = LoginSchema;
+export type LoginFormT = z.infer<typeof LoginFormSchema>;
 
 export default function LoginForm() {
-  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   //defino la forma
   const form = useForm<LoginFormT>({
-    resolver: zodResolver(LoginFormsSchema),
+    resolver: zodResolver(LoginFormSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const handleSubmit = async (values: LoginFormT) => {
-    try {
-      setIsLoading(true);
-      const result = await loginUser(values);
+  const { isPending, execute } = useServerAction(loginUserAction, {
+    onSuccess: ({ data: message }) => {
+      toast.success(message);
+      router.push("/dashboard");
+    },
+    onError: ({ err }) => {
+      console.log(err);
+      toast.error(err.message);
+    },
+  });
 
-      if (result?.error) {
-        toast.error("Error al inciar sesión", {
-          description: result.error,
-        });
-      } else {
-        toast.success("Bienvenido", {
-          description: "Has iniciado sesión correctamente.",
-        });
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error("Error en registro", {
-        description: "Ocurrió un error al iniciar sesión.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+  const handleSubmit = async (values: LoginFormT) => {
+    execute(values);
   };
 
   return (
@@ -111,10 +95,10 @@ export default function LoginForm() {
           type="submit"
           variant={"dynamis"}
           className="w-full"
-          disabled={isLoading}
+          disabled={isPending}
         >
-          {isLoading && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />}
-          {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
+          {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />}
+          {isPending ? "Iniciando sesión..." : "Iniciar sesión"}
         </Button>
       </form>
     </Form>

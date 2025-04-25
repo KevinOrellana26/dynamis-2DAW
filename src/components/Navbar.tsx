@@ -47,7 +47,7 @@ function Navbar() {
         {/* Iniciar Sesión y Btn Mode */}
         <div className="flex items-center gap-2">
           <ModeToggle />
-          <Button variant={"outline"} asChild>
+          <Button variant={"outline"}>
             <Link href={"/login"}>Iniciar sesión</Link>
           </Button>
         </div>

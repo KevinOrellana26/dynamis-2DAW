@@ -126,7 +126,7 @@ exports.Prisma.UserScalarFieldEnum = {
   image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  rol: 'rol'
+  role: 'role'
 };
 
 exports.Prisma.ProgressScalarFieldEnum = {
@@ -181,7 +181,7 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 exports.Rol = exports.$Enums.Rol = {
-  INVITADO: 'INVITADO',
+  GUEST: 'GUEST',
   USER: 'USER',
   ADMIN: 'ADMIN'
 };

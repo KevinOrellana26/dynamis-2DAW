@@ -1,8 +1,5 @@
 "use client";
 
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,65 +10,69 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { AuthFormSchema } from "./LoginForm";
-import { useState } from "react";
-import { toast } from "sonner";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ComponentProps } from "react";
+import { useForm } from "react-hook-form";
 import { RiLoader2Fill } from "react-icons/ri";
-import { registerUser } from "../_core/user/user.action";
+import { toast } from "sonner";
+import { z } from "zod";
+import { useServerAction } from "zsa-react";
+import { RegisterSchema } from "../_core/auth/user.types";
+import { registerUserAction } from "../_core/user/user.actions";
 
 //Defino el esquema
-export const RegisterFormSchema = AuthFormSchema.extend({
-  username: z.string().min(3, {
-    message: "El nombre de usuario debe tener al menos tres caracteres.",
-  }),
-});
-
+export const RegisterFormSchema = RegisterSchema;
 export type RegisterFormT = z.infer<typeof RegisterFormSchema>;
 
-export default function RegisterForm() {
-  const [isLoading, setIsLoading] = useState(false);
+type RegisterFormProps = ComponentProps<"form"> & {
+  onRegister?: () => void;
+};
+
+export default function RegisterForm({
+  onRegister,
+  ...props
+}: RegisterFormProps) {
 
   //defino la forma
   const form = useForm<RegisterFormT>({
     resolver: zodResolver(RegisterFormSchema),
     defaultValues: {
-      username: "",
+      name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
-  const handleSubmit = async (values: RegisterFormT) => {
-    try {
-      setIsLoading(true);
-
-      const result = await registerUser(values);
-
-      if (result?.error) {
-        toast.error("Error en registro", {
-          description: result.error,
-        });
-      } else {
-        toast.success("Registro exitoso", {
-          description: "Tu cuenta ha sido creada satisfactoriamente",
-        });
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error("Error en registro", {
-        description: "Ocurrió un error al crear tu cuenta",
-      });
-    } finally {
-      setIsLoading(false);
+  const { isPending, execute } = useServerAction(
+    registerUserAction,
+    {
+      onSuccess: ({ data: message }) => {
+        toast.success(message);
+        form.reset();
+        onRegister?.() //solo se va a ejecutar si onRegister existe 
+      },
+      onError: ({ err }) => {
+        console.log(err);
+        toast.error(err.message);
+      },
     }
+  );
+
+  const handleSubmit = async (values: RegisterFormT) => {
+    execute(values);
   };
 
   return (
     <Form {...form}>
-      <form className="space-y-5" onSubmit={form.handleSubmit(handleSubmit)}>
+      <form
+        className="space-y-5"
+        onSubmit={form.handleSubmit(handleSubmit)}
+        {...props}
+      >
         <FormField
           control={form.control}
-          name="username"
+          name="name"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Nombre</FormLabel>
@@ -102,19 +103,33 @@ export default function RegisterForm() {
             <FormItem>
               <FormLabel>Contraseña</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} type="password" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="confirmPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Confirmar contraseña</FormLabel>
+              <FormControl>
+                <Input {...field} type="password" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* {isError && <p>{error.message}</p>} */}
         <Button
           type="submit"
           variant={"dynamis"}
           className="w-full"
-          disabled={isLoading}
+          disabled={isPending}
         >
-          {isLoading && <RiLoader2Fill className="mr-2 h-4 2-4 animate-spin" />}
+          {isPending && <RiLoader2Fill className="mr-2 h-4 2-4 animate-spin" />}
           Registrarse
         </Button>
       </form>
