@@ -1,19 +1,19 @@
 "use client";
 
+import { LoginButton } from "@/app/(auth)/_components/LoginButton";
 import { Dumbbell } from "lucide-react";
-import { ModeToggle } from "./theme-toggle-button";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./theme-toggle-button";
 
 function Navbar() {
+  const path = usePathname();
+
   const navItems = [
     { name: "Inicio", href: "/" },
     { name: "Ejercicios", href: "/ejercicio" },
     { name: "Rutinas", href: "/rutina" },
   ];
-
-  const path = usePathname();
 
   return (
     <nav className="border-b border-gray-300 dark:border-gray-800">
@@ -46,10 +46,8 @@ function Navbar() {
         </div>
         {/* Iniciar Sesión y Btn Mode */}
         <div className="flex items-center gap-2">
-          <ModeToggle />
-          <Button variant={"outline"}>
-            <Link href={"/login"}>Iniciar sesión</Link>
-          </Button>
+          <ModeToggle /> {/* Botón Temas */}
+          <LoginButton />
         </div>
       </div>
     </nav>

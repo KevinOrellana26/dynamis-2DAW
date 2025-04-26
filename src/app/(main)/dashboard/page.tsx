@@ -16,14 +16,11 @@ export default async function Page() {
     redirect("/login");
   }
 
-  //hacer una server action sin parametros
-  
   return (
     <div className="h-screen flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl">
-        Dashboard | Hello, {session?.user.name} con email {session?.user.email}
+        Dashboard | Hello, {session?.user.name} con email {session?.user.email} 
       </h1>
-      {/* <LogoutButton /> */}
     </div>
   );
 }

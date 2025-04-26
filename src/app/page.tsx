@@ -32,7 +32,7 @@ function Home() {
               personalizadas y seguimiento de tu progreso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant={"outline"} size={"lg"} asChild>
+              <Button variant={"dynamis"} size={"lg"} asChild>
                 <Link href={"/login"}>
                   Empezar ahora <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

@@ -22,7 +22,7 @@ import { LoginSchema, RegisterSchema } from "../auth/user.types";
 
 export const registerUserAction = createServerAction()
     .input(
-        RegisterSchema
+        RegisterSchema // <- Validación esquema zod en el lado del servidor. ZSA(Zod Server Action)
     )
     .handler(async ({ input }) => {
         const response = await registerUser(input)

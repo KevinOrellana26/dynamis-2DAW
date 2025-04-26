@@ -31,7 +31,7 @@ export default function RegisterForm({
   onRegister,
   ...props
 }: RegisterFormProps) {
-  //defino la forma
+  //Inicialización del formulario, como sus valores por defecto.
   const form = useForm<RegisterT>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -43,10 +43,11 @@ export default function RegisterForm({
   });
 
   const { isPending, execute } = useServerAction(registerUserAction, {
+    //callbacks
     onSuccess: ({ data: message }) => {
       toast.success(message);
       form.reset();
-      onRegister?.(); //solo se va a ejecutar si onRegister existe
+      onRegister?.(); //solo se va a ejecutar si onRegister existe. Redirección después de un registro éxitoso.
     },
     onError: ({ err }) => {
       console.log(err);
@@ -55,7 +56,7 @@ export default function RegisterForm({
   });
 
   const handleSubmit = async (values: RegisterT) => {
-    execute(values);
+    execute(values); // <- envía los datos al servidor (server action: registerUseAction)
   };
 
   return (
@@ -125,7 +126,7 @@ export default function RegisterForm({
           disabled={isPending}
         >
           {isPending && <RiLoader2Fill className="mr-2 h-4 2-4 animate-spin" />}
-          Registrarse
+          {isPending ? "Registrando" : "Registrarse"}
         </Button>
       </form>
     </Form>
