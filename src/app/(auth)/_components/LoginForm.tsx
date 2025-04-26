@@ -15,21 +15,20 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { RiLoader2Fill } from "react-icons/ri";
 import { toast } from "sonner";
-import { z } from "zod";
 import { useServerAction } from "zsa-react";
-import { LoginSchema } from "../_core/auth/user.types";
+import { LoginSchema, LoginT } from "../_core/auth/user.types";
 import { loginUserAction } from "../_core/user/user.actions";
 
 //Validación (Esquema)
-export const LoginFormSchema = LoginSchema;
-export type LoginFormT = z.infer<typeof LoginFormSchema>;
+// export const LoginFormSchema = LoginSchema;
+// export type LoginFormT = z.infer<typeof LoginFormSchema>;
 
 export default function LoginForm() {
   const router = useRouter();
 
-  //defino la forma
-  const form = useForm<LoginFormT>({
-    resolver: zodResolver(LoginFormSchema),
+  //defino la forma del formulario con su tipo correspondiente.
+  const form = useForm<LoginT>({
+    resolver: zodResolver(LoginSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -47,7 +46,7 @@ export default function LoginForm() {
     },
   });
 
-  const handleSubmit = async (values: LoginFormT) => {
+  const handleSubmit = async (values: LoginT) => {
     execute(values);
   };
 

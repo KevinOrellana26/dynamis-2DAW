@@ -3,14 +3,14 @@
 
 import { prisma } from "@/lib/prisma";
 import { signIn } from "../auth/auth.lib";
-import { RegisterFormT } from "@/app/(auth)/_components/RegisterForm"
-import { LoginFormT } from "@/app/(auth)/_components/LoginForm";
-import bcrypt from 'bcryptjs';
+// import { RegisterFormT } from "@/app/(auth)/_components/RegisterForm"
+// import { LoginFormT } from "@/app/(auth)/_components/LoginForm";
 import { IS_DEV } from "@/config/env.config";
-import { redirect } from "next/dist/server/api-utils";
+import bcrypt from 'bcryptjs';
+import { LoginT, RegisterT } from "../auth/user.types";
 
 //Registrar nuevos usuarios
-export async function registerUser(values: RegisterFormT) {
+export async function registerUser(values: RegisterT) {
     try {
         // Verificar si el usuario ya existe
         const existingUser = await prisma.user.findUnique({
@@ -53,7 +53,7 @@ export async function registerUser(values: RegisterFormT) {
     }
 }
 
-export async function loginUser(values: LoginFormT) {
+export async function loginUser(values: LoginT) {
     try {
         console.log({ values })
 

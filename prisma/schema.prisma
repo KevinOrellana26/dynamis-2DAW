@@ -1,7 +1,7 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
-  //output = "../node_modules/@prisma/client"
+  // output   = "/node_modules/@prisma/client"
 }
 
 datasource db {
@@ -34,52 +34,50 @@ model User {
 }
 
 model Progress {
-  id           Int       @id @default(autoincrement())
-  usuario_id   String // Cambiado a String
-  ejercicio_id Int
-  fecha        DateTime? @default(now()) @db.Date
-  peso_usado   Float
-  repeticiones Int
-  usuario      User      @relation(fields: [usuario_id], references: [id])
-  ejercicio    Exercise  @relation(fields: [ejercicio_id], references: [id])
+  id          Int       @id @default(autoincrement())
+  user_id     String // Cambiado a String
+  exercise_id Int
+  date        DateTime? @default(now()) @db.Date
+  weight_used Float
+  repetitions Int
+  user        User      @relation(fields: [user_id], references: [id])
+  exercise    Exercise  @relation(fields: [exercise_id], references: [id])
 }
-
-// Aplicar el mismo cambio a Routine y Favorite
 
 model Routine {
   id               Int                @id @default(autoincrement())
-  usuario_id       String
-  nombre           String
-  fecha_creacion   DateTime?          @default(now()) @db.Date
-  usuario          User               @relation(fields: [usuario_id], references: [id])
-  Rutina_ejercicio Rutina_ejercicio[]
+  user_id          String
+  name             String
+  createdAt        DateTime?          @default(now()) @db.Date
+  user             User               @relation(fields: [user_id], references: [id])
+  Exercise_routine Exercise_routine[]
 }
 
 model Favorite {
-  id           Int      @id @default(autoincrement())
-  usuario_id   String
-  ejercicio_id Int
+  id          Int      @id @default(autoincrement())
+  user_id     String
+  exercise_id Int
   // fecha_creacion DateTime? @default(now()) @db.Date
-  usuario      User     @relation(fields: [usuario_id], references: [id])
-  ejercicio    Exercise @relation(fields: [ejercicio_id], references: [id])
+  user        User     @relation(fields: [user_id], references: [id])
+  exercise    Exercise @relation(fields: [exercise_id], references: [id])
 }
 
 model Exercise {
   id               Int                @id @default(autoincrement())
-  nombre           String
-  musculo          String
+  name             String
+  muscle           String
   video_img_url    String
-  Progreso         Progress[]
-  Favorito         Favorite[]
-  Rutina_ejercicio Rutina_ejercicio[]
+  Progress         Progress[]
+  Favorite         Favorite[]
+  Exercise_routine Exercise_routine[]
 }
 
-model Rutina_ejercicio {
-  id           Int      @id @default(autoincrement())
-  rutina_id    Int
-  ejercicio_id Int
-  series       Int
-  repeticiones Int
-  rutina       Routine  @relation(fields: [rutina_id], references: [id])
-  ejercicio    Exercise @relation(fields: [ejercicio_id], references: [id])
+model Exercise_routine {
+  id          Int      @id @default(autoincrement())
+  routine_id  Int
+  exercie_id  Int
+  series      Int
+  repetitions Int
+  routine     Routine  @relation(fields: [routine_id], references: [id])
+  exercise    Exercise @relation(fields: [exercie_id], references: [id])
 }

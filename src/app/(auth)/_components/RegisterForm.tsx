@@ -15,14 +15,13 @@ import { ComponentProps } from "react";
 import { useForm } from "react-hook-form";
 import { RiLoader2Fill } from "react-icons/ri";
 import { toast } from "sonner";
-import { z } from "zod";
 import { useServerAction } from "zsa-react";
-import { RegisterSchema } from "../_core/auth/user.types";
+import { RegisterSchema, RegisterT } from "../_core/auth/user.types";
 import { registerUserAction } from "../_core/user/user.actions";
 
 //Defino el esquema
-export const RegisterFormSchema = RegisterSchema;
-export type RegisterFormT = z.infer<typeof RegisterFormSchema>;
+// export const RegisterFormSchema = RegisterSchema;
+// export type RegisterFormT = z.infer<typeof RegisterFormSchema>;
 
 type RegisterFormProps = ComponentProps<"form"> & {
   onRegister?: () => void;
@@ -32,10 +31,9 @@ export default function RegisterForm({
   onRegister,
   ...props
 }: RegisterFormProps) {
-
   //defino la forma
-  const form = useForm<RegisterFormT>({
-    resolver: zodResolver(RegisterFormSchema),
+  const form = useForm<RegisterT>({
+    resolver: zodResolver(RegisterSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -44,22 +42,19 @@ export default function RegisterForm({
     },
   });
 
-  const { isPending, execute } = useServerAction(
-    registerUserAction,
-    {
-      onSuccess: ({ data: message }) => {
-        toast.success(message);
-        form.reset();
-        onRegister?.() //solo se va a ejecutar si onRegister existe 
-      },
-      onError: ({ err }) => {
-        console.log(err);
-        toast.error(err.message);
-      },
-    }
-  );
+  const { isPending, execute } = useServerAction(registerUserAction, {
+    onSuccess: ({ data: message }) => {
+      toast.success(message);
+      form.reset();
+      onRegister?.(); //solo se va a ejecutar si onRegister existe
+    },
+    onError: ({ err }) => {
+      console.log(err);
+      toast.error(err.message);
+    },
+  });
 
-  const handleSubmit = async (values: RegisterFormT) => {
+  const handleSubmit = async (values: RegisterT) => {
     execute(values);
   };
 

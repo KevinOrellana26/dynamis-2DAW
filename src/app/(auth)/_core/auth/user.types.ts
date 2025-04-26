@@ -1,5 +1,6 @@
 import { z } from "zod"
 
+// ESQUEMA -> QUE ES LO QUE YO ESPERO RECIBIR DEL USUARIO.
 export const UserSchema = z.object({
     id: z.string().optional(),
     name: z.string().min(3, {

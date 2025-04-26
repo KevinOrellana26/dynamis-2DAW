@@ -131,39 +131,39 @@ exports.Prisma.UserScalarFieldEnum = {
 
 exports.Prisma.ProgressScalarFieldEnum = {
   id: 'id',
-  usuario_id: 'usuario_id',
-  ejercicio_id: 'ejercicio_id',
-  fecha: 'fecha',
-  peso_usado: 'peso_usado',
-  repeticiones: 'repeticiones'
+  user_id: 'user_id',
+  exercise_id: 'exercise_id',
+  date: 'date',
+  weight_used: 'weight_used',
+  repetitions: 'repetitions'
 };
 
 exports.Prisma.RoutineScalarFieldEnum = {
   id: 'id',
-  usuario_id: 'usuario_id',
-  nombre: 'nombre',
-  fecha_creacion: 'fecha_creacion'
+  user_id: 'user_id',
+  name: 'name',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.FavoriteScalarFieldEnum = {
   id: 'id',
-  usuario_id: 'usuario_id',
-  ejercicio_id: 'ejercicio_id'
+  user_id: 'user_id',
+  exercise_id: 'exercise_id'
 };
 
 exports.Prisma.ExerciseScalarFieldEnum = {
   id: 'id',
-  nombre: 'nombre',
-  musculo: 'musculo',
+  name: 'name',
+  muscle: 'muscle',
   video_img_url: 'video_img_url'
 };
 
-exports.Prisma.Rutina_ejercicioScalarFieldEnum = {
+exports.Prisma.Exercise_routineScalarFieldEnum = {
   id: 'id',
-  rutina_id: 'rutina_id',
-  ejercicio_id: 'ejercicio_id',
+  routine_id: 'routine_id',
+  exercie_id: 'exercie_id',
   series: 'series',
-  repeticiones: 'repeticiones'
+  repetitions: 'repetitions'
 };
 
 exports.Prisma.SortOrder = {
@@ -192,7 +192,7 @@ exports.Prisma.ModelName = {
   Routine: 'Routine',
   Favorite: 'Favorite',
   Exercise: 'Exercise',
-  Rutina_ejercicio: 'Rutina_ejercicio'
+  Exercise_routine: 'Exercise_routine'
 };
 
 /**
