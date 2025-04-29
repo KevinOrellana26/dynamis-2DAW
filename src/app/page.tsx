@@ -1,11 +1,11 @@
 import BenefitsCard from "@/components/BenefitsCard";
-import ExerciseCard from "@/components/ExerciseCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Dumbbell, ChartLine, ListChecks } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Exercise from "@/mocks/exercise.json";
 import { Metadata } from "next";
+import ExerciseCard from "@/components/ExerciseCard";
 
 export const metadata: Metadata = {
   title: "Dashboard",

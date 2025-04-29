@@ -6,7 +6,7 @@ type Benefits = {
   icon: React.ReactNode; //cualquier componente de react como icono
 };
 
-export default function ExerciseCard({ title, subtitle, icon }: Benefits) {
+export default function BenefitsCard({ title, subtitle, icon }: Benefits) {
   return (
     <Card>
       <div className="ml-6 pt-5">{icon}</div>

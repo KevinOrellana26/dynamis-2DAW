@@ -142,7 +142,10 @@ exports.Prisma.RoutineScalarFieldEnum = {
   id: 'id',
   user_id: 'user_id',
   name: 'name',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  description: 'description',
+  duration: 'duration',
+  totalExercise: 'totalExercise'
 };
 
 exports.Prisma.FavoriteScalarFieldEnum = {

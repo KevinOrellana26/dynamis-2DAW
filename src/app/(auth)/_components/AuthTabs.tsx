@@ -49,8 +49,12 @@ function AuthTabs() {
         value={currentTab}
       >
         <TabsList className="w-full mb-3">
-          <TabsTrigger value="login">Iniciar sesión</TabsTrigger>
-          <TabsTrigger value="register">Registrarse</TabsTrigger>
+          <TabsTrigger value="login" className="cursor-pointer">
+            Iniciar sesión
+          </TabsTrigger>
+          <TabsTrigger value="register" className="cursor-pointer">
+            Registrarse
+          </TabsTrigger>
         </TabsList>
 
         {/* Content Login */}

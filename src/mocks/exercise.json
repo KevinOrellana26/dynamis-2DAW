@@ -1,26 +1,26 @@
 [
     {
-        "id": "1",
-        "nombre": "Press Banca",
-        "musculo": "Pecho",
-        "img": "/exercise/press-banca.png"
+        "id": 1,
+        "name": "Press Banca",
+        "muscle": "Pecho",
+        "video_img_url": "/exercise/press-banca.png"
     },
     {
-        "id": "2",
-        "nombre": "Remo",
-        "musculo": "Espalda",
-        "img": "/exercise/remo.png"
+        "id": 2,
+        "name": "Remo",
+        "muscle": "Espalda",
+        "video_img_url": "/exercise/remo.png"
     },
     {
-        "id": "3",
-        "nombre": "Sentadilla libre",
-        "musculo": "Pierna",
-        "img": "/exercise/sentadilla-libre.png"
+        "id": 3,
+        "name": "Sentadilla libre",
+        "muscle": "Pierna",
+        "video_img_url": "/exercise/sentadilla-libre.png"
     },
     {
-        "id": "4",
-        "nombre": "Jalón al pecho",
-        "musculo": "Espalda",
-        "img": "/exercise/jalon.png"
+        "id": 4,
+        "name": "Jalón al pecho",
+        "muscle": "Espalda",
+        "video_img_url": "/exercise/jalon.png"
     }
 ]

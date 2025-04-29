@@ -2,23 +2,28 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import { Exercise } from "@/generated/prisma";
 
 import Image from "next/image";
 
-type Exercise = {
-  id: number | string;
-  nombre: string;
-  musculo: string;
-  img: string;
-};
+// type Exercise = {
+//   id: number | string;
+//   nombre: string;
+//   musculo: string;
+//   img: string;
+// };
 
-export default function ExerciseCard({ nombre, musculo, img }: Exercise) {
+export default function ExerciseCard({
+  name,
+  muscle,
+  video_img_url,
+}: Exercise) {
   return (
     <Card>
       <div className="relative aspect-video overflow-hidden">
         <Image
-          src={img}
-          alt={nombre}
+          src={video_img_url}
+          alt={name}
           fill //Ocupa todo el espacio del contenedor padre (div)
           className="rounded-t-2xl object-cover"
         />
@@ -26,9 +31,9 @@ export default function ExerciseCard({ nombre, musculo, img }: Exercise) {
       <CardContent>
         <div className="flex items-start justify-between">
           <div>
-            <h3 className="font-semibold text-lg">{nombre}</h3>
+            <h3 className="font-semibold text-lg">{name}</h3>
             <Badge variant="outline" className="mt-1">
-              {musculo}
+              {muscle}
             </Badge>
           </div>
           {/* <Button

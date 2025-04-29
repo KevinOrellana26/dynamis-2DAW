@@ -49,6 +49,9 @@ model Routine {
   user_id          String
   name             String
   createdAt        DateTime?          @default(now()) @db.Date
+  description      String
+  duration         Int
+  totalExercise    Int
   user             User               @relation(fields: [user_id], references: [id])
   Exercise_routine Exercise_routine[]
 }

@@ -6,13 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./theme-toggle-button";
 
-function PublicNavbar() {
+function UserNavbar() {
   const path = usePathname();
 
   const navItems = [
     { name: "Inicio", href: "/" },
-    // { name: "Ejercicios", href: "/exercise" },
-    // { name: "Rutinas", href: "/routine" },
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "Ejercicios", href: "/exercise" },
+    { name: "Rutinas", href: "/routine" },
+    { name: "Progreso", href: "/progress" },
   ];
 
   return (
@@ -54,4 +56,4 @@ function PublicNavbar() {
   );
 }
 
-export default PublicNavbar;
+export default UserNavbar;

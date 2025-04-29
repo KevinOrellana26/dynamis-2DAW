@@ -1,10 +1,10 @@
+import AuthProvider from "@/components/auth-provider";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/Navbar";
 import "../styles/globals.css";
-import AuthProvider from "@/components/auth-provider";
-import { Toaster } from "@/components/ui/sonner";
+import SelectNavbar from "@/components/selectNavbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +33,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
+            <SelectNavbar />
             {children}
             <Toaster />
           </ThemeProvider>
