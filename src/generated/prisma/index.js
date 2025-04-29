@@ -181,7 +181,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\korel\\OneDrive\\Escritorio\\dynamis\\src\\generated\\prisma",
+      "value": "C:\\Users\\ExpertOne2024_1\\Documents\\Kevin\\dynamis-2DAW\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -195,7 +195,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\korel\\OneDrive\\Escritorio\\dynamis\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\ExpertOne2024_1\\Documents\\Kevin\\dynamis-2DAW\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -209,11 +209,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://postgres:postgres@localhost:5432/dynamis?schema=public"
+        "value": null
       }
     }
   },

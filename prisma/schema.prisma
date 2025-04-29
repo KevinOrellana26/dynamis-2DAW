@@ -78,9 +78,9 @@ model Exercise {
 model Exercise_routine {
   id          Int      @id @default(autoincrement())
   routine_id  Int
-  exercie_id  Int
+  exercise_id  Int
   series      Int
   repetitions Int
   routine     Routine  @relation(fields: [routine_id], references: [id])
-  exercise    Exercise @relation(fields: [exercie_id], references: [id])
+  exercise    Exercise @relation(fields: [exercise_id], references: [id])
 }
