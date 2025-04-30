@@ -1,17 +1,9 @@
-import { Card, CardContent } from "./ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Exercise } from "@/generated/prisma";
-
+import { Star } from "lucide-react";
 import Image from "next/image";
-
-// type Exercise = {
-//   id: number | string;
-//   nombre: string;
-//   musculo: string;
-//   img: string;
-// };
 
 export default function ExerciseCard({
   name,
@@ -37,22 +29,21 @@ export default function ExerciseCard({
               {muscle}
             </Badge>
           </div>
-          {/* <Button
-            variant="ghost"
+          <Button
+            variant={"link"}
             size="icon"
-            className={`h-8 w-8 hover:text-yellow-600`}
+            className={`h-8 w-8 hover:text-yellow-600 cursor-pointer`}
           >
             <Star className={`h-5 w-5`} />
             <span className="sr-only">Favorito</span>
-          </Button> */}
+          </Button>
         </div>
-
-        {/* <CardTitle>{nombre}</CardTitle>
-        <Badge variant="outline">{musculo}</Badge>
-        <Button variant={"destructive"}>
-          <Image src="/icons/star.svg" alt="star" width={20} height={20} />
-        </Button> */}
       </CardContent>
+      <CardFooter>
+        <Button className="w-full cursor-pointer" variant={"secondary"}>
+          Ver detalles
+        </Button>
+      </CardFooter>
     </Card>
   );
 }

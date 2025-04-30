@@ -1,34 +1,26 @@
 "use client";
 
-import { LoginButton } from "@/app/(auth)/_components/LoginButton";
-import { Dumbbell } from "lucide-react";
+import { LoginButton } from "@/components/LoginButton";
+import Logo from "@/components/Logo";
+import { ModeToggle } from "@/components/theme-toggle-button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "./theme-toggle-button";
 
-function AdminNavbar() {
+function UserNavbar() {
   const path = usePathname();
 
   const navItems = [
     { name: "Inicio", href: "/" },
+    { name: "Dashboard", href: "/dashboard" },
     { name: "Ejercicios", href: "/exercise" },
     { name: "Rutinas", href: "/routine" },
     { name: "Progreso", href: "/progress" },
-    { name: "Añadir Ejercicio", href: "/" }, //!EJEMPLO
   ];
 
   return (
     <nav className="border-b border-gray-300 dark:border-gray-800">
       <div className="flex items-center justify-between h-18 px-8 md:px-10 lg:px-12">
-        {/* Logo y Nombre */}
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <Dumbbell className="text-[#2057A9]" />
-            <h1 className="text-2xl font-bold text-[#2057A9] dark:text-[#2057A9]">
-              Dýnamis
-            </h1>
-          </Link>
-        </div>
+        <Logo />
         {/* Rutas */}
         <div className="hidden md:flex md:items-center md:space-x-6">
           {navItems.map((item) => (
@@ -56,4 +48,4 @@ function AdminNavbar() {
   );
 }
 
-export default AdminNavbar;
+export default UserNavbar;

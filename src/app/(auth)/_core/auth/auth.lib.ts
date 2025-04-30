@@ -2,11 +2,11 @@ import { AuthenticationError } from '@/app/_shared/errors';
 import { prisma } from "@/lib/prisma";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import bcrypt from 'bcryptjs';
+import type { NextAuthConfig } from 'next-auth';
 import NextAuth, { DefaultSession } from 'next-auth';
 import { JWT } from "next-auth/jwt";
 import Credentials from "next-auth/providers/credentials";
 import { LoginSchema } from './user.types';
-import type { NextAuthConfig } from 'next-auth';
 
 // Flujo:
 // 1. El usuario envía credenciales
@@ -91,7 +91,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             session.user.role = token.role;
             return session
         },
-        authorized: async ({ auth }) => { // -> Determina si el usuario tiene acceso.
+        authorized: async ({ auth }) => { // -> Verifica si existe una sesión válida.
             return !!auth;
         },
     },

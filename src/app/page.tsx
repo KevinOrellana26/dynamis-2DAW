@@ -72,9 +72,9 @@ function Home() {
               </Button>
             </div>
           </div>
-          <div className="flex flex-col md:flex-col lg:flex-row gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {mockExercises.map((exercise) => (
-              <div key={exercise.id} className="flex-1 min-w-[200px]">
+              <div key={exercise.id}>
                 <ExerciseCard {...exercise} />
               </div>
             ))}

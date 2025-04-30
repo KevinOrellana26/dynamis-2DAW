@@ -1,9 +1,9 @@
-import RoutineCard from "./_components/RoutineCard";
+import NewRoutineButton from "@/components/NewRoutineButton";
+import RoutineCard from "@/components/RoutineCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Routine from "@/mocks/routines.json";
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Rutina",
@@ -15,6 +15,14 @@ function Rutina() {
     createdAt: new Date(routine.createdAt), // Convierte "createdAt" a Date
   }));
 
+  //Ordena las rutinas por fecha (más reciente) y toma las tres primeras
+  const latestRoutines = mockRoutines
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    )
+    .slice(0, 7);
+
   // const [mockRoutines, setMockRoutines] = useState([]);
   // useEffect(() => {
   //   fetch("/src/mocks/routines.json")
@@ -23,10 +31,6 @@ function Rutina() {
   // });
 
   return (
-    // <div className="h-screen flex flex-col items-center justify-center p-4">
-    //   <h1 className="text-4xl">Routine</h1>
-    // </div>
-
     <div className="gap-5">
       <div className="flex flex-row gap-2 justify-between">
         <div className=" flex flex-col gap-2">
@@ -38,9 +42,7 @@ function Rutina() {
           </p>
         </div>
         <div>
-          <Button variant={"dynamis"} asChild>
-            <Link href="/addRoutine">Nueva Rutina</Link>
-          </Button>
+          <NewRoutineButton />
         </div>
       </div>
       <div className="flex flex-row justify-between">
@@ -59,8 +61,8 @@ function Rutina() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-col lg:flex-row gap-4">
-        {mockRoutines.map((routine) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {latestRoutines.map((routine) => (
           <RoutineCard key={routine.id} {...routine} />
         ))}
       </div>
