@@ -37,7 +37,7 @@ model Progress {
   id          Int       @id @default(autoincrement())
   user_id     String // Cambiado a String
   exercise_id Int
-  date        DateTime? @default(now()) @db.Date
+  date        DateTime @default(now()) @db.Date
   weight_used Float
   repetitions Int
   user        User      @relation(fields: [user_id], references: [id])

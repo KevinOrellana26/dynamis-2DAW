@@ -304,8 +304,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.6.0
-   * Query Engine version: f676762280b54cd07c770017ed3711ddde35f37a
+   * Prisma Client JS version: 6.7.0
+   * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
    */
   export type PrismaVersion = {
     client: string
@@ -2835,7 +2835,7 @@ export namespace Prisma {
     id: number
     user_id: string
     exercise_id: number
-    date: Date | null
+    date: Date
     weight_used: number
     repetitions: number
     _count: ProgressCountAggregateOutputType | null
@@ -2925,7 +2925,7 @@ export namespace Prisma {
       id: number
       user_id: string
       exercise_id: number
-      date: Date | null
+      date: Date
       weight_used: number
       repetitions: number
     }, ExtArgs["result"]["progress"]>
@@ -7169,7 +7169,7 @@ export namespace Prisma {
   export type Exercise_routineAvgAggregateOutputType = {
     id: number | null
     routine_id: number | null
-    exercie_id: number | null
+    exercise_id: number | null
     series: number | null
     repetitions: number | null
   }
@@ -7177,7 +7177,7 @@ export namespace Prisma {
   export type Exercise_routineSumAggregateOutputType = {
     id: number | null
     routine_id: number | null
-    exercie_id: number | null
+    exercise_id: number | null
     series: number | null
     repetitions: number | null
   }
@@ -7185,7 +7185,7 @@ export namespace Prisma {
   export type Exercise_routineMinAggregateOutputType = {
     id: number | null
     routine_id: number | null
-    exercie_id: number | null
+    exercise_id: number | null
     series: number | null
     repetitions: number | null
   }
@@ -7193,7 +7193,7 @@ export namespace Prisma {
   export type Exercise_routineMaxAggregateOutputType = {
     id: number | null
     routine_id: number | null
-    exercie_id: number | null
+    exercise_id: number | null
     series: number | null
     repetitions: number | null
   }
@@ -7201,7 +7201,7 @@ export namespace Prisma {
   export type Exercise_routineCountAggregateOutputType = {
     id: number
     routine_id: number
-    exercie_id: number
+    exercise_id: number
     series: number
     repetitions: number
     _all: number
@@ -7211,7 +7211,7 @@ export namespace Prisma {
   export type Exercise_routineAvgAggregateInputType = {
     id?: true
     routine_id?: true
-    exercie_id?: true
+    exercise_id?: true
     series?: true
     repetitions?: true
   }
@@ -7219,7 +7219,7 @@ export namespace Prisma {
   export type Exercise_routineSumAggregateInputType = {
     id?: true
     routine_id?: true
-    exercie_id?: true
+    exercise_id?: true
     series?: true
     repetitions?: true
   }
@@ -7227,7 +7227,7 @@ export namespace Prisma {
   export type Exercise_routineMinAggregateInputType = {
     id?: true
     routine_id?: true
-    exercie_id?: true
+    exercise_id?: true
     series?: true
     repetitions?: true
   }
@@ -7235,7 +7235,7 @@ export namespace Prisma {
   export type Exercise_routineMaxAggregateInputType = {
     id?: true
     routine_id?: true
-    exercie_id?: true
+    exercise_id?: true
     series?: true
     repetitions?: true
   }
@@ -7243,7 +7243,7 @@ export namespace Prisma {
   export type Exercise_routineCountAggregateInputType = {
     id?: true
     routine_id?: true
-    exercie_id?: true
+    exercise_id?: true
     series?: true
     repetitions?: true
     _all?: true
@@ -7338,7 +7338,7 @@ export namespace Prisma {
   export type Exercise_routineGroupByOutputType = {
     id: number
     routine_id: number
-    exercie_id: number
+    exercise_id: number
     series: number
     repetitions: number
     _count: Exercise_routineCountAggregateOutputType | null
@@ -7365,7 +7365,7 @@ export namespace Prisma {
   export type Exercise_routineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     routine_id?: boolean
-    exercie_id?: boolean
+    exercise_id?: boolean
     series?: boolean
     repetitions?: boolean
     routine?: boolean | RoutineDefaultArgs<ExtArgs>
@@ -7375,7 +7375,7 @@ export namespace Prisma {
   export type Exercise_routineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     routine_id?: boolean
-    exercie_id?: boolean
+    exercise_id?: boolean
     series?: boolean
     repetitions?: boolean
     routine?: boolean | RoutineDefaultArgs<ExtArgs>
@@ -7385,7 +7385,7 @@ export namespace Prisma {
   export type Exercise_routineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     routine_id?: boolean
-    exercie_id?: boolean
+    exercise_id?: boolean
     series?: boolean
     repetitions?: boolean
     routine?: boolean | RoutineDefaultArgs<ExtArgs>
@@ -7395,12 +7395,12 @@ export namespace Prisma {
   export type Exercise_routineSelectScalar = {
     id?: boolean
     routine_id?: boolean
-    exercie_id?: boolean
+    exercise_id?: boolean
     series?: boolean
     repetitions?: boolean
   }
 
-  export type Exercise_routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "routine_id" | "exercie_id" | "series" | "repetitions", ExtArgs["result"]["exercise_routine"]>
+  export type Exercise_routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "routine_id" | "exercise_id" | "series" | "repetitions", ExtArgs["result"]["exercise_routine"]>
   export type Exercise_routineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     routine?: boolean | RoutineDefaultArgs<ExtArgs>
     exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
@@ -7423,7 +7423,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       routine_id: number
-      exercie_id: number
+      exercise_id: number
       series: number
       repetitions: number
     }, ExtArgs["result"]["exercise_routine"]>
@@ -7853,7 +7853,7 @@ export namespace Prisma {
   interface Exercise_routineFieldRefs {
     readonly id: FieldRef<"Exercise_routine", 'Int'>
     readonly routine_id: FieldRef<"Exercise_routine", 'Int'>
-    readonly exercie_id: FieldRef<"Exercise_routine", 'Int'>
+    readonly exercise_id: FieldRef<"Exercise_routine", 'Int'>
     readonly series: FieldRef<"Exercise_routine", 'Int'>
     readonly repetitions: FieldRef<"Exercise_routine", 'Int'>
   }
@@ -8346,7 +8346,7 @@ export namespace Prisma {
   export const Exercise_routineScalarFieldEnum: {
     id: 'id',
     routine_id: 'routine_id',
-    exercie_id: 'exercie_id',
+    exercise_id: 'exercise_id',
     series: 'series',
     repetitions: 'repetitions'
   };
@@ -8544,7 +8544,7 @@ export namespace Prisma {
     id?: IntFilter<"Progress"> | number
     user_id?: StringFilter<"Progress"> | string
     exercise_id?: IntFilter<"Progress"> | number
-    date?: DateTimeNullableFilter<"Progress"> | Date | string | null
+    date?: DateTimeFilter<"Progress"> | Date | string
     weight_used?: FloatFilter<"Progress"> | number
     repetitions?: IntFilter<"Progress"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -8555,7 +8555,7 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     exercise_id?: SortOrder
-    date?: SortOrderInput | SortOrder
+    date?: SortOrder
     weight_used?: SortOrder
     repetitions?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -8569,7 +8569,7 @@ export namespace Prisma {
     NOT?: ProgressWhereInput | ProgressWhereInput[]
     user_id?: StringFilter<"Progress"> | string
     exercise_id?: IntFilter<"Progress"> | number
-    date?: DateTimeNullableFilter<"Progress"> | Date | string | null
+    date?: DateTimeFilter<"Progress"> | Date | string
     weight_used?: FloatFilter<"Progress"> | number
     repetitions?: IntFilter<"Progress"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -8580,7 +8580,7 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     exercise_id?: SortOrder
-    date?: SortOrderInput | SortOrder
+    date?: SortOrder
     weight_used?: SortOrder
     repetitions?: SortOrder
     _count?: ProgressCountOrderByAggregateInput
@@ -8597,7 +8597,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Progress"> | number
     user_id?: StringWithAggregatesFilter<"Progress"> | string
     exercise_id?: IntWithAggregatesFilter<"Progress"> | number
-    date?: DateTimeNullableWithAggregatesFilter<"Progress"> | Date | string | null
+    date?: DateTimeWithAggregatesFilter<"Progress"> | Date | string
     weight_used?: FloatWithAggregatesFilter<"Progress"> | number
     repetitions?: IntWithAggregatesFilter<"Progress"> | number
   }
@@ -8786,7 +8786,7 @@ export namespace Prisma {
     NOT?: Exercise_routineWhereInput | Exercise_routineWhereInput[]
     id?: IntFilter<"Exercise_routine"> | number
     routine_id?: IntFilter<"Exercise_routine"> | number
-    exercie_id?: IntFilter<"Exercise_routine"> | number
+    exercise_id?: IntFilter<"Exercise_routine"> | number
     series?: IntFilter<"Exercise_routine"> | number
     repetitions?: IntFilter<"Exercise_routine"> | number
     routine?: XOR<RoutineScalarRelationFilter, RoutineWhereInput>
@@ -8796,7 +8796,7 @@ export namespace Prisma {
   export type Exercise_routineOrderByWithRelationInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
     routine?: RoutineOrderByWithRelationInput
@@ -8809,7 +8809,7 @@ export namespace Prisma {
     OR?: Exercise_routineWhereInput[]
     NOT?: Exercise_routineWhereInput | Exercise_routineWhereInput[]
     routine_id?: IntFilter<"Exercise_routine"> | number
-    exercie_id?: IntFilter<"Exercise_routine"> | number
+    exercise_id?: IntFilter<"Exercise_routine"> | number
     series?: IntFilter<"Exercise_routine"> | number
     repetitions?: IntFilter<"Exercise_routine"> | number
     routine?: XOR<RoutineScalarRelationFilter, RoutineWhereInput>
@@ -8819,7 +8819,7 @@ export namespace Prisma {
   export type Exercise_routineOrderByWithAggregationInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
     _count?: Exercise_routineCountOrderByAggregateInput
@@ -8835,7 +8835,7 @@ export namespace Prisma {
     NOT?: Exercise_routineScalarWhereWithAggregatesInput | Exercise_routineScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Exercise_routine"> | number
     routine_id?: IntWithAggregatesFilter<"Exercise_routine"> | number
-    exercie_id?: IntWithAggregatesFilter<"Exercise_routine"> | number
+    exercise_id?: IntWithAggregatesFilter<"Exercise_routine"> | number
     series?: IntWithAggregatesFilter<"Exercise_routine"> | number
     repetitions?: IntWithAggregatesFilter<"Exercise_routine"> | number
   }
@@ -8937,7 +8937,7 @@ export namespace Prisma {
   }
 
   export type ProgressCreateInput = {
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
     user: UserCreateNestedOneWithoutProgressInput
@@ -8948,13 +8948,13 @@ export namespace Prisma {
     id?: number
     user_id: string
     exercise_id: number
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
   }
 
   export type ProgressUpdateInput = {
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutProgressNestedInput
@@ -8965,7 +8965,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
     exercise_id?: IntFieldUpdateOperationsInput | number
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -8974,13 +8974,13 @@ export namespace Prisma {
     id?: number
     user_id: string
     exercise_id: number
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
   }
 
   export type ProgressUpdateManyMutationInput = {
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -8989,7 +8989,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
     exercise_id?: IntFieldUpdateOperationsInput | number
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -9170,7 +9170,7 @@ export namespace Prisma {
   export type Exercise_routineUncheckedCreateInput = {
     id?: number
     routine_id: number
-    exercie_id: number
+    exercise_id: number
     series: number
     repetitions: number
   }
@@ -9185,7 +9185,7 @@ export namespace Prisma {
   export type Exercise_routineUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     routine_id?: IntFieldUpdateOperationsInput | number
-    exercie_id?: IntFieldUpdateOperationsInput | number
+    exercise_id?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -9193,7 +9193,7 @@ export namespace Prisma {
   export type Exercise_routineCreateManyInput = {
     id?: number
     routine_id: number
-    exercie_id: number
+    exercise_id: number
     series: number
     repetitions: number
   }
@@ -9206,7 +9206,7 @@ export namespace Prisma {
   export type Exercise_routineUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     routine_id?: IntFieldUpdateOperationsInput | number
-    exercie_id?: IntFieldUpdateOperationsInput | number
+    exercise_id?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -9637,7 +9637,7 @@ export namespace Prisma {
   export type Exercise_routineCountOrderByAggregateInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
@@ -9645,7 +9645,7 @@ export namespace Prisma {
   export type Exercise_routineAvgOrderByAggregateInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
@@ -9653,7 +9653,7 @@ export namespace Prisma {
   export type Exercise_routineMaxOrderByAggregateInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
@@ -9661,7 +9661,7 @@ export namespace Prisma {
   export type Exercise_routineMinOrderByAggregateInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
@@ -9669,7 +9669,7 @@ export namespace Prisma {
   export type Exercise_routineSumOrderByAggregateInput = {
     id?: SortOrder
     routine_id?: SortOrder
-    exercie_id?: SortOrder
+    exercise_id?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
@@ -10297,7 +10297,7 @@ export namespace Prisma {
   }
 
   export type ProgressCreateWithoutUserInput = {
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
     exercise: ExerciseCreateNestedOneWithoutProgressInput
@@ -10306,7 +10306,7 @@ export namespace Prisma {
   export type ProgressUncheckedCreateWithoutUserInput = {
     id?: number
     exercise_id: number
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
   }
@@ -10392,7 +10392,7 @@ export namespace Prisma {
     id?: IntFilter<"Progress"> | number
     user_id?: StringFilter<"Progress"> | string
     exercise_id?: IntFilter<"Progress"> | number
-    date?: DateTimeNullableFilter<"Progress"> | Date | string | null
+    date?: DateTimeFilter<"Progress"> | Date | string
     weight_used?: FloatFilter<"Progress"> | number
     repetitions?: IntFilter<"Progress"> | number
   }
@@ -10614,7 +10614,7 @@ export namespace Prisma {
 
   export type Exercise_routineUncheckedCreateWithoutRoutineInput = {
     id?: number
-    exercie_id: number
+    exercise_id: number
     series: number
     repetitions: number
   }
@@ -10690,7 +10690,7 @@ export namespace Prisma {
     NOT?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
     id?: IntFilter<"Exercise_routine"> | number
     routine_id?: IntFilter<"Exercise_routine"> | number
-    exercie_id?: IntFilter<"Exercise_routine"> | number
+    exercise_id?: IntFilter<"Exercise_routine"> | number
     series?: IntFilter<"Exercise_routine"> | number
     repetitions?: IntFilter<"Exercise_routine"> | number
   }
@@ -10818,7 +10818,7 @@ export namespace Prisma {
   }
 
   export type ProgressCreateWithoutExerciseInput = {
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
     user: UserCreateNestedOneWithoutProgressInput
@@ -10827,7 +10827,7 @@ export namespace Prisma {
   export type ProgressUncheckedCreateWithoutExerciseInput = {
     id?: number
     user_id: string
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
   }
@@ -11039,7 +11039,7 @@ export namespace Prisma {
   export type ProgressCreateManyUserInput = {
     id?: number
     exercise_id: number
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
   }
@@ -11059,7 +11059,7 @@ export namespace Prisma {
   }
 
   export type ProgressUpdateWithoutUserInput = {
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
     exercise?: ExerciseUpdateOneRequiredWithoutProgressNestedInput
@@ -11068,7 +11068,7 @@ export namespace Prisma {
   export type ProgressUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     exercise_id?: IntFieldUpdateOperationsInput | number
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -11076,7 +11076,7 @@ export namespace Prisma {
   export type ProgressUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     exercise_id?: IntFieldUpdateOperationsInput | number
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -11125,7 +11125,7 @@ export namespace Prisma {
 
   export type Exercise_routineCreateManyRoutineInput = {
     id?: number
-    exercie_id: number
+    exercise_id: number
     series: number
     repetitions: number
   }
@@ -11138,14 +11138,14 @@ export namespace Prisma {
 
   export type Exercise_routineUncheckedUpdateWithoutRoutineInput = {
     id?: IntFieldUpdateOperationsInput | number
-    exercie_id?: IntFieldUpdateOperationsInput | number
+    exercise_id?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
 
   export type Exercise_routineUncheckedUpdateManyWithoutRoutineInput = {
     id?: IntFieldUpdateOperationsInput | number
-    exercie_id?: IntFieldUpdateOperationsInput | number
+    exercise_id?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -11153,7 +11153,7 @@ export namespace Prisma {
   export type ProgressCreateManyExerciseInput = {
     id?: number
     user_id: string
-    date?: Date | string | null
+    date?: Date | string
     weight_used: number
     repetitions: number
   }
@@ -11171,7 +11171,7 @@ export namespace Prisma {
   }
 
   export type ProgressUpdateWithoutExerciseInput = {
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutProgressNestedInput
@@ -11180,7 +11180,7 @@ export namespace Prisma {
   export type ProgressUncheckedUpdateWithoutExerciseInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -11188,7 +11188,7 @@ export namespace Prisma {
   export type ProgressUncheckedUpdateManyWithoutExerciseInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
-    date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     weight_used?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }

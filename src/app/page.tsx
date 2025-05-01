@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 function Home() {
   // ! CAMBIAR CUANDO HAGA CONSULTAS A LA BD
   const mockExercises = Exercise;
+  const latestExercise = mockExercises.slice(0, 4);
 
   return (
     <div className="mx-3.5 sm:px-6 lg:px-8">
@@ -73,7 +74,7 @@ function Home() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {mockExercises.map((exercise) => (
+            {latestExercise.map((exercise) => (
               <div key={exercise.id}>
                 <ExerciseCard {...exercise} />
               </div>

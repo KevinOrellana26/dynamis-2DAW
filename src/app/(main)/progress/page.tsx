@@ -1,13 +1,21 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Progreso",
-};
+import TabsComponent from "./_components/TabsComponent";
 
 function Page() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl">Progress</h1>
+    <div className="mx-3 px-6 md:px-8 my-8">
+      {/* Titulo y botón añadir progreso */}
+      <header className="flex flex-col items-center md:flex-row md:justify-between gap-2">
+        <div className="text-center md:text-left">
+          <h1 className="font-semibold text-4xl md:text-6xl text-[#2057A9] dark:text-[#2057A9]">
+            Progreso
+          </h1>
+          <p className="font-light text-muted-foreground text-xl mt-1">
+            Visualiza y analiza tu evolución física y de rendimiento.
+          </p>
+        </div>
+      </header>
+
+      <TabsComponent />
     </div>
   );
 }

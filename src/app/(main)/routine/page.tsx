@@ -1,21 +1,21 @@
-import NewRoutineButton from "@/components/NewRoutineButton";
-import RoutineCard from "@/components/RoutineCard";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Routine from "@/mocks/routines.json";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Rutina",
-};
+import PaginationComponent from "@/app/(main)/_components/Pagination";
+import RoutineCard from "@/app/(main)/_components/RoutineCard";
+import Routine from "@/mocks/routines.json";
+import React, { useState } from "react";
+import SearchButton from "../_components/SearchButton";
+import SearchInput from "../_components/SearchInput";
 
 function Rutina() {
+  const [inputSearch, setInputSearch] = useState("");
+
   const mockRoutines = Routine.map((routine) => ({
     ...routine,
     createdAt: new Date(routine.createdAt), // Convierte "createdAt" a Date
   }));
 
-  //Ordena las rutinas por fecha (más reciente) y toma las tres primeras
+  //Ordena las rutinas por fecha (más reciente) y toma las 6 primeras
   const latestRoutines = mockRoutines
     .sort(
       (a, b) =>
@@ -23,43 +23,41 @@ function Rutina() {
     )
     .slice(0, 7);
 
-  // const [mockRoutines, setMockRoutines] = useState([]);
-  // useEffect(() => {
-  //   fetch("/src/mocks/routines.json")
-  //     .then((response) => response.json())
-  //     .then((data) => setMockRoutines(data));
-  // });
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Buscando rutina: ", inputSearch);
+  };
 
   return (
-    <div className="gap-5">
-      <div className="flex flex-row gap-2 justify-between">
-        <div className=" flex flex-col gap-2">
+    <div className="mx-3 px-6 md:px-8 my-8">
+      {/* Titulo y botón añadir rutina */}
+      <header className="flex flex-col items-center md:flex-row md:justify-between">
+        <div className="text-center md:text-left">
           <h1 className="font-semibold text-4xl md:text-6xl text-[#2057A9] dark:text-[#2057A9]">
             Mis Rutinas
           </h1>
-          <p className="font-light text-muted-foreground text-xl mr-14">
+          <p className="font-light text-muted-foreground text-xl mt-2">
             Gestiona y crea rutinas personalizadas.
           </p>
         </div>
-        <div>
+        {/* Solo para ADMIN */}
+        {/* <div>
           <NewRoutineButton />
-        </div>
-      </div>
-      <div className="flex flex-row justify-between">
-        <div>
-          {/* Debe de ser un formulario */}
-          <Input
-            type="search"
-            placeholder="full body, upper body, lower body..."
-            size={200}
-          />
-        </div>
-        <div>
-          <Button variant={"secondary"} type="submit">
-            Filtrar
-          </Button>
-        </div>
-      </div>
+        </div> */}
+      </header>
+
+      {/* Formulario buscar rutinas */}
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-row justify-between gap-2 my-8"
+      >
+        <SearchInput
+          placeholder="full body, upper body, lower body..."
+          value={inputSearch}
+          onChange={setInputSearch}
+        />
+        <SearchButton />
+      </form>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {latestRoutines.map((routine) => (
@@ -67,8 +65,8 @@ function Rutina() {
         ))}
       </div>
 
-      <footer className="flex flex-row justify-center">
-        <h1>Paginación</h1>
+      <footer className="mt-4">
+        <PaginationComponent />
       </footer>
     </div>
   );
