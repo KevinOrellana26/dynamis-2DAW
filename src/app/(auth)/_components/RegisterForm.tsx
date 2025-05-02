@@ -122,7 +122,7 @@ export default function RegisterForm({
         <Button
           type="submit"
           variant={"dynamis"}
-          className="w-full"
+          className="w-full cursor-pointer"
           disabled={isPending}
         >
           {isPending && <RiLoader2Fill className="mr-2 h-4 2-4 animate-spin" />}

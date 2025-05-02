@@ -1,12 +1,16 @@
 "use client";
 
-import { LoginButton } from "@/components/LoginButton";
+import AuthButton from "@/components/AuthButton";
 import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "../../../components/theme-toggle-button";
 
-function AdminNavbar() {
+type AdminNavbarT = {
+  isLoggedIn: boolean;
+}
+
+function AdminNavbar({ isLoggedIn }: AdminNavbarT) {
   const path = usePathname();
 
   const navItems = [
@@ -40,7 +44,7 @@ function AdminNavbar() {
         {/* Iniciar Sesión y Btn Mode */}
         <div className="flex items-center gap-2">
           <ModeToggle /> {/* Botón Temas */}
-          <LoginButton />
+          <AuthButton isLoggedIn={isLoggedIn} />
         </div>
       </div>
     </nav>

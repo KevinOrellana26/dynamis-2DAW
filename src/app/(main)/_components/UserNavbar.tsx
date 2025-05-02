@@ -1,12 +1,12 @@
 "use client";
 
-import { LoginButton } from "@/components/LoginButton";
+import AuthButton from "@/components/AuthButton";
 import Logo from "@/components/Logo";
 import { ModeToggle } from "@/components/theme-toggle-button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function UserNavbar() {
+function UserNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
   const path = usePathname();
 
   const navItems = [
@@ -41,7 +41,7 @@ function UserNavbar() {
         {/* Iniciar Sesión y Btn Mode */}
         <div className="flex items-center gap-2">
           <ModeToggle /> {/* Botón Temas */}
-          <LoginButton />
+          <AuthButton isLoggedIn={isLoggedIn} />
         </div>
       </div>
     </nav>

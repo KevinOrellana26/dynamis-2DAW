@@ -6,6 +6,7 @@ import Link from "next/link";
 import Exercise from "@/mocks/exercise.json";
 import { Metadata } from "next";
 import ExerciseCard from "@/components/ExerciseCard";
+import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 
 export const metadata: Metadata = {
   title: "Dashboard",

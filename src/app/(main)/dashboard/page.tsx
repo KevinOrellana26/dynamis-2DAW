@@ -1,5 +1,3 @@
-"use client";
-
 import RoutineCard from "@/app/(main)/_components/RoutineCard";
 import ExerciseCard from "@/app/(main)/_components/ExerciseCard";
 import NewRoutineButton from "@/components/NewRoutineButton";
@@ -8,17 +6,15 @@ import Routines from "@/mocks/routines.json";
 import RegisterCard from "../_components/RegisterCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-// import { middleware } from "@/app/(auth)/_core/auth/auth.lib";
-// import LogoutButton from "@/components/LogoutButton";
+import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
+import { redirect } from "next/navigation";
 
-export default function Page() {
-  // export default async function Page() {
-  // const session = await auth();
+export default async function Page() {
+  const session = await getSession();
 
-  // if (!session?.user) {
-  //redirige al login si no hay sesión
-  //   redirect("/login");
-  // }
+  if (!session.isLoggedIn) {
+    redirect("/login");
+  }
 
   const mockExercises = Exercise;
   const mockRoutines = Routines.map((routine) => ({
@@ -27,7 +23,7 @@ export default function Page() {
   }));
 
   // Toma las primeras 4 rutinas.
-  const latestExercise = mockExercises.slice(0,4)
+  const latestExercise = mockExercises.slice(0, 4);
 
   //Ordena las rutinas por fecha (más reciente) y toma las tres primeras
   const latestRoutines = mockRoutines
@@ -46,7 +42,8 @@ export default function Page() {
             Dashboard
           </h1>
           <p className="font-light text-muted-foreground text-xl mt-2">
-            Bienvenido de nuevo [username], aquí está tu resumen de actividad.
+            Bienvenido de nuevo <span className="font-bold text-2xl">{session.name}</span> con rol{" "}
+            {session.role}, aquí está tu resumen de actividad.
           </p>
         </div>
         <div className="my-3">

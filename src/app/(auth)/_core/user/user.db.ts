@@ -1,15 +1,16 @@
 //Funciones principales para manejar la autenticación de usuarios.
 "use server";
 
-import { prisma } from "@/lib/prisma";
-import { signIn } from "../auth/auth.lib";
-// import { RegisterFormT } from "@/app/(auth)/_components/RegisterForm"
-// import { LoginFormT } from "@/app/(auth)/_components/LoginForm";
 import { IS_DEV } from "@/config/env.config";
+import { prisma } from "@/lib/prisma";
 import bcrypt from 'bcryptjs';
+import { getIronSession } from "iron-session";
+import { cookies } from "next/headers";
+import { SessionData, sessionOptions } from "../auth/auth.lib";
 import { LoginT, RegisterT } from "../auth/user.types";
+import { login } from "../auth/auth.actions";
 
-//Registrar nuevos usuarios
+//Registrar nuevos usuarios - NO HACE FALTA EN EL REGISTRER PONER LA COOKIE
 export async function registerUser(values: RegisterT) {
     try {
         // Verificar si el usuario ya existe
@@ -36,14 +37,6 @@ export async function registerUser(values: RegisterT) {
 
         console.log({ user })
 
-        // Iniciar sesión automáticamente después del registro
-        await signIn("credentials", {
-            email: values.email,
-            password: values.password, //muestro la contraseña si hashear en la terminal
-            name: values.name,
-            redirect: false
-        });
-
         const message = "Cuenta creada exitosamente";
         return message;
     } catch (error) {
@@ -57,12 +50,17 @@ export async function loginUser(values: LoginT) {
     try {
         console.log({ values })
 
-        //Iniciar sesión
-        await signIn("credentials", {
-            email: values.email,
-            password: values.password,
-            redirect: false
+        // Verificar si el usuario ya existe
+        const user = await prisma.user.findUnique({
+            where: { email: values.email },
         });
+
+        if (!user || !(await bcrypt.compare(values.password, user.password))) {
+            throw new Error("Credenciales inválidas.");
+        }
+
+        //creación de la cookie
+        await login({ userId: user.id, email: user.email, name: user.name as string, role: user.role })
 
         const message = "Se ha iniciado sesión correctamente"
 

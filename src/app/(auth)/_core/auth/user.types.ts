@@ -44,7 +44,7 @@ export type RegisterT = z.infer<typeof RegisterSchema>;
 // ESQUEMA Y TIPO PARA LOGIN
 export const LoginSchema = UserSchema.pick({
     email: true,
-    password: true
+    password: true,
 })
 
 export type LoginT = z.infer<typeof LoginSchema>;
