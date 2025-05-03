@@ -1,13 +1,12 @@
-import GuestNavbar from "@/components/GuestNavbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
-import AdminNavbar from "./(admin)/_components/AdminNavbar";
+import Header from "@/components/Header";
 import UserNavbar from "./(main)/_components/UserNavbar";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
-import ServerNavbar from "@/components/ServerNavbar";
+import AdminNavbar from "./(admin)/_components/AdminNavbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,7 +36,11 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ServerNavbar />
+          <Header>
+            {session?.role === "ADMIN" && <AdminNavbar />}
+            {session?.role === "USER" && <UserNavbar />}
+          </Header>
+          {/* <ServerNavbar /> */}
           {children}
           <Toaster />
         </ThemeProvider>

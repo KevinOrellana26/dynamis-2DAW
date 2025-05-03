@@ -1,19 +1,34 @@
+"use client";
+import { logoutUserAction } from "@/app/(auth)/_core/user/user.actions";
+import { useRouter } from "next/navigation";
+import { useServerAction } from "zsa-react";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 
-type LogoutButtonT = {
-  onClick?: () => void;
-};
+export default function LogoutButton() {
+  const router = useRouter();
 
-export default function LogoutButton({ onClick }: LogoutButtonT) {
+  const { execute } = useServerAction(logoutUserAction, {
+    onSuccess: ({ data: message }) => {
+      toast.success(message);
+      router.push("/");
+    },
+    onError: ({ err }) => {
+      toast.error(err.message);
+    },
+  });
+
+  const handleLogoutButton = async () => {
+    execute();
+  };
+
   return (
-    <form>
-      <Button
-        variant={"dynamis"}
-        className="cursor-pointer"
-        onClick={onClick}
-      >
-        Cerrar sesión
-      </Button>
-    </form>
+    <Button
+      variant={"dynamis"}
+      className="cursor-pointer"
+      onClick={handleLogoutButton}
+    >
+      Cerrar sesión
+    </Button>
   );
 }

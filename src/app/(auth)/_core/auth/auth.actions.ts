@@ -1,3 +1,4 @@
+"use server"
 import { sessionOptions, SessionData, defaultSession } from "@/app/(auth)/_core/auth/auth.lib"
 import { getIronSession } from "iron-session"
 import { cookies } from "next/headers"
@@ -17,7 +18,7 @@ export const getSession = async () => {
     return session;
 }
 
-//LOGIN
+// FUNCIÓN QUE SE EJECUTA AL HACER EL LOGIN
 export const login = async ({ email, name, role, userId }: SessionData) => {
     const cookieStore = await cookies();
     const session = await getIronSession<SessionData>(cookieStore, sessionOptions);
@@ -32,7 +33,7 @@ export const login = async ({ email, name, role, userId }: SessionData) => {
     return session;
 };
 
-//LOGOUT
+//FUNCIÓN QUE SE EJECUTA AL HACER EL LOGOUT
 export const logout = async () => {
     const cookieStore = await cookies();
     const session = await getIronSession<SessionData>(cookieStore, sessionOptions);

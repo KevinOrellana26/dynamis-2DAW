@@ -4,11 +4,8 @@
 import { IS_DEV } from "@/config/env.config";
 import { prisma } from "@/lib/prisma";
 import bcrypt from 'bcryptjs';
-import { getIronSession } from "iron-session";
-import { cookies } from "next/headers";
-import { SessionData, sessionOptions } from "../auth/auth.lib";
-import { LoginT, RegisterT } from "../auth/user.types";
 import { login } from "../auth/auth.actions";
+import { LoginT, RegisterT } from "../auth/user.types";
 
 //Registrar nuevos usuarios - NO HACE FALTA EN EL REGISTRER PONER LA COOKIE
 export async function registerUser(values: RegisterT) {

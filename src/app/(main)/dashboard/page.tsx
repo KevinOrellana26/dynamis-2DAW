@@ -42,7 +42,8 @@ export default async function Page() {
             Dashboard
           </h1>
           <p className="font-light text-muted-foreground text-xl mt-2">
-            Bienvenido de nuevo <span className="font-bold text-2xl">{session.name}</span> con rol{" "}
+            Bienvenido de nuevo{" "}
+            <span className="font-bold text-2xl">{session.name}</span> con rol{" "}
             {session.role}, aquí está tu resumen de actividad.
           </p>
         </div>
