@@ -39,7 +39,7 @@ function Home() {
                 </Link>
               </Button>
               <Button variant={"secondary"} size={"lg"} asChild>
-                <Link href={"/ejercicio"}>Explorar ejercicios</Link>
+                <Link href={"/exercise"}>Explorar ejercicios</Link>
               </Button>
             </div>
           </div>

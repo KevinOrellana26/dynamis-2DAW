@@ -4,7 +4,7 @@
 import { IS_DEV } from "@/config/env.config";
 import { prisma } from "@/lib/prisma";
 import bcrypt from 'bcryptjs';
-import { login } from "../auth/auth.actions";
+import { createSession } from "../auth/auth.actions";
 import { LoginT, RegisterT } from "../auth/user.types";
 
 //Registrar nuevos usuarios - NO HACE FALTA EN EL REGISTRER PONER LA COOKIE
@@ -22,13 +22,17 @@ export async function registerUser(values: RegisterT) {
         //hashear la contraseña
         const hashedPassword = await bcrypt.hash(values.password, 10)
 
+        //ruta del avatar por defecto
+        const defaultAvatarPath = "/profile/defaultAvatar.png"
+
         // Creación del usuario
         const user = await prisma.user.create({
             data: {
                 email: values.email,
                 name: values.name,
                 password: hashedPassword,
-                role: "USER" //por defecto será usuario normal
+                role: "USER", //por defecto será usuario normal
+                avatar: defaultAvatarPath
             },
         });
 
@@ -57,7 +61,7 @@ export async function loginUser(values: LoginT) {
         }
 
         //creación de la cookie
-        await login({ userId: user.id, email: user.email, name: user.name as string, role: user.role })
+        await createSession({ userId: user.id, email: user.email, name: user.name as string, role: user.role, avatar: user.avatar as string })
 
         const message = "Se ha iniciado sesión correctamente"
 

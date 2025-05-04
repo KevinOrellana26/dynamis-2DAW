@@ -40,7 +40,6 @@ export default async function RootLayout({
             {session?.role === "ADMIN" && <AdminNavbar />}
             {session?.role === "USER" && <UserNavbar />}
           </Header>
-          {/* <ServerNavbar /> */}
           {children}
           <Toaster />
         </ThemeProvider>

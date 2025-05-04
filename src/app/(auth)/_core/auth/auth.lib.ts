@@ -7,12 +7,12 @@ export type SessionData = {
     userId?: string
     name?: string
     email?: string
-    img?: string
-    role?: "USER" | "ADMIN" | "GUEST"
-    isLoggedIn?: boolean
+    avatar?: string
+    role: "USER" | "ADMIN" | "GUEST"
+    isLoggedIn: boolean
 }
 
-export const defaultSession: SessionData = {
+export const defaultSession: SessionData= {
     isLoggedIn: false,
     role: "GUEST"
 }

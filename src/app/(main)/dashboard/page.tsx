@@ -7,14 +7,11 @@ import RegisterCard from "../_components/RegisterCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
-import { redirect } from "next/navigation";
 
 export default async function Page() {
   const session = await getSession();
 
-  if (!session.isLoggedIn) {
-    redirect("/login");
-  }
+  //! SE PUEDE VERIFICAR SI HAY SESIÓN, PERO ES OPCIONAL PORQUE EL MIDDLEWARE YA LO HARÁ
 
   const mockExercises = Exercise;
   const mockRoutines = Routines.map((routine) => ({

@@ -2,7 +2,7 @@
 import { createServerAction } from "zsa";
 import { LoginSchema, RegisterSchema } from "../auth/user.types";
 import { loginUser, registerUser } from "./user.db";
-import { logout } from "../auth/auth.actions";
+import { deleteSession } from "../auth/auth.actions";
 import { IS_DEV } from "@/config/env.config";
 
 // const authedProcedure = createServerActionProcedure()
@@ -42,7 +42,7 @@ export const loginUserAction = createServerAction()
 export const logoutUserAction = createServerAction()
     .handler(async () => {
         try {
-            await logout();
+            await deleteSession();
             const message = "Se ha cerrado sesión correctamente"
             return message
         } catch (error) {

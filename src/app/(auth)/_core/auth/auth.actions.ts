@@ -3,7 +3,7 @@ import { sessionOptions, SessionData, defaultSession } from "@/app/(auth)/_core/
 import { getIronSession } from "iron-session"
 import { cookies } from "next/headers"
 
-//OBTIENE LA SESIÓN
+//OBTIENE LA SESIÓN -> Descifra la cookie de sesión y acccede a la información.
 export const getSession = async () => {
     //cookies de next/headers devuelve una promesa, getSession espera un objeto de tipo cookieStore
     //debemos usar await para resolver la promesa antes de pasarla a getIronSession()
@@ -12,21 +12,28 @@ export const getSession = async () => {
 
     //si no hay sesión activa, devuelvo la sesión por defecto
     if (!session.isLoggedIn) {
-        return { ...defaultSession }
+        //mantenemos los métodos de IronSession al mezclar con defaultSession.
+        //si no hacemos esto, en algunos casos devuelve una defaultSession y se pierden los métodos .save() o .destroy()
+        // return { ...defaultSession }
+
+        console.log("No hay sesión activa, devolviendo sesión por defecto")
+        Object.assign(session, defaultSession)
+        // return session
     }
 
+    console.log("Session data: ", session)
     return session;
 }
 
 // FUNCIÓN QUE SE EJECUTA AL HACER EL LOGIN
-export const login = async ({ email, name, role, userId }: SessionData) => {
-    const cookieStore = await cookies();
-    const session = await getIronSession<SessionData>(cookieStore, sessionOptions);
+export const createSession = async ({ email, name, role, userId, avatar }: Omit<SessionData, "isLoggedIn">) => {
+    const session = await getSession();
 
     session.name = name;
     session.userId = userId;
     session.email = email;
     session.role = role;
+    session.avatar = avatar
     session.isLoggedIn = true;
 
     await session.save(); // Guarda la sesión en la cookie
@@ -34,9 +41,9 @@ export const login = async ({ email, name, role, userId }: SessionData) => {
 };
 
 //FUNCIÓN QUE SE EJECUTA AL HACER EL LOGOUT
-export const logout = async () => {
-    const cookieStore = await cookies();
-    const session = await getIronSession<SessionData>(cookieStore, sessionOptions);
+export const deleteSession = async () => {
+    const session = await getSession()
     session.destroy(); // Destruye la sesión
-    return { ...defaultSession }
+    return session
+    // return { ...defaultSession }
 };
