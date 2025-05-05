@@ -103,7 +103,6 @@ async function seedUsers() {
     await prisma.user.createMany({
         data: [
             {
-                // id: "cmab6fgjz0000ufxcve4807fi",
                 name: "Kevin",
                 email: "kevin@gmail.com",
                 avatar: "/profile/defaultAvatar.png",
@@ -112,7 +111,6 @@ async function seedUsers() {
                 emailVerified: null,
             },
             {
-                // id: "cmab6u2oe0000uflwv5q3kk4m",
                 name: "Admin",
                 email: "admin@gmail.com",
                 avatar: "/profile/defaultAvatar.png",
@@ -136,7 +134,7 @@ async function seedProgress() {
     await prisma.progress.createMany({
         data: [
             {
-                user_id: user!.id, //Kevin
+                user_id: user!.id,
                 exercise_id: pressBanca!.id,
                 weight_used: 80,
                 repetitions: 10

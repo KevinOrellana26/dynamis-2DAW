@@ -26,7 +26,7 @@ export default async function Header({ children }: HeaderT) {
           <ModeToggle /> {/* Botón Temas */}
           {session.isLoggedIn ? (
             <>
-              <LogoutButton />{" "}
+              <LogoutButton />
               <UserAvatar
                 avatar={session.avatar ?? ""}
                 name={session.name ?? ""}

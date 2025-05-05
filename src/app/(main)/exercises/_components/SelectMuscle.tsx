@@ -33,14 +33,13 @@ export default function SelectMuscle({
   return (
     <div className="flex gap-2 items-center">
       <Select
-        // value={value === "" ? "__none__" : value}
         value={value}
         onValueChange={(selectedValue) => {
           onValueChange(selectedValue);
         }}
       >
         <SelectTrigger className={className}>
-          <SelectValue placeholder="Selecciona Músculo" />
+          <SelectValue placeholder="-- Selecciona Músculo --" />
         </SelectTrigger>
         <SelectContent>
           {options.map((option) => (

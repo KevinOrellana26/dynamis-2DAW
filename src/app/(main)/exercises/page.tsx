@@ -5,6 +5,7 @@ import Pagination from "../_components/Pagination";
 import ExercisesFilters from "./_components/ExercisesFilters";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
 import { getExercisesUseCase } from "./_core/exercises.use-cases";
+import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
@@ -15,7 +16,19 @@ export default async function ExercisePage({ ...props }: PageProps) {
   const parsedSearchParams = exercisesSearchParamsCache.parse(searchParams);
   const { query, selectedMuscle, showFavourites } = parsedSearchParams;
 
-  const [exercises, error] = await handleAsync(getExercisesUseCase);
+  //Obtener la sesión del usuario
+  const session = await getSession();
+  const userId = session.userId;
+
+  //Pasar los parámetros al caso de uso
+  const [exercises, error] = await handleAsync(() =>
+    getExercisesUseCase({
+      query,
+      muscle: selectedMuscle,
+      showFavourites,
+      userId,
+    })
+  );
 
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
