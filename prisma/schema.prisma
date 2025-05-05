@@ -24,7 +24,7 @@ model User {
   email         String     @unique
   emailVerified DateTime?
   password      String
-  avatar         String?
+  avatar        String?
   createdAt     DateTime   @default(now())
   updatedAt     DateTime   @updatedAt
   role          Rol        @default(USER)
@@ -34,14 +34,14 @@ model User {
 }
 
 model Progress {
-  id          Int       @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   user_id     String // Cambiado a String
   exercise_id Int
   date        DateTime @default(now()) @db.Date
   weight_used Float
   repetitions Int
-  user        User      @relation(fields: [user_id], references: [id])
-  exercise    Exercise  @relation(fields: [exercise_id], references: [id])
+  user        User     @relation(fields: [user_id], references: [id])
+  exercise    Exercise @relation(fields: [exercise_id], references: [id])
 }
 
 model Routine {
@@ -67,7 +67,7 @@ model Favorite {
 
 model Exercise {
   id               Int                @id @default(autoincrement())
-  name             String
+  name             String             @unique
   muscle           String
   video_img_url    String
   Progress         Progress[]
@@ -78,7 +78,7 @@ model Exercise {
 model Exercise_routine {
   id          Int      @id @default(autoincrement())
   routine_id  Int
-  exercise_id  Int
+  exercise_id Int
   series      Int
   repetitions Int
   routine     Routine  @relation(fields: [routine_id], references: [id])

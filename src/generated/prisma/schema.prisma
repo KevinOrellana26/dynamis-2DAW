@@ -67,7 +67,7 @@ model Favorite {
 
 model Exercise {
   id               Int                @id @default(autoincrement())
-  name             String
+  name             String             @unique
   muscle           String
   video_img_url    String
   Progress         Progress[]

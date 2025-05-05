@@ -8,7 +8,8 @@ import { toast } from "sonner";
 export default function LogoutButton() {
   const router = useRouter();
 
-  const { execute } = useServerAction(logoutUserAction, {
+  // zsa
+  const { execute, isPending } = useServerAction(logoutUserAction, {
     onSuccess: ({ data: message }) => {
       toast.success(message);
       router.push("/");
@@ -27,6 +28,7 @@ export default function LogoutButton() {
       variant={"dynamis"}
       className="cursor-pointer"
       onClick={handleLogoutButton}
+      isPending={isPending}
     >
       Cerrar sesión
     </Button>

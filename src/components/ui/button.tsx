@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/components.lib";
+import { RiLoader2Fill } from "react-icons/ri";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -36,25 +37,73 @@ const buttonVariants = cva(
   }
 );
 
+type ButtonProps = React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+    isPending?: boolean;
+  };
 function Button({
   className,
   variant,
   size,
   asChild = false,
+  children,
+  disabled,
+  isPending,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
+}: ButtonProps) {
   const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({ variant, size, className }),
+        isPending && "pointer-events-none opacity-80 cursor-progress"
+      )}
+      disabled={disabled || isPending}
       {...props}
-    />
+    >
+      {asChild ? (
+        children
+      ) : (
+        <>
+          {children}
+          {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />}
+        </>
+      )}
+    </Comp>
   );
+
+  
+  // const Comp = asChild ? Slot : "button";
+  
+  // return asChild ? (
+  //   <Slot
+  //     data-slot="button"
+  //     className={cn(
+  //       buttonVariants({ variant, size, className }),
+  //       isPending && "pointer-events-none opacity-80 cursor-progress"
+  //     )}
+  //     {...props}
+  //   >
+  //     {children}
+  //   </Slot>
+  // ) : (
+  //   <button
+  //     data-slot="button"
+  //     className={cn(
+  //       buttonVariants({ variant, size, className }),
+  //       isPending && "pointer-events-none opacity-80 cursor-progress"
+  //     )}
+  //     disabled={disabled || isPending}
+  //     {...props}
+  //   >
+  //     <>
+  //       {children}
+  //       {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />}
+  //     </>
+  //   </button>
+  // );
 }
 
 export { Button, buttonVariants };

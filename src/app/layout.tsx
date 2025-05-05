@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import UserNavbar from "./(main)/_components/UserNavbar";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 import AdminNavbar from "./(admin)/_components/AdminNavbar";
+import Providers from "./Providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,19 +31,14 @@ export default async function RootLayout({
   return (
     <html lang="es" className={inter.className} suppressHydrationWarning>
       <body className="font-body" suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <Header>
             {session?.role === "ADMIN" && <AdminNavbar />}
             {session?.role === "USER" && <UserNavbar />}
           </Header>
           {children}
           <Toaster />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

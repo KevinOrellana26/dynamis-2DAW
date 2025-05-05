@@ -9,8 +9,8 @@ function UserNavbar() {
   const navItems = [
     { name: "Inicio", href: "/" },
     { name: "Dashboard", href: "/dashboard" },
-    { name: "Ejercicios", href: "/exercise" },
-    { name: "Rutinas", href: "/routine" },
+    { name: "Ejercicios", href: "/exercises" },
+    { name: "Rutinas", href: "/routines" },
     { name: "Progreso", href: "/progress" },
   ];
 

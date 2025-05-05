@@ -1,6 +1,6 @@
 import TabsComponent from "./_components/TabsComponent";
 
-function Page() {
+export default function ProgressPage() {
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
       {/* Titulo y botón añadir progreso */}
@@ -9,7 +9,7 @@ function Page() {
           <h1 className="font-semibold text-4xl md:text-6xl text-[#2057A9] dark:text-[#2057A9]">
             Progreso
           </h1>
-          <p className="font-light text-muted-foreground text-xl mt-1">
+          <p className="font-semibold text-muted-foreground text-xl mt-1">
             Visualiza y analiza tu evolución física y de rendimiento.
           </p>
         </div>
@@ -19,5 +19,3 @@ function Page() {
     </div>
   );
 }
-
-export default Page;

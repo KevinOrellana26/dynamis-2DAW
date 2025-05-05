@@ -94,9 +94,9 @@ export default function LoginForm() {
           type="submit"
           variant={"dynamis"}
           className="w-full cursor-pointer"
-          disabled={isPending}
+          isPending={isPending}
         >
-          {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />}
+          {/* {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />} */}
           {isPending ? "Iniciando sesión..." : "Iniciar sesión"}
         </Button>
       </form>

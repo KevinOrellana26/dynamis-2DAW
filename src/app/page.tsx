@@ -28,7 +28,7 @@ function Home() {
                 transforma tu vida
               </span>
             </h1>
-            <p className="font-light text-muted-foreground text-xl mr-14">
+            <p className="font-semibold text-muted-foreground text-xl mr-14">
               Dýnamis te ayuda a alcanzar tus objetivos fitness con rutinas
               personalizadas y seguimiento de tu progreso.
             </p>

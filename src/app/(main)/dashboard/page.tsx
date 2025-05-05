@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 
-export default async function Page() {
+export default async function DashboardPage() {
   const session = await getSession();
 
   //! SE PUEDE VERIFICAR SI HAY SESIÓN, PERO ES OPCIONAL PORQUE EL MIDDLEWARE YA LO HARÁ
@@ -38,7 +38,7 @@ export default async function Page() {
           <h1 className="font-semibold text-4xl md:text-6xl text-[#2057A9] dark:text-[#2057A9]">
             Dashboard
           </h1>
-          <p className="font-light text-muted-foreground text-xl mt-2">
+          <p className="font-semibold text-muted-foreground text-xl mt-2">
             Bienvenido de nuevo{" "}
             <span className="font-bold text-2xl">{session.name}</span> con rol{" "}
             {session.role}, aquí está tu resumen de actividad.

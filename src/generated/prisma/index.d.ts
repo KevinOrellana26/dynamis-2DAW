@@ -8747,16 +8747,16 @@ export namespace Prisma {
 
   export type ExerciseWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    name?: string
     AND?: ExerciseWhereInput | ExerciseWhereInput[]
     OR?: ExerciseWhereInput[]
     NOT?: ExerciseWhereInput | ExerciseWhereInput[]
-    name?: StringFilter<"Exercise"> | string
     muscle?: StringFilter<"Exercise"> | string
     video_img_url?: StringFilter<"Exercise"> | string
     Progress?: ProgressListRelationFilter
     Favorite?: FavoriteListRelationFilter
     Exercise_routine?: Exercise_routineListRelationFilter
-  }, "id">
+  }, "id" | "name">
 
   export type ExerciseOrderByWithAggregationInput = {
     id?: SortOrder

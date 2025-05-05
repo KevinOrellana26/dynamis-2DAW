@@ -23,3 +23,18 @@ export const NotFoundError = class NotFoundError extends Error {
         this.name = "NotFoundError";
     }
 };
+
+//función genérica que recibe como argumento una función callback que retorna una promesa.
+//devuelve una tupla con dos posibles valores:
+//  si todo sale bien: [resultado, null]
+//  si hay error: [null, error]
+export const handleAsync = async <T>(
+    callback: () => Promise<T>,
+): Promise<[T | null, Error | null]> => {
+    try {
+        const data = await callback();
+        return [data, null];
+    } catch (err) {
+        return [null, err as Error];
+    }
+};
