@@ -7,7 +7,7 @@ import { authedProcedure } from "@/app/(auth)/_core/user/user.procedures";
 
 export const addExerciseToFavoritesAction = authedProcedure
   .createServerAction()
-  .input(addExerciseToFavoritesSchema.omit({ userId: true })) // <- Validación esquema zod en el ladoW del servidor. ZSA(Zod Server Action)
+  .input(addExerciseToFavoritesSchema.omit({ userId: true })) // <- Validación esquema zod en el lado del servidor. ZSA(Zod Server Action)
   .handler(async ({ ctx, input }) => {
     const { user } = ctx; // <- Obtener el userId de la sesión
     const { userId } = user; // <- Obtener el userId de la sesión

@@ -3,60 +3,60 @@
         "id": 1,
         "name": "Press Banca",
         "muscle": "Pecho",
-        "video_img_url": "/exercise/press-banca.png"
+        "videoImgUrl": "/exercise/press-banca.png"
     },
     {
         "id": 2,
         "name": "Remo",
         "muscle": "Espalda",
-        "video_img_url": "/exercise/remo.png"
+        "videoImgUrl": "/exercise/remo.png"
     },
     {
         "id": 3,
         "name": "Sentadilla libre",
         "muscle": "Pierna",
-        "video_img_url": "/exercise/sentadilla-libre.png"
+        "videoImgUrl": "/exercise/sentadilla-libre.png"
     },
     {
         "id": 4,
         "name": "Jalón al pecho",
         "muscle": "Espalda",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     },
     {
         "id": 5,
         "name": "Dominadas",
         "muscle": "Espalda",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     },
     {
         "id": 6,
         "name": "Curl de Bíceps",
         "muscle": "Bíceps",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     },
     {
         "id": 7,
         "name": "Press Militar",
         "muscle": "Hombro",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     },
     {
         "id": 8,
         "name": "Extensiones de Trícpes",
         "muscle": "Tríceps",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     },
     {
         "id": 9,
         "name": "Zancadas",
         "muscle": "Pierna",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     },
     {
         "id": 10,
         "name": "Press en Banco Inclinado",
         "muscle": "Hombro",
-        "video_img_url": "/exercise/jalon.png"
+        "videoImgUrl": "/exercise/jalon.png"
     }
 ]

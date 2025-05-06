@@ -69,7 +69,7 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {latestExercise.map((exercise) => (
           <div key={exercise.id}>
-            <ExerciseCard {...exercise} />
+            <ExerciseCard exercise={exercise} />
           </div>
         ))}
       </div>
