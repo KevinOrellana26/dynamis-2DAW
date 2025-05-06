@@ -1,28 +1,9 @@
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/components.lib";
 import React from "react";
 
-type SearchInputT = {
-  placeholder?: string;
-  value?: string;
-  className?: string;
-  onChange: (value: string) => void;
-};
+type SearchInputT = React.ComponentProps<typeof Input>;
 
-export default function SearchInput({
-  placeholder,
-  value,
-  onChange,
-  className,
-}: SearchInputT) {
-  return (
-    <div className={`w-full ${className}`}>
-      <Input
-        type="search"
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full"
-      />
-    </div>
-  );
+export default function SearchInput({ className, ...props }: SearchInputT) {
+  return <Input type="search" {...props} className={cn("w-full", className)} />;
 }

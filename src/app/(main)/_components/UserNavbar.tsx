@@ -20,11 +20,11 @@ function UserNavbar() {
         <Link
           key={item.name}
           href={item.href}
-          className={`text-lg font-medium text-[#2057A9] hover:text-[#354966d5] dark:text-[#2057A9] dark:hover:text-[#354966d5]
+          className={`text-lg font-medium text-accent-blue hover:text-[#354966d5] dark:text-accent-blue dark:hover:text-[#354966d5]
                     ${
                       path === item.href
-                        ? "text-[#2057A9] dark:text-[#2057A9]"
-                        : "text-gray-700 dark:text-[#2057A9]"
+                        ? "text-accent-blue dark:text-accent-blue"
+                        : "text-gray-700 dark:text-accent-blue"
                     }`}
         >
           {item.name}

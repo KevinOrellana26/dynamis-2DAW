@@ -1,3 +1,4 @@
+import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 import { handleAsync } from "@/app/_shared/errors";
 import type { SearchParams } from "nuqs/server";
 import ExerciseCard from "../_components/ExerciseCard";
@@ -5,7 +6,6 @@ import Pagination from "../_components/Pagination";
 import ExercisesFilters from "./_components/ExercisesFilters";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
 import { getExercisesUseCase } from "./_core/exercises.use-cases";
-import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
@@ -14,7 +14,7 @@ type PageProps = {
 export default async function ExercisePage({ ...props }: PageProps) {
   const searchParams = await props.searchParams;
   const parsedSearchParams = exercisesSearchParamsCache.parse(searchParams);
-  const { query, selectedMuscle, showFavourites } = parsedSearchParams;
+  const { query, selectedMuscle, showFavorites } = parsedSearchParams;
 
   //Obtener la sesión del usuario
   const session = await getSession();
@@ -24,9 +24,9 @@ export default async function ExercisePage({ ...props }: PageProps) {
   const [exercises, error] = await handleAsync(() =>
     getExercisesUseCase({
       query,
-      muscle: selectedMuscle,
-      showFavourites,
-      userId,
+      selectedMuscle,
+      showFavorites,
+      userId: showFavorites ? userId : undefined,
     })
   );
 
@@ -35,7 +35,7 @@ export default async function ExercisePage({ ...props }: PageProps) {
       {/* Titulo y botón añadir rutina */}
       <header className="flex flex-col items-center md:flex-row md:justify-between gap-2">
         <div className="text-center md:text-left">
-          <h1 className="font-semibold text-4xl md:text-6xl text-[#2057A9] dark:text-[#2057A9]">
+          <h1 className="font-semibold text-4xl md:text-6xl text-accent-blue dark:text-accent-blue">
             Ejercicios
           </h1>
           <p className="font-semibold text-muted-foreground text-xl mt-1">
@@ -54,7 +54,9 @@ export default async function ExercisePage({ ...props }: PageProps) {
         {exercises ? (
           exercises.map((exercise) => (
             <div key={exercise.id}>
-              <ExerciseCard {...exercise} />
+              <ExerciseCard
+                exercise={exercise} // <- Pasar el ejercicio a la tarjeta
+              />
             </div>
           ))
         ) : (

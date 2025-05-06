@@ -1,20 +1,39 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Exercise } from "@/generated/prisma";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
+import { useServerAction } from "zsa-react";
+import { addExerciseToFavoritesAction } from "../exercises/exercises.actions";
+import { ExerciseT } from "../exercises/_core/exercises.definitions";
 
-export default function ExerciseCard({
-  name,
-  muscle,
-  video_img_url,
-}: Exercise) {
+type ExerciseCardProps = {
+  exercise: ExerciseT;
+};
+export default function ExerciseCard({ exercise }: ExerciseCardProps) {
+  const { id: exerciseId, name, muscle, videoImgUrl, isFavorite } = exercise;
+
+  const { execute, isPending } = useServerAction(addExerciseToFavoritesAction, {
+    onSuccess: ({ data: message }) => {
+      toast.success(message);
+    },
+    onError: ({ err }) => {
+      toast.error(err.message);
+    },
+  });
+
+  const handleExerciseToFavorites = async (exerciseId: number) => {
+    execute({ exerciseId });
+  };
+
   return (
     <Card>
       <div className="relative aspect-video overflow-hidden">
         <Image
-          src={video_img_url}
+          src={videoImgUrl}
           alt={name}
           fill //Ocupa todo el espacio del contenedor padre (div)
           priority
@@ -32,15 +51,20 @@ export default function ExerciseCard({
           <Button
             variant={"link"}
             size="icon"
-            className={`h-8 w-8 hover:text-yellow-600 cursor-pointer`}
+            onClick={() => handleExerciseToFavorites(exerciseId)}
+            className={`h-8 w-8 hover:text-accent-yellow`}
           >
-            <Star className={`h-5 w-5`} />
+            <Star
+              className={`h-5 w-5 ${
+                isFavorite ? "text-accent-blue fill-accent-blue" : ""
+              }`}
+            />
             <span className="sr-only">Favorito</span>
           </Button>
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full cursor-pointer" variant={"secondary"}>
+        <Button className="w-full" variant={"secondary"}>
           Ver detalles
         </Button>
       </CardFooter>

@@ -33,7 +33,7 @@ export default function RutinaPage() {
       {/* Titulo y botón añadir rutina */}
       <header className="flex flex-col items-center md:flex-row md:justify-between">
         <div className="text-center md:text-left">
-          <h1 className="font-semibold text-4xl md:text-6xl text-[#2057A9] dark:text-[#2057A9]">
+          <h1 className="font-semibold text-4xl md:text-6xl text-accent-blue dark:text-accent-blue">
             Mis Rutinas
           </h1>
           <p className="font-semibold text-muted-foreground text-xl mt-2">

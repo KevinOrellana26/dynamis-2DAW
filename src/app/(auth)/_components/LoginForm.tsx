@@ -20,9 +20,6 @@ import { LoginSchema, LoginT } from "../_core/auth/user.types";
 import { loginUserAction } from "../_core/user/user.actions";
 
 //Validación (Esquema)
-// export const LoginFormSchema = LoginSchema;
-// export type LoginFormT = z.infer<typeof LoginFormSchema>;
-
 export default function LoginForm() {
   const router = useRouter();
 

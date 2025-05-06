@@ -40,7 +40,7 @@ export default function ExerciseCard({
           {/* <Button
             variant="ghost"
             size="icon"
-            className={`h-8 w-8 hover:text-yellow-600`}
+            className={`h-8 w-8 hover:text-accent-yellow`}
           >
             <Star className={`h-5 w-5`} />
             <span className="sr-only">Favorito</span>

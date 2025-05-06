@@ -19,7 +19,7 @@ export const exercisesSearchParams = {
     selectedMuscle: parseAsString
         .withDefault("")
         .withOptions(options),
-    showFavourites: parseAsBoolean.withDefault(false).withOptions(options)
+    showFavorites: parseAsBoolean.withDefault(false).withOptions(options)
 }
 export const exercisesSearchParamsCache = createSearchParamsCache(
     exercisesSearchParams,

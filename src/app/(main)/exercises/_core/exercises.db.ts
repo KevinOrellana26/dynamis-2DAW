@@ -1,66 +1,92 @@
-//SOLO interactua con la base de datos
+//* SOLO interactua con la base de datos
 
 import { NotFoundError } from "@/app/_shared/errors";
-import { Exercise, Favorite } from "@/generated/prisma";
+import { Exercise, Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
-import { NextRequest } from "next/server";
+import { addExerciseToFavoritesT } from "./exercises.types";
+import { exerciseAdapter } from "./exercises.definitions";
 
-//TODO: modificar esta query para que acepte parametros opcionales (query y muscle)
-export const getExercises = async () => {
-    let exercises: Exercise[]
-    try {
-        exercises = await prisma.exercise.findMany()
-    } catch (error) {
-        console.log("Error", error)
-        const message = "No se han encontrado ejercicios."
-        throw new Error(message)
-    }
-
-    if (exercises.length <= 0) {
-        const message = "No se han encontrado ejercicios."
-        throw new NotFoundError(message)
-    }
-    return exercises
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-type FavouriteWithExerciseT = {
-    id: number;
-    user_id: string;
-    exercise_id: number;
-    exercise: Exercise;
+export type GetExercisesOptionsT = {
+  query?: string;
+  selectedMuscle?: string;
+  showFavorites?: boolean;
+  userId?: string;
 };
 
-export const getUserExerciseFavorite = async (userId: string): Promise<Exercise[]> => {
-    let favourites: FavouriteWithExerciseT[];
-    try {
-        favourites = await prisma.favorite.findMany({
-            where: { user_id: userId },
-            include: {
-                exercise: true
-            }
-        })
-    } catch (error) {
-        console.log("Error", error)
-        const message = "No se han encontrado ejercicios favoritos."
-        throw new Error(message)
+export type ExerciseWithFavoriteT = Prisma.ExerciseGetPayload<{
+  include: { Favorite: true };
+}>;
+
+export const getExercises = async (options: GetExercisesOptionsT) => {
+  const { query, selectedMuscle, showFavorites, userId } = options;
+  let exercises: ExerciseWithFavoriteT[];
+
+  try {
+    // * AND: combina múltiples condiciones, solo se devolverán los
+    // * ejercicios que cumplan TODAS las condiciones especificadas dentro del array.
+    // * filtra los ejercicios cuyo nombre contenga el valor query (lo mismo para muscle) y es insensible a mayúsculas y minúsculas.
+    // * si showFavorites es verdadero y userId está definido, se filtran los ejercicios
+    // * que tienen una relación de favoritos con el userId proporcionado.
+    // * si showFavorites es falso, no se aplica ningún filtro (se devuelve un objeto vacío).
+
+    exercises = await prisma.exercise.findMany({
+      where: {
+        AND: [
+          { name: { contains: query, mode: "insensitive" } },
+          { muscle: { contains: selectedMuscle, mode: "insensitive" } },
+          showFavorites && userId
+            ? {
+                Favorite: {
+                  some: {
+                    user_id: userId, // Filtra por el userId en la tabla de favoritos
+                  },
+                },
+              }
+            : {},
+        ],
+      },
+      include: {
+        Favorite: true,
+      },
+    });
+  } catch (error) {
+    console.log("Error", error);
+    const message = "No se han encontrado ejercicios.";
+    throw new Error(message);
+  }
+
+  if (exercises.length <= 0) {
+    const message = "No se han encontrado ejercicios.";
+    throw new NotFoundError(message);
+  }
+  const parsedExercises = exercises.map(exerciseAdapter);
+
+  return parsedExercises;
+};
+
+//TODO: addExerciseToFavorites -> cuando se pulse el botón de estrella, se debe de añadir a la lista de favoritos del usuario.
+//TODO: se le pasa como parámetro el id del ejercicio y el id del usuario.
+export const addExerciseToFavorites = async (
+  params: addExerciseToFavoritesT
+) => {
+  const { exerciseId, userId } = params;
+  try {
+    const favorite = await prisma.favorite.create({
+      data: {
+        user_id: userId,
+        exercise_id: exerciseId,
+      },
+    });
+
+    if (!favorite) {
+      const message = "No se ha podido añadir el ejercicio a favoritos.";
+      throw new Error(message);
     }
-
-
-    if (favourites.length <= 0) {
-        const message = "No se han encontrado favoritos."
-        throw new NotFoundError(message)
-    }
-    // Transformamos el resultado, ya que solo queremos devolver los datos de los ejericios favoritos, 
-    // mapeamos el array para extraer solo la parte exercise de cada favorito
-    return favourites.map(fav => fav.exercise)
-}
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//TODO: deleteFavoriteUserExercise -> cuando se pulse el botón de estrella, se debe de eliminar de la lista de favoritos del usuario.
-
-
-// export const getExerciseById = async (id: number) => {
-//     return await prisma.exercise.findUnique({ where: { id } })
-// }
-
+    const message = "Ejercicio añadido a favoritos";
+    return message;
+  } catch (error) {
+    console.log("Error", error);
+    const message = "No se ha podido añadir el ejercicio a favoritos.";
+    throw new Error(message);
+  }
+};

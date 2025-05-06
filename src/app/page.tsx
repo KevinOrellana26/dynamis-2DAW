@@ -24,7 +24,7 @@ function Home() {
           <div className="flex-1 space-y-6 content-center">
             <h1 className="font-semibold text-4xl md:text-6xl">
               Transforma tu cuerpo,{" "}
-              <span className="text-[#2057A9] dark:text-[#2057A9]">
+              <span className="text-accent-blue dark:text-accent-blue">
                 transforma tu vida
               </span>
             </h1>
@@ -93,21 +93,21 @@ function Home() {
               <BenefitsCard
                 title="Biblioteca de Ejercicios"
                 subtitle="Accede a una lista de ejercicios con instrucciones detalladas y videos demostrativos."
-                icon={<Dumbbell className="h-8 w-8 text-[#2057A9]" />}
+                icon={<Dumbbell className="h-8 w-8 text-accent-blue" />}
               />
             </div>
             <div className="flex-1">
               <BenefitsCard
                 title="Rutinas Personalizadas"
                 subtitle="Crea rutinas adaptadas a tus objetivos, nivel de experiencia y tiempo disponible."
-                icon={<ChartLine className="h-8 w-8 text-[#2057A9]" />}
+                icon={<ChartLine className="h-8 w-8 text-accent-blue" />}
               />
             </div>
             <div className="flex-1">
               <BenefitsCard
                 title="Seguimiento de Progreso"
                 subtitle="Visualiza tu evolución con gráficos detallados y estadísticas personalizadas."
-                icon={<ListChecks className="h-8 w-8 text-[#2057A9]" />}
+                icon={<ListChecks className="h-8 w-8 text-accent-blue" />}
               />
             </div>
           </div>

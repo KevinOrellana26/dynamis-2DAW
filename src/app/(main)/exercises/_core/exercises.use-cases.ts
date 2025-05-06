@@ -1,25 +1,28 @@
 //Interactura con exercises.db.ts para obtener los datos.
-import { getExercises, getUserExerciseFavorite } from "./exercises.db";
 import type { Exercise } from "@/generated/prisma";
+import {
+  addExerciseToFavorites,
+  getExercises,
+  GetExercisesOptionsT,
+} from "./exercises.db";
+import { addExerciseToFavoritesT } from "./exercises.types";
 
-type GetExercisesParams = {
-    query?: string;
-    muscle?: string;
-    showFavourites?: boolean;
-    userId?: string;
-}
+// * Caso de uso que obtiene los ejercicios de la base de datos.
+// * getExercises recibe un objeto de parametros opcionales.
+// * dependiendo de los parametros que se pasen, se filtran los ejercicios.
+// * devuelve un array de ejercicios que cumplen con los filtros.
+// * si no, se muestra un mensaje de error.
+export const getExercisesUseCase = async (options: GetExercisesOptionsT) => {
+  const exercises = await getExercises(options);
+  return exercises;
+};
 
-//Caso de uso: obtener todos los ejercicios de la base de datos
-export const getExercisesUseCase = async (options: GetExercisesParams): Promise<Exercise[]> => {
-    const { query, muscle, showFavourites, userId } = options
-    
-    // TODO: pasar el id del usuario por parámetro (opcional) y obtener los favoritos del usuario
-    if (showFavourites && userId) {
-        const favoriteExercises = await getUserExerciseFavorite(userId)
-        return favoriteExercises
-    }
-    
-    // TODO: tanto el query como el muscle deben ser case insensitive (aceptar mayúsculas y minúsculas)
-    const exercises = await getExercises()
-    return exercises
-}
+// * Caso de uso que añade un ejercicio a la lista de favoritos del usuario.
+
+export const addExerciseToFavoritesUseCase = async (
+  options: addExerciseToFavoritesT
+): Promise<string> => {
+  // comprobar que el usuario esta logueado
+  const message = await addExerciseToFavorites(options);
+  return message;
+};

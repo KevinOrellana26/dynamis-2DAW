@@ -31,7 +31,7 @@ function AuthTabs() {
   return (
     <Card className="p-8 md:p-14 w-full max-w-xl mx-auto">
       <CardHeader>
-        <CardTitle className="text-center font-bold text-2xl text-[#2057A9]">
+        <CardTitle className="text-center font-bold text-2xl text-accent-blue">
           Bienvenido a Dýnamis
         </CardTitle>
         <CardDescription className="text-center">
