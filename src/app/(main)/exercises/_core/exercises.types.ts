@@ -8,3 +8,8 @@ export const addExerciseToFavoritesSchema = z.object({
 export type addExerciseToFavoritesT = z.infer<
   typeof addExerciseToFavoritesSchema
 >;
+
+export const removeErxerciseFromFavoriteSchema = addExerciseToFavoritesSchema
+export type removeExerciseFromFavoritesT = z.infer<
+  typeof removeErxerciseFromFavoriteSchema
+>;

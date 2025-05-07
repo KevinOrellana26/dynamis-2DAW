@@ -1,9 +1,12 @@
 //* SOLO interactua con la base de datos
 
 import { NotFoundError } from "@/app/_shared/errors";
-import { Exercise, Prisma } from "@/generated/prisma";
+import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
-import { addExerciseToFavoritesT } from "./exercises.types";
+import {
+  addExerciseToFavoritesT,
+  removeExerciseFromFavoritesT,
+} from "./exercises.types";
 import { exerciseAdapter } from "./exercises.definitions";
 
 export type GetExercisesOptionsT = {
@@ -87,6 +90,32 @@ export const addExerciseToFavorites = async (
   } catch (error) {
     console.log("Error", error);
     const message = "No se ha podido añadir el ejercicio a favoritos.";
+    throw new Error(message);
+  }
+};
+
+export const removeExerciseFromFavorites = async (
+  params: removeExerciseFromFavoritesT
+) => {
+  const { exerciseId, userId } = params;
+  try {
+    const favorite = await prisma.favorite.deleteMany({
+      where: {
+        user_id: userId,
+        exercise_id: exerciseId,
+      },
+    });
+
+    if (!favorite) {
+      const message = "No se ha podido eliminar el ejercicio de favoritos.";
+      return message;
+    }
+
+    const message = "Ejercicio eliminado de favoritos";
+    return message;
+  } catch (error) {
+    console.log("Error", error);
+    const message = "No se ha podido eliminar el ejercicio de favoritos.";
     throw new Error(message);
   }
 };

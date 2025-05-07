@@ -1,11 +1,14 @@
 //Interactura con exercises.db.ts para obtener los datos.
-import type { Exercise } from "@/generated/prisma";
 import {
   addExerciseToFavorites,
   getExercises,
   GetExercisesOptionsT,
+  removeExerciseFromFavorites,
 } from "./exercises.db";
-import { addExerciseToFavoritesT } from "./exercises.types";
+import {
+  addExerciseToFavoritesT,
+  removeExerciseFromFavoritesT,
+} from "./exercises.types";
 
 // * Caso de uso que obtiene los ejercicios de la base de datos.
 // * getExercises recibe un objeto de parametros opcionales.
@@ -18,11 +21,17 @@ export const getExercisesUseCase = async (options: GetExercisesOptionsT) => {
 };
 
 // * Caso de uso que añade un ejercicio a la lista de favoritos del usuario.
-
 export const addExerciseToFavoritesUseCase = async (
   options: addExerciseToFavoritesT
 ): Promise<string> => {
-  // comprobar que el usuario esta logueado
   const message = await addExerciseToFavorites(options);
+  return message;
+};
+
+// * Caso de uso que elimina un ejercicio de la lista de favoritos del usuario.
+export const removeExerciseFromFavoritesUseCase = async (
+  options: removeExerciseFromFavoritesT
+): Promise<string> => {
+  const message = await removeExerciseFromFavorites(options);
   return message;
 };

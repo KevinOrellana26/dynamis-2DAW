@@ -53,7 +53,7 @@ export default function ExercisesFilters() {
         }
       />
 
-      {/* Checkbox Favorites  + Botón buscar*/}
+      {/* Checkbox Favorites */}
       <div className="flex items-center justify-center mb-1.5">
         <CheckboxFavorite
           checked={showFavorites}

@@ -7,7 +7,10 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
-import { addExerciseToFavoritesAction } from "../exercises/exercises.actions";
+import {
+  addExerciseToFavoritesAction,
+  removeExerciseFromFavoritesAction,
+} from "../exercises/exercises.actions";
 import { ExerciseT } from "../exercises/_core/exercises.definitions";
 
 type ExerciseCardProps = {
@@ -16,6 +19,7 @@ type ExerciseCardProps = {
 export default function ExerciseCard({ exercise }: ExerciseCardProps) {
   const { id: exerciseId, name, muscle, videoImgUrl, isFavorite } = exercise;
 
+  /*AÑADIR  FAVORITO*/
   const { execute, isPending } = useServerAction(addExerciseToFavoritesAction, {
     onSuccess: ({ data: message }) => {
       toast.success(message);
@@ -27,6 +31,23 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
 
   const handleExerciseToFavorites = async (exerciseId: number) => {
     execute({ exerciseId });
+  };
+
+  /* ELIMINAR FAVORITO*/
+  const { execute: executeRemove, isPending: isRemoving } = useServerAction(
+    removeExerciseFromFavoritesAction,
+    {
+      onSuccess: ({ data: message }) => {
+        toast.success(message);
+      },
+      onError: ({ err }) => {
+        toast.error(err.message);
+      },
+    }
+  );
+
+  const handleRemoveExerciseFromFavorites = async (exerciseId: number) => {
+    executeRemove({ exerciseId });
   };
 
   return (
@@ -51,7 +72,11 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
           <Button
             variant={"link"}
             size="icon"
-            onClick={() => handleExerciseToFavorites(exerciseId)}
+            onClick={() =>
+              isFavorite
+                ? handleRemoveExerciseFromFavorites(exerciseId)
+                : handleExerciseToFavorites(exerciseId)
+            }
             className={`h-8 w-8 hover:text-accent-yellow`}
           >
             <Star
@@ -59,7 +84,9 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
                 isFavorite ? "text-accent-blue fill-accent-blue" : ""
               }`}
             />
-            <span className="sr-only">Favorito</span>
+            <span className="sr-only">
+              {isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
+            </span>
           </Button>
         </div>
       </CardContent>
