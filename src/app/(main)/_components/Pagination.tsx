@@ -3,14 +3,13 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
-  PaginationPrevious,
+  PaginationPrevious
 } from "@/components/ui/pagination";
 import { DEFAULT_SEARCH_PARAMS_OPTIONS } from "@/config/params.config";
-import { useQueryStates, parseAsInteger } from "nuqs";
+import { parseAsInteger, useQueryStates } from "nuqs";
 
 type PaginationProps = {
   totalPages: number;
@@ -20,53 +19,25 @@ type PaginationProps = {
 export default function PaginationComponent(params: PaginationProps) {
   const { totalPages, classname } = params;
   const options = { ...DEFAULT_SEARCH_PARAMS_OPTIONS };
-  //nuqs para sincronizar el estado de la paginacion con los searchParams
+  //nuqs sincroniza el estado de la página actual en la URL
   const [pageState, setPageState] = useQueryStates(
     {
-      page: parseAsInteger.withDefault(1), //Página actual
+      page: parseAsInteger.withDefault(1),
     },
     options
   );
 
-  const { page: currentPage } = pageState;
+  const currentPage = pageState.page;
 
+  //maneja el estado de la página
   const handlePageChange = (newPage: number) => {
-    setPageState({ page: newPage }); // actualiza el estado y los searchParams
+    setPageState({ page: newPage });
   };
-
-  //////////////////////////////
-  const getPageNumbers = () => {
-    const pages = [];
-
-    // muestra la primera página
-    if (currentPage > 3) {
-      pages.push(1);
-      pages.push("start-ellipsis");
-    }
-
-    // muestra las páginas cercanas a la página actual
-    const start = Math.max(1, currentPage - 1);
-    const end = Math.min(totalPages, currentPage + 1);
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
-
-    // muestra la última página
-    if (currentPage < totalPages - 2) {
-      pages.push("end-ellipsis");
-      pages.push(totalPages);
-    }
-
-    return pages;
-  };
-
-  const pageItems = getPageNumbers();
-  //////////////////////////////////////////
 
   return (
-    <Pagination>
+    <Pagination className={classname}>
       <PaginationContent>
+        {/* Botón anterior */}
         {currentPage > 1 && (
           <PaginationItem>
             <PaginationPrevious
@@ -75,38 +46,22 @@ export default function PaginationComponent(params: PaginationProps) {
           </PaginationItem>
         )}
 
-        {/* {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-          <PaginationItem key={page}>
-            <PaginationLink
-              isActive={page === currentPage}
-              onClick={() => handlePageChange(page)}
-            >
-              {page}
-            </PaginationLink>
-          </PaginationItem>
-        ))} */}
-
-        {pageItems.map((item, index) => {
-          if (item === "start-ellipsis" || item === "end-ellipsis") {
-            return (
-              <PaginationItem key={item + index}>
-                <PaginationEllipsis />
-              </PaginationItem>
-            );
-          }
-
+        {/* Números de páginas, solo muestra las primeras 5 páginas */}
+        {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+          const pageNumber = i + 1;
           return (
-            <PaginationItem key={item}>
+            <PaginationItem key={pageNumber}>
               <PaginationLink
-                isActive={item === currentPage}
-                onClick={() => handlePageChange(item as number)}
+                isActive={pageNumber === currentPage}
+                onClick={() => handlePageChange(pageNumber)}
               >
-                {item}
+                {pageNumber}
               </PaginationLink>
             </PaginationItem>
           );
         })}
 
+        {/* Botón siguiente */}
         {currentPage < totalPages && (
           <PaginationItem>
             <PaginationNext onClick={() => handlePageChange(currentPage + 1)} />

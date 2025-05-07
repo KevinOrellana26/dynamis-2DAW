@@ -77,7 +77,7 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
                 ? handleRemoveExerciseFromFavorites(exerciseId)
                 : handleExerciseToFavorites(exerciseId)
             }
-            className={`h-8 w-8 hover:text-accent-yellow`}
+            className={"h-8 w-8 hover:text-accent-blue"}
           >
             <Star
               className={`h-5 w-5 ${

@@ -83,11 +83,7 @@ export default async function ExercisePage({ ...props }: PageProps) {
       </div>
 
       {/* Paginación */}
-      {isValidPage && (
-        <footer className="mt-4">
-          <Pagination totalPages={totalPages} />
-        </footer>
-      )}
+      {isValidPage && <Pagination classname="mt-7" totalPages={totalPages} />}
     </div>
   );
 }
