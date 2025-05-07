@@ -26,7 +26,6 @@ export default function LogoutButton() {
   return (
     <Button
       variant={"dynamis"}
-      className="cursor-pointer"
       onClick={handleLogoutButton}
       isPending={isPending}
     >
