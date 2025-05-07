@@ -1,4 +1,3 @@
-import { Exercise } from "@/generated/prisma";
 import { z } from "zod";
 import { ExerciseWithFavoriteT } from "./exercises.db";
 

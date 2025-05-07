@@ -12,23 +12,42 @@ type PageProps = {
 };
 
 export default async function ExercisePage({ ...props }: PageProps) {
-  const searchParams = await props.searchParams;
-  const parsedSearchParams = exercisesSearchParamsCache.parse(searchParams);
-  const { query, selectedMuscle, showFavorites } = parsedSearchParams;
-
   //Obtener la sesión del usuario
   const session = await getSession();
   const userId = session.userId;
 
+  //Obtener los parámetros de búsqueda de la URL
+  const searchParams = await props.searchParams;
+  const parsedSearchParams = exercisesSearchParamsCache.parse(searchParams);
+  const { query, selectedMuscle, showFavorites, page = 1 } = parsedSearchParams;
+
+  const limit = 8;
   //Pasar los parámetros al caso de uso
-  const [exercises, error] = await handleAsync(() =>
+  const [data, error] = await handleAsync(() =>
     getExercisesUseCase({
       query,
       selectedMuscle,
       showFavorites,
       userId: showFavorites ? userId : undefined,
+      page: Number(page),
+      limit, //numero de resultados por página
     })
   );
+
+  // Verifica si data es null
+  if (!data) {
+    return (
+      <div className="mx-3 px-6 md:px-8 my-8">
+        <p className="text-red-500">
+          {error?.message || "Ocurrió un error al cargar los ejercicios."}
+        </p>
+      </div>
+    );
+  }
+
+  const { exercises, totalPages } = data;
+  // verificar si la página actual no sea mayor al total de páginas
+  const isValidPage = page > 0 && page <= totalPages;
 
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
@@ -42,31 +61,29 @@ export default async function ExercisePage({ ...props }: PageProps) {
             Explora y gestiona la lista de ejercicios disponibles.
           </p>
         </div>
-        {/* Solo para ADMIN */}
-        {/* <div>
-          <NewExerciseButton />
-        </div> */}
       </header>
       <ExercisesFilters />
 
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        {exercises ? (
+        {!isValidPage ? (
+          //Error: si la página no es válida
+          <p className="text-sky-900">La página no existe.</p>
+        ) : exercises.length > 0 ? (
           exercises.map((exercise) => (
             <div key={exercise.id}>
-              <ExerciseCard
-                exercise={exercise} // <- Pasar el ejercicio a la tarjeta
-              />
+              <ExerciseCard exercise={exercise} />
             </div>
           ))
         ) : (
-          <p className="text-sky-900">{error?.message}</p>
+          //Error: si no hay ejercicios
+          <p className="text-sky-900">No se encontraron ejercicios.</p>
         )}
       </div>
 
       {/* Paginación */}
       <footer className="mt-4">
-        <Pagination />
+        <Pagination totalPages={totalPages}/>
       </footer>
     </div>
   );

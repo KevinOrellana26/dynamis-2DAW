@@ -63,7 +63,7 @@ export default async function DashboardPage() {
         </h1>
 
         <Button variant={"secondary"} className="cursor-pointer" asChild>
-          <Link href={"/routine"}>Ver más</Link>
+          <Link href={"/exercises"}>Ver más</Link>
         </Button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

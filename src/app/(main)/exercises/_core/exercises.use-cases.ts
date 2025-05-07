@@ -1,24 +1,55 @@
+import { ExerciseT } from "./exercises.definitions";
 //Interactura con exercises.db.ts para obtener los datos.
 import {
   addExerciseToFavorites,
   getExercises,
   GetExercisesOptionsT,
   removeExerciseFromFavorites,
+  getTotalItems,
 } from "./exercises.db";
 import {
   addExerciseToFavoritesT,
   removeExerciseFromFavoritesT,
 } from "./exercises.types";
 
-// * Caso de uso que obtiene los ejercicios de la base de datos.
-// * getExercises recibe un objeto de parametros opcionales.
-// * dependiendo de los parametros que se pasen, se filtran los ejercicios.
-// * devuelve un array de ejercicios que cumplen con los filtros.
-// * si no, se muestra un mensaje de error.
-export const getExercisesUseCase = async (options: GetExercisesOptionsT) => {
-  const exercises = await getExercises(options);
-  return exercises;
+export const getExercisesUseCase = async (
+  options: GetExercisesOptionsT & { page: number; limit: number }
+): Promise<{ exercises: ExerciseT[]; totalPages: number }> => {
+  const { query, selectedMuscle, showFavorites, userId, page, limit } = options;
+
+  const totalItems = await getTotalItems({
+    query,
+    selectedMuscle,
+    showFavorites,
+    userId,
+  });
+
+  //calcular el total de páginas
+  const totalPages = Math.ceil(totalItems / limit);
+
+  //si la página es inválida, devuelve vacío pero no lanza error
+  if (page < 1 || page > totalPages) {
+    return {
+      exercises: [],
+      totalPages,
+    };
+  }
+
+  const exercises = await getExercises({
+    query,
+    selectedMuscle,
+    showFavorites,
+    userId,
+    skip: (page - 1) * limit,
+    take: limit,
+  });
+  return { exercises, totalPages };
 };
+
+// export const getExercisesUseCase = async (options: GetExercisesOptionsT) => {
+//   const exercises = await getExercises(options);
+//   return exercises;
+// };
 
 // * Caso de uso que añade un ejercicio a la lista de favoritos del usuario.
 export const addExerciseToFavoritesUseCase = async (

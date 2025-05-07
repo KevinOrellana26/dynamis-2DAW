@@ -1,7 +1,12 @@
 "use client";
 
 import { DEFAULT_SEARCH_PARAMS_OPTIONS } from "@/config/params.config";
-import { parseAsBoolean, parseAsString, useQueryStates } from "nuqs";
+import {
+  parseAsBoolean,
+  parseAsInteger,
+  parseAsString,
+  useQueryStates,
+} from "nuqs";
 import { useDebouncedCallback } from "use-debounce";
 import SearchInput from "../../_components/SearchInput";
 import CheckboxFavorite from "./CheckboxFavorite";
@@ -15,6 +20,7 @@ export default function ExercisesFilters() {
       query: parseAsString.withDefault(""),
       selectedMuscle: parseAsString.withDefault(""),
       showFavorites: parseAsBoolean.withDefault(false),
+      page: parseAsInteger.withDefault(1),
     },
     options
   );
@@ -34,7 +40,11 @@ export default function ExercisesFilters() {
         defaultValue={query}
         onChange={(e) => {
           const value = e.target.value;
-          debouncedSetExercisesFilters((prev) => ({ ...prev, query: value }));
+          debouncedSetExercisesFilters((prev) => ({
+            ...prev,
+            query: value,
+            page: 1,
+          }));
         }}
       />
 
@@ -43,12 +53,17 @@ export default function ExercisesFilters() {
         value={selectedMuscle}
         className="w-full flex-1"
         onValueChange={(value) => {
-          setExercisesFilters((prev) => ({ ...prev, selectedMuscle: value }));
+          setExercisesFilters((prev) => ({
+            ...prev,
+            selectedMuscle: value,
+            page: 1,
+          }));
         }}
         onClear={() =>
           setExercisesFilters((prev) => ({
             ...prev,
             selectedMuscle: "",
+            page: 1,
           }))
         }
       />
@@ -58,7 +73,11 @@ export default function ExercisesFilters() {
         <CheckboxFavorite
           checked={showFavorites}
           onCheckedChange={(value: boolean) => {
-            setExercisesFilters((prev) => ({ ...prev, showFavorites: value }));
+            setExercisesFilters((prev) => ({
+              ...prev,
+              showFavorites: value,
+              page: 1,
+            }));
           }}
         />
       </div>
