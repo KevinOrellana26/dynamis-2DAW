@@ -16,7 +16,7 @@ export type GetExercisesOptionsT = {
   userId?: string;
 };
 
-export type ExerciseWithFavoriteT = Prisma.ExerciseGetPayload<{
+export type ExerciseWithFavoriteT = Prisma.exerciseGetPayload<{
   include: { Favorite: true };
 }>;
 
@@ -42,7 +42,7 @@ export const getExercises = async (
             ? {
                 Favorite: {
                   some: {
-                    user_id: userId, // Filtra por el userId en la tabla de favoritos
+                    userId: userId, // Filtra por el userId en la tabla de favoritos
                   },
                 },
               }
@@ -85,7 +85,7 @@ export const getTotalItems = async (
             ? {
                 Favorite: {
                   some: {
-                    user_id: userId,
+                    userId: userId,
                   },
                 },
               }
@@ -115,8 +115,8 @@ export const addExerciseToFavorites = async (
   try {
     const favorite = await prisma.favorite.create({
       data: {
-        user_id: userId,
-        exercise_id: exerciseId,
+        userId: userId,
+        exerciseId: exerciseId,
       },
     });
 
@@ -140,8 +140,8 @@ export const removeExerciseFromFavorites = async (
   try {
     const favorite = await prisma.favorite.deleteMany({
       where: {
-        user_id: userId,
-        exercise_id: exerciseId,
+        userId: userId,
+        exerciseId: exerciseId,
       },
     });
 

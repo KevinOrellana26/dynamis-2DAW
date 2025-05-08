@@ -23,6 +23,9 @@ const options = [
   { value: "espalda", label: "Espalda" },
   { value: "abdomen", label: "Abdomen" },
   { value: "hombro", label: "Hombro" },
+  { value: "bíceps", label: "Bíceps" },
+  { value: "tríceps", label: "Tríceps" },
+  { value: "pantorrilla", label: "Pantorrilla" },
 ];
 
 export default function SelectMuscle({

@@ -134,16 +134,16 @@ exports.Prisma.UserScalarFieldEnum = {
 
 exports.Prisma.ProgressScalarFieldEnum = {
   id: 'id',
-  user_id: 'user_id',
-  exercise_id: 'exercise_id',
+  userId: 'userId',
+  exerciseId: 'exerciseId',
   date: 'date',
-  weight_used: 'weight_used',
+  weightUsed: 'weightUsed',
   repetitions: 'repetitions'
 };
 
 exports.Prisma.RoutineScalarFieldEnum = {
   id: 'id',
-  user_id: 'user_id',
+  userId: 'userId',
   name: 'name',
   createdAt: 'createdAt',
   description: 'description',
@@ -153,21 +153,24 @@ exports.Prisma.RoutineScalarFieldEnum = {
 
 exports.Prisma.FavoriteScalarFieldEnum = {
   id: 'id',
-  user_id: 'user_id',
-  exercise_id: 'exercise_id'
+  userId: 'userId',
+  exerciseId: 'exerciseId'
 };
 
 exports.Prisma.ExerciseScalarFieldEnum = {
   id: 'id',
   name: 'name',
   muscle: 'muscle',
-  video_img_url: 'video_img_url'
+  videoImgUrl: 'videoImgUrl',
+  description: 'description',
+  executionSteps: 'executionSteps',
+  tips: 'tips'
 };
 
-exports.Prisma.Exercise_routineScalarFieldEnum = {
+exports.Prisma.ExerciseRoutineScalarFieldEnum = {
   id: 'id',
-  routine_id: 'routine_id',
-  exercise_id: 'exercise_id',
+  routineId: 'routineId',
+  exerciseId: 'exerciseId',
   series: 'series',
   repetitions: 'repetitions'
 };
@@ -193,12 +196,12 @@ exports.Rol = exports.$Enums.Rol = {
 };
 
 exports.Prisma.ModelName = {
-  User: 'User',
-  Progress: 'Progress',
-  Routine: 'Routine',
-  Favorite: 'Favorite',
-  Exercise: 'Exercise',
-  Exercise_routine: 'Exercise_routine'
+  user: 'user',
+  progress: 'progress',
+  routine: 'routine',
+  favorite: 'favorite',
+  exercise: 'exercise',
+  exerciseRoutine: 'exerciseRoutine'
 };
 
 /**

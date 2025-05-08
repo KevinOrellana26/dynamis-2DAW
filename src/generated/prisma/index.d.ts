@@ -14,35 +14,35 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model User
+ * Model user
  * 
  */
-export type User = $Result.DefaultSelection<Prisma.$UserPayload>
+export type user = $Result.DefaultSelection<Prisma.$userPayload>
 /**
- * Model Progress
+ * Model progress
  * 
  */
-export type Progress = $Result.DefaultSelection<Prisma.$ProgressPayload>
+export type progress = $Result.DefaultSelection<Prisma.$progressPayload>
 /**
- * Model Routine
+ * Model routine
  * 
  */
-export type Routine = $Result.DefaultSelection<Prisma.$RoutinePayload>
+export type routine = $Result.DefaultSelection<Prisma.$routinePayload>
 /**
- * Model Favorite
+ * Model favorite
  * 
  */
-export type Favorite = $Result.DefaultSelection<Prisma.$FavoritePayload>
+export type favorite = $Result.DefaultSelection<Prisma.$favoritePayload>
 /**
- * Model Exercise
+ * Model exercise
  * 
  */
-export type Exercise = $Result.DefaultSelection<Prisma.$ExercisePayload>
+export type exercise = $Result.DefaultSelection<Prisma.$exercisePayload>
 /**
- * Model Exercise_routine
+ * Model exerciseRoutine
  * 
  */
-export type Exercise_routine = $Result.DefaultSelection<Prisma.$Exercise_routinePayload>
+export type exerciseRoutine = $Result.DefaultSelection<Prisma.$exerciseRoutinePayload>
 
 /**
  * Enums
@@ -188,64 +188,64 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.user`: Exposes CRUD operations for the **User** model.
+   * `prisma.user`: Exposes CRUD operations for the **user** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Users
     * const users = await prisma.user.findMany()
     * ```
     */
-  get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
+  get user(): Prisma.userDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.progress`: Exposes CRUD operations for the **Progress** model.
+   * `prisma.progress`: Exposes CRUD operations for the **progress** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Progresses
     * const progresses = await prisma.progress.findMany()
     * ```
     */
-  get progress(): Prisma.ProgressDelegate<ExtArgs, ClientOptions>;
+  get progress(): Prisma.progressDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.routine`: Exposes CRUD operations for the **Routine** model.
+   * `prisma.routine`: Exposes CRUD operations for the **routine** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Routines
     * const routines = await prisma.routine.findMany()
     * ```
     */
-  get routine(): Prisma.RoutineDelegate<ExtArgs, ClientOptions>;
+  get routine(): Prisma.routineDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.favorite`: Exposes CRUD operations for the **Favorite** model.
+   * `prisma.favorite`: Exposes CRUD operations for the **favorite** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Favorites
     * const favorites = await prisma.favorite.findMany()
     * ```
     */
-  get favorite(): Prisma.FavoriteDelegate<ExtArgs, ClientOptions>;
+  get favorite(): Prisma.favoriteDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.exercise`: Exposes CRUD operations for the **Exercise** model.
+   * `prisma.exercise`: Exposes CRUD operations for the **exercise** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Exercises
     * const exercises = await prisma.exercise.findMany()
     * ```
     */
-  get exercise(): Prisma.ExerciseDelegate<ExtArgs, ClientOptions>;
+  get exercise(): Prisma.exerciseDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.exercise_routine`: Exposes CRUD operations for the **Exercise_routine** model.
+   * `prisma.exerciseRoutine`: Exposes CRUD operations for the **exerciseRoutine** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Exercise_routines
-    * const exercise_routines = await prisma.exercise_routine.findMany()
+    * // Fetch zero or more ExerciseRoutines
+    * const exerciseRoutines = await prisma.exerciseRoutine.findMany()
     * ```
     */
-  get exercise_routine(): Prisma.Exercise_routineDelegate<ExtArgs, ClientOptions>;
+  get exerciseRoutine(): Prisma.exerciseRoutineDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -686,12 +686,12 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    User: 'User',
-    Progress: 'Progress',
-    Routine: 'Routine',
-    Favorite: 'Favorite',
-    Exercise: 'Exercise',
-    Exercise_routine: 'Exercise_routine'
+    user: 'user',
+    progress: 'progress',
+    routine: 'routine',
+    favorite: 'favorite',
+    exercise: 'exercise',
+    exerciseRoutine: 'exerciseRoutine'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -710,451 +710,451 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "progress" | "routine" | "favorite" | "exercise" | "exercise_routine"
+      modelProps: "user" | "progress" | "routine" | "favorite" | "exercise" | "exerciseRoutine"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      User: {
-        payload: Prisma.$UserPayload<ExtArgs>
-        fields: Prisma.UserFieldRefs
+      user: {
+        payload: Prisma.$userPayload<ExtArgs>
+        fields: Prisma.userFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.UserFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
+            args: Prisma.userFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.UserFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           findFirst: {
-            args: Prisma.UserFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
+            args: Prisma.userFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.UserFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           findMany: {
-            args: Prisma.UserFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
+            args: Prisma.userFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>[]
           }
           create: {
-            args: Prisma.UserCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           createMany: {
-            args: Prisma.UserCreateManyArgs<ExtArgs>
+            args: Prisma.userCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.UserCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
+            args: Prisma.userCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>[]
           }
           delete: {
-            args: Prisma.UserDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           update: {
-            args: Prisma.UserUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           deleteMany: {
-            args: Prisma.UserDeleteManyArgs<ExtArgs>
+            args: Prisma.userDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.UserUpdateManyArgs<ExtArgs>
+            args: Prisma.userUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.UserUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
+            args: Prisma.userUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>[]
           }
           upsert: {
-            args: Prisma.UserUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
+            args: Prisma.userUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$userPayload>
           }
           aggregate: {
             args: Prisma.UserAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateUser>
           }
           groupBy: {
-            args: Prisma.UserGroupByArgs<ExtArgs>
+            args: Prisma.userGroupByArgs<ExtArgs>
             result: $Utils.Optional<UserGroupByOutputType>[]
           }
           count: {
-            args: Prisma.UserCountArgs<ExtArgs>
+            args: Prisma.userCountArgs<ExtArgs>
             result: $Utils.Optional<UserCountAggregateOutputType> | number
           }
         }
       }
-      Progress: {
-        payload: Prisma.$ProgressPayload<ExtArgs>
-        fields: Prisma.ProgressFieldRefs
+      progress: {
+        payload: Prisma.$progressPayload<ExtArgs>
+        fields: Prisma.progressFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ProgressFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload> | null
+            args: Prisma.progressFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ProgressFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>
+            args: Prisma.progressFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>
           }
           findFirst: {
-            args: Prisma.ProgressFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload> | null
+            args: Prisma.progressFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ProgressFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>
+            args: Prisma.progressFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>
           }
           findMany: {
-            args: Prisma.ProgressFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>[]
+            args: Prisma.progressFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>[]
           }
           create: {
-            args: Prisma.ProgressCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>
+            args: Prisma.progressCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>
           }
           createMany: {
-            args: Prisma.ProgressCreateManyArgs<ExtArgs>
+            args: Prisma.progressCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.ProgressCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>[]
+            args: Prisma.progressCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>[]
           }
           delete: {
-            args: Prisma.ProgressDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>
+            args: Prisma.progressDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>
           }
           update: {
-            args: Prisma.ProgressUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>
+            args: Prisma.progressUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>
           }
           deleteMany: {
-            args: Prisma.ProgressDeleteManyArgs<ExtArgs>
+            args: Prisma.progressDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ProgressUpdateManyArgs<ExtArgs>
+            args: Prisma.progressUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.ProgressUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>[]
+            args: Prisma.progressUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>[]
           }
           upsert: {
-            args: Prisma.ProgressUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ProgressPayload>
+            args: Prisma.progressUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$progressPayload>
           }
           aggregate: {
             args: Prisma.ProgressAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateProgress>
           }
           groupBy: {
-            args: Prisma.ProgressGroupByArgs<ExtArgs>
+            args: Prisma.progressGroupByArgs<ExtArgs>
             result: $Utils.Optional<ProgressGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ProgressCountArgs<ExtArgs>
+            args: Prisma.progressCountArgs<ExtArgs>
             result: $Utils.Optional<ProgressCountAggregateOutputType> | number
           }
         }
       }
-      Routine: {
-        payload: Prisma.$RoutinePayload<ExtArgs>
-        fields: Prisma.RoutineFieldRefs
+      routine: {
+        payload: Prisma.$routinePayload<ExtArgs>
+        fields: Prisma.routineFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.RoutineFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload> | null
+            args: Prisma.routineFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.RoutineFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>
+            args: Prisma.routineFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>
           }
           findFirst: {
-            args: Prisma.RoutineFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload> | null
+            args: Prisma.routineFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.RoutineFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>
+            args: Prisma.routineFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>
           }
           findMany: {
-            args: Prisma.RoutineFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>[]
+            args: Prisma.routineFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>[]
           }
           create: {
-            args: Prisma.RoutineCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>
+            args: Prisma.routineCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>
           }
           createMany: {
-            args: Prisma.RoutineCreateManyArgs<ExtArgs>
+            args: Prisma.routineCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.RoutineCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>[]
+            args: Prisma.routineCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>[]
           }
           delete: {
-            args: Prisma.RoutineDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>
+            args: Prisma.routineDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>
           }
           update: {
-            args: Prisma.RoutineUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>
+            args: Prisma.routineUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>
           }
           deleteMany: {
-            args: Prisma.RoutineDeleteManyArgs<ExtArgs>
+            args: Prisma.routineDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.RoutineUpdateManyArgs<ExtArgs>
+            args: Prisma.routineUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.RoutineUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>[]
+            args: Prisma.routineUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>[]
           }
           upsert: {
-            args: Prisma.RoutineUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RoutinePayload>
+            args: Prisma.routineUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$routinePayload>
           }
           aggregate: {
             args: Prisma.RoutineAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateRoutine>
           }
           groupBy: {
-            args: Prisma.RoutineGroupByArgs<ExtArgs>
+            args: Prisma.routineGroupByArgs<ExtArgs>
             result: $Utils.Optional<RoutineGroupByOutputType>[]
           }
           count: {
-            args: Prisma.RoutineCountArgs<ExtArgs>
+            args: Prisma.routineCountArgs<ExtArgs>
             result: $Utils.Optional<RoutineCountAggregateOutputType> | number
           }
         }
       }
-      Favorite: {
-        payload: Prisma.$FavoritePayload<ExtArgs>
-        fields: Prisma.FavoriteFieldRefs
+      favorite: {
+        payload: Prisma.$favoritePayload<ExtArgs>
+        fields: Prisma.favoriteFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.FavoriteFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload> | null
+            args: Prisma.favoriteFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.FavoriteFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>
+            args: Prisma.favoriteFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>
           }
           findFirst: {
-            args: Prisma.FavoriteFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload> | null
+            args: Prisma.favoriteFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.FavoriteFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>
+            args: Prisma.favoriteFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>
           }
           findMany: {
-            args: Prisma.FavoriteFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>[]
+            args: Prisma.favoriteFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>[]
           }
           create: {
-            args: Prisma.FavoriteCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>
+            args: Prisma.favoriteCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>
           }
           createMany: {
-            args: Prisma.FavoriteCreateManyArgs<ExtArgs>
+            args: Prisma.favoriteCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.FavoriteCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>[]
+            args: Prisma.favoriteCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>[]
           }
           delete: {
-            args: Prisma.FavoriteDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>
+            args: Prisma.favoriteDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>
           }
           update: {
-            args: Prisma.FavoriteUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>
+            args: Prisma.favoriteUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>
           }
           deleteMany: {
-            args: Prisma.FavoriteDeleteManyArgs<ExtArgs>
+            args: Prisma.favoriteDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.FavoriteUpdateManyArgs<ExtArgs>
+            args: Prisma.favoriteUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.FavoriteUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>[]
+            args: Prisma.favoriteUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>[]
           }
           upsert: {
-            args: Prisma.FavoriteUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$FavoritePayload>
+            args: Prisma.favoriteUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$favoritePayload>
           }
           aggregate: {
             args: Prisma.FavoriteAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateFavorite>
           }
           groupBy: {
-            args: Prisma.FavoriteGroupByArgs<ExtArgs>
+            args: Prisma.favoriteGroupByArgs<ExtArgs>
             result: $Utils.Optional<FavoriteGroupByOutputType>[]
           }
           count: {
-            args: Prisma.FavoriteCountArgs<ExtArgs>
+            args: Prisma.favoriteCountArgs<ExtArgs>
             result: $Utils.Optional<FavoriteCountAggregateOutputType> | number
           }
         }
       }
-      Exercise: {
-        payload: Prisma.$ExercisePayload<ExtArgs>
-        fields: Prisma.ExerciseFieldRefs
+      exercise: {
+        payload: Prisma.$exercisePayload<ExtArgs>
+        fields: Prisma.exerciseFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ExerciseFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload> | null
+            args: Prisma.exerciseFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ExerciseFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>
+            args: Prisma.exerciseFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>
           }
           findFirst: {
-            args: Prisma.ExerciseFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload> | null
+            args: Prisma.exerciseFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ExerciseFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>
+            args: Prisma.exerciseFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>
           }
           findMany: {
-            args: Prisma.ExerciseFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>[]
+            args: Prisma.exerciseFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>[]
           }
           create: {
-            args: Prisma.ExerciseCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>
+            args: Prisma.exerciseCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>
           }
           createMany: {
-            args: Prisma.ExerciseCreateManyArgs<ExtArgs>
+            args: Prisma.exerciseCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.ExerciseCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>[]
+            args: Prisma.exerciseCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>[]
           }
           delete: {
-            args: Prisma.ExerciseDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>
+            args: Prisma.exerciseDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>
           }
           update: {
-            args: Prisma.ExerciseUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>
+            args: Prisma.exerciseUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>
           }
           deleteMany: {
-            args: Prisma.ExerciseDeleteManyArgs<ExtArgs>
+            args: Prisma.exerciseDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ExerciseUpdateManyArgs<ExtArgs>
+            args: Prisma.exerciseUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.ExerciseUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>[]
+            args: Prisma.exerciseUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>[]
           }
           upsert: {
-            args: Prisma.ExerciseUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExercisePayload>
+            args: Prisma.exerciseUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exercisePayload>
           }
           aggregate: {
             args: Prisma.ExerciseAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateExercise>
           }
           groupBy: {
-            args: Prisma.ExerciseGroupByArgs<ExtArgs>
+            args: Prisma.exerciseGroupByArgs<ExtArgs>
             result: $Utils.Optional<ExerciseGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ExerciseCountArgs<ExtArgs>
+            args: Prisma.exerciseCountArgs<ExtArgs>
             result: $Utils.Optional<ExerciseCountAggregateOutputType> | number
           }
         }
       }
-      Exercise_routine: {
-        payload: Prisma.$Exercise_routinePayload<ExtArgs>
-        fields: Prisma.Exercise_routineFieldRefs
+      exerciseRoutine: {
+        payload: Prisma.$exerciseRoutinePayload<ExtArgs>
+        fields: Prisma.exerciseRoutineFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Exercise_routineFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload> | null
+            args: Prisma.exerciseRoutineFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Exercise_routineFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>
+            args: Prisma.exerciseRoutineFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>
           }
           findFirst: {
-            args: Prisma.Exercise_routineFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload> | null
+            args: Prisma.exerciseRoutineFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Exercise_routineFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>
+            args: Prisma.exerciseRoutineFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>
           }
           findMany: {
-            args: Prisma.Exercise_routineFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>[]
+            args: Prisma.exerciseRoutineFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>[]
           }
           create: {
-            args: Prisma.Exercise_routineCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>
+            args: Prisma.exerciseRoutineCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>
           }
           createMany: {
-            args: Prisma.Exercise_routineCreateManyArgs<ExtArgs>
+            args: Prisma.exerciseRoutineCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.Exercise_routineCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>[]
+            args: Prisma.exerciseRoutineCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>[]
           }
           delete: {
-            args: Prisma.Exercise_routineDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>
+            args: Prisma.exerciseRoutineDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>
           }
           update: {
-            args: Prisma.Exercise_routineUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>
+            args: Prisma.exerciseRoutineUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>
           }
           deleteMany: {
-            args: Prisma.Exercise_routineDeleteManyArgs<ExtArgs>
+            args: Prisma.exerciseRoutineDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.Exercise_routineUpdateManyArgs<ExtArgs>
+            args: Prisma.exerciseRoutineUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.Exercise_routineUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>[]
+            args: Prisma.exerciseRoutineUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>[]
           }
           upsert: {
-            args: Prisma.Exercise_routineUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Exercise_routinePayload>
+            args: Prisma.exerciseRoutineUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$exerciseRoutinePayload>
           }
           aggregate: {
-            args: Prisma.Exercise_routineAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateExercise_routine>
+            args: Prisma.ExerciseRoutineAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateExerciseRoutine>
           }
           groupBy: {
-            args: Prisma.Exercise_routineGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Exercise_routineGroupByOutputType>[]
+            args: Prisma.exerciseRoutineGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ExerciseRoutineGroupByOutputType>[]
           }
           count: {
-            args: Prisma.Exercise_routineCountArgs<ExtArgs>
-            result: $Utils.Optional<Exercise_routineCountAggregateOutputType> | number
+            args: Prisma.exerciseRoutineCountArgs<ExtArgs>
+            result: $Utils.Optional<ExerciseRoutineCountAggregateOutputType> | number
           }
         }
       }
@@ -1242,12 +1242,12 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    user?: UserOmit
-    progress?: ProgressOmit
-    routine?: RoutineOmit
-    favorite?: FavoriteOmit
-    exercise?: ExerciseOmit
-    exercise_routine?: Exercise_routineOmit
+    user?: userOmit
+    progress?: progressOmit
+    routine?: routineOmit
+    favorite?: favoriteOmit
+    exercise?: exerciseOmit
+    exerciseRoutine?: exerciseRoutineOmit
   }
 
   /* Types for Logging */
@@ -1342,15 +1342,15 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    Progress: number
-    Routine: number
-    Favorite: number
+    progress: number
+    routine: number
+    favorite: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Progress?: boolean | UserCountOutputTypeCountProgressArgs
-    Routine?: boolean | UserCountOutputTypeCountRoutineArgs
-    Favorite?: boolean | UserCountOutputTypeCountFavoriteArgs
+    progress?: boolean | UserCountOutputTypeCountProgressArgs
+    routine?: boolean | UserCountOutputTypeCountRoutineArgs
+    favorite?: boolean | UserCountOutputTypeCountFavoriteArgs
   }
 
   // Custom InputTypes
@@ -1368,21 +1368,21 @@ export namespace Prisma {
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountProgressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProgressWhereInput
+    where?: progressWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountRoutineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RoutineWhereInput
+    where?: routineWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountFavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
   }
 
 
@@ -1391,11 +1391,11 @@ export namespace Prisma {
    */
 
   export type RoutineCountOutputType = {
-    Exercise_routine: number
+    exerciseRoutine: number
   }
 
   export type RoutineCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Exercise_routine?: boolean | RoutineCountOutputTypeCountExercise_routineArgs
+    exerciseRoutine?: boolean | RoutineCountOutputTypeCountExerciseRoutineArgs
   }
 
   // Custom InputTypes
@@ -1412,8 +1412,8 @@ export namespace Prisma {
   /**
    * RoutineCountOutputType without action
    */
-  export type RoutineCountOutputTypeCountExercise_routineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Exercise_routineWhereInput
+  export type RoutineCountOutputTypeCountExerciseRoutineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: exerciseRoutineWhereInput
   }
 
 
@@ -1424,13 +1424,13 @@ export namespace Prisma {
   export type ExerciseCountOutputType = {
     Progress: number
     Favorite: number
-    Exercise_routine: number
+    exerciseRoutine: number
   }
 
   export type ExerciseCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Progress?: boolean | ExerciseCountOutputTypeCountProgressArgs
     Favorite?: boolean | ExerciseCountOutputTypeCountFavoriteArgs
-    Exercise_routine?: boolean | ExerciseCountOutputTypeCountExercise_routineArgs
+    exerciseRoutine?: boolean | ExerciseCountOutputTypeCountExerciseRoutineArgs
   }
 
   // Custom InputTypes
@@ -1448,21 +1448,21 @@ export namespace Prisma {
    * ExerciseCountOutputType without action
    */
   export type ExerciseCountOutputTypeCountProgressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProgressWhereInput
+    where?: progressWhereInput
   }
 
   /**
    * ExerciseCountOutputType without action
    */
   export type ExerciseCountOutputTypeCountFavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
   }
 
   /**
    * ExerciseCountOutputType without action
    */
-  export type ExerciseCountOutputTypeCountExercise_routineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Exercise_routineWhereInput
+  export type ExerciseCountOutputTypeCountExerciseRoutineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: exerciseRoutineWhereInput
   }
 
 
@@ -1471,7 +1471,7 @@ export namespace Prisma {
    */
 
   /**
-   * Model User
+   * Model user
    */
 
   export type AggregateUser = {
@@ -1557,37 +1557,37 @@ export namespace Prisma {
 
   export type UserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which User to aggregate.
+     * Filter which user to aggregate.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Users
+     * Count returned users
     **/
     _count?: true | UserCountAggregateInputType
     /**
@@ -1615,11 +1615,11 @@ export namespace Prisma {
 
 
 
-  export type UserGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithAggregationInput | UserOrderByWithAggregationInput[]
+  export type userGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: userWhereInput
+    orderBy?: userOrderByWithAggregationInput | userOrderByWithAggregationInput[]
     by: UserScalarFieldEnum[] | UserScalarFieldEnum
-    having?: UserScalarWhereWithAggregatesInput
+    having?: userScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
@@ -1629,7 +1629,7 @@ export namespace Prisma {
 
   export type UserGroupByOutputType = {
     id: string
-    name: string | null
+    name: string
     email: string
     emailVerified: Date | null
     password: string
@@ -1642,7 +1642,7 @@ export namespace Prisma {
     _max: UserMaxAggregateOutputType | null
   }
 
-  type GetUserGroupByPayload<T extends UserGroupByArgs> = Prisma.PrismaPromise<
+  type GetUserGroupByPayload<T extends userGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<UserGroupByOutputType, T['by']> &
         {
@@ -1656,7 +1656,7 @@ export namespace Prisma {
     >
 
 
-  export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type userSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     email?: boolean
@@ -1666,13 +1666,13 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     role?: boolean
-    Progress?: boolean | User$ProgressArgs<ExtArgs>
-    Routine?: boolean | User$RoutineArgs<ExtArgs>
-    Favorite?: boolean | User$FavoriteArgs<ExtArgs>
+    progress?: boolean | user$progressArgs<ExtArgs>
+    routine?: boolean | user$routineArgs<ExtArgs>
+    favorite?: boolean | user$favoriteArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
-  export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type userSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     email?: boolean
@@ -1684,7 +1684,7 @@ export namespace Prisma {
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
-  export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type userSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     email?: boolean
@@ -1696,7 +1696,7 @@ export namespace Prisma {
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
-  export type UserSelectScalar = {
+  export type userSelectScalar = {
     id?: boolean
     name?: boolean
     email?: boolean
@@ -1708,26 +1708,26 @@ export namespace Prisma {
     role?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "password" | "avatar" | "createdAt" | "updatedAt" | "role", ExtArgs["result"]["user"]>
-  export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Progress?: boolean | User$ProgressArgs<ExtArgs>
-    Routine?: boolean | User$RoutineArgs<ExtArgs>
-    Favorite?: boolean | User$FavoriteArgs<ExtArgs>
+  export type userOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "password" | "avatar" | "createdAt" | "updatedAt" | "role", ExtArgs["result"]["user"]>
+  export type userInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    progress?: boolean | user$progressArgs<ExtArgs>
+    routine?: boolean | user$routineArgs<ExtArgs>
+    favorite?: boolean | user$favoriteArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type UserIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type userIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type userIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "User"
+  export type $userPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "user"
     objects: {
-      Progress: Prisma.$ProgressPayload<ExtArgs>[]
-      Routine: Prisma.$RoutinePayload<ExtArgs>[]
-      Favorite: Prisma.$FavoritePayload<ExtArgs>[]
+      progress: Prisma.$progressPayload<ExtArgs>[]
+      routine: Prisma.$routinePayload<ExtArgs>[]
+      favorite: Prisma.$favoritePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      name: string | null
+      name: string
       email: string
       emailVerified: Date | null
       password: string
@@ -1739,18 +1739,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type UserGetPayload<S extends boolean | null | undefined | UserDefaultArgs> = $Result.GetResult<Prisma.$UserPayload, S>
+  type userGetPayload<S extends boolean | null | undefined | userDefaultArgs> = $Result.GetResult<Prisma.$userPayload, S>
 
-  type UserCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UserFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type userCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<userFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: UserCountAggregateInputType | true
     }
 
-  export interface UserDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['User'], meta: { name: 'User' } }
+  export interface userDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['user'], meta: { name: 'user' } }
     /**
      * Find zero or one User that matches the filter.
-     * @param {UserFindUniqueArgs} args - Arguments to find a User
+     * @param {userFindUniqueArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findUnique({
@@ -1759,12 +1759,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends UserFindUniqueArgs>(args: SelectSubset<T, UserFindUniqueArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends userFindUniqueArgs>(args: SelectSubset<T, userFindUniqueArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one User that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {UserFindUniqueOrThrowArgs} args - Arguments to find a User
+     * @param {userFindUniqueOrThrowArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findUniqueOrThrow({
@@ -1773,13 +1773,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends UserFindUniqueOrThrowArgs>(args: SelectSubset<T, UserFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends userFindUniqueOrThrowArgs>(args: SelectSubset<T, userFindUniqueOrThrowArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first User that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstArgs} args - Arguments to find a User
+     * @param {userFindFirstArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findFirst({
@@ -1788,14 +1788,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends UserFindFirstArgs>(args?: SelectSubset<T, UserFindFirstArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends userFindFirstArgs>(args?: SelectSubset<T, userFindFirstArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first User that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstOrThrowArgs} args - Arguments to find a User
+     * @param {userFindFirstOrThrowArgs} args - Arguments to find a User
      * @example
      * // Get one User
      * const user = await prisma.user.findFirstOrThrow({
@@ -1804,13 +1804,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends UserFindFirstOrThrowArgs>(args?: SelectSubset<T, UserFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends userFindFirstOrThrowArgs>(args?: SelectSubset<T, userFindFirstOrThrowArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Users that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {userFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Users
      * const users = await prisma.user.findMany()
@@ -1822,11 +1822,11 @@ export namespace Prisma {
      * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends UserFindManyArgs>(args?: SelectSubset<T, UserFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends userFindManyArgs>(args?: SelectSubset<T, userFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a User.
-     * @param {UserCreateArgs} args - Arguments to create a User.
+     * @param {userCreateArgs} args - Arguments to create a User.
      * @example
      * // Create one User
      * const User = await prisma.user.create({
@@ -1836,11 +1836,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends UserCreateArgs>(args: SelectSubset<T, UserCreateArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends userCreateArgs>(args: SelectSubset<T, userCreateArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Users.
-     * @param {UserCreateManyArgs} args - Arguments to create many Users.
+     * @param {userCreateManyArgs} args - Arguments to create many Users.
      * @example
      * // Create many Users
      * const user = await prisma.user.createMany({
@@ -1850,11 +1850,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends UserCreateManyArgs>(args?: SelectSubset<T, UserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends userCreateManyArgs>(args?: SelectSubset<T, userCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Users and returns the data saved in the database.
-     * @param {UserCreateManyAndReturnArgs} args - Arguments to create many Users.
+     * @param {userCreateManyAndReturnArgs} args - Arguments to create many Users.
      * @example
      * // Create many Users
      * const user = await prisma.user.createManyAndReturn({
@@ -1874,11 +1874,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends UserCreateManyAndReturnArgs>(args?: SelectSubset<T, UserCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends userCreateManyAndReturnArgs>(args?: SelectSubset<T, userCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Delete a User.
-     * @param {UserDeleteArgs} args - Arguments to delete one User.
+     * @param {userDeleteArgs} args - Arguments to delete one User.
      * @example
      * // Delete one User
      * const User = await prisma.user.delete({
@@ -1888,11 +1888,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends UserDeleteArgs>(args: SelectSubset<T, UserDeleteArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends userDeleteArgs>(args: SelectSubset<T, userDeleteArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one User.
-     * @param {UserUpdateArgs} args - Arguments to update one User.
+     * @param {userUpdateArgs} args - Arguments to update one User.
      * @example
      * // Update one User
      * const user = await prisma.user.update({
@@ -1905,11 +1905,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends UserUpdateArgs>(args: SelectSubset<T, UserUpdateArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends userUpdateArgs>(args: SelectSubset<T, userUpdateArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Users.
-     * @param {UserDeleteManyArgs} args - Arguments to filter Users to delete.
+     * @param {userDeleteManyArgs} args - Arguments to filter Users to delete.
      * @example
      * // Delete a few Users
      * const { count } = await prisma.user.deleteMany({
@@ -1919,13 +1919,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends UserDeleteManyArgs>(args?: SelectSubset<T, UserDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends userDeleteManyArgs>(args?: SelectSubset<T, userDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Users.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {userUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Users
      * const user = await prisma.user.updateMany({
@@ -1938,11 +1938,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends UserUpdateManyArgs>(args: SelectSubset<T, UserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends userUpdateManyArgs>(args: SelectSubset<T, userUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Users and returns the data updated in the database.
-     * @param {UserUpdateManyAndReturnArgs} args - Arguments to update many Users.
+     * @param {userUpdateManyAndReturnArgs} args - Arguments to update many Users.
      * @example
      * // Update many Users
      * const user = await prisma.user.updateManyAndReturn({
@@ -1968,11 +1968,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends UserUpdateManyAndReturnArgs>(args: SelectSubset<T, UserUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends userUpdateManyAndReturnArgs>(args: SelectSubset<T, userUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one User.
-     * @param {UserUpsertArgs} args - Arguments to update or create a User.
+     * @param {userUpsertArgs} args - Arguments to update or create a User.
      * @example
      * // Update or create a User
      * const user = await prisma.user.upsert({
@@ -1987,14 +1987,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends UserUpsertArgs>(args: SelectSubset<T, UserUpsertArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends userUpsertArgs>(args: SelectSubset<T, userUpsertArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Users.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserCountArgs} args - Arguments to filter Users to count.
+     * @param {userCountArgs} args - Arguments to filter Users to count.
      * @example
      * // Count the number of Users
      * const count = await prisma.user.count({
@@ -2003,8 +2003,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends UserCountArgs>(
-      args?: Subset<T, UserCountArgs>,
+    count<T extends userCountArgs>(
+      args?: Subset<T, userCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -2043,7 +2043,7 @@ export namespace Prisma {
      * Group by User.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserGroupByArgs} args - Group by arguments.
+     * @param {userGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2058,14 +2058,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends UserGroupByArgs,
+      T extends userGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UserGroupByArgs['orderBy'] }
-        : { orderBy?: UserGroupByArgs['orderBy'] },
+        ? { orderBy: userGroupByArgs['orderBy'] }
+        : { orderBy?: userGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2114,24 +2114,24 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, UserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, userGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the User model
+   * Fields of the user model
    */
-  readonly fields: UserFieldRefs;
+  readonly fields: userFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for User.
+   * The delegate class that acts as a "Promise-like" for user.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__userClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Progress<T extends User$ProgressArgs<ExtArgs> = {}>(args?: Subset<T, User$ProgressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Routine<T extends User$RoutineArgs<ExtArgs> = {}>(args?: Subset<T, User$RoutineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Favorite<T extends User$FavoriteArgs<ExtArgs> = {}>(args?: Subset<T, User$FavoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    progress<T extends user$progressArgs<ExtArgs> = {}>(args?: Subset<T, user$progressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    routine<T extends user$routineArgs<ExtArgs> = {}>(args?: Subset<T, user$routineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favorite<T extends user$favoriteArgs<ExtArgs> = {}>(args?: Subset<T, user$favoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2158,498 +2158,498 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the User model
+   * Fields of the user model
    */
-  interface UserFieldRefs {
-    readonly id: FieldRef<"User", 'String'>
-    readonly name: FieldRef<"User", 'String'>
-    readonly email: FieldRef<"User", 'String'>
-    readonly emailVerified: FieldRef<"User", 'DateTime'>
-    readonly password: FieldRef<"User", 'String'>
-    readonly avatar: FieldRef<"User", 'String'>
-    readonly createdAt: FieldRef<"User", 'DateTime'>
-    readonly updatedAt: FieldRef<"User", 'DateTime'>
-    readonly role: FieldRef<"User", 'Rol'>
+  interface userFieldRefs {
+    readonly id: FieldRef<"user", 'String'>
+    readonly name: FieldRef<"user", 'String'>
+    readonly email: FieldRef<"user", 'String'>
+    readonly emailVerified: FieldRef<"user", 'DateTime'>
+    readonly password: FieldRef<"user", 'String'>
+    readonly avatar: FieldRef<"user", 'String'>
+    readonly createdAt: FieldRef<"user", 'DateTime'>
+    readonly updatedAt: FieldRef<"user", 'DateTime'>
+    readonly role: FieldRef<"user", 'Rol'>
   }
     
 
   // Custom InputTypes
   /**
-   * User findUnique
+   * user findUnique
    */
-  export type UserFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User findUniqueOrThrow
+   * user findUniqueOrThrow
    */
-  export type UserFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User findFirst
+   * user findFirst
    */
-  export type UserFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Users.
+     * Sets the position for searching for users.
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Users.
+     * Filter by unique combinations of users.
      */
     distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
-   * User findFirstOrThrow
+   * user findFirstOrThrow
    */
-  export type UserFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * Filter, which User to fetch.
+     * Filter, which user to fetch.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Users.
+     * Sets the position for searching for users.
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Users.
+     * Filter by unique combinations of users.
      */
     distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
-   * User findMany
+   * user findMany
    */
-  export type UserFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * Filter, which Users to fetch.
+     * Filter, which users to fetch.
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Users to fetch.
+     * Determine the order of users to fetch.
      */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Users.
+     * Sets the position for listing users.
      */
-    cursor?: UserWhereUniqueInput
+    cursor?: userWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Users from the position of the cursor.
+     * Take `±n` users from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Users.
+     * Skip the first `n` users.
      */
     skip?: number
     distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
-   * User create
+   * user create
    */
-  export type UserCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * The data needed to create a User.
+     * The data needed to create a user.
      */
-    data: XOR<UserCreateInput, UserUncheckedCreateInput>
+    data: XOR<userCreateInput, userUncheckedCreateInput>
   }
 
   /**
-   * User createMany
+   * user createMany
    */
-  export type UserCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Users.
+     * The data used to create many users.
      */
-    data: UserCreateManyInput | UserCreateManyInput[]
+    data: userCreateManyInput | userCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * User createManyAndReturn
+   * user createManyAndReturn
    */
-  export type UserCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelectCreateManyAndReturn<ExtArgs> | null
+    select?: userSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * The data used to create many Users.
+     * The data used to create many users.
      */
-    data: UserCreateManyInput | UserCreateManyInput[]
+    data: userCreateManyInput | userCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * User update
+   * user update
    */
-  export type UserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * The data needed to update a User.
+     * The data needed to update a user.
      */
-    data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    data: XOR<userUpdateInput, userUncheckedUpdateInput>
     /**
-     * Choose, which User to update.
+     * Choose, which user to update.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User updateMany
+   * user updateMany
    */
-  export type UserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Users.
+     * The data used to update users.
      */
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
+    data: XOR<userUpdateManyMutationInput, userUncheckedUpdateManyInput>
     /**
-     * Filter which Users to update
+     * Filter which users to update
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
-     * Limit how many Users to update.
+     * Limit how many users to update.
      */
     limit?: number
   }
 
   /**
-   * User updateManyAndReturn
+   * user updateManyAndReturn
    */
-  export type UserUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: userSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
-     * The data used to update Users.
+     * The data used to update users.
      */
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
+    data: XOR<userUpdateManyMutationInput, userUncheckedUpdateManyInput>
     /**
-     * Filter which Users to update
+     * Filter which users to update
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
-     * Limit how many Users to update.
+     * Limit how many users to update.
      */
     limit?: number
   }
 
   /**
-   * User upsert
+   * user upsert
    */
-  export type UserUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * The filter to search for the User to update in case it exists.
+     * The filter to search for the user to update in case it exists.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
     /**
-     * In case the User found by the `where` argument doesn't exist, create a new User with this data.
+     * In case the user found by the `where` argument doesn't exist, create a new user with this data.
      */
-    create: XOR<UserCreateInput, UserUncheckedCreateInput>
+    create: XOR<userCreateInput, userUncheckedCreateInput>
     /**
-     * In case the User was found with the provided `where` argument, update it with this data.
+     * In case the user was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    update: XOR<userUpdateInput, userUncheckedUpdateInput>
   }
 
   /**
-   * User delete
+   * user delete
    */
-  export type UserDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
     /**
-     * Filter which User to delete.
+     * Filter which user to delete.
      */
-    where: UserWhereUniqueInput
+    where: userWhereUniqueInput
   }
 
   /**
-   * User deleteMany
+   * user deleteMany
    */
-  export type UserDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Users to delete
+     * Filter which users to delete
      */
-    where?: UserWhereInput
+    where?: userWhereInput
     /**
-     * Limit how many Users to delete.
+     * Limit how many users to delete.
      */
     limit?: number
   }
 
   /**
-   * User.Progress
+   * user.progress
    */
-  export type User$ProgressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type user$progressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
-    where?: ProgressWhereInput
-    orderBy?: ProgressOrderByWithRelationInput | ProgressOrderByWithRelationInput[]
-    cursor?: ProgressWhereUniqueInput
+    include?: progressInclude<ExtArgs> | null
+    where?: progressWhereInput
+    orderBy?: progressOrderByWithRelationInput | progressOrderByWithRelationInput[]
+    cursor?: progressWhereUniqueInput
     take?: number
     skip?: number
     distinct?: ProgressScalarFieldEnum | ProgressScalarFieldEnum[]
   }
 
   /**
-   * User.Routine
+   * user.routine
    */
-  export type User$RoutineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type user$routineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
-    where?: RoutineWhereInput
-    orderBy?: RoutineOrderByWithRelationInput | RoutineOrderByWithRelationInput[]
-    cursor?: RoutineWhereUniqueInput
+    include?: routineInclude<ExtArgs> | null
+    where?: routineWhereInput
+    orderBy?: routineOrderByWithRelationInput | routineOrderByWithRelationInput[]
+    cursor?: routineWhereUniqueInput
     take?: number
     skip?: number
     distinct?: RoutineScalarFieldEnum | RoutineScalarFieldEnum[]
   }
 
   /**
-   * User.Favorite
+   * user.favorite
    */
-  export type User$FavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type user$favoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
-    where?: FavoriteWhereInput
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
-    cursor?: FavoriteWhereUniqueInput
+    include?: favoriteInclude<ExtArgs> | null
+    where?: favoriteWhereInput
+    orderBy?: favoriteOrderByWithRelationInput | favoriteOrderByWithRelationInput[]
+    cursor?: favoriteWhereUniqueInput
     take?: number
     skip?: number
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
   /**
-   * User without action
+   * user without action
    */
-  export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type userDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the user
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: userSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the user
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: userOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
+    include?: userInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Progress
+   * Model progress
    */
 
   export type AggregateProgress = {
@@ -2662,42 +2662,42 @@ export namespace Prisma {
 
   export type ProgressAvgAggregateOutputType = {
     id: number | null
-    exercise_id: number | null
-    weight_used: number | null
+    exerciseId: number | null
+    weightUsed: number | null
     repetitions: number | null
   }
 
   export type ProgressSumAggregateOutputType = {
     id: number | null
-    exercise_id: number | null
-    weight_used: number | null
+    exerciseId: number | null
+    weightUsed: number | null
     repetitions: number | null
   }
 
   export type ProgressMinAggregateOutputType = {
     id: number | null
-    user_id: string | null
-    exercise_id: number | null
+    userId: string | null
+    exerciseId: number | null
     date: Date | null
-    weight_used: number | null
+    weightUsed: number | null
     repetitions: number | null
   }
 
   export type ProgressMaxAggregateOutputType = {
     id: number | null
-    user_id: string | null
-    exercise_id: number | null
+    userId: string | null
+    exerciseId: number | null
     date: Date | null
-    weight_used: number | null
+    weightUsed: number | null
     repetitions: number | null
   }
 
   export type ProgressCountAggregateOutputType = {
     id: number
-    user_id: number
-    exercise_id: number
+    userId: number
+    exerciseId: number
     date: number
-    weight_used: number
+    weightUsed: number
     repetitions: number
     _all: number
   }
@@ -2705,79 +2705,79 @@ export namespace Prisma {
 
   export type ProgressAvgAggregateInputType = {
     id?: true
-    exercise_id?: true
-    weight_used?: true
+    exerciseId?: true
+    weightUsed?: true
     repetitions?: true
   }
 
   export type ProgressSumAggregateInputType = {
     id?: true
-    exercise_id?: true
-    weight_used?: true
+    exerciseId?: true
+    weightUsed?: true
     repetitions?: true
   }
 
   export type ProgressMinAggregateInputType = {
     id?: true
-    user_id?: true
-    exercise_id?: true
+    userId?: true
+    exerciseId?: true
     date?: true
-    weight_used?: true
+    weightUsed?: true
     repetitions?: true
   }
 
   export type ProgressMaxAggregateInputType = {
     id?: true
-    user_id?: true
-    exercise_id?: true
+    userId?: true
+    exerciseId?: true
     date?: true
-    weight_used?: true
+    weightUsed?: true
     repetitions?: true
   }
 
   export type ProgressCountAggregateInputType = {
     id?: true
-    user_id?: true
-    exercise_id?: true
+    userId?: true
+    exerciseId?: true
     date?: true
-    weight_used?: true
+    weightUsed?: true
     repetitions?: true
     _all?: true
   }
 
   export type ProgressAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Progress to aggregate.
+     * Filter which progress to aggregate.
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Progresses to fetch.
+     * Determine the order of progresses to fetch.
      */
-    orderBy?: ProgressOrderByWithRelationInput | ProgressOrderByWithRelationInput[]
+    orderBy?: progressOrderByWithRelationInput | progressOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ProgressWhereUniqueInput
+    cursor?: progressWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Progresses from the position of the cursor.
+     * Take `±n` progresses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Progresses.
+     * Skip the first `n` progresses.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Progresses
+     * Count returned progresses
     **/
     _count?: true | ProgressCountAggregateInputType
     /**
@@ -2817,11 +2817,11 @@ export namespace Prisma {
 
 
 
-  export type ProgressGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProgressWhereInput
-    orderBy?: ProgressOrderByWithAggregationInput | ProgressOrderByWithAggregationInput[]
+  export type progressGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: progressWhereInput
+    orderBy?: progressOrderByWithAggregationInput | progressOrderByWithAggregationInput[]
     by: ProgressScalarFieldEnum[] | ProgressScalarFieldEnum
-    having?: ProgressScalarWhereWithAggregatesInput
+    having?: progressScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: ProgressCountAggregateInputType | true
@@ -2833,10 +2833,10 @@ export namespace Prisma {
 
   export type ProgressGroupByOutputType = {
     id: number
-    user_id: string
-    exercise_id: number
+    userId: string
+    exerciseId: number
     date: Date
-    weight_used: number
+    weightUsed: number
     repetitions: number
     _count: ProgressCountAggregateOutputType | null
     _avg: ProgressAvgAggregateOutputType | null
@@ -2845,7 +2845,7 @@ export namespace Prisma {
     _max: ProgressMaxAggregateOutputType | null
   }
 
-  type GetProgressGroupByPayload<T extends ProgressGroupByArgs> = Prisma.PrismaPromise<
+  type GetProgressGroupByPayload<T extends progressGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<ProgressGroupByOutputType, T['by']> &
         {
@@ -2859,91 +2859,91 @@ export namespace Prisma {
     >
 
 
-  export type ProgressSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type progressSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
+    userId?: boolean
+    exerciseId?: boolean
     date?: boolean
-    weight_used?: boolean
+    weightUsed?: boolean
     repetitions?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["progress"]>
 
-  export type ProgressSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type progressSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
+    userId?: boolean
+    exerciseId?: boolean
     date?: boolean
-    weight_used?: boolean
+    weightUsed?: boolean
     repetitions?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["progress"]>
 
-  export type ProgressSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type progressSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
+    userId?: boolean
+    exerciseId?: boolean
     date?: boolean
-    weight_used?: boolean
+    weightUsed?: boolean
     repetitions?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["progress"]>
 
-  export type ProgressSelectScalar = {
+  export type progressSelectScalar = {
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
+    userId?: boolean
+    exerciseId?: boolean
     date?: boolean
-    weight_used?: boolean
+    weightUsed?: boolean
     repetitions?: boolean
   }
 
-  export type ProgressOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "exercise_id" | "date" | "weight_used" | "repetitions", ExtArgs["result"]["progress"]>
-  export type ProgressInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type progressOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "exerciseId" | "date" | "weightUsed" | "repetitions", ExtArgs["result"]["progress"]>
+  export type progressInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
-  export type ProgressIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type progressIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
-  export type ProgressIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type progressIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
 
-  export type $ProgressPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Progress"
+  export type $progressPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "progress"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-      exercise: Prisma.$ExercisePayload<ExtArgs>
+      user: Prisma.$userPayload<ExtArgs>
+      exercise: Prisma.$exercisePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      user_id: string
-      exercise_id: number
+      userId: string
+      exerciseId: number
       date: Date
-      weight_used: number
+      weightUsed: number
       repetitions: number
     }, ExtArgs["result"]["progress"]>
     composites: {}
   }
 
-  type ProgressGetPayload<S extends boolean | null | undefined | ProgressDefaultArgs> = $Result.GetResult<Prisma.$ProgressPayload, S>
+  type progressGetPayload<S extends boolean | null | undefined | progressDefaultArgs> = $Result.GetResult<Prisma.$progressPayload, S>
 
-  type ProgressCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ProgressFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type progressCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<progressFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: ProgressCountAggregateInputType | true
     }
 
-  export interface ProgressDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Progress'], meta: { name: 'Progress' } }
+  export interface progressDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['progress'], meta: { name: 'progress' } }
     /**
      * Find zero or one Progress that matches the filter.
-     * @param {ProgressFindUniqueArgs} args - Arguments to find a Progress
+     * @param {progressFindUniqueArgs} args - Arguments to find a Progress
      * @example
      * // Get one Progress
      * const progress = await prisma.progress.findUnique({
@@ -2952,12 +2952,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends ProgressFindUniqueArgs>(args: SelectSubset<T, ProgressFindUniqueArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends progressFindUniqueArgs>(args: SelectSubset<T, progressFindUniqueArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Progress that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ProgressFindUniqueOrThrowArgs} args - Arguments to find a Progress
+     * @param {progressFindUniqueOrThrowArgs} args - Arguments to find a Progress
      * @example
      * // Get one Progress
      * const progress = await prisma.progress.findUniqueOrThrow({
@@ -2966,13 +2966,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ProgressFindUniqueOrThrowArgs>(args: SelectSubset<T, ProgressFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends progressFindUniqueOrThrowArgs>(args: SelectSubset<T, progressFindUniqueOrThrowArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Progress that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProgressFindFirstArgs} args - Arguments to find a Progress
+     * @param {progressFindFirstArgs} args - Arguments to find a Progress
      * @example
      * // Get one Progress
      * const progress = await prisma.progress.findFirst({
@@ -2981,14 +2981,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends ProgressFindFirstArgs>(args?: SelectSubset<T, ProgressFindFirstArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends progressFindFirstArgs>(args?: SelectSubset<T, progressFindFirstArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Progress that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProgressFindFirstOrThrowArgs} args - Arguments to find a Progress
+     * @param {progressFindFirstOrThrowArgs} args - Arguments to find a Progress
      * @example
      * // Get one Progress
      * const progress = await prisma.progress.findFirstOrThrow({
@@ -2997,13 +2997,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends ProgressFindFirstOrThrowArgs>(args?: SelectSubset<T, ProgressFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends progressFindFirstOrThrowArgs>(args?: SelectSubset<T, progressFindFirstOrThrowArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Progresses that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProgressFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {progressFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Progresses
      * const progresses = await prisma.progress.findMany()
@@ -3015,11 +3015,11 @@ export namespace Prisma {
      * const progressWithIdOnly = await prisma.progress.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends ProgressFindManyArgs>(args?: SelectSubset<T, ProgressFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends progressFindManyArgs>(args?: SelectSubset<T, progressFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Progress.
-     * @param {ProgressCreateArgs} args - Arguments to create a Progress.
+     * @param {progressCreateArgs} args - Arguments to create a Progress.
      * @example
      * // Create one Progress
      * const Progress = await prisma.progress.create({
@@ -3029,11 +3029,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends ProgressCreateArgs>(args: SelectSubset<T, ProgressCreateArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends progressCreateArgs>(args: SelectSubset<T, progressCreateArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Progresses.
-     * @param {ProgressCreateManyArgs} args - Arguments to create many Progresses.
+     * @param {progressCreateManyArgs} args - Arguments to create many Progresses.
      * @example
      * // Create many Progresses
      * const progress = await prisma.progress.createMany({
@@ -3043,11 +3043,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends ProgressCreateManyArgs>(args?: SelectSubset<T, ProgressCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends progressCreateManyArgs>(args?: SelectSubset<T, progressCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Progresses and returns the data saved in the database.
-     * @param {ProgressCreateManyAndReturnArgs} args - Arguments to create many Progresses.
+     * @param {progressCreateManyAndReturnArgs} args - Arguments to create many Progresses.
      * @example
      * // Create many Progresses
      * const progress = await prisma.progress.createManyAndReturn({
@@ -3067,11 +3067,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends ProgressCreateManyAndReturnArgs>(args?: SelectSubset<T, ProgressCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends progressCreateManyAndReturnArgs>(args?: SelectSubset<T, progressCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Delete a Progress.
-     * @param {ProgressDeleteArgs} args - Arguments to delete one Progress.
+     * @param {progressDeleteArgs} args - Arguments to delete one Progress.
      * @example
      * // Delete one Progress
      * const Progress = await prisma.progress.delete({
@@ -3081,11 +3081,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends ProgressDeleteArgs>(args: SelectSubset<T, ProgressDeleteArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends progressDeleteArgs>(args: SelectSubset<T, progressDeleteArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Progress.
-     * @param {ProgressUpdateArgs} args - Arguments to update one Progress.
+     * @param {progressUpdateArgs} args - Arguments to update one Progress.
      * @example
      * // Update one Progress
      * const progress = await prisma.progress.update({
@@ -3098,11 +3098,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ProgressUpdateArgs>(args: SelectSubset<T, ProgressUpdateArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends progressUpdateArgs>(args: SelectSubset<T, progressUpdateArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Progresses.
-     * @param {ProgressDeleteManyArgs} args - Arguments to filter Progresses to delete.
+     * @param {progressDeleteManyArgs} args - Arguments to filter Progresses to delete.
      * @example
      * // Delete a few Progresses
      * const { count } = await prisma.progress.deleteMany({
@@ -3112,13 +3112,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends ProgressDeleteManyArgs>(args?: SelectSubset<T, ProgressDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends progressDeleteManyArgs>(args?: SelectSubset<T, progressDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Progresses.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProgressUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {progressUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Progresses
      * const progress = await prisma.progress.updateMany({
@@ -3131,11 +3131,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ProgressUpdateManyArgs>(args: SelectSubset<T, ProgressUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends progressUpdateManyArgs>(args: SelectSubset<T, progressUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Progresses and returns the data updated in the database.
-     * @param {ProgressUpdateManyAndReturnArgs} args - Arguments to update many Progresses.
+     * @param {progressUpdateManyAndReturnArgs} args - Arguments to update many Progresses.
      * @example
      * // Update many Progresses
      * const progress = await prisma.progress.updateManyAndReturn({
@@ -3161,11 +3161,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends ProgressUpdateManyAndReturnArgs>(args: SelectSubset<T, ProgressUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends progressUpdateManyAndReturnArgs>(args: SelectSubset<T, progressUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Progress.
-     * @param {ProgressUpsertArgs} args - Arguments to update or create a Progress.
+     * @param {progressUpsertArgs} args - Arguments to update or create a Progress.
      * @example
      * // Update or create a Progress
      * const progress = await prisma.progress.upsert({
@@ -3180,14 +3180,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends ProgressUpsertArgs>(args: SelectSubset<T, ProgressUpsertArgs<ExtArgs>>): Prisma__ProgressClient<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends progressUpsertArgs>(args: SelectSubset<T, progressUpsertArgs<ExtArgs>>): Prisma__progressClient<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Progresses.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProgressCountArgs} args - Arguments to filter Progresses to count.
+     * @param {progressCountArgs} args - Arguments to filter Progresses to count.
      * @example
      * // Count the number of Progresses
      * const count = await prisma.progress.count({
@@ -3196,8 +3196,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends ProgressCountArgs>(
-      args?: Subset<T, ProgressCountArgs>,
+    count<T extends progressCountArgs>(
+      args?: Subset<T, progressCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -3236,7 +3236,7 @@ export namespace Prisma {
      * Group by Progress.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProgressGroupByArgs} args - Group by arguments.
+     * @param {progressGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3251,14 +3251,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ProgressGroupByArgs,
+      T extends progressGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ProgressGroupByArgs['orderBy'] }
-        : { orderBy?: ProgressGroupByArgs['orderBy'] },
+        ? { orderBy: progressGroupByArgs['orderBy'] }
+        : { orderBy?: progressGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3307,23 +3307,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ProgressGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProgressGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, progressGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProgressGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Progress model
+   * Fields of the progress model
    */
-  readonly fields: ProgressFieldRefs;
+  readonly fields: progressFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Progress.
+   * The delegate class that acts as a "Promise-like" for progress.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ProgressClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__progressClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    exercise<T extends ExerciseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ExerciseDefaultArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends userDefaultArgs<ExtArgs> = {}>(args?: Subset<T, userDefaultArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    exercise<T extends exerciseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, exerciseDefaultArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3350,431 +3350,431 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Progress model
+   * Fields of the progress model
    */
-  interface ProgressFieldRefs {
-    readonly id: FieldRef<"Progress", 'Int'>
-    readonly user_id: FieldRef<"Progress", 'String'>
-    readonly exercise_id: FieldRef<"Progress", 'Int'>
-    readonly date: FieldRef<"Progress", 'DateTime'>
-    readonly weight_used: FieldRef<"Progress", 'Float'>
-    readonly repetitions: FieldRef<"Progress", 'Int'>
+  interface progressFieldRefs {
+    readonly id: FieldRef<"progress", 'Int'>
+    readonly userId: FieldRef<"progress", 'String'>
+    readonly exerciseId: FieldRef<"progress", 'Int'>
+    readonly date: FieldRef<"progress", 'DateTime'>
+    readonly weightUsed: FieldRef<"progress", 'Float'>
+    readonly repetitions: FieldRef<"progress", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Progress findUnique
+   * progress findUnique
    */
-  export type ProgressFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * Filter, which Progress to fetch.
+     * Filter, which progress to fetch.
      */
-    where: ProgressWhereUniqueInput
+    where: progressWhereUniqueInput
   }
 
   /**
-   * Progress findUniqueOrThrow
+   * progress findUniqueOrThrow
    */
-  export type ProgressFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * Filter, which Progress to fetch.
+     * Filter, which progress to fetch.
      */
-    where: ProgressWhereUniqueInput
+    where: progressWhereUniqueInput
   }
 
   /**
-   * Progress findFirst
+   * progress findFirst
    */
-  export type ProgressFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * Filter, which Progress to fetch.
+     * Filter, which progress to fetch.
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Progresses to fetch.
+     * Determine the order of progresses to fetch.
      */
-    orderBy?: ProgressOrderByWithRelationInput | ProgressOrderByWithRelationInput[]
+    orderBy?: progressOrderByWithRelationInput | progressOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Progresses.
+     * Sets the position for searching for progresses.
      */
-    cursor?: ProgressWhereUniqueInput
+    cursor?: progressWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Progresses from the position of the cursor.
+     * Take `±n` progresses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Progresses.
+     * Skip the first `n` progresses.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Progresses.
+     * Filter by unique combinations of progresses.
      */
     distinct?: ProgressScalarFieldEnum | ProgressScalarFieldEnum[]
   }
 
   /**
-   * Progress findFirstOrThrow
+   * progress findFirstOrThrow
    */
-  export type ProgressFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * Filter, which Progress to fetch.
+     * Filter, which progress to fetch.
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Progresses to fetch.
+     * Determine the order of progresses to fetch.
      */
-    orderBy?: ProgressOrderByWithRelationInput | ProgressOrderByWithRelationInput[]
+    orderBy?: progressOrderByWithRelationInput | progressOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Progresses.
+     * Sets the position for searching for progresses.
      */
-    cursor?: ProgressWhereUniqueInput
+    cursor?: progressWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Progresses from the position of the cursor.
+     * Take `±n` progresses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Progresses.
+     * Skip the first `n` progresses.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Progresses.
+     * Filter by unique combinations of progresses.
      */
     distinct?: ProgressScalarFieldEnum | ProgressScalarFieldEnum[]
   }
 
   /**
-   * Progress findMany
+   * progress findMany
    */
-  export type ProgressFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * Filter, which Progresses to fetch.
+     * Filter, which progresses to fetch.
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Progresses to fetch.
+     * Determine the order of progresses to fetch.
      */
-    orderBy?: ProgressOrderByWithRelationInput | ProgressOrderByWithRelationInput[]
+    orderBy?: progressOrderByWithRelationInput | progressOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Progresses.
+     * Sets the position for listing progresses.
      */
-    cursor?: ProgressWhereUniqueInput
+    cursor?: progressWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Progresses from the position of the cursor.
+     * Take `±n` progresses from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Progresses.
+     * Skip the first `n` progresses.
      */
     skip?: number
     distinct?: ProgressScalarFieldEnum | ProgressScalarFieldEnum[]
   }
 
   /**
-   * Progress create
+   * progress create
    */
-  export type ProgressCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * The data needed to create a Progress.
+     * The data needed to create a progress.
      */
-    data: XOR<ProgressCreateInput, ProgressUncheckedCreateInput>
+    data: XOR<progressCreateInput, progressUncheckedCreateInput>
   }
 
   /**
-   * Progress createMany
+   * progress createMany
    */
-  export type ProgressCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Progresses.
+     * The data used to create many progresses.
      */
-    data: ProgressCreateManyInput | ProgressCreateManyInput[]
+    data: progressCreateManyInput | progressCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Progress createManyAndReturn
+   * progress createManyAndReturn
    */
-  export type ProgressCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelectCreateManyAndReturn<ExtArgs> | null
+    select?: progressSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
-     * The data used to create many Progresses.
+     * The data used to create many progresses.
      */
-    data: ProgressCreateManyInput | ProgressCreateManyInput[]
+    data: progressCreateManyInput | progressCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: progressIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Progress update
+   * progress update
    */
-  export type ProgressUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * The data needed to update a Progress.
+     * The data needed to update a progress.
      */
-    data: XOR<ProgressUpdateInput, ProgressUncheckedUpdateInput>
+    data: XOR<progressUpdateInput, progressUncheckedUpdateInput>
     /**
-     * Choose, which Progress to update.
+     * Choose, which progress to update.
      */
-    where: ProgressWhereUniqueInput
+    where: progressWhereUniqueInput
   }
 
   /**
-   * Progress updateMany
+   * progress updateMany
    */
-  export type ProgressUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Progresses.
+     * The data used to update progresses.
      */
-    data: XOR<ProgressUpdateManyMutationInput, ProgressUncheckedUpdateManyInput>
+    data: XOR<progressUpdateManyMutationInput, progressUncheckedUpdateManyInput>
     /**
-     * Filter which Progresses to update
+     * Filter which progresses to update
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
-     * Limit how many Progresses to update.
+     * Limit how many progresses to update.
      */
     limit?: number
   }
 
   /**
-   * Progress updateManyAndReturn
+   * progress updateManyAndReturn
    */
-  export type ProgressUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: progressSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
-     * The data used to update Progresses.
+     * The data used to update progresses.
      */
-    data: XOR<ProgressUpdateManyMutationInput, ProgressUncheckedUpdateManyInput>
+    data: XOR<progressUpdateManyMutationInput, progressUncheckedUpdateManyInput>
     /**
-     * Filter which Progresses to update
+     * Filter which progresses to update
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
-     * Limit how many Progresses to update.
+     * Limit how many progresses to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: progressIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Progress upsert
+   * progress upsert
    */
-  export type ProgressUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * The filter to search for the Progress to update in case it exists.
+     * The filter to search for the progress to update in case it exists.
      */
-    where: ProgressWhereUniqueInput
+    where: progressWhereUniqueInput
     /**
-     * In case the Progress found by the `where` argument doesn't exist, create a new Progress with this data.
+     * In case the progress found by the `where` argument doesn't exist, create a new progress with this data.
      */
-    create: XOR<ProgressCreateInput, ProgressUncheckedCreateInput>
+    create: XOR<progressCreateInput, progressUncheckedCreateInput>
     /**
-     * In case the Progress was found with the provided `where` argument, update it with this data.
+     * In case the progress was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ProgressUpdateInput, ProgressUncheckedUpdateInput>
+    update: XOR<progressUpdateInput, progressUncheckedUpdateInput>
   }
 
   /**
-   * Progress delete
+   * progress delete
    */
-  export type ProgressDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
     /**
-     * Filter which Progress to delete.
+     * Filter which progress to delete.
      */
-    where: ProgressWhereUniqueInput
+    where: progressWhereUniqueInput
   }
 
   /**
-   * Progress deleteMany
+   * progress deleteMany
    */
-  export type ProgressDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Progresses to delete
+     * Filter which progresses to delete
      */
-    where?: ProgressWhereInput
+    where?: progressWhereInput
     /**
-     * Limit how many Progresses to delete.
+     * Limit how many progresses to delete.
      */
     limit?: number
   }
 
   /**
-   * Progress without action
+   * progress without action
    */
-  export type ProgressDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type progressDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
+    include?: progressInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Routine
+   * Model routine
    */
 
   export type AggregateRoutine = {
@@ -3799,7 +3799,7 @@ export namespace Prisma {
 
   export type RoutineMinAggregateOutputType = {
     id: number | null
-    user_id: string | null
+    userId: string | null
     name: string | null
     createdAt: Date | null
     description: string | null
@@ -3809,7 +3809,7 @@ export namespace Prisma {
 
   export type RoutineMaxAggregateOutputType = {
     id: number | null
-    user_id: string | null
+    userId: string | null
     name: string | null
     createdAt: Date | null
     description: string | null
@@ -3819,7 +3819,7 @@ export namespace Prisma {
 
   export type RoutineCountAggregateOutputType = {
     id: number
-    user_id: number
+    userId: number
     name: number
     createdAt: number
     description: number
@@ -3843,7 +3843,7 @@ export namespace Prisma {
 
   export type RoutineMinAggregateInputType = {
     id?: true
-    user_id?: true
+    userId?: true
     name?: true
     createdAt?: true
     description?: true
@@ -3853,7 +3853,7 @@ export namespace Prisma {
 
   export type RoutineMaxAggregateInputType = {
     id?: true
-    user_id?: true
+    userId?: true
     name?: true
     createdAt?: true
     description?: true
@@ -3863,7 +3863,7 @@ export namespace Prisma {
 
   export type RoutineCountAggregateInputType = {
     id?: true
-    user_id?: true
+    userId?: true
     name?: true
     createdAt?: true
     description?: true
@@ -3874,37 +3874,37 @@ export namespace Prisma {
 
   export type RoutineAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Routine to aggregate.
+     * Filter which routine to aggregate.
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Routines to fetch.
+     * Determine the order of routines to fetch.
      */
-    orderBy?: RoutineOrderByWithRelationInput | RoutineOrderByWithRelationInput[]
+    orderBy?: routineOrderByWithRelationInput | routineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: RoutineWhereUniqueInput
+    cursor?: routineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Routines from the position of the cursor.
+     * Take `±n` routines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Routines.
+     * Skip the first `n` routines.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Routines
+     * Count returned routines
     **/
     _count?: true | RoutineCountAggregateInputType
     /**
@@ -3944,11 +3944,11 @@ export namespace Prisma {
 
 
 
-  export type RoutineGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RoutineWhereInput
-    orderBy?: RoutineOrderByWithAggregationInput | RoutineOrderByWithAggregationInput[]
+  export type routineGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: routineWhereInput
+    orderBy?: routineOrderByWithAggregationInput | routineOrderByWithAggregationInput[]
     by: RoutineScalarFieldEnum[] | RoutineScalarFieldEnum
-    having?: RoutineScalarWhereWithAggregatesInput
+    having?: routineScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: RoutineCountAggregateInputType | true
@@ -3960,7 +3960,7 @@ export namespace Prisma {
 
   export type RoutineGroupByOutputType = {
     id: number
-    user_id: string
+    userId: string
     name: string
     createdAt: Date | null
     description: string
@@ -3973,7 +3973,7 @@ export namespace Prisma {
     _max: RoutineMaxAggregateOutputType | null
   }
 
-  type GetRoutineGroupByPayload<T extends RoutineGroupByArgs> = Prisma.PrismaPromise<
+  type GetRoutineGroupByPayload<T extends routineGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<RoutineGroupByOutputType, T['by']> &
         {
@@ -3987,44 +3987,44 @@ export namespace Prisma {
     >
 
 
-  export type RoutineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type routineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
+    userId?: boolean
     name?: boolean
     createdAt?: boolean
     description?: boolean
     duration?: boolean
     totalExercise?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    Exercise_routine?: boolean | Routine$Exercise_routineArgs<ExtArgs>
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exerciseRoutine?: boolean | routine$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | RoutineCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
 
-  export type RoutineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type routineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
+    userId?: boolean
     name?: boolean
     createdAt?: boolean
     description?: boolean
     duration?: boolean
     totalExercise?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
+    user?: boolean | userDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
 
-  export type RoutineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type routineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
+    userId?: boolean
     name?: boolean
     createdAt?: boolean
     description?: boolean
     duration?: boolean
     totalExercise?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
+    user?: boolean | userDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
 
-  export type RoutineSelectScalar = {
+  export type routineSelectScalar = {
     id?: boolean
-    user_id?: boolean
+    userId?: boolean
     name?: boolean
     createdAt?: boolean
     description?: boolean
@@ -4032,28 +4032,28 @@ export namespace Prisma {
     totalExercise?: boolean
   }
 
-  export type RoutineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "name" | "createdAt" | "description" | "duration" | "totalExercise", ExtArgs["result"]["routine"]>
-  export type RoutineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    Exercise_routine?: boolean | Routine$Exercise_routineArgs<ExtArgs>
+  export type routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "createdAt" | "description" | "duration" | "totalExercise", ExtArgs["result"]["routine"]>
+  export type routineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exerciseRoutine?: boolean | routine$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | RoutineCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type RoutineIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
+  export type routineIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
   }
-  export type RoutineIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
+  export type routineIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
   }
 
-  export type $RoutinePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Routine"
+  export type $routinePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "routine"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-      Exercise_routine: Prisma.$Exercise_routinePayload<ExtArgs>[]
+      user: Prisma.$userPayload<ExtArgs>
+      exerciseRoutine: Prisma.$exerciseRoutinePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      user_id: string
+      userId: string
       name: string
       createdAt: Date | null
       description: string
@@ -4063,18 +4063,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type RoutineGetPayload<S extends boolean | null | undefined | RoutineDefaultArgs> = $Result.GetResult<Prisma.$RoutinePayload, S>
+  type routineGetPayload<S extends boolean | null | undefined | routineDefaultArgs> = $Result.GetResult<Prisma.$routinePayload, S>
 
-  type RoutineCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<RoutineFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type routineCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<routineFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: RoutineCountAggregateInputType | true
     }
 
-  export interface RoutineDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Routine'], meta: { name: 'Routine' } }
+  export interface routineDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['routine'], meta: { name: 'routine' } }
     /**
      * Find zero or one Routine that matches the filter.
-     * @param {RoutineFindUniqueArgs} args - Arguments to find a Routine
+     * @param {routineFindUniqueArgs} args - Arguments to find a Routine
      * @example
      * // Get one Routine
      * const routine = await prisma.routine.findUnique({
@@ -4083,12 +4083,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends RoutineFindUniqueArgs>(args: SelectSubset<T, RoutineFindUniqueArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends routineFindUniqueArgs>(args: SelectSubset<T, routineFindUniqueArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Routine that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {RoutineFindUniqueOrThrowArgs} args - Arguments to find a Routine
+     * @param {routineFindUniqueOrThrowArgs} args - Arguments to find a Routine
      * @example
      * // Get one Routine
      * const routine = await prisma.routine.findUniqueOrThrow({
@@ -4097,13 +4097,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends RoutineFindUniqueOrThrowArgs>(args: SelectSubset<T, RoutineFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends routineFindUniqueOrThrowArgs>(args: SelectSubset<T, routineFindUniqueOrThrowArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Routine that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RoutineFindFirstArgs} args - Arguments to find a Routine
+     * @param {routineFindFirstArgs} args - Arguments to find a Routine
      * @example
      * // Get one Routine
      * const routine = await prisma.routine.findFirst({
@@ -4112,14 +4112,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends RoutineFindFirstArgs>(args?: SelectSubset<T, RoutineFindFirstArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends routineFindFirstArgs>(args?: SelectSubset<T, routineFindFirstArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Routine that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RoutineFindFirstOrThrowArgs} args - Arguments to find a Routine
+     * @param {routineFindFirstOrThrowArgs} args - Arguments to find a Routine
      * @example
      * // Get one Routine
      * const routine = await prisma.routine.findFirstOrThrow({
@@ -4128,13 +4128,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends RoutineFindFirstOrThrowArgs>(args?: SelectSubset<T, RoutineFindFirstOrThrowArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends routineFindFirstOrThrowArgs>(args?: SelectSubset<T, routineFindFirstOrThrowArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Routines that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RoutineFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {routineFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Routines
      * const routines = await prisma.routine.findMany()
@@ -4146,11 +4146,11 @@ export namespace Prisma {
      * const routineWithIdOnly = await prisma.routine.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends RoutineFindManyArgs>(args?: SelectSubset<T, RoutineFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends routineFindManyArgs>(args?: SelectSubset<T, routineFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Routine.
-     * @param {RoutineCreateArgs} args - Arguments to create a Routine.
+     * @param {routineCreateArgs} args - Arguments to create a Routine.
      * @example
      * // Create one Routine
      * const Routine = await prisma.routine.create({
@@ -4160,11 +4160,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends RoutineCreateArgs>(args: SelectSubset<T, RoutineCreateArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends routineCreateArgs>(args: SelectSubset<T, routineCreateArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Routines.
-     * @param {RoutineCreateManyArgs} args - Arguments to create many Routines.
+     * @param {routineCreateManyArgs} args - Arguments to create many Routines.
      * @example
      * // Create many Routines
      * const routine = await prisma.routine.createMany({
@@ -4174,11 +4174,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends RoutineCreateManyArgs>(args?: SelectSubset<T, RoutineCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends routineCreateManyArgs>(args?: SelectSubset<T, routineCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Routines and returns the data saved in the database.
-     * @param {RoutineCreateManyAndReturnArgs} args - Arguments to create many Routines.
+     * @param {routineCreateManyAndReturnArgs} args - Arguments to create many Routines.
      * @example
      * // Create many Routines
      * const routine = await prisma.routine.createManyAndReturn({
@@ -4198,11 +4198,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends RoutineCreateManyAndReturnArgs>(args?: SelectSubset<T, RoutineCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends routineCreateManyAndReturnArgs>(args?: SelectSubset<T, routineCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Delete a Routine.
-     * @param {RoutineDeleteArgs} args - Arguments to delete one Routine.
+     * @param {routineDeleteArgs} args - Arguments to delete one Routine.
      * @example
      * // Delete one Routine
      * const Routine = await prisma.routine.delete({
@@ -4212,11 +4212,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends RoutineDeleteArgs>(args: SelectSubset<T, RoutineDeleteArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends routineDeleteArgs>(args: SelectSubset<T, routineDeleteArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Routine.
-     * @param {RoutineUpdateArgs} args - Arguments to update one Routine.
+     * @param {routineUpdateArgs} args - Arguments to update one Routine.
      * @example
      * // Update one Routine
      * const routine = await prisma.routine.update({
@@ -4229,11 +4229,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends RoutineUpdateArgs>(args: SelectSubset<T, RoutineUpdateArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends routineUpdateArgs>(args: SelectSubset<T, routineUpdateArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Routines.
-     * @param {RoutineDeleteManyArgs} args - Arguments to filter Routines to delete.
+     * @param {routineDeleteManyArgs} args - Arguments to filter Routines to delete.
      * @example
      * // Delete a few Routines
      * const { count } = await prisma.routine.deleteMany({
@@ -4243,13 +4243,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends RoutineDeleteManyArgs>(args?: SelectSubset<T, RoutineDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends routineDeleteManyArgs>(args?: SelectSubset<T, routineDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Routines.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RoutineUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {routineUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Routines
      * const routine = await prisma.routine.updateMany({
@@ -4262,11 +4262,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends RoutineUpdateManyArgs>(args: SelectSubset<T, RoutineUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends routineUpdateManyArgs>(args: SelectSubset<T, routineUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Routines and returns the data updated in the database.
-     * @param {RoutineUpdateManyAndReturnArgs} args - Arguments to update many Routines.
+     * @param {routineUpdateManyAndReturnArgs} args - Arguments to update many Routines.
      * @example
      * // Update many Routines
      * const routine = await prisma.routine.updateManyAndReturn({
@@ -4292,11 +4292,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends RoutineUpdateManyAndReturnArgs>(args: SelectSubset<T, RoutineUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends routineUpdateManyAndReturnArgs>(args: SelectSubset<T, routineUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Routine.
-     * @param {RoutineUpsertArgs} args - Arguments to update or create a Routine.
+     * @param {routineUpsertArgs} args - Arguments to update or create a Routine.
      * @example
      * // Update or create a Routine
      * const routine = await prisma.routine.upsert({
@@ -4311,14 +4311,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends RoutineUpsertArgs>(args: SelectSubset<T, RoutineUpsertArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends routineUpsertArgs>(args: SelectSubset<T, routineUpsertArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Routines.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RoutineCountArgs} args - Arguments to filter Routines to count.
+     * @param {routineCountArgs} args - Arguments to filter Routines to count.
      * @example
      * // Count the number of Routines
      * const count = await prisma.routine.count({
@@ -4327,8 +4327,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends RoutineCountArgs>(
-      args?: Subset<T, RoutineCountArgs>,
+    count<T extends routineCountArgs>(
+      args?: Subset<T, routineCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -4367,7 +4367,7 @@ export namespace Prisma {
      * Group by Routine.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RoutineGroupByArgs} args - Group by arguments.
+     * @param {routineGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4382,14 +4382,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends RoutineGroupByArgs,
+      T extends routineGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: RoutineGroupByArgs['orderBy'] }
-        : { orderBy?: RoutineGroupByArgs['orderBy'] },
+        ? { orderBy: routineGroupByArgs['orderBy'] }
+        : { orderBy?: routineGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4438,23 +4438,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, RoutineGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRoutineGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, routineGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRoutineGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Routine model
+   * Fields of the routine model
    */
-  readonly fields: RoutineFieldRefs;
+  readonly fields: routineFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Routine.
+   * The delegate class that acts as a "Promise-like" for routine.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__RoutineClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__routineClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    Exercise_routine<T extends Routine$Exercise_routineArgs<ExtArgs> = {}>(args?: Subset<T, Routine$Exercise_routineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    user<T extends userDefaultArgs<ExtArgs> = {}>(args?: Subset<T, userDefaultArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    exerciseRoutine<T extends routine$exerciseRoutineArgs<ExtArgs> = {}>(args?: Subset<T, routine$exerciseRoutineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4481,456 +4481,456 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Routine model
+   * Fields of the routine model
    */
-  interface RoutineFieldRefs {
-    readonly id: FieldRef<"Routine", 'Int'>
-    readonly user_id: FieldRef<"Routine", 'String'>
-    readonly name: FieldRef<"Routine", 'String'>
-    readonly createdAt: FieldRef<"Routine", 'DateTime'>
-    readonly description: FieldRef<"Routine", 'String'>
-    readonly duration: FieldRef<"Routine", 'Int'>
-    readonly totalExercise: FieldRef<"Routine", 'Int'>
+  interface routineFieldRefs {
+    readonly id: FieldRef<"routine", 'Int'>
+    readonly userId: FieldRef<"routine", 'String'>
+    readonly name: FieldRef<"routine", 'String'>
+    readonly createdAt: FieldRef<"routine", 'DateTime'>
+    readonly description: FieldRef<"routine", 'String'>
+    readonly duration: FieldRef<"routine", 'Int'>
+    readonly totalExercise: FieldRef<"routine", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Routine findUnique
+   * routine findUnique
    */
-  export type RoutineFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * Filter, which Routine to fetch.
+     * Filter, which routine to fetch.
      */
-    where: RoutineWhereUniqueInput
+    where: routineWhereUniqueInput
   }
 
   /**
-   * Routine findUniqueOrThrow
+   * routine findUniqueOrThrow
    */
-  export type RoutineFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * Filter, which Routine to fetch.
+     * Filter, which routine to fetch.
      */
-    where: RoutineWhereUniqueInput
+    where: routineWhereUniqueInput
   }
 
   /**
-   * Routine findFirst
+   * routine findFirst
    */
-  export type RoutineFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * Filter, which Routine to fetch.
+     * Filter, which routine to fetch.
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Routines to fetch.
+     * Determine the order of routines to fetch.
      */
-    orderBy?: RoutineOrderByWithRelationInput | RoutineOrderByWithRelationInput[]
+    orderBy?: routineOrderByWithRelationInput | routineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Routines.
+     * Sets the position for searching for routines.
      */
-    cursor?: RoutineWhereUniqueInput
+    cursor?: routineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Routines from the position of the cursor.
+     * Take `±n` routines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Routines.
+     * Skip the first `n` routines.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Routines.
+     * Filter by unique combinations of routines.
      */
     distinct?: RoutineScalarFieldEnum | RoutineScalarFieldEnum[]
   }
 
   /**
-   * Routine findFirstOrThrow
+   * routine findFirstOrThrow
    */
-  export type RoutineFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * Filter, which Routine to fetch.
+     * Filter, which routine to fetch.
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Routines to fetch.
+     * Determine the order of routines to fetch.
      */
-    orderBy?: RoutineOrderByWithRelationInput | RoutineOrderByWithRelationInput[]
+    orderBy?: routineOrderByWithRelationInput | routineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Routines.
+     * Sets the position for searching for routines.
      */
-    cursor?: RoutineWhereUniqueInput
+    cursor?: routineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Routines from the position of the cursor.
+     * Take `±n` routines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Routines.
+     * Skip the first `n` routines.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Routines.
+     * Filter by unique combinations of routines.
      */
     distinct?: RoutineScalarFieldEnum | RoutineScalarFieldEnum[]
   }
 
   /**
-   * Routine findMany
+   * routine findMany
    */
-  export type RoutineFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * Filter, which Routines to fetch.
+     * Filter, which routines to fetch.
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Routines to fetch.
+     * Determine the order of routines to fetch.
      */
-    orderBy?: RoutineOrderByWithRelationInput | RoutineOrderByWithRelationInput[]
+    orderBy?: routineOrderByWithRelationInput | routineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Routines.
+     * Sets the position for listing routines.
      */
-    cursor?: RoutineWhereUniqueInput
+    cursor?: routineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Routines from the position of the cursor.
+     * Take `±n` routines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Routines.
+     * Skip the first `n` routines.
      */
     skip?: number
     distinct?: RoutineScalarFieldEnum | RoutineScalarFieldEnum[]
   }
 
   /**
-   * Routine create
+   * routine create
    */
-  export type RoutineCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * The data needed to create a Routine.
+     * The data needed to create a routine.
      */
-    data: XOR<RoutineCreateInput, RoutineUncheckedCreateInput>
+    data: XOR<routineCreateInput, routineUncheckedCreateInput>
   }
 
   /**
-   * Routine createMany
+   * routine createMany
    */
-  export type RoutineCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Routines.
+     * The data used to create many routines.
      */
-    data: RoutineCreateManyInput | RoutineCreateManyInput[]
+    data: routineCreateManyInput | routineCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Routine createManyAndReturn
+   * routine createManyAndReturn
    */
-  export type RoutineCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelectCreateManyAndReturn<ExtArgs> | null
+    select?: routineSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
-     * The data used to create many Routines.
+     * The data used to create many routines.
      */
-    data: RoutineCreateManyInput | RoutineCreateManyInput[]
+    data: routineCreateManyInput | routineCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: routineIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Routine update
+   * routine update
    */
-  export type RoutineUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * The data needed to update a Routine.
+     * The data needed to update a routine.
      */
-    data: XOR<RoutineUpdateInput, RoutineUncheckedUpdateInput>
+    data: XOR<routineUpdateInput, routineUncheckedUpdateInput>
     /**
-     * Choose, which Routine to update.
+     * Choose, which routine to update.
      */
-    where: RoutineWhereUniqueInput
+    where: routineWhereUniqueInput
   }
 
   /**
-   * Routine updateMany
+   * routine updateMany
    */
-  export type RoutineUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Routines.
+     * The data used to update routines.
      */
-    data: XOR<RoutineUpdateManyMutationInput, RoutineUncheckedUpdateManyInput>
+    data: XOR<routineUpdateManyMutationInput, routineUncheckedUpdateManyInput>
     /**
-     * Filter which Routines to update
+     * Filter which routines to update
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
-     * Limit how many Routines to update.
+     * Limit how many routines to update.
      */
     limit?: number
   }
 
   /**
-   * Routine updateManyAndReturn
+   * routine updateManyAndReturn
    */
-  export type RoutineUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: routineSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
-     * The data used to update Routines.
+     * The data used to update routines.
      */
-    data: XOR<RoutineUpdateManyMutationInput, RoutineUncheckedUpdateManyInput>
+    data: XOR<routineUpdateManyMutationInput, routineUncheckedUpdateManyInput>
     /**
-     * Filter which Routines to update
+     * Filter which routines to update
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
-     * Limit how many Routines to update.
+     * Limit how many routines to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: routineIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Routine upsert
+   * routine upsert
    */
-  export type RoutineUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * The filter to search for the Routine to update in case it exists.
+     * The filter to search for the routine to update in case it exists.
      */
-    where: RoutineWhereUniqueInput
+    where: routineWhereUniqueInput
     /**
-     * In case the Routine found by the `where` argument doesn't exist, create a new Routine with this data.
+     * In case the routine found by the `where` argument doesn't exist, create a new routine with this data.
      */
-    create: XOR<RoutineCreateInput, RoutineUncheckedCreateInput>
+    create: XOR<routineCreateInput, routineUncheckedCreateInput>
     /**
-     * In case the Routine was found with the provided `where` argument, update it with this data.
+     * In case the routine was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<RoutineUpdateInput, RoutineUncheckedUpdateInput>
+    update: XOR<routineUpdateInput, routineUncheckedUpdateInput>
   }
 
   /**
-   * Routine delete
+   * routine delete
    */
-  export type RoutineDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
     /**
-     * Filter which Routine to delete.
+     * Filter which routine to delete.
      */
-    where: RoutineWhereUniqueInput
+    where: routineWhereUniqueInput
   }
 
   /**
-   * Routine deleteMany
+   * routine deleteMany
    */
-  export type RoutineDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Routines to delete
+     * Filter which routines to delete
      */
-    where?: RoutineWhereInput
+    where?: routineWhereInput
     /**
-     * Limit how many Routines to delete.
+     * Limit how many routines to delete.
      */
     limit?: number
   }
 
   /**
-   * Routine.Exercise_routine
+   * routine.exerciseRoutine
    */
-  export type Routine$Exercise_routineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routine$exerciseRoutineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
-    where?: Exercise_routineWhereInput
-    orderBy?: Exercise_routineOrderByWithRelationInput | Exercise_routineOrderByWithRelationInput[]
-    cursor?: Exercise_routineWhereUniqueInput
+    include?: exerciseRoutineInclude<ExtArgs> | null
+    where?: exerciseRoutineWhereInput
+    orderBy?: exerciseRoutineOrderByWithRelationInput | exerciseRoutineOrderByWithRelationInput[]
+    cursor?: exerciseRoutineWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Exercise_routineScalarFieldEnum | Exercise_routineScalarFieldEnum[]
+    distinct?: ExerciseRoutineScalarFieldEnum | ExerciseRoutineScalarFieldEnum[]
   }
 
   /**
-   * Routine without action
+   * routine without action
    */
-  export type RoutineDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type routineDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Routine
+     * Select specific fields to fetch from the routine
      */
-    select?: RoutineSelect<ExtArgs> | null
+    select?: routineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Routine
+     * Omit specific fields from the routine
      */
-    omit?: RoutineOmit<ExtArgs> | null
+    omit?: routineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RoutineInclude<ExtArgs> | null
+    include?: routineInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Favorite
+   * Model favorite
    */
 
   export type AggregateFavorite = {
@@ -4943,96 +4943,96 @@ export namespace Prisma {
 
   export type FavoriteAvgAggregateOutputType = {
     id: number | null
-    exercise_id: number | null
+    exerciseId: number | null
   }
 
   export type FavoriteSumAggregateOutputType = {
     id: number | null
-    exercise_id: number | null
+    exerciseId: number | null
   }
 
   export type FavoriteMinAggregateOutputType = {
     id: number | null
-    user_id: string | null
-    exercise_id: number | null
+    userId: string | null
+    exerciseId: number | null
   }
 
   export type FavoriteMaxAggregateOutputType = {
     id: number | null
-    user_id: string | null
-    exercise_id: number | null
+    userId: string | null
+    exerciseId: number | null
   }
 
   export type FavoriteCountAggregateOutputType = {
     id: number
-    user_id: number
-    exercise_id: number
+    userId: number
+    exerciseId: number
     _all: number
   }
 
 
   export type FavoriteAvgAggregateInputType = {
     id?: true
-    exercise_id?: true
+    exerciseId?: true
   }
 
   export type FavoriteSumAggregateInputType = {
     id?: true
-    exercise_id?: true
+    exerciseId?: true
   }
 
   export type FavoriteMinAggregateInputType = {
     id?: true
-    user_id?: true
-    exercise_id?: true
+    userId?: true
+    exerciseId?: true
   }
 
   export type FavoriteMaxAggregateInputType = {
     id?: true
-    user_id?: true
-    exercise_id?: true
+    userId?: true
+    exerciseId?: true
   }
 
   export type FavoriteCountAggregateInputType = {
     id?: true
-    user_id?: true
-    exercise_id?: true
+    userId?: true
+    exerciseId?: true
     _all?: true
   }
 
   export type FavoriteAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Favorite to aggregate.
+     * Filter which favorite to aggregate.
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Favorites to fetch.
+     * Determine the order of favorites to fetch.
      */
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
+    orderBy?: favoriteOrderByWithRelationInput | favoriteOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: FavoriteWhereUniqueInput
+    cursor?: favoriteWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Favorites from the position of the cursor.
+     * Take `±n` favorites from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Favorites.
+     * Skip the first `n` favorites.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Favorites
+     * Count returned favorites
     **/
     _count?: true | FavoriteCountAggregateInputType
     /**
@@ -5072,11 +5072,11 @@ export namespace Prisma {
 
 
 
-  export type FavoriteGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FavoriteWhereInput
-    orderBy?: FavoriteOrderByWithAggregationInput | FavoriteOrderByWithAggregationInput[]
+  export type favoriteGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: favoriteWhereInput
+    orderBy?: favoriteOrderByWithAggregationInput | favoriteOrderByWithAggregationInput[]
     by: FavoriteScalarFieldEnum[] | FavoriteScalarFieldEnum
-    having?: FavoriteScalarWhereWithAggregatesInput
+    having?: favoriteScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: FavoriteCountAggregateInputType | true
@@ -5088,8 +5088,8 @@ export namespace Prisma {
 
   export type FavoriteGroupByOutputType = {
     id: number
-    user_id: string
-    exercise_id: number
+    userId: string
+    exerciseId: number
     _count: FavoriteCountAggregateOutputType | null
     _avg: FavoriteAvgAggregateOutputType | null
     _sum: FavoriteSumAggregateOutputType | null
@@ -5097,7 +5097,7 @@ export namespace Prisma {
     _max: FavoriteMaxAggregateOutputType | null
   }
 
-  type GetFavoriteGroupByPayload<T extends FavoriteGroupByArgs> = Prisma.PrismaPromise<
+  type GetFavoriteGroupByPayload<T extends favoriteGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<FavoriteGroupByOutputType, T['by']> &
         {
@@ -5111,76 +5111,76 @@ export namespace Prisma {
     >
 
 
-  export type FavoriteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type favoriteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+    userId?: boolean
+    exerciseId?: boolean
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["favorite"]>
 
-  export type FavoriteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type favoriteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+    userId?: boolean
+    exerciseId?: boolean
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["favorite"]>
 
-  export type FavoriteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type favoriteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+    userId?: boolean
+    exerciseId?: boolean
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["favorite"]>
 
-  export type FavoriteSelectScalar = {
+  export type favoriteSelectScalar = {
     id?: boolean
-    user_id?: boolean
-    exercise_id?: boolean
+    userId?: boolean
+    exerciseId?: boolean
   }
 
-  export type FavoriteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "exercise_id", ExtArgs["result"]["favorite"]>
-  export type FavoriteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type favoriteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "exerciseId", ExtArgs["result"]["favorite"]>
+  export type favoriteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
-  export type FavoriteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type favoriteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
-  export type FavoriteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type favoriteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | userDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
 
-  export type $FavoritePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Favorite"
+  export type $favoritePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "favorite"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-      exercise: Prisma.$ExercisePayload<ExtArgs>
+      user: Prisma.$userPayload<ExtArgs>
+      exercise: Prisma.$exercisePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      user_id: string
-      exercise_id: number
+      userId: string
+      exerciseId: number
     }, ExtArgs["result"]["favorite"]>
     composites: {}
   }
 
-  type FavoriteGetPayload<S extends boolean | null | undefined | FavoriteDefaultArgs> = $Result.GetResult<Prisma.$FavoritePayload, S>
+  type favoriteGetPayload<S extends boolean | null | undefined | favoriteDefaultArgs> = $Result.GetResult<Prisma.$favoritePayload, S>
 
-  type FavoriteCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<FavoriteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type favoriteCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<favoriteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: FavoriteCountAggregateInputType | true
     }
 
-  export interface FavoriteDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Favorite'], meta: { name: 'Favorite' } }
+  export interface favoriteDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['favorite'], meta: { name: 'favorite' } }
     /**
      * Find zero or one Favorite that matches the filter.
-     * @param {FavoriteFindUniqueArgs} args - Arguments to find a Favorite
+     * @param {favoriteFindUniqueArgs} args - Arguments to find a Favorite
      * @example
      * // Get one Favorite
      * const favorite = await prisma.favorite.findUnique({
@@ -5189,12 +5189,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends FavoriteFindUniqueArgs>(args: SelectSubset<T, FavoriteFindUniqueArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends favoriteFindUniqueArgs>(args: SelectSubset<T, favoriteFindUniqueArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Favorite that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {FavoriteFindUniqueOrThrowArgs} args - Arguments to find a Favorite
+     * @param {favoriteFindUniqueOrThrowArgs} args - Arguments to find a Favorite
      * @example
      * // Get one Favorite
      * const favorite = await prisma.favorite.findUniqueOrThrow({
@@ -5203,13 +5203,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends FavoriteFindUniqueOrThrowArgs>(args: SelectSubset<T, FavoriteFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends favoriteFindUniqueOrThrowArgs>(args: SelectSubset<T, favoriteFindUniqueOrThrowArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Favorite that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteFindFirstArgs} args - Arguments to find a Favorite
+     * @param {favoriteFindFirstArgs} args - Arguments to find a Favorite
      * @example
      * // Get one Favorite
      * const favorite = await prisma.favorite.findFirst({
@@ -5218,14 +5218,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends FavoriteFindFirstArgs>(args?: SelectSubset<T, FavoriteFindFirstArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends favoriteFindFirstArgs>(args?: SelectSubset<T, favoriteFindFirstArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Favorite that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteFindFirstOrThrowArgs} args - Arguments to find a Favorite
+     * @param {favoriteFindFirstOrThrowArgs} args - Arguments to find a Favorite
      * @example
      * // Get one Favorite
      * const favorite = await prisma.favorite.findFirstOrThrow({
@@ -5234,13 +5234,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends FavoriteFindFirstOrThrowArgs>(args?: SelectSubset<T, FavoriteFindFirstOrThrowArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends favoriteFindFirstOrThrowArgs>(args?: SelectSubset<T, favoriteFindFirstOrThrowArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Favorites that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {favoriteFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Favorites
      * const favorites = await prisma.favorite.findMany()
@@ -5252,11 +5252,11 @@ export namespace Prisma {
      * const favoriteWithIdOnly = await prisma.favorite.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends FavoriteFindManyArgs>(args?: SelectSubset<T, FavoriteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends favoriteFindManyArgs>(args?: SelectSubset<T, favoriteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Favorite.
-     * @param {FavoriteCreateArgs} args - Arguments to create a Favorite.
+     * @param {favoriteCreateArgs} args - Arguments to create a Favorite.
      * @example
      * // Create one Favorite
      * const Favorite = await prisma.favorite.create({
@@ -5266,11 +5266,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends FavoriteCreateArgs>(args: SelectSubset<T, FavoriteCreateArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends favoriteCreateArgs>(args: SelectSubset<T, favoriteCreateArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Favorites.
-     * @param {FavoriteCreateManyArgs} args - Arguments to create many Favorites.
+     * @param {favoriteCreateManyArgs} args - Arguments to create many Favorites.
      * @example
      * // Create many Favorites
      * const favorite = await prisma.favorite.createMany({
@@ -5280,11 +5280,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends FavoriteCreateManyArgs>(args?: SelectSubset<T, FavoriteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends favoriteCreateManyArgs>(args?: SelectSubset<T, favoriteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Favorites and returns the data saved in the database.
-     * @param {FavoriteCreateManyAndReturnArgs} args - Arguments to create many Favorites.
+     * @param {favoriteCreateManyAndReturnArgs} args - Arguments to create many Favorites.
      * @example
      * // Create many Favorites
      * const favorite = await prisma.favorite.createManyAndReturn({
@@ -5304,11 +5304,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends FavoriteCreateManyAndReturnArgs>(args?: SelectSubset<T, FavoriteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends favoriteCreateManyAndReturnArgs>(args?: SelectSubset<T, favoriteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Delete a Favorite.
-     * @param {FavoriteDeleteArgs} args - Arguments to delete one Favorite.
+     * @param {favoriteDeleteArgs} args - Arguments to delete one Favorite.
      * @example
      * // Delete one Favorite
      * const Favorite = await prisma.favorite.delete({
@@ -5318,11 +5318,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends FavoriteDeleteArgs>(args: SelectSubset<T, FavoriteDeleteArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends favoriteDeleteArgs>(args: SelectSubset<T, favoriteDeleteArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Favorite.
-     * @param {FavoriteUpdateArgs} args - Arguments to update one Favorite.
+     * @param {favoriteUpdateArgs} args - Arguments to update one Favorite.
      * @example
      * // Update one Favorite
      * const favorite = await prisma.favorite.update({
@@ -5335,11 +5335,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends FavoriteUpdateArgs>(args: SelectSubset<T, FavoriteUpdateArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends favoriteUpdateArgs>(args: SelectSubset<T, favoriteUpdateArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Favorites.
-     * @param {FavoriteDeleteManyArgs} args - Arguments to filter Favorites to delete.
+     * @param {favoriteDeleteManyArgs} args - Arguments to filter Favorites to delete.
      * @example
      * // Delete a few Favorites
      * const { count } = await prisma.favorite.deleteMany({
@@ -5349,13 +5349,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends FavoriteDeleteManyArgs>(args?: SelectSubset<T, FavoriteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends favoriteDeleteManyArgs>(args?: SelectSubset<T, favoriteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Favorites.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {favoriteUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Favorites
      * const favorite = await prisma.favorite.updateMany({
@@ -5368,11 +5368,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends FavoriteUpdateManyArgs>(args: SelectSubset<T, FavoriteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends favoriteUpdateManyArgs>(args: SelectSubset<T, favoriteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Favorites and returns the data updated in the database.
-     * @param {FavoriteUpdateManyAndReturnArgs} args - Arguments to update many Favorites.
+     * @param {favoriteUpdateManyAndReturnArgs} args - Arguments to update many Favorites.
      * @example
      * // Update many Favorites
      * const favorite = await prisma.favorite.updateManyAndReturn({
@@ -5398,11 +5398,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends FavoriteUpdateManyAndReturnArgs>(args: SelectSubset<T, FavoriteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends favoriteUpdateManyAndReturnArgs>(args: SelectSubset<T, favoriteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Favorite.
-     * @param {FavoriteUpsertArgs} args - Arguments to update or create a Favorite.
+     * @param {favoriteUpsertArgs} args - Arguments to update or create a Favorite.
      * @example
      * // Update or create a Favorite
      * const favorite = await prisma.favorite.upsert({
@@ -5417,14 +5417,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends FavoriteUpsertArgs>(args: SelectSubset<T, FavoriteUpsertArgs<ExtArgs>>): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends favoriteUpsertArgs>(args: SelectSubset<T, favoriteUpsertArgs<ExtArgs>>): Prisma__favoriteClient<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Favorites.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteCountArgs} args - Arguments to filter Favorites to count.
+     * @param {favoriteCountArgs} args - Arguments to filter Favorites to count.
      * @example
      * // Count the number of Favorites
      * const count = await prisma.favorite.count({
@@ -5433,8 +5433,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends FavoriteCountArgs>(
-      args?: Subset<T, FavoriteCountArgs>,
+    count<T extends favoriteCountArgs>(
+      args?: Subset<T, favoriteCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -5473,7 +5473,7 @@ export namespace Prisma {
      * Group by Favorite.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteGroupByArgs} args - Group by arguments.
+     * @param {favoriteGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -5488,14 +5488,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends FavoriteGroupByArgs,
+      T extends favoriteGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: FavoriteGroupByArgs['orderBy'] }
-        : { orderBy?: FavoriteGroupByArgs['orderBy'] },
+        ? { orderBy: favoriteGroupByArgs['orderBy'] }
+        : { orderBy?: favoriteGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -5544,23 +5544,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, FavoriteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFavoriteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, favoriteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFavoriteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Favorite model
+   * Fields of the favorite model
    */
-  readonly fields: FavoriteFieldRefs;
+  readonly fields: favoriteFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Favorite.
+   * The delegate class that acts as a "Promise-like" for favorite.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__FavoriteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__favoriteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    exercise<T extends ExerciseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ExerciseDefaultArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends userDefaultArgs<ExtArgs> = {}>(args?: Subset<T, userDefaultArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    exercise<T extends exerciseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, exerciseDefaultArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5587,428 +5587,428 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Favorite model
+   * Fields of the favorite model
    */
-  interface FavoriteFieldRefs {
-    readonly id: FieldRef<"Favorite", 'Int'>
-    readonly user_id: FieldRef<"Favorite", 'String'>
-    readonly exercise_id: FieldRef<"Favorite", 'Int'>
+  interface favoriteFieldRefs {
+    readonly id: FieldRef<"favorite", 'Int'>
+    readonly userId: FieldRef<"favorite", 'String'>
+    readonly exerciseId: FieldRef<"favorite", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Favorite findUnique
+   * favorite findUnique
    */
-  export type FavoriteFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * Filter, which Favorite to fetch.
+     * Filter, which favorite to fetch.
      */
-    where: FavoriteWhereUniqueInput
+    where: favoriteWhereUniqueInput
   }
 
   /**
-   * Favorite findUniqueOrThrow
+   * favorite findUniqueOrThrow
    */
-  export type FavoriteFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * Filter, which Favorite to fetch.
+     * Filter, which favorite to fetch.
      */
-    where: FavoriteWhereUniqueInput
+    where: favoriteWhereUniqueInput
   }
 
   /**
-   * Favorite findFirst
+   * favorite findFirst
    */
-  export type FavoriteFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * Filter, which Favorite to fetch.
+     * Filter, which favorite to fetch.
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Favorites to fetch.
+     * Determine the order of favorites to fetch.
      */
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
+    orderBy?: favoriteOrderByWithRelationInput | favoriteOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Favorites.
+     * Sets the position for searching for favorites.
      */
-    cursor?: FavoriteWhereUniqueInput
+    cursor?: favoriteWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Favorites from the position of the cursor.
+     * Take `±n` favorites from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Favorites.
+     * Skip the first `n` favorites.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Favorites.
+     * Filter by unique combinations of favorites.
      */
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
   /**
-   * Favorite findFirstOrThrow
+   * favorite findFirstOrThrow
    */
-  export type FavoriteFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * Filter, which Favorite to fetch.
+     * Filter, which favorite to fetch.
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Favorites to fetch.
+     * Determine the order of favorites to fetch.
      */
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
+    orderBy?: favoriteOrderByWithRelationInput | favoriteOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Favorites.
+     * Sets the position for searching for favorites.
      */
-    cursor?: FavoriteWhereUniqueInput
+    cursor?: favoriteWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Favorites from the position of the cursor.
+     * Take `±n` favorites from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Favorites.
+     * Skip the first `n` favorites.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Favorites.
+     * Filter by unique combinations of favorites.
      */
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
   /**
-   * Favorite findMany
+   * favorite findMany
    */
-  export type FavoriteFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * Filter, which Favorites to fetch.
+     * Filter, which favorites to fetch.
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Favorites to fetch.
+     * Determine the order of favorites to fetch.
      */
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
+    orderBy?: favoriteOrderByWithRelationInput | favoriteOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Favorites.
+     * Sets the position for listing favorites.
      */
-    cursor?: FavoriteWhereUniqueInput
+    cursor?: favoriteWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Favorites from the position of the cursor.
+     * Take `±n` favorites from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Favorites.
+     * Skip the first `n` favorites.
      */
     skip?: number
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
   /**
-   * Favorite create
+   * favorite create
    */
-  export type FavoriteCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * The data needed to create a Favorite.
+     * The data needed to create a favorite.
      */
-    data: XOR<FavoriteCreateInput, FavoriteUncheckedCreateInput>
+    data: XOR<favoriteCreateInput, favoriteUncheckedCreateInput>
   }
 
   /**
-   * Favorite createMany
+   * favorite createMany
    */
-  export type FavoriteCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Favorites.
+     * The data used to create many favorites.
      */
-    data: FavoriteCreateManyInput | FavoriteCreateManyInput[]
+    data: favoriteCreateManyInput | favoriteCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Favorite createManyAndReturn
+   * favorite createManyAndReturn
    */
-  export type FavoriteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelectCreateManyAndReturn<ExtArgs> | null
+    select?: favoriteSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
-     * The data used to create many Favorites.
+     * The data used to create many favorites.
      */
-    data: FavoriteCreateManyInput | FavoriteCreateManyInput[]
+    data: favoriteCreateManyInput | favoriteCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: favoriteIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Favorite update
+   * favorite update
    */
-  export type FavoriteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * The data needed to update a Favorite.
+     * The data needed to update a favorite.
      */
-    data: XOR<FavoriteUpdateInput, FavoriteUncheckedUpdateInput>
+    data: XOR<favoriteUpdateInput, favoriteUncheckedUpdateInput>
     /**
-     * Choose, which Favorite to update.
+     * Choose, which favorite to update.
      */
-    where: FavoriteWhereUniqueInput
+    where: favoriteWhereUniqueInput
   }
 
   /**
-   * Favorite updateMany
+   * favorite updateMany
    */
-  export type FavoriteUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Favorites.
+     * The data used to update favorites.
      */
-    data: XOR<FavoriteUpdateManyMutationInput, FavoriteUncheckedUpdateManyInput>
+    data: XOR<favoriteUpdateManyMutationInput, favoriteUncheckedUpdateManyInput>
     /**
-     * Filter which Favorites to update
+     * Filter which favorites to update
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
-     * Limit how many Favorites to update.
+     * Limit how many favorites to update.
      */
     limit?: number
   }
 
   /**
-   * Favorite updateManyAndReturn
+   * favorite updateManyAndReturn
    */
-  export type FavoriteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: favoriteSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
-     * The data used to update Favorites.
+     * The data used to update favorites.
      */
-    data: XOR<FavoriteUpdateManyMutationInput, FavoriteUncheckedUpdateManyInput>
+    data: XOR<favoriteUpdateManyMutationInput, favoriteUncheckedUpdateManyInput>
     /**
-     * Filter which Favorites to update
+     * Filter which favorites to update
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
-     * Limit how many Favorites to update.
+     * Limit how many favorites to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: favoriteIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Favorite upsert
+   * favorite upsert
    */
-  export type FavoriteUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * The filter to search for the Favorite to update in case it exists.
+     * The filter to search for the favorite to update in case it exists.
      */
-    where: FavoriteWhereUniqueInput
+    where: favoriteWhereUniqueInput
     /**
-     * In case the Favorite found by the `where` argument doesn't exist, create a new Favorite with this data.
+     * In case the favorite found by the `where` argument doesn't exist, create a new favorite with this data.
      */
-    create: XOR<FavoriteCreateInput, FavoriteUncheckedCreateInput>
+    create: XOR<favoriteCreateInput, favoriteUncheckedCreateInput>
     /**
-     * In case the Favorite was found with the provided `where` argument, update it with this data.
+     * In case the favorite was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<FavoriteUpdateInput, FavoriteUncheckedUpdateInput>
+    update: XOR<favoriteUpdateInput, favoriteUncheckedUpdateInput>
   }
 
   /**
-   * Favorite delete
+   * favorite delete
    */
-  export type FavoriteDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
     /**
-     * Filter which Favorite to delete.
+     * Filter which favorite to delete.
      */
-    where: FavoriteWhereUniqueInput
+    where: favoriteWhereUniqueInput
   }
 
   /**
-   * Favorite deleteMany
+   * favorite deleteMany
    */
-  export type FavoriteDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Favorites to delete
+     * Filter which favorites to delete
      */
-    where?: FavoriteWhereInput
+    where?: favoriteWhereInput
     /**
-     * Limit how many Favorites to delete.
+     * Limit how many favorites to delete.
      */
     limit?: number
   }
 
   /**
-   * Favorite without action
+   * favorite without action
    */
-  export type FavoriteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type favoriteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
+    include?: favoriteInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Exercise
+   * Model exercise
    */
 
   export type AggregateExercise = {
@@ -6031,21 +6031,30 @@ export namespace Prisma {
     id: number | null
     name: string | null
     muscle: string | null
-    video_img_url: string | null
+    videoImgUrl: string | null
+    description: string | null
+    executionSteps: string | null
+    tips: string | null
   }
 
   export type ExerciseMaxAggregateOutputType = {
     id: number | null
     name: string | null
     muscle: string | null
-    video_img_url: string | null
+    videoImgUrl: string | null
+    description: string | null
+    executionSteps: string | null
+    tips: string | null
   }
 
   export type ExerciseCountAggregateOutputType = {
     id: number
     name: number
     muscle: number
-    video_img_url: number
+    videoImgUrl: number
+    description: number
+    executionSteps: number
+    tips: number
     _all: number
   }
 
@@ -6062,57 +6071,66 @@ export namespace Prisma {
     id?: true
     name?: true
     muscle?: true
-    video_img_url?: true
+    videoImgUrl?: true
+    description?: true
+    executionSteps?: true
+    tips?: true
   }
 
   export type ExerciseMaxAggregateInputType = {
     id?: true
     name?: true
     muscle?: true
-    video_img_url?: true
+    videoImgUrl?: true
+    description?: true
+    executionSteps?: true
+    tips?: true
   }
 
   export type ExerciseCountAggregateInputType = {
     id?: true
     name?: true
     muscle?: true
-    video_img_url?: true
+    videoImgUrl?: true
+    description?: true
+    executionSteps?: true
+    tips?: true
     _all?: true
   }
 
   export type ExerciseAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Exercise to aggregate.
+     * Filter which exercise to aggregate.
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercises to fetch.
+     * Determine the order of exercises to fetch.
      */
-    orderBy?: ExerciseOrderByWithRelationInput | ExerciseOrderByWithRelationInput[]
+    orderBy?: exerciseOrderByWithRelationInput | exerciseOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ExerciseWhereUniqueInput
+    cursor?: exerciseWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercises from the position of the cursor.
+     * Take `±n` exercises from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercises.
+     * Skip the first `n` exercises.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Exercises
+     * Count returned exercises
     **/
     _count?: true | ExerciseCountAggregateInputType
     /**
@@ -6152,11 +6170,11 @@ export namespace Prisma {
 
 
 
-  export type ExerciseGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ExerciseWhereInput
-    orderBy?: ExerciseOrderByWithAggregationInput | ExerciseOrderByWithAggregationInput[]
+  export type exerciseGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: exerciseWhereInput
+    orderBy?: exerciseOrderByWithAggregationInput | exerciseOrderByWithAggregationInput[]
     by: ExerciseScalarFieldEnum[] | ExerciseScalarFieldEnum
-    having?: ExerciseScalarWhereWithAggregatesInput
+    having?: exerciseScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: ExerciseCountAggregateInputType | true
@@ -6170,7 +6188,10 @@ export namespace Prisma {
     id: number
     name: string
     muscle: string
-    video_img_url: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
     _count: ExerciseCountAggregateOutputType | null
     _avg: ExerciseAvgAggregateOutputType | null
     _sum: ExerciseSumAggregateOutputType | null
@@ -6178,7 +6199,7 @@ export namespace Prisma {
     _max: ExerciseMaxAggregateOutputType | null
   }
 
-  type GetExerciseGroupByPayload<T extends ExerciseGroupByArgs> = Prisma.PrismaPromise<
+  type GetExerciseGroupByPayload<T extends exerciseGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<ExerciseGroupByOutputType, T['by']> &
         {
@@ -6192,76 +6213,91 @@ export namespace Prisma {
     >
 
 
-  export type ExerciseSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type exerciseSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     muscle?: boolean
-    video_img_url?: boolean
-    Progress?: boolean | Exercise$ProgressArgs<ExtArgs>
-    Favorite?: boolean | Exercise$FavoriteArgs<ExtArgs>
-    Exercise_routine?: boolean | Exercise$Exercise_routineArgs<ExtArgs>
+    videoImgUrl?: boolean
+    description?: boolean
+    executionSteps?: boolean
+    tips?: boolean
+    Progress?: boolean | exercise$ProgressArgs<ExtArgs>
+    Favorite?: boolean | exercise$FavoriteArgs<ExtArgs>
+    exerciseRoutine?: boolean | exercise$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | ExerciseCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["exercise"]>
 
-  export type ExerciseSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type exerciseSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     muscle?: boolean
-    video_img_url?: boolean
+    videoImgUrl?: boolean
+    description?: boolean
+    executionSteps?: boolean
+    tips?: boolean
   }, ExtArgs["result"]["exercise"]>
 
-  export type ExerciseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type exerciseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     muscle?: boolean
-    video_img_url?: boolean
+    videoImgUrl?: boolean
+    description?: boolean
+    executionSteps?: boolean
+    tips?: boolean
   }, ExtArgs["result"]["exercise"]>
 
-  export type ExerciseSelectScalar = {
+  export type exerciseSelectScalar = {
     id?: boolean
     name?: boolean
     muscle?: boolean
-    video_img_url?: boolean
+    videoImgUrl?: boolean
+    description?: boolean
+    executionSteps?: boolean
+    tips?: boolean
   }
 
-  export type ExerciseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "muscle" | "video_img_url", ExtArgs["result"]["exercise"]>
-  export type ExerciseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Progress?: boolean | Exercise$ProgressArgs<ExtArgs>
-    Favorite?: boolean | Exercise$FavoriteArgs<ExtArgs>
-    Exercise_routine?: boolean | Exercise$Exercise_routineArgs<ExtArgs>
+  export type exerciseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "muscle" | "videoImgUrl" | "description" | "executionSteps" | "tips", ExtArgs["result"]["exercise"]>
+  export type exerciseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Progress?: boolean | exercise$ProgressArgs<ExtArgs>
+    Favorite?: boolean | exercise$FavoriteArgs<ExtArgs>
+    exerciseRoutine?: boolean | exercise$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | ExerciseCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type ExerciseIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type ExerciseIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type exerciseIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type exerciseIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $ExercisePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Exercise"
+  export type $exercisePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "exercise"
     objects: {
-      Progress: Prisma.$ProgressPayload<ExtArgs>[]
-      Favorite: Prisma.$FavoritePayload<ExtArgs>[]
-      Exercise_routine: Prisma.$Exercise_routinePayload<ExtArgs>[]
+      Progress: Prisma.$progressPayload<ExtArgs>[]
+      Favorite: Prisma.$favoritePayload<ExtArgs>[]
+      exerciseRoutine: Prisma.$exerciseRoutinePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
       muscle: string
-      video_img_url: string
+      videoImgUrl: string
+      description: string
+      executionSteps: string
+      tips: string
     }, ExtArgs["result"]["exercise"]>
     composites: {}
   }
 
-  type ExerciseGetPayload<S extends boolean | null | undefined | ExerciseDefaultArgs> = $Result.GetResult<Prisma.$ExercisePayload, S>
+  type exerciseGetPayload<S extends boolean | null | undefined | exerciseDefaultArgs> = $Result.GetResult<Prisma.$exercisePayload, S>
 
-  type ExerciseCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ExerciseFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type exerciseCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<exerciseFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: ExerciseCountAggregateInputType | true
     }
 
-  export interface ExerciseDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Exercise'], meta: { name: 'Exercise' } }
+  export interface exerciseDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['exercise'], meta: { name: 'exercise' } }
     /**
      * Find zero or one Exercise that matches the filter.
-     * @param {ExerciseFindUniqueArgs} args - Arguments to find a Exercise
+     * @param {exerciseFindUniqueArgs} args - Arguments to find a Exercise
      * @example
      * // Get one Exercise
      * const exercise = await prisma.exercise.findUnique({
@@ -6270,12 +6306,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends ExerciseFindUniqueArgs>(args: SelectSubset<T, ExerciseFindUniqueArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends exerciseFindUniqueArgs>(args: SelectSubset<T, exerciseFindUniqueArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Exercise that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ExerciseFindUniqueOrThrowArgs} args - Arguments to find a Exercise
+     * @param {exerciseFindUniqueOrThrowArgs} args - Arguments to find a Exercise
      * @example
      * // Get one Exercise
      * const exercise = await prisma.exercise.findUniqueOrThrow({
@@ -6284,13 +6320,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ExerciseFindUniqueOrThrowArgs>(args: SelectSubset<T, ExerciseFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends exerciseFindUniqueOrThrowArgs>(args: SelectSubset<T, exerciseFindUniqueOrThrowArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Exercise that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExerciseFindFirstArgs} args - Arguments to find a Exercise
+     * @param {exerciseFindFirstArgs} args - Arguments to find a Exercise
      * @example
      * // Get one Exercise
      * const exercise = await prisma.exercise.findFirst({
@@ -6299,14 +6335,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends ExerciseFindFirstArgs>(args?: SelectSubset<T, ExerciseFindFirstArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends exerciseFindFirstArgs>(args?: SelectSubset<T, exerciseFindFirstArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Exercise that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExerciseFindFirstOrThrowArgs} args - Arguments to find a Exercise
+     * @param {exerciseFindFirstOrThrowArgs} args - Arguments to find a Exercise
      * @example
      * // Get one Exercise
      * const exercise = await prisma.exercise.findFirstOrThrow({
@@ -6315,13 +6351,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends ExerciseFindFirstOrThrowArgs>(args?: SelectSubset<T, ExerciseFindFirstOrThrowArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends exerciseFindFirstOrThrowArgs>(args?: SelectSubset<T, exerciseFindFirstOrThrowArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Exercises that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExerciseFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {exerciseFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Exercises
      * const exercises = await prisma.exercise.findMany()
@@ -6333,11 +6369,11 @@ export namespace Prisma {
      * const exerciseWithIdOnly = await prisma.exercise.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends ExerciseFindManyArgs>(args?: SelectSubset<T, ExerciseFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends exerciseFindManyArgs>(args?: SelectSubset<T, exerciseFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Exercise.
-     * @param {ExerciseCreateArgs} args - Arguments to create a Exercise.
+     * @param {exerciseCreateArgs} args - Arguments to create a Exercise.
      * @example
      * // Create one Exercise
      * const Exercise = await prisma.exercise.create({
@@ -6347,11 +6383,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends ExerciseCreateArgs>(args: SelectSubset<T, ExerciseCreateArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends exerciseCreateArgs>(args: SelectSubset<T, exerciseCreateArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Exercises.
-     * @param {ExerciseCreateManyArgs} args - Arguments to create many Exercises.
+     * @param {exerciseCreateManyArgs} args - Arguments to create many Exercises.
      * @example
      * // Create many Exercises
      * const exercise = await prisma.exercise.createMany({
@@ -6361,11 +6397,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends ExerciseCreateManyArgs>(args?: SelectSubset<T, ExerciseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends exerciseCreateManyArgs>(args?: SelectSubset<T, exerciseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Exercises and returns the data saved in the database.
-     * @param {ExerciseCreateManyAndReturnArgs} args - Arguments to create many Exercises.
+     * @param {exerciseCreateManyAndReturnArgs} args - Arguments to create many Exercises.
      * @example
      * // Create many Exercises
      * const exercise = await prisma.exercise.createManyAndReturn({
@@ -6385,11 +6421,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends ExerciseCreateManyAndReturnArgs>(args?: SelectSubset<T, ExerciseCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends exerciseCreateManyAndReturnArgs>(args?: SelectSubset<T, exerciseCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Delete a Exercise.
-     * @param {ExerciseDeleteArgs} args - Arguments to delete one Exercise.
+     * @param {exerciseDeleteArgs} args - Arguments to delete one Exercise.
      * @example
      * // Delete one Exercise
      * const Exercise = await prisma.exercise.delete({
@@ -6399,11 +6435,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends ExerciseDeleteArgs>(args: SelectSubset<T, ExerciseDeleteArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends exerciseDeleteArgs>(args: SelectSubset<T, exerciseDeleteArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Exercise.
-     * @param {ExerciseUpdateArgs} args - Arguments to update one Exercise.
+     * @param {exerciseUpdateArgs} args - Arguments to update one Exercise.
      * @example
      * // Update one Exercise
      * const exercise = await prisma.exercise.update({
@@ -6416,11 +6452,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ExerciseUpdateArgs>(args: SelectSubset<T, ExerciseUpdateArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends exerciseUpdateArgs>(args: SelectSubset<T, exerciseUpdateArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Exercises.
-     * @param {ExerciseDeleteManyArgs} args - Arguments to filter Exercises to delete.
+     * @param {exerciseDeleteManyArgs} args - Arguments to filter Exercises to delete.
      * @example
      * // Delete a few Exercises
      * const { count } = await prisma.exercise.deleteMany({
@@ -6430,13 +6466,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends ExerciseDeleteManyArgs>(args?: SelectSubset<T, ExerciseDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends exerciseDeleteManyArgs>(args?: SelectSubset<T, exerciseDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Exercises.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExerciseUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {exerciseUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Exercises
      * const exercise = await prisma.exercise.updateMany({
@@ -6449,11 +6485,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ExerciseUpdateManyArgs>(args: SelectSubset<T, ExerciseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends exerciseUpdateManyArgs>(args: SelectSubset<T, exerciseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Exercises and returns the data updated in the database.
-     * @param {ExerciseUpdateManyAndReturnArgs} args - Arguments to update many Exercises.
+     * @param {exerciseUpdateManyAndReturnArgs} args - Arguments to update many Exercises.
      * @example
      * // Update many Exercises
      * const exercise = await prisma.exercise.updateManyAndReturn({
@@ -6479,11 +6515,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends ExerciseUpdateManyAndReturnArgs>(args: SelectSubset<T, ExerciseUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends exerciseUpdateManyAndReturnArgs>(args: SelectSubset<T, exerciseUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Exercise.
-     * @param {ExerciseUpsertArgs} args - Arguments to update or create a Exercise.
+     * @param {exerciseUpsertArgs} args - Arguments to update or create a Exercise.
      * @example
      * // Update or create a Exercise
      * const exercise = await prisma.exercise.upsert({
@@ -6498,14 +6534,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends ExerciseUpsertArgs>(args: SelectSubset<T, ExerciseUpsertArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends exerciseUpsertArgs>(args: SelectSubset<T, exerciseUpsertArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Exercises.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExerciseCountArgs} args - Arguments to filter Exercises to count.
+     * @param {exerciseCountArgs} args - Arguments to filter Exercises to count.
      * @example
      * // Count the number of Exercises
      * const count = await prisma.exercise.count({
@@ -6514,8 +6550,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends ExerciseCountArgs>(
-      args?: Subset<T, ExerciseCountArgs>,
+    count<T extends exerciseCountArgs>(
+      args?: Subset<T, exerciseCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -6554,7 +6590,7 @@ export namespace Prisma {
      * Group by Exercise.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExerciseGroupByArgs} args - Group by arguments.
+     * @param {exerciseGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -6569,14 +6605,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ExerciseGroupByArgs,
+      T extends exerciseGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ExerciseGroupByArgs['orderBy'] }
-        : { orderBy?: ExerciseGroupByArgs['orderBy'] },
+        ? { orderBy: exerciseGroupByArgs['orderBy'] }
+        : { orderBy?: exerciseGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -6625,24 +6661,24 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ExerciseGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExerciseGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, exerciseGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExerciseGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Exercise model
+   * Fields of the exercise model
    */
-  readonly fields: ExerciseFieldRefs;
+  readonly fields: exerciseFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Exercise.
+   * The delegate class that acts as a "Promise-like" for exercise.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ExerciseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__exerciseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Progress<T extends Exercise$ProgressArgs<ExtArgs> = {}>(args?: Subset<T, Exercise$ProgressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Favorite<T extends Exercise$FavoriteArgs<ExtArgs> = {}>(args?: Subset<T, Exercise$FavoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Exercise_routine<T extends Exercise$Exercise_routineArgs<ExtArgs> = {}>(args?: Subset<T, Exercise$Exercise_routineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Progress<T extends exercise$ProgressArgs<ExtArgs> = {}>(args?: Subset<T, exercise$ProgressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Favorite<T extends exercise$FavoriteArgs<ExtArgs> = {}>(args?: Subset<T, exercise$FavoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    exerciseRoutine<T extends exercise$exerciseRoutineArgs<ExtArgs> = {}>(args?: Subset<T, exercise$exerciseRoutineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6669,893 +6705,896 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Exercise model
+   * Fields of the exercise model
    */
-  interface ExerciseFieldRefs {
-    readonly id: FieldRef<"Exercise", 'Int'>
-    readonly name: FieldRef<"Exercise", 'String'>
-    readonly muscle: FieldRef<"Exercise", 'String'>
-    readonly video_img_url: FieldRef<"Exercise", 'String'>
+  interface exerciseFieldRefs {
+    readonly id: FieldRef<"exercise", 'Int'>
+    readonly name: FieldRef<"exercise", 'String'>
+    readonly muscle: FieldRef<"exercise", 'String'>
+    readonly videoImgUrl: FieldRef<"exercise", 'String'>
+    readonly description: FieldRef<"exercise", 'String'>
+    readonly executionSteps: FieldRef<"exercise", 'String'>
+    readonly tips: FieldRef<"exercise", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Exercise findUnique
+   * exercise findUnique
    */
-  export type ExerciseFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise to fetch.
+     * Filter, which exercise to fetch.
      */
-    where: ExerciseWhereUniqueInput
+    where: exerciseWhereUniqueInput
   }
 
   /**
-   * Exercise findUniqueOrThrow
+   * exercise findUniqueOrThrow
    */
-  export type ExerciseFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise to fetch.
+     * Filter, which exercise to fetch.
      */
-    where: ExerciseWhereUniqueInput
+    where: exerciseWhereUniqueInput
   }
 
   /**
-   * Exercise findFirst
+   * exercise findFirst
    */
-  export type ExerciseFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise to fetch.
+     * Filter, which exercise to fetch.
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercises to fetch.
+     * Determine the order of exercises to fetch.
      */
-    orderBy?: ExerciseOrderByWithRelationInput | ExerciseOrderByWithRelationInput[]
+    orderBy?: exerciseOrderByWithRelationInput | exerciseOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Exercises.
+     * Sets the position for searching for exercises.
      */
-    cursor?: ExerciseWhereUniqueInput
+    cursor?: exerciseWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercises from the position of the cursor.
+     * Take `±n` exercises from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercises.
+     * Skip the first `n` exercises.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Exercises.
+     * Filter by unique combinations of exercises.
      */
     distinct?: ExerciseScalarFieldEnum | ExerciseScalarFieldEnum[]
   }
 
   /**
-   * Exercise findFirstOrThrow
+   * exercise findFirstOrThrow
    */
-  export type ExerciseFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise to fetch.
+     * Filter, which exercise to fetch.
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercises to fetch.
+     * Determine the order of exercises to fetch.
      */
-    orderBy?: ExerciseOrderByWithRelationInput | ExerciseOrderByWithRelationInput[]
+    orderBy?: exerciseOrderByWithRelationInput | exerciseOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Exercises.
+     * Sets the position for searching for exercises.
      */
-    cursor?: ExerciseWhereUniqueInput
+    cursor?: exerciseWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercises from the position of the cursor.
+     * Take `±n` exercises from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercises.
+     * Skip the first `n` exercises.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Exercises.
+     * Filter by unique combinations of exercises.
      */
     distinct?: ExerciseScalarFieldEnum | ExerciseScalarFieldEnum[]
   }
 
   /**
-   * Exercise findMany
+   * exercise findMany
    */
-  export type ExerciseFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * Filter, which Exercises to fetch.
+     * Filter, which exercises to fetch.
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercises to fetch.
+     * Determine the order of exercises to fetch.
      */
-    orderBy?: ExerciseOrderByWithRelationInput | ExerciseOrderByWithRelationInput[]
+    orderBy?: exerciseOrderByWithRelationInput | exerciseOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Exercises.
+     * Sets the position for listing exercises.
      */
-    cursor?: ExerciseWhereUniqueInput
+    cursor?: exerciseWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercises from the position of the cursor.
+     * Take `±n` exercises from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercises.
+     * Skip the first `n` exercises.
      */
     skip?: number
     distinct?: ExerciseScalarFieldEnum | ExerciseScalarFieldEnum[]
   }
 
   /**
-   * Exercise create
+   * exercise create
    */
-  export type ExerciseCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * The data needed to create a Exercise.
+     * The data needed to create a exercise.
      */
-    data: XOR<ExerciseCreateInput, ExerciseUncheckedCreateInput>
+    data: XOR<exerciseCreateInput, exerciseUncheckedCreateInput>
   }
 
   /**
-   * Exercise createMany
+   * exercise createMany
    */
-  export type ExerciseCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Exercises.
+     * The data used to create many exercises.
      */
-    data: ExerciseCreateManyInput | ExerciseCreateManyInput[]
+    data: exerciseCreateManyInput | exerciseCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Exercise createManyAndReturn
+   * exercise createManyAndReturn
    */
-  export type ExerciseCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelectCreateManyAndReturn<ExtArgs> | null
+    select?: exerciseSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
-     * The data used to create many Exercises.
+     * The data used to create many exercises.
      */
-    data: ExerciseCreateManyInput | ExerciseCreateManyInput[]
+    data: exerciseCreateManyInput | exerciseCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Exercise update
+   * exercise update
    */
-  export type ExerciseUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * The data needed to update a Exercise.
+     * The data needed to update a exercise.
      */
-    data: XOR<ExerciseUpdateInput, ExerciseUncheckedUpdateInput>
+    data: XOR<exerciseUpdateInput, exerciseUncheckedUpdateInput>
     /**
-     * Choose, which Exercise to update.
+     * Choose, which exercise to update.
      */
-    where: ExerciseWhereUniqueInput
+    where: exerciseWhereUniqueInput
   }
 
   /**
-   * Exercise updateMany
+   * exercise updateMany
    */
-  export type ExerciseUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Exercises.
+     * The data used to update exercises.
      */
-    data: XOR<ExerciseUpdateManyMutationInput, ExerciseUncheckedUpdateManyInput>
+    data: XOR<exerciseUpdateManyMutationInput, exerciseUncheckedUpdateManyInput>
     /**
-     * Filter which Exercises to update
+     * Filter which exercises to update
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
-     * Limit how many Exercises to update.
+     * Limit how many exercises to update.
      */
     limit?: number
   }
 
   /**
-   * Exercise updateManyAndReturn
+   * exercise updateManyAndReturn
    */
-  export type ExerciseUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: exerciseSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
-     * The data used to update Exercises.
+     * The data used to update exercises.
      */
-    data: XOR<ExerciseUpdateManyMutationInput, ExerciseUncheckedUpdateManyInput>
+    data: XOR<exerciseUpdateManyMutationInput, exerciseUncheckedUpdateManyInput>
     /**
-     * Filter which Exercises to update
+     * Filter which exercises to update
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
-     * Limit how many Exercises to update.
+     * Limit how many exercises to update.
      */
     limit?: number
   }
 
   /**
-   * Exercise upsert
+   * exercise upsert
    */
-  export type ExerciseUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * The filter to search for the Exercise to update in case it exists.
+     * The filter to search for the exercise to update in case it exists.
      */
-    where: ExerciseWhereUniqueInput
+    where: exerciseWhereUniqueInput
     /**
-     * In case the Exercise found by the `where` argument doesn't exist, create a new Exercise with this data.
+     * In case the exercise found by the `where` argument doesn't exist, create a new exercise with this data.
      */
-    create: XOR<ExerciseCreateInput, ExerciseUncheckedCreateInput>
+    create: XOR<exerciseCreateInput, exerciseUncheckedCreateInput>
     /**
-     * In case the Exercise was found with the provided `where` argument, update it with this data.
+     * In case the exercise was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ExerciseUpdateInput, ExerciseUncheckedUpdateInput>
+    update: XOR<exerciseUpdateInput, exerciseUncheckedUpdateInput>
   }
 
   /**
-   * Exercise delete
+   * exercise delete
    */
-  export type ExerciseDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
     /**
-     * Filter which Exercise to delete.
+     * Filter which exercise to delete.
      */
-    where: ExerciseWhereUniqueInput
+    where: exerciseWhereUniqueInput
   }
 
   /**
-   * Exercise deleteMany
+   * exercise deleteMany
    */
-  export type ExerciseDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Exercises to delete
+     * Filter which exercises to delete
      */
-    where?: ExerciseWhereInput
+    where?: exerciseWhereInput
     /**
-     * Limit how many Exercises to delete.
+     * Limit how many exercises to delete.
      */
     limit?: number
   }
 
   /**
-   * Exercise.Progress
+   * exercise.Progress
    */
-  export type Exercise$ProgressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exercise$ProgressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Progress
+     * Select specific fields to fetch from the progress
      */
-    select?: ProgressSelect<ExtArgs> | null
+    select?: progressSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Progress
+     * Omit specific fields from the progress
      */
-    omit?: ProgressOmit<ExtArgs> | null
+    omit?: progressOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProgressInclude<ExtArgs> | null
-    where?: ProgressWhereInput
-    orderBy?: ProgressOrderByWithRelationInput | ProgressOrderByWithRelationInput[]
-    cursor?: ProgressWhereUniqueInput
+    include?: progressInclude<ExtArgs> | null
+    where?: progressWhereInput
+    orderBy?: progressOrderByWithRelationInput | progressOrderByWithRelationInput[]
+    cursor?: progressWhereUniqueInput
     take?: number
     skip?: number
     distinct?: ProgressScalarFieldEnum | ProgressScalarFieldEnum[]
   }
 
   /**
-   * Exercise.Favorite
+   * exercise.Favorite
    */
-  export type Exercise$FavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exercise$FavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Favorite
+     * Select specific fields to fetch from the favorite
      */
-    select?: FavoriteSelect<ExtArgs> | null
+    select?: favoriteSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Favorite
+     * Omit specific fields from the favorite
      */
-    omit?: FavoriteOmit<ExtArgs> | null
+    omit?: favoriteOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FavoriteInclude<ExtArgs> | null
-    where?: FavoriteWhereInput
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
-    cursor?: FavoriteWhereUniqueInput
+    include?: favoriteInclude<ExtArgs> | null
+    where?: favoriteWhereInput
+    orderBy?: favoriteOrderByWithRelationInput | favoriteOrderByWithRelationInput[]
+    cursor?: favoriteWhereUniqueInput
     take?: number
     skip?: number
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
   /**
-   * Exercise.Exercise_routine
+   * exercise.exerciseRoutine
    */
-  export type Exercise$Exercise_routineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exercise$exerciseRoutineArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
-    where?: Exercise_routineWhereInput
-    orderBy?: Exercise_routineOrderByWithRelationInput | Exercise_routineOrderByWithRelationInput[]
-    cursor?: Exercise_routineWhereUniqueInput
+    include?: exerciseRoutineInclude<ExtArgs> | null
+    where?: exerciseRoutineWhereInput
+    orderBy?: exerciseRoutineOrderByWithRelationInput | exerciseRoutineOrderByWithRelationInput[]
+    cursor?: exerciseRoutineWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Exercise_routineScalarFieldEnum | Exercise_routineScalarFieldEnum[]
+    distinct?: ExerciseRoutineScalarFieldEnum | ExerciseRoutineScalarFieldEnum[]
   }
 
   /**
-   * Exercise without action
+   * exercise without action
    */
-  export type ExerciseDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise
+     * Select specific fields to fetch from the exercise
      */
-    select?: ExerciseSelect<ExtArgs> | null
+    select?: exerciseSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise
+     * Omit specific fields from the exercise
      */
-    omit?: ExerciseOmit<ExtArgs> | null
+    omit?: exerciseOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExerciseInclude<ExtArgs> | null
+    include?: exerciseInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Exercise_routine
+   * Model exerciseRoutine
    */
 
-  export type AggregateExercise_routine = {
-    _count: Exercise_routineCountAggregateOutputType | null
-    _avg: Exercise_routineAvgAggregateOutputType | null
-    _sum: Exercise_routineSumAggregateOutputType | null
-    _min: Exercise_routineMinAggregateOutputType | null
-    _max: Exercise_routineMaxAggregateOutputType | null
+  export type AggregateExerciseRoutine = {
+    _count: ExerciseRoutineCountAggregateOutputType | null
+    _avg: ExerciseRoutineAvgAggregateOutputType | null
+    _sum: ExerciseRoutineSumAggregateOutputType | null
+    _min: ExerciseRoutineMinAggregateOutputType | null
+    _max: ExerciseRoutineMaxAggregateOutputType | null
   }
 
-  export type Exercise_routineAvgAggregateOutputType = {
+  export type ExerciseRoutineAvgAggregateOutputType = {
     id: number | null
-    routine_id: number | null
-    exercise_id: number | null
+    routineId: number | null
+    exerciseId: number | null
     series: number | null
     repetitions: number | null
   }
 
-  export type Exercise_routineSumAggregateOutputType = {
+  export type ExerciseRoutineSumAggregateOutputType = {
     id: number | null
-    routine_id: number | null
-    exercise_id: number | null
+    routineId: number | null
+    exerciseId: number | null
     series: number | null
     repetitions: number | null
   }
 
-  export type Exercise_routineMinAggregateOutputType = {
+  export type ExerciseRoutineMinAggregateOutputType = {
     id: number | null
-    routine_id: number | null
-    exercise_id: number | null
+    routineId: number | null
+    exerciseId: number | null
     series: number | null
     repetitions: number | null
   }
 
-  export type Exercise_routineMaxAggregateOutputType = {
+  export type ExerciseRoutineMaxAggregateOutputType = {
     id: number | null
-    routine_id: number | null
-    exercise_id: number | null
+    routineId: number | null
+    exerciseId: number | null
     series: number | null
     repetitions: number | null
   }
 
-  export type Exercise_routineCountAggregateOutputType = {
+  export type ExerciseRoutineCountAggregateOutputType = {
     id: number
-    routine_id: number
-    exercise_id: number
+    routineId: number
+    exerciseId: number
     series: number
     repetitions: number
     _all: number
   }
 
 
-  export type Exercise_routineAvgAggregateInputType = {
+  export type ExerciseRoutineAvgAggregateInputType = {
     id?: true
-    routine_id?: true
-    exercise_id?: true
+    routineId?: true
+    exerciseId?: true
     series?: true
     repetitions?: true
   }
 
-  export type Exercise_routineSumAggregateInputType = {
+  export type ExerciseRoutineSumAggregateInputType = {
     id?: true
-    routine_id?: true
-    exercise_id?: true
+    routineId?: true
+    exerciseId?: true
     series?: true
     repetitions?: true
   }
 
-  export type Exercise_routineMinAggregateInputType = {
+  export type ExerciseRoutineMinAggregateInputType = {
     id?: true
-    routine_id?: true
-    exercise_id?: true
+    routineId?: true
+    exerciseId?: true
     series?: true
     repetitions?: true
   }
 
-  export type Exercise_routineMaxAggregateInputType = {
+  export type ExerciseRoutineMaxAggregateInputType = {
     id?: true
-    routine_id?: true
-    exercise_id?: true
+    routineId?: true
+    exerciseId?: true
     series?: true
     repetitions?: true
   }
 
-  export type Exercise_routineCountAggregateInputType = {
+  export type ExerciseRoutineCountAggregateInputType = {
     id?: true
-    routine_id?: true
-    exercise_id?: true
+    routineId?: true
+    exerciseId?: true
     series?: true
     repetitions?: true
     _all?: true
   }
 
-  export type Exercise_routineAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ExerciseRoutineAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Exercise_routine to aggregate.
+     * Filter which exerciseRoutine to aggregate.
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercise_routines to fetch.
+     * Determine the order of exerciseRoutines to fetch.
      */
-    orderBy?: Exercise_routineOrderByWithRelationInput | Exercise_routineOrderByWithRelationInput[]
+    orderBy?: exerciseRoutineOrderByWithRelationInput | exerciseRoutineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Exercise_routineWhereUniqueInput
+    cursor?: exerciseRoutineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercise_routines from the position of the cursor.
+     * Take `±n` exerciseRoutines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercise_routines.
+     * Skip the first `n` exerciseRoutines.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Exercise_routines
+     * Count returned exerciseRoutines
     **/
-    _count?: true | Exercise_routineCountAggregateInputType
+    _count?: true | ExerciseRoutineCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: Exercise_routineAvgAggregateInputType
+    _avg?: ExerciseRoutineAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: Exercise_routineSumAggregateInputType
+    _sum?: ExerciseRoutineSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Exercise_routineMinAggregateInputType
+    _min?: ExerciseRoutineMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Exercise_routineMaxAggregateInputType
+    _max?: ExerciseRoutineMaxAggregateInputType
   }
 
-  export type GetExercise_routineAggregateType<T extends Exercise_routineAggregateArgs> = {
-        [P in keyof T & keyof AggregateExercise_routine]: P extends '_count' | 'count'
+  export type GetExerciseRoutineAggregateType<T extends ExerciseRoutineAggregateArgs> = {
+        [P in keyof T & keyof AggregateExerciseRoutine]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateExercise_routine[P]>
-      : GetScalarType<T[P], AggregateExercise_routine[P]>
+        : GetScalarType<T[P], AggregateExerciseRoutine[P]>
+      : GetScalarType<T[P], AggregateExerciseRoutine[P]>
   }
 
 
 
 
-  export type Exercise_routineGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Exercise_routineWhereInput
-    orderBy?: Exercise_routineOrderByWithAggregationInput | Exercise_routineOrderByWithAggregationInput[]
-    by: Exercise_routineScalarFieldEnum[] | Exercise_routineScalarFieldEnum
-    having?: Exercise_routineScalarWhereWithAggregatesInput
+  export type exerciseRoutineGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: exerciseRoutineWhereInput
+    orderBy?: exerciseRoutineOrderByWithAggregationInput | exerciseRoutineOrderByWithAggregationInput[]
+    by: ExerciseRoutineScalarFieldEnum[] | ExerciseRoutineScalarFieldEnum
+    having?: exerciseRoutineScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Exercise_routineCountAggregateInputType | true
-    _avg?: Exercise_routineAvgAggregateInputType
-    _sum?: Exercise_routineSumAggregateInputType
-    _min?: Exercise_routineMinAggregateInputType
-    _max?: Exercise_routineMaxAggregateInputType
+    _count?: ExerciseRoutineCountAggregateInputType | true
+    _avg?: ExerciseRoutineAvgAggregateInputType
+    _sum?: ExerciseRoutineSumAggregateInputType
+    _min?: ExerciseRoutineMinAggregateInputType
+    _max?: ExerciseRoutineMaxAggregateInputType
   }
 
-  export type Exercise_routineGroupByOutputType = {
+  export type ExerciseRoutineGroupByOutputType = {
     id: number
-    routine_id: number
-    exercise_id: number
+    routineId: number
+    exerciseId: number
     series: number
     repetitions: number
-    _count: Exercise_routineCountAggregateOutputType | null
-    _avg: Exercise_routineAvgAggregateOutputType | null
-    _sum: Exercise_routineSumAggregateOutputType | null
-    _min: Exercise_routineMinAggregateOutputType | null
-    _max: Exercise_routineMaxAggregateOutputType | null
+    _count: ExerciseRoutineCountAggregateOutputType | null
+    _avg: ExerciseRoutineAvgAggregateOutputType | null
+    _sum: ExerciseRoutineSumAggregateOutputType | null
+    _min: ExerciseRoutineMinAggregateOutputType | null
+    _max: ExerciseRoutineMaxAggregateOutputType | null
   }
 
-  type GetExercise_routineGroupByPayload<T extends Exercise_routineGroupByArgs> = Prisma.PrismaPromise<
+  type GetExerciseRoutineGroupByPayload<T extends exerciseRoutineGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Exercise_routineGroupByOutputType, T['by']> &
+      PickEnumerable<ExerciseRoutineGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Exercise_routineGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof ExerciseRoutineGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Exercise_routineGroupByOutputType[P]>
-            : GetScalarType<T[P], Exercise_routineGroupByOutputType[P]>
+              : GetScalarType<T[P], ExerciseRoutineGroupByOutputType[P]>
+            : GetScalarType<T[P], ExerciseRoutineGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Exercise_routineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type exerciseRoutineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    routine_id?: boolean
-    exercise_id?: boolean
+    routineId?: boolean
+    exerciseId?: boolean
     series?: boolean
     repetitions?: boolean
-    routine?: boolean | RoutineDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["exercise_routine"]>
+    routine?: boolean | routineDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["exerciseRoutine"]>
 
-  export type Exercise_routineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type exerciseRoutineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    routine_id?: boolean
-    exercise_id?: boolean
+    routineId?: boolean
+    exerciseId?: boolean
     series?: boolean
     repetitions?: boolean
-    routine?: boolean | RoutineDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["exercise_routine"]>
+    routine?: boolean | routineDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["exerciseRoutine"]>
 
-  export type Exercise_routineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type exerciseRoutineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    routine_id?: boolean
-    exercise_id?: boolean
+    routineId?: boolean
+    exerciseId?: boolean
     series?: boolean
     repetitions?: boolean
-    routine?: boolean | RoutineDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["exercise_routine"]>
+    routine?: boolean | routineDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["exerciseRoutine"]>
 
-  export type Exercise_routineSelectScalar = {
+  export type exerciseRoutineSelectScalar = {
     id?: boolean
-    routine_id?: boolean
-    exercise_id?: boolean
+    routineId?: boolean
+    exerciseId?: boolean
     series?: boolean
     repetitions?: boolean
   }
 
-  export type Exercise_routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "routine_id" | "exercise_id" | "series" | "repetitions", ExtArgs["result"]["exercise_routine"]>
-  export type Exercise_routineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    routine?: boolean | RoutineDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type exerciseRoutineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "routineId" | "exerciseId" | "series" | "repetitions", ExtArgs["result"]["exerciseRoutine"]>
+  export type exerciseRoutineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    routine?: boolean | routineDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
-  export type Exercise_routineIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    routine?: boolean | RoutineDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type exerciseRoutineIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    routine?: boolean | routineDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
-  export type Exercise_routineIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    routine?: boolean | RoutineDefaultArgs<ExtArgs>
-    exercise?: boolean | ExerciseDefaultArgs<ExtArgs>
+  export type exerciseRoutineIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    routine?: boolean | routineDefaultArgs<ExtArgs>
+    exercise?: boolean | exerciseDefaultArgs<ExtArgs>
   }
 
-  export type $Exercise_routinePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Exercise_routine"
+  export type $exerciseRoutinePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "exerciseRoutine"
     objects: {
-      routine: Prisma.$RoutinePayload<ExtArgs>
-      exercise: Prisma.$ExercisePayload<ExtArgs>
+      routine: Prisma.$routinePayload<ExtArgs>
+      exercise: Prisma.$exercisePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      routine_id: number
-      exercise_id: number
+      routineId: number
+      exerciseId: number
       series: number
       repetitions: number
-    }, ExtArgs["result"]["exercise_routine"]>
+    }, ExtArgs["result"]["exerciseRoutine"]>
     composites: {}
   }
 
-  type Exercise_routineGetPayload<S extends boolean | null | undefined | Exercise_routineDefaultArgs> = $Result.GetResult<Prisma.$Exercise_routinePayload, S>
+  type exerciseRoutineGetPayload<S extends boolean | null | undefined | exerciseRoutineDefaultArgs> = $Result.GetResult<Prisma.$exerciseRoutinePayload, S>
 
-  type Exercise_routineCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<Exercise_routineFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Exercise_routineCountAggregateInputType | true
+  type exerciseRoutineCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<exerciseRoutineFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ExerciseRoutineCountAggregateInputType | true
     }
 
-  export interface Exercise_routineDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Exercise_routine'], meta: { name: 'Exercise_routine' } }
+  export interface exerciseRoutineDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['exerciseRoutine'], meta: { name: 'exerciseRoutine' } }
     /**
-     * Find zero or one Exercise_routine that matches the filter.
-     * @param {Exercise_routineFindUniqueArgs} args - Arguments to find a Exercise_routine
+     * Find zero or one ExerciseRoutine that matches the filter.
+     * @param {exerciseRoutineFindUniqueArgs} args - Arguments to find a ExerciseRoutine
      * @example
-     * // Get one Exercise_routine
-     * const exercise_routine = await prisma.exercise_routine.findUnique({
+     * // Get one ExerciseRoutine
+     * const exerciseRoutine = await prisma.exerciseRoutine.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends Exercise_routineFindUniqueArgs>(args: SelectSubset<T, Exercise_routineFindUniqueArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends exerciseRoutineFindUniqueArgs>(args: SelectSubset<T, exerciseRoutineFindUniqueArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Exercise_routine that matches the filter or throw an error with `error.code='P2025'`
+     * Find one ExerciseRoutine that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {Exercise_routineFindUniqueOrThrowArgs} args - Arguments to find a Exercise_routine
+     * @param {exerciseRoutineFindUniqueOrThrowArgs} args - Arguments to find a ExerciseRoutine
      * @example
-     * // Get one Exercise_routine
-     * const exercise_routine = await prisma.exercise_routine.findUniqueOrThrow({
+     * // Get one ExerciseRoutine
+     * const exerciseRoutine = await prisma.exerciseRoutine.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends Exercise_routineFindUniqueOrThrowArgs>(args: SelectSubset<T, Exercise_routineFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends exerciseRoutineFindUniqueOrThrowArgs>(args: SelectSubset<T, exerciseRoutineFindUniqueOrThrowArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Exercise_routine that matches the filter.
+     * Find the first ExerciseRoutine that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineFindFirstArgs} args - Arguments to find a Exercise_routine
+     * @param {exerciseRoutineFindFirstArgs} args - Arguments to find a ExerciseRoutine
      * @example
-     * // Get one Exercise_routine
-     * const exercise_routine = await prisma.exercise_routine.findFirst({
+     * // Get one ExerciseRoutine
+     * const exerciseRoutine = await prisma.exerciseRoutine.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends Exercise_routineFindFirstArgs>(args?: SelectSubset<T, Exercise_routineFindFirstArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends exerciseRoutineFindFirstArgs>(args?: SelectSubset<T, exerciseRoutineFindFirstArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Exercise_routine that matches the filter or
+     * Find the first ExerciseRoutine that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineFindFirstOrThrowArgs} args - Arguments to find a Exercise_routine
+     * @param {exerciseRoutineFindFirstOrThrowArgs} args - Arguments to find a ExerciseRoutine
      * @example
-     * // Get one Exercise_routine
-     * const exercise_routine = await prisma.exercise_routine.findFirstOrThrow({
+     * // Get one ExerciseRoutine
+     * const exerciseRoutine = await prisma.exerciseRoutine.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends Exercise_routineFindFirstOrThrowArgs>(args?: SelectSubset<T, Exercise_routineFindFirstOrThrowArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends exerciseRoutineFindFirstOrThrowArgs>(args?: SelectSubset<T, exerciseRoutineFindFirstOrThrowArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Exercise_routines that matches the filter.
+     * Find zero or more ExerciseRoutines that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {exerciseRoutineFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Exercise_routines
-     * const exercise_routines = await prisma.exercise_routine.findMany()
+     * // Get all ExerciseRoutines
+     * const exerciseRoutines = await prisma.exerciseRoutine.findMany()
      * 
-     * // Get first 10 Exercise_routines
-     * const exercise_routines = await prisma.exercise_routine.findMany({ take: 10 })
+     * // Get first 10 ExerciseRoutines
+     * const exerciseRoutines = await prisma.exerciseRoutine.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const exercise_routineWithIdOnly = await prisma.exercise_routine.findMany({ select: { id: true } })
+     * const exerciseRoutineWithIdOnly = await prisma.exerciseRoutine.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends Exercise_routineFindManyArgs>(args?: SelectSubset<T, Exercise_routineFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends exerciseRoutineFindManyArgs>(args?: SelectSubset<T, exerciseRoutineFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Exercise_routine.
-     * @param {Exercise_routineCreateArgs} args - Arguments to create a Exercise_routine.
+     * Create a ExerciseRoutine.
+     * @param {exerciseRoutineCreateArgs} args - Arguments to create a ExerciseRoutine.
      * @example
-     * // Create one Exercise_routine
-     * const Exercise_routine = await prisma.exercise_routine.create({
+     * // Create one ExerciseRoutine
+     * const ExerciseRoutine = await prisma.exerciseRoutine.create({
      *   data: {
-     *     // ... data to create a Exercise_routine
+     *     // ... data to create a ExerciseRoutine
      *   }
      * })
      * 
      */
-    create<T extends Exercise_routineCreateArgs>(args: SelectSubset<T, Exercise_routineCreateArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends exerciseRoutineCreateArgs>(args: SelectSubset<T, exerciseRoutineCreateArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Exercise_routines.
-     * @param {Exercise_routineCreateManyArgs} args - Arguments to create many Exercise_routines.
+     * Create many ExerciseRoutines.
+     * @param {exerciseRoutineCreateManyArgs} args - Arguments to create many ExerciseRoutines.
      * @example
-     * // Create many Exercise_routines
-     * const exercise_routine = await prisma.exercise_routine.createMany({
+     * // Create many ExerciseRoutines
+     * const exerciseRoutine = await prisma.exerciseRoutine.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends Exercise_routineCreateManyArgs>(args?: SelectSubset<T, Exercise_routineCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends exerciseRoutineCreateManyArgs>(args?: SelectSubset<T, exerciseRoutineCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Exercise_routines and returns the data saved in the database.
-     * @param {Exercise_routineCreateManyAndReturnArgs} args - Arguments to create many Exercise_routines.
+     * Create many ExerciseRoutines and returns the data saved in the database.
+     * @param {exerciseRoutineCreateManyAndReturnArgs} args - Arguments to create many ExerciseRoutines.
      * @example
-     * // Create many Exercise_routines
-     * const exercise_routine = await prisma.exercise_routine.createManyAndReturn({
+     * // Create many ExerciseRoutines
+     * const exerciseRoutine = await prisma.exerciseRoutine.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Exercise_routines and only return the `id`
-     * const exercise_routineWithIdOnly = await prisma.exercise_routine.createManyAndReturn({
+     * // Create many ExerciseRoutines and only return the `id`
+     * const exerciseRoutineWithIdOnly = await prisma.exerciseRoutine.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -7565,28 +7604,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends Exercise_routineCreateManyAndReturnArgs>(args?: SelectSubset<T, Exercise_routineCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends exerciseRoutineCreateManyAndReturnArgs>(args?: SelectSubset<T, exerciseRoutineCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Exercise_routine.
-     * @param {Exercise_routineDeleteArgs} args - Arguments to delete one Exercise_routine.
+     * Delete a ExerciseRoutine.
+     * @param {exerciseRoutineDeleteArgs} args - Arguments to delete one ExerciseRoutine.
      * @example
-     * // Delete one Exercise_routine
-     * const Exercise_routine = await prisma.exercise_routine.delete({
+     * // Delete one ExerciseRoutine
+     * const ExerciseRoutine = await prisma.exerciseRoutine.delete({
      *   where: {
-     *     // ... filter to delete one Exercise_routine
+     *     // ... filter to delete one ExerciseRoutine
      *   }
      * })
      * 
      */
-    delete<T extends Exercise_routineDeleteArgs>(args: SelectSubset<T, Exercise_routineDeleteArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends exerciseRoutineDeleteArgs>(args: SelectSubset<T, exerciseRoutineDeleteArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Exercise_routine.
-     * @param {Exercise_routineUpdateArgs} args - Arguments to update one Exercise_routine.
+     * Update one ExerciseRoutine.
+     * @param {exerciseRoutineUpdateArgs} args - Arguments to update one ExerciseRoutine.
      * @example
-     * // Update one Exercise_routine
-     * const exercise_routine = await prisma.exercise_routine.update({
+     * // Update one ExerciseRoutine
+     * const exerciseRoutine = await prisma.exerciseRoutine.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -7596,30 +7635,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends Exercise_routineUpdateArgs>(args: SelectSubset<T, Exercise_routineUpdateArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends exerciseRoutineUpdateArgs>(args: SelectSubset<T, exerciseRoutineUpdateArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Exercise_routines.
-     * @param {Exercise_routineDeleteManyArgs} args - Arguments to filter Exercise_routines to delete.
+     * Delete zero or more ExerciseRoutines.
+     * @param {exerciseRoutineDeleteManyArgs} args - Arguments to filter ExerciseRoutines to delete.
      * @example
-     * // Delete a few Exercise_routines
-     * const { count } = await prisma.exercise_routine.deleteMany({
+     * // Delete a few ExerciseRoutines
+     * const { count } = await prisma.exerciseRoutine.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends Exercise_routineDeleteManyArgs>(args?: SelectSubset<T, Exercise_routineDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends exerciseRoutineDeleteManyArgs>(args?: SelectSubset<T, exerciseRoutineDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Exercise_routines.
+     * Update zero or more ExerciseRoutines.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {exerciseRoutineUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Exercise_routines
-     * const exercise_routine = await prisma.exercise_routine.updateMany({
+     * // Update many ExerciseRoutines
+     * const exerciseRoutine = await prisma.exerciseRoutine.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -7629,14 +7668,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends Exercise_routineUpdateManyArgs>(args: SelectSubset<T, Exercise_routineUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends exerciseRoutineUpdateManyArgs>(args: SelectSubset<T, exerciseRoutineUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Exercise_routines and returns the data updated in the database.
-     * @param {Exercise_routineUpdateManyAndReturnArgs} args - Arguments to update many Exercise_routines.
+     * Update zero or more ExerciseRoutines and returns the data updated in the database.
+     * @param {exerciseRoutineUpdateManyAndReturnArgs} args - Arguments to update many ExerciseRoutines.
      * @example
-     * // Update many Exercise_routines
-     * const exercise_routine = await prisma.exercise_routine.updateManyAndReturn({
+     * // Update many ExerciseRoutines
+     * const exerciseRoutine = await prisma.exerciseRoutine.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -7645,8 +7684,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Exercise_routines and only return the `id`
-     * const exercise_routineWithIdOnly = await prisma.exercise_routine.updateManyAndReturn({
+     * // Update zero or more ExerciseRoutines and only return the `id`
+     * const exerciseRoutineWithIdOnly = await prisma.exerciseRoutine.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -7659,56 +7698,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends Exercise_routineUpdateManyAndReturnArgs>(args: SelectSubset<T, Exercise_routineUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends exerciseRoutineUpdateManyAndReturnArgs>(args: SelectSubset<T, exerciseRoutineUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Exercise_routine.
-     * @param {Exercise_routineUpsertArgs} args - Arguments to update or create a Exercise_routine.
+     * Create or update one ExerciseRoutine.
+     * @param {exerciseRoutineUpsertArgs} args - Arguments to update or create a ExerciseRoutine.
      * @example
-     * // Update or create a Exercise_routine
-     * const exercise_routine = await prisma.exercise_routine.upsert({
+     * // Update or create a ExerciseRoutine
+     * const exerciseRoutine = await prisma.exerciseRoutine.upsert({
      *   create: {
-     *     // ... data to create a Exercise_routine
+     *     // ... data to create a ExerciseRoutine
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Exercise_routine we want to update
+     *     // ... the filter for the ExerciseRoutine we want to update
      *   }
      * })
      */
-    upsert<T extends Exercise_routineUpsertArgs>(args: SelectSubset<T, Exercise_routineUpsertArgs<ExtArgs>>): Prisma__Exercise_routineClient<$Result.GetResult<Prisma.$Exercise_routinePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends exerciseRoutineUpsertArgs>(args: SelectSubset<T, exerciseRoutineUpsertArgs<ExtArgs>>): Prisma__exerciseRoutineClient<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Exercise_routines.
+     * Count the number of ExerciseRoutines.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineCountArgs} args - Arguments to filter Exercise_routines to count.
+     * @param {exerciseRoutineCountArgs} args - Arguments to filter ExerciseRoutines to count.
      * @example
-     * // Count the number of Exercise_routines
-     * const count = await prisma.exercise_routine.count({
+     * // Count the number of ExerciseRoutines
+     * const count = await prisma.exerciseRoutine.count({
      *   where: {
-     *     // ... the filter for the Exercise_routines we want to count
+     *     // ... the filter for the ExerciseRoutines we want to count
      *   }
      * })
     **/
-    count<T extends Exercise_routineCountArgs>(
-      args?: Subset<T, Exercise_routineCountArgs>,
+    count<T extends exerciseRoutineCountArgs>(
+      args?: Subset<T, exerciseRoutineCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Exercise_routineCountAggregateOutputType>
+          : GetScalarType<T['select'], ExerciseRoutineCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Exercise_routine.
+     * Allows you to perform aggregations operations on a ExerciseRoutine.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {ExerciseRoutineAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -7728,13 +7767,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Exercise_routineAggregateArgs>(args: Subset<T, Exercise_routineAggregateArgs>): Prisma.PrismaPromise<GetExercise_routineAggregateType<T>>
+    aggregate<T extends ExerciseRoutineAggregateArgs>(args: Subset<T, ExerciseRoutineAggregateArgs>): Prisma.PrismaPromise<GetExerciseRoutineAggregateType<T>>
 
     /**
-     * Group by Exercise_routine.
+     * Group by ExerciseRoutine.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Exercise_routineGroupByArgs} args - Group by arguments.
+     * @param {exerciseRoutineGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -7749,14 +7788,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Exercise_routineGroupByArgs,
+      T extends exerciseRoutineGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Exercise_routineGroupByArgs['orderBy'] }
-        : { orderBy?: Exercise_routineGroupByArgs['orderBy'] },
+        ? { orderBy: exerciseRoutineGroupByArgs['orderBy'] }
+        : { orderBy?: exerciseRoutineGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -7805,23 +7844,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Exercise_routineGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExercise_routineGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, exerciseRoutineGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExerciseRoutineGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Exercise_routine model
+   * Fields of the exerciseRoutine model
    */
-  readonly fields: Exercise_routineFieldRefs;
+  readonly fields: exerciseRoutineFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Exercise_routine.
+   * The delegate class that acts as a "Promise-like" for exerciseRoutine.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Exercise_routineClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__exerciseRoutineClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    routine<T extends RoutineDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RoutineDefaultArgs<ExtArgs>>): Prisma__RoutineClient<$Result.GetResult<Prisma.$RoutinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    exercise<T extends ExerciseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ExerciseDefaultArgs<ExtArgs>>): Prisma__ExerciseClient<$Result.GetResult<Prisma.$ExercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    routine<T extends routineDefaultArgs<ExtArgs> = {}>(args?: Subset<T, routineDefaultArgs<ExtArgs>>): Prisma__routineClient<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    exercise<T extends exerciseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, exerciseDefaultArgs<ExtArgs>>): Prisma__exerciseClient<$Result.GetResult<Prisma.$exercisePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7848,425 +7887,425 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Exercise_routine model
+   * Fields of the exerciseRoutine model
    */
-  interface Exercise_routineFieldRefs {
-    readonly id: FieldRef<"Exercise_routine", 'Int'>
-    readonly routine_id: FieldRef<"Exercise_routine", 'Int'>
-    readonly exercise_id: FieldRef<"Exercise_routine", 'Int'>
-    readonly series: FieldRef<"Exercise_routine", 'Int'>
-    readonly repetitions: FieldRef<"Exercise_routine", 'Int'>
+  interface exerciseRoutineFieldRefs {
+    readonly id: FieldRef<"exerciseRoutine", 'Int'>
+    readonly routineId: FieldRef<"exerciseRoutine", 'Int'>
+    readonly exerciseId: FieldRef<"exerciseRoutine", 'Int'>
+    readonly series: FieldRef<"exerciseRoutine", 'Int'>
+    readonly repetitions: FieldRef<"exerciseRoutine", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Exercise_routine findUnique
+   * exerciseRoutine findUnique
    */
-  export type Exercise_routineFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise_routine to fetch.
+     * Filter, which exerciseRoutine to fetch.
      */
-    where: Exercise_routineWhereUniqueInput
+    where: exerciseRoutineWhereUniqueInput
   }
 
   /**
-   * Exercise_routine findUniqueOrThrow
+   * exerciseRoutine findUniqueOrThrow
    */
-  export type Exercise_routineFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise_routine to fetch.
+     * Filter, which exerciseRoutine to fetch.
      */
-    where: Exercise_routineWhereUniqueInput
+    where: exerciseRoutineWhereUniqueInput
   }
 
   /**
-   * Exercise_routine findFirst
+   * exerciseRoutine findFirst
    */
-  export type Exercise_routineFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise_routine to fetch.
+     * Filter, which exerciseRoutine to fetch.
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercise_routines to fetch.
+     * Determine the order of exerciseRoutines to fetch.
      */
-    orderBy?: Exercise_routineOrderByWithRelationInput | Exercise_routineOrderByWithRelationInput[]
+    orderBy?: exerciseRoutineOrderByWithRelationInput | exerciseRoutineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Exercise_routines.
+     * Sets the position for searching for exerciseRoutines.
      */
-    cursor?: Exercise_routineWhereUniqueInput
+    cursor?: exerciseRoutineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercise_routines from the position of the cursor.
+     * Take `±n` exerciseRoutines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercise_routines.
+     * Skip the first `n` exerciseRoutines.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Exercise_routines.
+     * Filter by unique combinations of exerciseRoutines.
      */
-    distinct?: Exercise_routineScalarFieldEnum | Exercise_routineScalarFieldEnum[]
+    distinct?: ExerciseRoutineScalarFieldEnum | ExerciseRoutineScalarFieldEnum[]
   }
 
   /**
-   * Exercise_routine findFirstOrThrow
+   * exerciseRoutine findFirstOrThrow
    */
-  export type Exercise_routineFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise_routine to fetch.
+     * Filter, which exerciseRoutine to fetch.
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercise_routines to fetch.
+     * Determine the order of exerciseRoutines to fetch.
      */
-    orderBy?: Exercise_routineOrderByWithRelationInput | Exercise_routineOrderByWithRelationInput[]
+    orderBy?: exerciseRoutineOrderByWithRelationInput | exerciseRoutineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Exercise_routines.
+     * Sets the position for searching for exerciseRoutines.
      */
-    cursor?: Exercise_routineWhereUniqueInput
+    cursor?: exerciseRoutineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercise_routines from the position of the cursor.
+     * Take `±n` exerciseRoutines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercise_routines.
+     * Skip the first `n` exerciseRoutines.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Exercise_routines.
+     * Filter by unique combinations of exerciseRoutines.
      */
-    distinct?: Exercise_routineScalarFieldEnum | Exercise_routineScalarFieldEnum[]
+    distinct?: ExerciseRoutineScalarFieldEnum | ExerciseRoutineScalarFieldEnum[]
   }
 
   /**
-   * Exercise_routine findMany
+   * exerciseRoutine findMany
    */
-  export type Exercise_routineFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * Filter, which Exercise_routines to fetch.
+     * Filter, which exerciseRoutines to fetch.
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exercise_routines to fetch.
+     * Determine the order of exerciseRoutines to fetch.
      */
-    orderBy?: Exercise_routineOrderByWithRelationInput | Exercise_routineOrderByWithRelationInput[]
+    orderBy?: exerciseRoutineOrderByWithRelationInput | exerciseRoutineOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Exercise_routines.
+     * Sets the position for listing exerciseRoutines.
      */
-    cursor?: Exercise_routineWhereUniqueInput
+    cursor?: exerciseRoutineWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exercise_routines from the position of the cursor.
+     * Take `±n` exerciseRoutines from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exercise_routines.
+     * Skip the first `n` exerciseRoutines.
      */
     skip?: number
-    distinct?: Exercise_routineScalarFieldEnum | Exercise_routineScalarFieldEnum[]
+    distinct?: ExerciseRoutineScalarFieldEnum | ExerciseRoutineScalarFieldEnum[]
   }
 
   /**
-   * Exercise_routine create
+   * exerciseRoutine create
    */
-  export type Exercise_routineCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * The data needed to create a Exercise_routine.
+     * The data needed to create a exerciseRoutine.
      */
-    data: XOR<Exercise_routineCreateInput, Exercise_routineUncheckedCreateInput>
+    data: XOR<exerciseRoutineCreateInput, exerciseRoutineUncheckedCreateInput>
   }
 
   /**
-   * Exercise_routine createMany
+   * exerciseRoutine createMany
    */
-  export type Exercise_routineCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Exercise_routines.
+     * The data used to create many exerciseRoutines.
      */
-    data: Exercise_routineCreateManyInput | Exercise_routineCreateManyInput[]
+    data: exerciseRoutineCreateManyInput | exerciseRoutineCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Exercise_routine createManyAndReturn
+   * exerciseRoutine createManyAndReturn
    */
-  export type Exercise_routineCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelectCreateManyAndReturn<ExtArgs> | null
+    select?: exerciseRoutineSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
-     * The data used to create many Exercise_routines.
+     * The data used to create many exerciseRoutines.
      */
-    data: Exercise_routineCreateManyInput | Exercise_routineCreateManyInput[]
+    data: exerciseRoutineCreateManyInput | exerciseRoutineCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: exerciseRoutineIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Exercise_routine update
+   * exerciseRoutine update
    */
-  export type Exercise_routineUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * The data needed to update a Exercise_routine.
+     * The data needed to update a exerciseRoutine.
      */
-    data: XOR<Exercise_routineUpdateInput, Exercise_routineUncheckedUpdateInput>
+    data: XOR<exerciseRoutineUpdateInput, exerciseRoutineUncheckedUpdateInput>
     /**
-     * Choose, which Exercise_routine to update.
+     * Choose, which exerciseRoutine to update.
      */
-    where: Exercise_routineWhereUniqueInput
+    where: exerciseRoutineWhereUniqueInput
   }
 
   /**
-   * Exercise_routine updateMany
+   * exerciseRoutine updateMany
    */
-  export type Exercise_routineUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Exercise_routines.
+     * The data used to update exerciseRoutines.
      */
-    data: XOR<Exercise_routineUpdateManyMutationInput, Exercise_routineUncheckedUpdateManyInput>
+    data: XOR<exerciseRoutineUpdateManyMutationInput, exerciseRoutineUncheckedUpdateManyInput>
     /**
-     * Filter which Exercise_routines to update
+     * Filter which exerciseRoutines to update
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
-     * Limit how many Exercise_routines to update.
+     * Limit how many exerciseRoutines to update.
      */
     limit?: number
   }
 
   /**
-   * Exercise_routine updateManyAndReturn
+   * exerciseRoutine updateManyAndReturn
    */
-  export type Exercise_routineUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: exerciseRoutineSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
-     * The data used to update Exercise_routines.
+     * The data used to update exerciseRoutines.
      */
-    data: XOR<Exercise_routineUpdateManyMutationInput, Exercise_routineUncheckedUpdateManyInput>
+    data: XOR<exerciseRoutineUpdateManyMutationInput, exerciseRoutineUncheckedUpdateManyInput>
     /**
-     * Filter which Exercise_routines to update
+     * Filter which exerciseRoutines to update
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
-     * Limit how many Exercise_routines to update.
+     * Limit how many exerciseRoutines to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: exerciseRoutineIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Exercise_routine upsert
+   * exerciseRoutine upsert
    */
-  export type Exercise_routineUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * The filter to search for the Exercise_routine to update in case it exists.
+     * The filter to search for the exerciseRoutine to update in case it exists.
      */
-    where: Exercise_routineWhereUniqueInput
+    where: exerciseRoutineWhereUniqueInput
     /**
-     * In case the Exercise_routine found by the `where` argument doesn't exist, create a new Exercise_routine with this data.
+     * In case the exerciseRoutine found by the `where` argument doesn't exist, create a new exerciseRoutine with this data.
      */
-    create: XOR<Exercise_routineCreateInput, Exercise_routineUncheckedCreateInput>
+    create: XOR<exerciseRoutineCreateInput, exerciseRoutineUncheckedCreateInput>
     /**
-     * In case the Exercise_routine was found with the provided `where` argument, update it with this data.
+     * In case the exerciseRoutine was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Exercise_routineUpdateInput, Exercise_routineUncheckedUpdateInput>
+    update: XOR<exerciseRoutineUpdateInput, exerciseRoutineUncheckedUpdateInput>
   }
 
   /**
-   * Exercise_routine delete
+   * exerciseRoutine delete
    */
-  export type Exercise_routineDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
     /**
-     * Filter which Exercise_routine to delete.
+     * Filter which exerciseRoutine to delete.
      */
-    where: Exercise_routineWhereUniqueInput
+    where: exerciseRoutineWhereUniqueInput
   }
 
   /**
-   * Exercise_routine deleteMany
+   * exerciseRoutine deleteMany
    */
-  export type Exercise_routineDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Exercise_routines to delete
+     * Filter which exerciseRoutines to delete
      */
-    where?: Exercise_routineWhereInput
+    where?: exerciseRoutineWhereInput
     /**
-     * Limit how many Exercise_routines to delete.
+     * Limit how many exerciseRoutines to delete.
      */
     limit?: number
   }
 
   /**
-   * Exercise_routine without action
+   * exerciseRoutine without action
    */
-  export type Exercise_routineDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exerciseRoutineDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Exercise_routine
+     * Select specific fields to fetch from the exerciseRoutine
      */
-    select?: Exercise_routineSelect<ExtArgs> | null
+    select?: exerciseRoutineSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Exercise_routine
+     * Omit specific fields from the exerciseRoutine
      */
-    omit?: Exercise_routineOmit<ExtArgs> | null
+    omit?: exerciseRoutineOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Exercise_routineInclude<ExtArgs> | null
+    include?: exerciseRoutineInclude<ExtArgs> | null
   }
 
 
@@ -8301,10 +8340,10 @@ export namespace Prisma {
 
   export const ProgressScalarFieldEnum: {
     id: 'id',
-    user_id: 'user_id',
-    exercise_id: 'exercise_id',
+    userId: 'userId',
+    exerciseId: 'exerciseId',
     date: 'date',
-    weight_used: 'weight_used',
+    weightUsed: 'weightUsed',
     repetitions: 'repetitions'
   };
 
@@ -8313,7 +8352,7 @@ export namespace Prisma {
 
   export const RoutineScalarFieldEnum: {
     id: 'id',
-    user_id: 'user_id',
+    userId: 'userId',
     name: 'name',
     createdAt: 'createdAt',
     description: 'description',
@@ -8326,8 +8365,8 @@ export namespace Prisma {
 
   export const FavoriteScalarFieldEnum: {
     id: 'id',
-    user_id: 'user_id',
-    exercise_id: 'exercise_id'
+    userId: 'userId',
+    exerciseId: 'exerciseId'
   };
 
   export type FavoriteScalarFieldEnum = (typeof FavoriteScalarFieldEnum)[keyof typeof FavoriteScalarFieldEnum]
@@ -8337,21 +8376,24 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     muscle: 'muscle',
-    video_img_url: 'video_img_url'
+    videoImgUrl: 'videoImgUrl',
+    description: 'description',
+    executionSteps: 'executionSteps',
+    tips: 'tips'
   };
 
   export type ExerciseScalarFieldEnum = (typeof ExerciseScalarFieldEnum)[keyof typeof ExerciseScalarFieldEnum]
 
 
-  export const Exercise_routineScalarFieldEnum: {
+  export const ExerciseRoutineScalarFieldEnum: {
     id: 'id',
-    routine_id: 'routine_id',
-    exercise_id: 'exercise_id',
+    routineId: 'routineId',
+    exerciseId: 'exerciseId',
     series: 'series',
     repetitions: 'repetitions'
   };
 
-  export type Exercise_routineScalarFieldEnum = (typeof Exercise_routineScalarFieldEnum)[keyof typeof Exercise_routineScalarFieldEnum]
+  export type ExerciseRoutineScalarFieldEnum = (typeof ExerciseRoutineScalarFieldEnum)[keyof typeof ExerciseRoutineScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -8456,27 +8498,27 @@ export namespace Prisma {
    */
 
 
-  export type UserWhereInput = {
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    id?: StringFilter<"User"> | string
-    name?: StringNullableFilter<"User"> | string | null
-    email?: StringFilter<"User"> | string
-    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
-    password?: StringFilter<"User"> | string
-    avatar?: StringNullableFilter<"User"> | string | null
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
-    role?: EnumRolFilter<"User"> | $Enums.Rol
-    Progress?: ProgressListRelationFilter
-    Routine?: RoutineListRelationFilter
-    Favorite?: FavoriteListRelationFilter
+  export type userWhereInput = {
+    AND?: userWhereInput | userWhereInput[]
+    OR?: userWhereInput[]
+    NOT?: userWhereInput | userWhereInput[]
+    id?: StringFilter<"user"> | string
+    name?: StringFilter<"user"> | string
+    email?: StringFilter<"user"> | string
+    emailVerified?: DateTimeNullableFilter<"user"> | Date | string | null
+    password?: StringFilter<"user"> | string
+    avatar?: StringNullableFilter<"user"> | string | null
+    createdAt?: DateTimeFilter<"user"> | Date | string
+    updatedAt?: DateTimeFilter<"user"> | Date | string
+    role?: EnumRolFilter<"user"> | $Enums.Rol
+    progress?: ProgressListRelationFilter
+    routine?: RoutineListRelationFilter
+    favorite?: FavoriteListRelationFilter
   }
 
-  export type UserOrderByWithRelationInput = {
+  export type userOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrderInput | SortOrder
+    name?: SortOrder
     email?: SortOrder
     emailVerified?: SortOrderInput | SortOrder
     password?: SortOrder
@@ -8484,32 +8526,32 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     role?: SortOrder
-    Progress?: ProgressOrderByRelationAggregateInput
-    Routine?: RoutineOrderByRelationAggregateInput
-    Favorite?: FavoriteOrderByRelationAggregateInput
+    progress?: progressOrderByRelationAggregateInput
+    routine?: routineOrderByRelationAggregateInput
+    favorite?: favoriteOrderByRelationAggregateInput
   }
 
-  export type UserWhereUniqueInput = Prisma.AtLeast<{
+  export type userWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     email?: string
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    name?: StringNullableFilter<"User"> | string | null
-    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
-    password?: StringFilter<"User"> | string
-    avatar?: StringNullableFilter<"User"> | string | null
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
-    role?: EnumRolFilter<"User"> | $Enums.Rol
-    Progress?: ProgressListRelationFilter
-    Routine?: RoutineListRelationFilter
-    Favorite?: FavoriteListRelationFilter
+    AND?: userWhereInput | userWhereInput[]
+    OR?: userWhereInput[]
+    NOT?: userWhereInput | userWhereInput[]
+    name?: StringFilter<"user"> | string
+    emailVerified?: DateTimeNullableFilter<"user"> | Date | string | null
+    password?: StringFilter<"user"> | string
+    avatar?: StringNullableFilter<"user"> | string | null
+    createdAt?: DateTimeFilter<"user"> | Date | string
+    updatedAt?: DateTimeFilter<"user"> | Date | string
+    role?: EnumRolFilter<"user"> | $Enums.Rol
+    progress?: ProgressListRelationFilter
+    routine?: RoutineListRelationFilter
+    favorite?: FavoriteListRelationFilter
   }, "id" | "email">
 
-  export type UserOrderByWithAggregationInput = {
+  export type userOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrderInput | SortOrder
+    name?: SortOrder
     email?: SortOrder
     emailVerified?: SortOrderInput | SortOrder
     password?: SortOrder
@@ -8517,332 +8559,347 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     role?: SortOrder
-    _count?: UserCountOrderByAggregateInput
-    _max?: UserMaxOrderByAggregateInput
-    _min?: UserMinOrderByAggregateInput
+    _count?: userCountOrderByAggregateInput
+    _max?: userMaxOrderByAggregateInput
+    _min?: userMinOrderByAggregateInput
   }
 
-  export type UserScalarWhereWithAggregatesInput = {
-    AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    OR?: UserScalarWhereWithAggregatesInput[]
-    NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"User"> | string
-    name?: StringNullableWithAggregatesFilter<"User"> | string | null
-    email?: StringWithAggregatesFilter<"User"> | string
-    emailVerified?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
-    password?: StringWithAggregatesFilter<"User"> | string
-    avatar?: StringNullableWithAggregatesFilter<"User"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    role?: EnumRolWithAggregatesFilter<"User"> | $Enums.Rol
+  export type userScalarWhereWithAggregatesInput = {
+    AND?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
+    OR?: userScalarWhereWithAggregatesInput[]
+    NOT?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"user"> | string
+    name?: StringWithAggregatesFilter<"user"> | string
+    email?: StringWithAggregatesFilter<"user"> | string
+    emailVerified?: DateTimeNullableWithAggregatesFilter<"user"> | Date | string | null
+    password?: StringWithAggregatesFilter<"user"> | string
+    avatar?: StringNullableWithAggregatesFilter<"user"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"user"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"user"> | Date | string
+    role?: EnumRolWithAggregatesFilter<"user"> | $Enums.Rol
   }
 
-  export type ProgressWhereInput = {
-    AND?: ProgressWhereInput | ProgressWhereInput[]
-    OR?: ProgressWhereInput[]
-    NOT?: ProgressWhereInput | ProgressWhereInput[]
-    id?: IntFilter<"Progress"> | number
-    user_id?: StringFilter<"Progress"> | string
-    exercise_id?: IntFilter<"Progress"> | number
-    date?: DateTimeFilter<"Progress"> | Date | string
-    weight_used?: FloatFilter<"Progress"> | number
-    repetitions?: IntFilter<"Progress"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    exercise?: XOR<ExerciseScalarRelationFilter, ExerciseWhereInput>
+  export type progressWhereInput = {
+    AND?: progressWhereInput | progressWhereInput[]
+    OR?: progressWhereInput[]
+    NOT?: progressWhereInput | progressWhereInput[]
+    id?: IntFilter<"progress"> | number
+    userId?: StringFilter<"progress"> | string
+    exerciseId?: IntFilter<"progress"> | number
+    date?: DateTimeFilter<"progress"> | Date | string
+    weightUsed?: FloatFilter<"progress"> | number
+    repetitions?: IntFilter<"progress"> | number
+    user?: XOR<UserScalarRelationFilter, userWhereInput>
+    exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
   }
 
-  export type ProgressOrderByWithRelationInput = {
+  export type progressOrderByWithRelationInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
     date?: SortOrder
-    weight_used?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
-    user?: UserOrderByWithRelationInput
-    exercise?: ExerciseOrderByWithRelationInput
+    user?: userOrderByWithRelationInput
+    exercise?: exerciseOrderByWithRelationInput
   }
 
-  export type ProgressWhereUniqueInput = Prisma.AtLeast<{
+  export type progressWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: ProgressWhereInput | ProgressWhereInput[]
-    OR?: ProgressWhereInput[]
-    NOT?: ProgressWhereInput | ProgressWhereInput[]
-    user_id?: StringFilter<"Progress"> | string
-    exercise_id?: IntFilter<"Progress"> | number
-    date?: DateTimeFilter<"Progress"> | Date | string
-    weight_used?: FloatFilter<"Progress"> | number
-    repetitions?: IntFilter<"Progress"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    exercise?: XOR<ExerciseScalarRelationFilter, ExerciseWhereInput>
+    AND?: progressWhereInput | progressWhereInput[]
+    OR?: progressWhereInput[]
+    NOT?: progressWhereInput | progressWhereInput[]
+    userId?: StringFilter<"progress"> | string
+    exerciseId?: IntFilter<"progress"> | number
+    date?: DateTimeFilter<"progress"> | Date | string
+    weightUsed?: FloatFilter<"progress"> | number
+    repetitions?: IntFilter<"progress"> | number
+    user?: XOR<UserScalarRelationFilter, userWhereInput>
+    exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
   }, "id">
 
-  export type ProgressOrderByWithAggregationInput = {
+  export type progressOrderByWithAggregationInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
     date?: SortOrder
-    weight_used?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
-    _count?: ProgressCountOrderByAggregateInput
-    _avg?: ProgressAvgOrderByAggregateInput
-    _max?: ProgressMaxOrderByAggregateInput
-    _min?: ProgressMinOrderByAggregateInput
-    _sum?: ProgressSumOrderByAggregateInput
+    _count?: progressCountOrderByAggregateInput
+    _avg?: progressAvgOrderByAggregateInput
+    _max?: progressMaxOrderByAggregateInput
+    _min?: progressMinOrderByAggregateInput
+    _sum?: progressSumOrderByAggregateInput
   }
 
-  export type ProgressScalarWhereWithAggregatesInput = {
-    AND?: ProgressScalarWhereWithAggregatesInput | ProgressScalarWhereWithAggregatesInput[]
-    OR?: ProgressScalarWhereWithAggregatesInput[]
-    NOT?: ProgressScalarWhereWithAggregatesInput | ProgressScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Progress"> | number
-    user_id?: StringWithAggregatesFilter<"Progress"> | string
-    exercise_id?: IntWithAggregatesFilter<"Progress"> | number
-    date?: DateTimeWithAggregatesFilter<"Progress"> | Date | string
-    weight_used?: FloatWithAggregatesFilter<"Progress"> | number
-    repetitions?: IntWithAggregatesFilter<"Progress"> | number
+  export type progressScalarWhereWithAggregatesInput = {
+    AND?: progressScalarWhereWithAggregatesInput | progressScalarWhereWithAggregatesInput[]
+    OR?: progressScalarWhereWithAggregatesInput[]
+    NOT?: progressScalarWhereWithAggregatesInput | progressScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"progress"> | number
+    userId?: StringWithAggregatesFilter<"progress"> | string
+    exerciseId?: IntWithAggregatesFilter<"progress"> | number
+    date?: DateTimeWithAggregatesFilter<"progress"> | Date | string
+    weightUsed?: FloatWithAggregatesFilter<"progress"> | number
+    repetitions?: IntWithAggregatesFilter<"progress"> | number
   }
 
-  export type RoutineWhereInput = {
-    AND?: RoutineWhereInput | RoutineWhereInput[]
-    OR?: RoutineWhereInput[]
-    NOT?: RoutineWhereInput | RoutineWhereInput[]
-    id?: IntFilter<"Routine"> | number
-    user_id?: StringFilter<"Routine"> | string
-    name?: StringFilter<"Routine"> | string
-    createdAt?: DateTimeNullableFilter<"Routine"> | Date | string | null
-    description?: StringFilter<"Routine"> | string
-    duration?: IntFilter<"Routine"> | number
-    totalExercise?: IntFilter<"Routine"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    Exercise_routine?: Exercise_routineListRelationFilter
+  export type routineWhereInput = {
+    AND?: routineWhereInput | routineWhereInput[]
+    OR?: routineWhereInput[]
+    NOT?: routineWhereInput | routineWhereInput[]
+    id?: IntFilter<"routine"> | number
+    userId?: StringFilter<"routine"> | string
+    name?: StringFilter<"routine"> | string
+    createdAt?: DateTimeNullableFilter<"routine"> | Date | string | null
+    description?: StringFilter<"routine"> | string
+    duration?: IntFilter<"routine"> | number
+    totalExercise?: IntFilter<"routine"> | number
+    user?: XOR<UserScalarRelationFilter, userWhereInput>
+    exerciseRoutine?: ExerciseRoutineListRelationFilter
   }
 
-  export type RoutineOrderByWithRelationInput = {
+  export type routineOrderByWithRelationInput = {
     id?: SortOrder
-    user_id?: SortOrder
+    userId?: SortOrder
     name?: SortOrder
     createdAt?: SortOrderInput | SortOrder
     description?: SortOrder
     duration?: SortOrder
     totalExercise?: SortOrder
-    user?: UserOrderByWithRelationInput
-    Exercise_routine?: Exercise_routineOrderByRelationAggregateInput
+    user?: userOrderByWithRelationInput
+    exerciseRoutine?: exerciseRoutineOrderByRelationAggregateInput
   }
 
-  export type RoutineWhereUniqueInput = Prisma.AtLeast<{
+  export type routineWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: RoutineWhereInput | RoutineWhereInput[]
-    OR?: RoutineWhereInput[]
-    NOT?: RoutineWhereInput | RoutineWhereInput[]
-    user_id?: StringFilter<"Routine"> | string
-    name?: StringFilter<"Routine"> | string
-    createdAt?: DateTimeNullableFilter<"Routine"> | Date | string | null
-    description?: StringFilter<"Routine"> | string
-    duration?: IntFilter<"Routine"> | number
-    totalExercise?: IntFilter<"Routine"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    Exercise_routine?: Exercise_routineListRelationFilter
+    AND?: routineWhereInput | routineWhereInput[]
+    OR?: routineWhereInput[]
+    NOT?: routineWhereInput | routineWhereInput[]
+    userId?: StringFilter<"routine"> | string
+    name?: StringFilter<"routine"> | string
+    createdAt?: DateTimeNullableFilter<"routine"> | Date | string | null
+    description?: StringFilter<"routine"> | string
+    duration?: IntFilter<"routine"> | number
+    totalExercise?: IntFilter<"routine"> | number
+    user?: XOR<UserScalarRelationFilter, userWhereInput>
+    exerciseRoutine?: ExerciseRoutineListRelationFilter
   }, "id">
 
-  export type RoutineOrderByWithAggregationInput = {
+  export type routineOrderByWithAggregationInput = {
     id?: SortOrder
-    user_id?: SortOrder
+    userId?: SortOrder
     name?: SortOrder
     createdAt?: SortOrderInput | SortOrder
     description?: SortOrder
     duration?: SortOrder
     totalExercise?: SortOrder
-    _count?: RoutineCountOrderByAggregateInput
-    _avg?: RoutineAvgOrderByAggregateInput
-    _max?: RoutineMaxOrderByAggregateInput
-    _min?: RoutineMinOrderByAggregateInput
-    _sum?: RoutineSumOrderByAggregateInput
+    _count?: routineCountOrderByAggregateInput
+    _avg?: routineAvgOrderByAggregateInput
+    _max?: routineMaxOrderByAggregateInput
+    _min?: routineMinOrderByAggregateInput
+    _sum?: routineSumOrderByAggregateInput
   }
 
-  export type RoutineScalarWhereWithAggregatesInput = {
-    AND?: RoutineScalarWhereWithAggregatesInput | RoutineScalarWhereWithAggregatesInput[]
-    OR?: RoutineScalarWhereWithAggregatesInput[]
-    NOT?: RoutineScalarWhereWithAggregatesInput | RoutineScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Routine"> | number
-    user_id?: StringWithAggregatesFilter<"Routine"> | string
-    name?: StringWithAggregatesFilter<"Routine"> | string
-    createdAt?: DateTimeNullableWithAggregatesFilter<"Routine"> | Date | string | null
-    description?: StringWithAggregatesFilter<"Routine"> | string
-    duration?: IntWithAggregatesFilter<"Routine"> | number
-    totalExercise?: IntWithAggregatesFilter<"Routine"> | number
+  export type routineScalarWhereWithAggregatesInput = {
+    AND?: routineScalarWhereWithAggregatesInput | routineScalarWhereWithAggregatesInput[]
+    OR?: routineScalarWhereWithAggregatesInput[]
+    NOT?: routineScalarWhereWithAggregatesInput | routineScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"routine"> | number
+    userId?: StringWithAggregatesFilter<"routine"> | string
+    name?: StringWithAggregatesFilter<"routine"> | string
+    createdAt?: DateTimeNullableWithAggregatesFilter<"routine"> | Date | string | null
+    description?: StringWithAggregatesFilter<"routine"> | string
+    duration?: IntWithAggregatesFilter<"routine"> | number
+    totalExercise?: IntWithAggregatesFilter<"routine"> | number
   }
 
-  export type FavoriteWhereInput = {
-    AND?: FavoriteWhereInput | FavoriteWhereInput[]
-    OR?: FavoriteWhereInput[]
-    NOT?: FavoriteWhereInput | FavoriteWhereInput[]
-    id?: IntFilter<"Favorite"> | number
-    user_id?: StringFilter<"Favorite"> | string
-    exercise_id?: IntFilter<"Favorite"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    exercise?: XOR<ExerciseScalarRelationFilter, ExerciseWhereInput>
+  export type favoriteWhereInput = {
+    AND?: favoriteWhereInput | favoriteWhereInput[]
+    OR?: favoriteWhereInput[]
+    NOT?: favoriteWhereInput | favoriteWhereInput[]
+    id?: IntFilter<"favorite"> | number
+    userId?: StringFilter<"favorite"> | string
+    exerciseId?: IntFilter<"favorite"> | number
+    user?: XOR<UserScalarRelationFilter, userWhereInput>
+    exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
   }
 
-  export type FavoriteOrderByWithRelationInput = {
+  export type favoriteOrderByWithRelationInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
-    user?: UserOrderByWithRelationInput
-    exercise?: ExerciseOrderByWithRelationInput
+    userId?: SortOrder
+    exerciseId?: SortOrder
+    user?: userOrderByWithRelationInput
+    exercise?: exerciseOrderByWithRelationInput
   }
 
-  export type FavoriteWhereUniqueInput = Prisma.AtLeast<{
+  export type favoriteWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: FavoriteWhereInput | FavoriteWhereInput[]
-    OR?: FavoriteWhereInput[]
-    NOT?: FavoriteWhereInput | FavoriteWhereInput[]
-    user_id?: StringFilter<"Favorite"> | string
-    exercise_id?: IntFilter<"Favorite"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    exercise?: XOR<ExerciseScalarRelationFilter, ExerciseWhereInput>
+    AND?: favoriteWhereInput | favoriteWhereInput[]
+    OR?: favoriteWhereInput[]
+    NOT?: favoriteWhereInput | favoriteWhereInput[]
+    userId?: StringFilter<"favorite"> | string
+    exerciseId?: IntFilter<"favorite"> | number
+    user?: XOR<UserScalarRelationFilter, userWhereInput>
+    exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
   }, "id">
 
-  export type FavoriteOrderByWithAggregationInput = {
+  export type favoriteOrderByWithAggregationInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
-    _count?: FavoriteCountOrderByAggregateInput
-    _avg?: FavoriteAvgOrderByAggregateInput
-    _max?: FavoriteMaxOrderByAggregateInput
-    _min?: FavoriteMinOrderByAggregateInput
-    _sum?: FavoriteSumOrderByAggregateInput
+    userId?: SortOrder
+    exerciseId?: SortOrder
+    _count?: favoriteCountOrderByAggregateInput
+    _avg?: favoriteAvgOrderByAggregateInput
+    _max?: favoriteMaxOrderByAggregateInput
+    _min?: favoriteMinOrderByAggregateInput
+    _sum?: favoriteSumOrderByAggregateInput
   }
 
-  export type FavoriteScalarWhereWithAggregatesInput = {
-    AND?: FavoriteScalarWhereWithAggregatesInput | FavoriteScalarWhereWithAggregatesInput[]
-    OR?: FavoriteScalarWhereWithAggregatesInput[]
-    NOT?: FavoriteScalarWhereWithAggregatesInput | FavoriteScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Favorite"> | number
-    user_id?: StringWithAggregatesFilter<"Favorite"> | string
-    exercise_id?: IntWithAggregatesFilter<"Favorite"> | number
+  export type favoriteScalarWhereWithAggregatesInput = {
+    AND?: favoriteScalarWhereWithAggregatesInput | favoriteScalarWhereWithAggregatesInput[]
+    OR?: favoriteScalarWhereWithAggregatesInput[]
+    NOT?: favoriteScalarWhereWithAggregatesInput | favoriteScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"favorite"> | number
+    userId?: StringWithAggregatesFilter<"favorite"> | string
+    exerciseId?: IntWithAggregatesFilter<"favorite"> | number
   }
 
-  export type ExerciseWhereInput = {
-    AND?: ExerciseWhereInput | ExerciseWhereInput[]
-    OR?: ExerciseWhereInput[]
-    NOT?: ExerciseWhereInput | ExerciseWhereInput[]
-    id?: IntFilter<"Exercise"> | number
-    name?: StringFilter<"Exercise"> | string
-    muscle?: StringFilter<"Exercise"> | string
-    video_img_url?: StringFilter<"Exercise"> | string
+  export type exerciseWhereInput = {
+    AND?: exerciseWhereInput | exerciseWhereInput[]
+    OR?: exerciseWhereInput[]
+    NOT?: exerciseWhereInput | exerciseWhereInput[]
+    id?: IntFilter<"exercise"> | number
+    name?: StringFilter<"exercise"> | string
+    muscle?: StringFilter<"exercise"> | string
+    videoImgUrl?: StringFilter<"exercise"> | string
+    description?: StringFilter<"exercise"> | string
+    executionSteps?: StringFilter<"exercise"> | string
+    tips?: StringFilter<"exercise"> | string
     Progress?: ProgressListRelationFilter
     Favorite?: FavoriteListRelationFilter
-    Exercise_routine?: Exercise_routineListRelationFilter
+    exerciseRoutine?: ExerciseRoutineListRelationFilter
   }
 
-  export type ExerciseOrderByWithRelationInput = {
+  export type exerciseOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     muscle?: SortOrder
-    video_img_url?: SortOrder
-    Progress?: ProgressOrderByRelationAggregateInput
-    Favorite?: FavoriteOrderByRelationAggregateInput
-    Exercise_routine?: Exercise_routineOrderByRelationAggregateInput
+    videoImgUrl?: SortOrder
+    description?: SortOrder
+    executionSteps?: SortOrder
+    tips?: SortOrder
+    Progress?: progressOrderByRelationAggregateInput
+    Favorite?: favoriteOrderByRelationAggregateInput
+    exerciseRoutine?: exerciseRoutineOrderByRelationAggregateInput
   }
 
-  export type ExerciseWhereUniqueInput = Prisma.AtLeast<{
+  export type exerciseWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     name?: string
-    AND?: ExerciseWhereInput | ExerciseWhereInput[]
-    OR?: ExerciseWhereInput[]
-    NOT?: ExerciseWhereInput | ExerciseWhereInput[]
-    muscle?: StringFilter<"Exercise"> | string
-    video_img_url?: StringFilter<"Exercise"> | string
+    AND?: exerciseWhereInput | exerciseWhereInput[]
+    OR?: exerciseWhereInput[]
+    NOT?: exerciseWhereInput | exerciseWhereInput[]
+    muscle?: StringFilter<"exercise"> | string
+    videoImgUrl?: StringFilter<"exercise"> | string
+    description?: StringFilter<"exercise"> | string
+    executionSteps?: StringFilter<"exercise"> | string
+    tips?: StringFilter<"exercise"> | string
     Progress?: ProgressListRelationFilter
     Favorite?: FavoriteListRelationFilter
-    Exercise_routine?: Exercise_routineListRelationFilter
+    exerciseRoutine?: ExerciseRoutineListRelationFilter
   }, "id" | "name">
 
-  export type ExerciseOrderByWithAggregationInput = {
+  export type exerciseOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     muscle?: SortOrder
-    video_img_url?: SortOrder
-    _count?: ExerciseCountOrderByAggregateInput
-    _avg?: ExerciseAvgOrderByAggregateInput
-    _max?: ExerciseMaxOrderByAggregateInput
-    _min?: ExerciseMinOrderByAggregateInput
-    _sum?: ExerciseSumOrderByAggregateInput
+    videoImgUrl?: SortOrder
+    description?: SortOrder
+    executionSteps?: SortOrder
+    tips?: SortOrder
+    _count?: exerciseCountOrderByAggregateInput
+    _avg?: exerciseAvgOrderByAggregateInput
+    _max?: exerciseMaxOrderByAggregateInput
+    _min?: exerciseMinOrderByAggregateInput
+    _sum?: exerciseSumOrderByAggregateInput
   }
 
-  export type ExerciseScalarWhereWithAggregatesInput = {
-    AND?: ExerciseScalarWhereWithAggregatesInput | ExerciseScalarWhereWithAggregatesInput[]
-    OR?: ExerciseScalarWhereWithAggregatesInput[]
-    NOT?: ExerciseScalarWhereWithAggregatesInput | ExerciseScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Exercise"> | number
-    name?: StringWithAggregatesFilter<"Exercise"> | string
-    muscle?: StringWithAggregatesFilter<"Exercise"> | string
-    video_img_url?: StringWithAggregatesFilter<"Exercise"> | string
+  export type exerciseScalarWhereWithAggregatesInput = {
+    AND?: exerciseScalarWhereWithAggregatesInput | exerciseScalarWhereWithAggregatesInput[]
+    OR?: exerciseScalarWhereWithAggregatesInput[]
+    NOT?: exerciseScalarWhereWithAggregatesInput | exerciseScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"exercise"> | number
+    name?: StringWithAggregatesFilter<"exercise"> | string
+    muscle?: StringWithAggregatesFilter<"exercise"> | string
+    videoImgUrl?: StringWithAggregatesFilter<"exercise"> | string
+    description?: StringWithAggregatesFilter<"exercise"> | string
+    executionSteps?: StringWithAggregatesFilter<"exercise"> | string
+    tips?: StringWithAggregatesFilter<"exercise"> | string
   }
 
-  export type Exercise_routineWhereInput = {
-    AND?: Exercise_routineWhereInput | Exercise_routineWhereInput[]
-    OR?: Exercise_routineWhereInput[]
-    NOT?: Exercise_routineWhereInput | Exercise_routineWhereInput[]
-    id?: IntFilter<"Exercise_routine"> | number
-    routine_id?: IntFilter<"Exercise_routine"> | number
-    exercise_id?: IntFilter<"Exercise_routine"> | number
-    series?: IntFilter<"Exercise_routine"> | number
-    repetitions?: IntFilter<"Exercise_routine"> | number
-    routine?: XOR<RoutineScalarRelationFilter, RoutineWhereInput>
-    exercise?: XOR<ExerciseScalarRelationFilter, ExerciseWhereInput>
+  export type exerciseRoutineWhereInput = {
+    AND?: exerciseRoutineWhereInput | exerciseRoutineWhereInput[]
+    OR?: exerciseRoutineWhereInput[]
+    NOT?: exerciseRoutineWhereInput | exerciseRoutineWhereInput[]
+    id?: IntFilter<"exerciseRoutine"> | number
+    routineId?: IntFilter<"exerciseRoutine"> | number
+    exerciseId?: IntFilter<"exerciseRoutine"> | number
+    series?: IntFilter<"exerciseRoutine"> | number
+    repetitions?: IntFilter<"exerciseRoutine"> | number
+    routine?: XOR<RoutineScalarRelationFilter, routineWhereInput>
+    exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
   }
 
-  export type Exercise_routineOrderByWithRelationInput = {
+  export type exerciseRoutineOrderByWithRelationInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
-    routine?: RoutineOrderByWithRelationInput
-    exercise?: ExerciseOrderByWithRelationInput
+    routine?: routineOrderByWithRelationInput
+    exercise?: exerciseOrderByWithRelationInput
   }
 
-  export type Exercise_routineWhereUniqueInput = Prisma.AtLeast<{
+  export type exerciseRoutineWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: Exercise_routineWhereInput | Exercise_routineWhereInput[]
-    OR?: Exercise_routineWhereInput[]
-    NOT?: Exercise_routineWhereInput | Exercise_routineWhereInput[]
-    routine_id?: IntFilter<"Exercise_routine"> | number
-    exercise_id?: IntFilter<"Exercise_routine"> | number
-    series?: IntFilter<"Exercise_routine"> | number
-    repetitions?: IntFilter<"Exercise_routine"> | number
-    routine?: XOR<RoutineScalarRelationFilter, RoutineWhereInput>
-    exercise?: XOR<ExerciseScalarRelationFilter, ExerciseWhereInput>
+    AND?: exerciseRoutineWhereInput | exerciseRoutineWhereInput[]
+    OR?: exerciseRoutineWhereInput[]
+    NOT?: exerciseRoutineWhereInput | exerciseRoutineWhereInput[]
+    routineId?: IntFilter<"exerciseRoutine"> | number
+    exerciseId?: IntFilter<"exerciseRoutine"> | number
+    series?: IntFilter<"exerciseRoutine"> | number
+    repetitions?: IntFilter<"exerciseRoutine"> | number
+    routine?: XOR<RoutineScalarRelationFilter, routineWhereInput>
+    exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
   }, "id">
 
-  export type Exercise_routineOrderByWithAggregationInput = {
+  export type exerciseRoutineOrderByWithAggregationInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
-    _count?: Exercise_routineCountOrderByAggregateInput
-    _avg?: Exercise_routineAvgOrderByAggregateInput
-    _max?: Exercise_routineMaxOrderByAggregateInput
-    _min?: Exercise_routineMinOrderByAggregateInput
-    _sum?: Exercise_routineSumOrderByAggregateInput
+    _count?: exerciseRoutineCountOrderByAggregateInput
+    _avg?: exerciseRoutineAvgOrderByAggregateInput
+    _max?: exerciseRoutineMaxOrderByAggregateInput
+    _min?: exerciseRoutineMinOrderByAggregateInput
+    _sum?: exerciseRoutineSumOrderByAggregateInput
   }
 
-  export type Exercise_routineScalarWhereWithAggregatesInput = {
-    AND?: Exercise_routineScalarWhereWithAggregatesInput | Exercise_routineScalarWhereWithAggregatesInput[]
-    OR?: Exercise_routineScalarWhereWithAggregatesInput[]
-    NOT?: Exercise_routineScalarWhereWithAggregatesInput | Exercise_routineScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Exercise_routine"> | number
-    routine_id?: IntWithAggregatesFilter<"Exercise_routine"> | number
-    exercise_id?: IntWithAggregatesFilter<"Exercise_routine"> | number
-    series?: IntWithAggregatesFilter<"Exercise_routine"> | number
-    repetitions?: IntWithAggregatesFilter<"Exercise_routine"> | number
+  export type exerciseRoutineScalarWhereWithAggregatesInput = {
+    AND?: exerciseRoutineScalarWhereWithAggregatesInput | exerciseRoutineScalarWhereWithAggregatesInput[]
+    OR?: exerciseRoutineScalarWhereWithAggregatesInput[]
+    NOT?: exerciseRoutineScalarWhereWithAggregatesInput | exerciseRoutineScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"exerciseRoutine"> | number
+    routineId?: IntWithAggregatesFilter<"exerciseRoutine"> | number
+    exerciseId?: IntWithAggregatesFilter<"exerciseRoutine"> | number
+    series?: IntWithAggregatesFilter<"exerciseRoutine"> | number
+    repetitions?: IntWithAggregatesFilter<"exerciseRoutine"> | number
   }
 
-  export type UserCreateInput = {
+  export type userCreateInput = {
     id?: string
-    name?: string | null
+    name: string
     email: string
     emailVerified?: Date | string | null
     password: string
@@ -8850,14 +8907,14 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     role?: $Enums.Rol
-    Progress?: ProgressCreateNestedManyWithoutUserInput
-    Routine?: RoutineCreateNestedManyWithoutUserInput
-    Favorite?: FavoriteCreateNestedManyWithoutUserInput
+    progress?: progressCreateNestedManyWithoutUserInput
+    routine?: routineCreateNestedManyWithoutUserInput
+    favorite?: favoriteCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateInput = {
+  export type userUncheckedCreateInput = {
     id?: string
-    name?: string | null
+    name: string
     email: string
     emailVerified?: Date | string | null
     password: string
@@ -8865,14 +8922,14 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     role?: $Enums.Rol
-    Progress?: ProgressUncheckedCreateNestedManyWithoutUserInput
-    Routine?: RoutineUncheckedCreateNestedManyWithoutUserInput
-    Favorite?: FavoriteUncheckedCreateNestedManyWithoutUserInput
+    progress?: progressUncheckedCreateNestedManyWithoutUserInput
+    routine?: routineUncheckedCreateNestedManyWithoutUserInput
+    favorite?: favoriteUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserUpdateInput = {
+  export type userUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
@@ -8880,14 +8937,14 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Progress?: ProgressUpdateManyWithoutUserNestedInput
-    Routine?: RoutineUpdateManyWithoutUserNestedInput
-    Favorite?: FavoriteUpdateManyWithoutUserNestedInput
+    progress?: progressUpdateManyWithoutUserNestedInput
+    routine?: routineUpdateManyWithoutUserNestedInput
+    favorite?: favoriteUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateInput = {
+  export type userUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
@@ -8895,14 +8952,14 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Progress?: ProgressUncheckedUpdateManyWithoutUserNestedInput
-    Routine?: RoutineUncheckedUpdateManyWithoutUserNestedInput
-    Favorite?: FavoriteUncheckedUpdateManyWithoutUserNestedInput
+    progress?: progressUncheckedUpdateManyWithoutUserNestedInput
+    routine?: routineUncheckedUpdateManyWithoutUserNestedInput
+    favorite?: favoriteUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserCreateManyInput = {
+  export type userCreateManyInput = {
     id?: string
-    name?: string | null
+    name: string
     email: string
     emailVerified?: Date | string | null
     password: string
@@ -8912,9 +8969,9 @@ export namespace Prisma {
     role?: $Enums.Rol
   }
 
-  export type UserUpdateManyMutationInput = {
+  export type userUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
@@ -8924,9 +8981,9 @@ export namespace Prisma {
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
   }
 
-  export type UserUncheckedUpdateManyInput = {
+  export type userUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
@@ -8936,109 +8993,109 @@ export namespace Prisma {
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
   }
 
-  export type ProgressCreateInput = {
+  export type progressCreateInput = {
     date?: Date | string
-    weight_used: number
+    weightUsed: number
     repetitions: number
-    user: UserCreateNestedOneWithoutProgressInput
-    exercise: ExerciseCreateNestedOneWithoutProgressInput
+    user: userCreateNestedOneWithoutProgressInput
+    exercise: exerciseCreateNestedOneWithoutProgressInput
   }
 
-  export type ProgressUncheckedCreateInput = {
+  export type progressUncheckedCreateInput = {
     id?: number
-    user_id: string
-    exercise_id: number
+    userId: string
+    exerciseId: number
     date?: Date | string
-    weight_used: number
+    weightUsed: number
     repetitions: number
   }
 
-  export type ProgressUpdateInput = {
+  export type progressUpdateInput = {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
+    weightUsed?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
-    user?: UserUpdateOneRequiredWithoutProgressNestedInput
-    exercise?: ExerciseUpdateOneRequiredWithoutProgressNestedInput
+    user?: userUpdateOneRequiredWithoutProgressNestedInput
+    exercise?: exerciseUpdateOneRequiredWithoutProgressNestedInput
   }
 
-  export type ProgressUncheckedUpdateInput = {
+  export type progressUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-    exercise_id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    exerciseId?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
+    weightUsed?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ProgressCreateManyInput = {
+  export type progressCreateManyInput = {
     id?: number
-    user_id: string
-    exercise_id: number
+    userId: string
+    exerciseId: number
     date?: Date | string
-    weight_used: number
+    weightUsed: number
     repetitions: number
   }
 
-  export type ProgressUpdateManyMutationInput = {
+  export type progressUpdateManyMutationInput = {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
+    weightUsed?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ProgressUncheckedUpdateManyInput = {
+  export type progressUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-    exercise_id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    exerciseId?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
+    weightUsed?: FloatFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RoutineCreateInput = {
+  export type routineCreateInput = {
     name: string
     createdAt?: Date | string | null
     description: string
     duration: number
     totalExercise: number
-    user: UserCreateNestedOneWithoutRoutineInput
-    Exercise_routine?: Exercise_routineCreateNestedManyWithoutRoutineInput
+    user: userCreateNestedOneWithoutRoutineInput
+    exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutRoutineInput
   }
 
-  export type RoutineUncheckedCreateInput = {
+  export type routineUncheckedCreateInput = {
     id?: number
-    user_id: string
+    userId: string
     name: string
     createdAt?: Date | string | null
     description: string
     duration: number
     totalExercise: number
-    Exercise_routine?: Exercise_routineUncheckedCreateNestedManyWithoutRoutineInput
+    exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput
   }
 
-  export type RoutineUpdateInput = {
+  export type routineUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
     totalExercise?: IntFieldUpdateOperationsInput | number
-    user?: UserUpdateOneRequiredWithoutRoutineNestedInput
-    Exercise_routine?: Exercise_routineUpdateManyWithoutRoutineNestedInput
+    user?: userUpdateOneRequiredWithoutRoutineNestedInput
+    exerciseRoutine?: exerciseRoutineUpdateManyWithoutRoutineNestedInput
   }
 
-  export type RoutineUncheckedUpdateInput = {
+  export type routineUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
     totalExercise?: IntFieldUpdateOperationsInput | number
-    Exercise_routine?: Exercise_routineUncheckedUpdateManyWithoutRoutineNestedInput
+    exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput
   }
 
-  export type RoutineCreateManyInput = {
+  export type routineCreateManyInput = {
     id?: number
-    user_id: string
+    userId: string
     name: string
     createdAt?: Date | string | null
     description: string
@@ -9046,7 +9103,7 @@ export namespace Prisma {
     totalExercise: number
   }
 
-  export type RoutineUpdateManyMutationInput = {
+  export type routineUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     description?: StringFieldUpdateOperationsInput | string
@@ -9054,9 +9111,9 @@ export namespace Prisma {
     totalExercise?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RoutineUncheckedUpdateManyInput = {
+  export type routineUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     description?: StringFieldUpdateOperationsInput | string
@@ -9064,149 +9121,170 @@ export namespace Prisma {
     totalExercise?: IntFieldUpdateOperationsInput | number
   }
 
-  export type FavoriteCreateInput = {
-    user: UserCreateNestedOneWithoutFavoriteInput
-    exercise: ExerciseCreateNestedOneWithoutFavoriteInput
+  export type favoriteCreateInput = {
+    user: userCreateNestedOneWithoutFavoriteInput
+    exercise: exerciseCreateNestedOneWithoutFavoriteInput
   }
 
-  export type FavoriteUncheckedCreateInput = {
+  export type favoriteUncheckedCreateInput = {
     id?: number
-    user_id: string
-    exercise_id: number
+    userId: string
+    exerciseId: number
   }
 
-  export type FavoriteUpdateInput = {
-    user?: UserUpdateOneRequiredWithoutFavoriteNestedInput
-    exercise?: ExerciseUpdateOneRequiredWithoutFavoriteNestedInput
+  export type favoriteUpdateInput = {
+    user?: userUpdateOneRequiredWithoutFavoriteNestedInput
+    exercise?: exerciseUpdateOneRequiredWithoutFavoriteNestedInput
   }
 
-  export type FavoriteUncheckedUpdateInput = {
+  export type favoriteUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-    exercise_id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    exerciseId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type FavoriteCreateManyInput = {
+  export type favoriteCreateManyInput = {
     id?: number
-    user_id: string
-    exercise_id: number
+    userId: string
+    exerciseId: number
   }
 
-  export type FavoriteUpdateManyMutationInput = {
+  export type favoriteUpdateManyMutationInput = {
 
   }
 
-  export type FavoriteUncheckedUpdateManyInput = {
+  export type favoriteUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-    exercise_id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    exerciseId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ExerciseCreateInput = {
+  export type exerciseCreateInput = {
     name: string
     muscle: string
-    video_img_url: string
-    Progress?: ProgressCreateNestedManyWithoutExerciseInput
-    Favorite?: FavoriteCreateNestedManyWithoutExerciseInput
-    Exercise_routine?: Exercise_routineCreateNestedManyWithoutExerciseInput
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+    Progress?: progressCreateNestedManyWithoutExerciseInput
+    Favorite?: favoriteCreateNestedManyWithoutExerciseInput
+    exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutExerciseInput
   }
 
-  export type ExerciseUncheckedCreateInput = {
-    id?: number
-    name: string
-    muscle: string
-    video_img_url: string
-    Progress?: ProgressUncheckedCreateNestedManyWithoutExerciseInput
-    Favorite?: FavoriteUncheckedCreateNestedManyWithoutExerciseInput
-    Exercise_routine?: Exercise_routineUncheckedCreateNestedManyWithoutExerciseInput
-  }
-
-  export type ExerciseUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Progress?: ProgressUpdateManyWithoutExerciseNestedInput
-    Favorite?: FavoriteUpdateManyWithoutExerciseNestedInput
-    Exercise_routine?: Exercise_routineUpdateManyWithoutExerciseNestedInput
-  }
-
-  export type ExerciseUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Progress?: ProgressUncheckedUpdateManyWithoutExerciseNestedInput
-    Favorite?: FavoriteUncheckedUpdateManyWithoutExerciseNestedInput
-    Exercise_routine?: Exercise_routineUncheckedUpdateManyWithoutExerciseNestedInput
-  }
-
-  export type ExerciseCreateManyInput = {
+  export type exerciseUncheckedCreateInput = {
     id?: number
     name: string
     muscle: string
-    video_img_url: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+    Progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
+    Favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
+    exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput
   }
 
-  export type ExerciseUpdateManyMutationInput = {
+  export type exerciseUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Progress?: progressUpdateManyWithoutExerciseNestedInput
+    Favorite?: favoriteUpdateManyWithoutExerciseNestedInput
+    exerciseRoutine?: exerciseRoutineUpdateManyWithoutExerciseNestedInput
   }
 
-  export type ExerciseUncheckedUpdateManyInput = {
+  export type exerciseUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
+    Favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
+    exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
-  export type Exercise_routineCreateInput = {
-    series: number
-    repetitions: number
-    routine: RoutineCreateNestedOneWithoutExercise_routineInput
-    exercise: ExerciseCreateNestedOneWithoutExercise_routineInput
-  }
-
-  export type Exercise_routineUncheckedCreateInput = {
+  export type exerciseCreateManyInput = {
     id?: number
-    routine_id: number
-    exercise_id: number
+    name: string
+    muscle: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+  }
+
+  export type exerciseUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type exerciseUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type exerciseRoutineCreateInput = {
     series: number
     repetitions: number
+    routine: routineCreateNestedOneWithoutExerciseRoutineInput
+    exercise: exerciseCreateNestedOneWithoutExerciseRoutineInput
   }
 
-  export type Exercise_routineUpdateInput = {
-    series?: IntFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-    routine?: RoutineUpdateOneRequiredWithoutExercise_routineNestedInput
-    exercise?: ExerciseUpdateOneRequiredWithoutExercise_routineNestedInput
-  }
-
-  export type Exercise_routineUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    routine_id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
-    series?: IntFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type Exercise_routineCreateManyInput = {
+  export type exerciseRoutineUncheckedCreateInput = {
     id?: number
-    routine_id: number
-    exercise_id: number
+    routineId: number
+    exerciseId: number
     series: number
     repetitions: number
   }
 
-  export type Exercise_routineUpdateManyMutationInput = {
+  export type exerciseRoutineUpdateInput = {
+    series?: IntFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+    routine?: routineUpdateOneRequiredWithoutExerciseRoutineNestedInput
+    exercise?: exerciseUpdateOneRequiredWithoutExerciseRoutineNestedInput
+  }
+
+  export type exerciseRoutineUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    routineId?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
 
-  export type Exercise_routineUncheckedUpdateManyInput = {
+  export type exerciseRoutineCreateManyInput = {
+    id?: number
+    routineId: number
+    exerciseId: number
+    series: number
+    repetitions: number
+  }
+
+  export type exerciseRoutineUpdateManyMutationInput = {
+    series?: IntFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type exerciseRoutineUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    routine_id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
+    routineId?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
@@ -9226,6 +9304,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -9239,17 +9328,6 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -9271,21 +9349,21 @@ export namespace Prisma {
   }
 
   export type ProgressListRelationFilter = {
-    every?: ProgressWhereInput
-    some?: ProgressWhereInput
-    none?: ProgressWhereInput
+    every?: progressWhereInput
+    some?: progressWhereInput
+    none?: progressWhereInput
   }
 
   export type RoutineListRelationFilter = {
-    every?: RoutineWhereInput
-    some?: RoutineWhereInput
-    none?: RoutineWhereInput
+    every?: routineWhereInput
+    some?: routineWhereInput
+    none?: routineWhereInput
   }
 
   export type FavoriteListRelationFilter = {
-    every?: FavoriteWhereInput
-    some?: FavoriteWhereInput
-    none?: FavoriteWhereInput
+    every?: favoriteWhereInput
+    some?: favoriteWhereInput
+    none?: favoriteWhereInput
   }
 
   export type SortOrderInput = {
@@ -9293,19 +9371,19 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type ProgressOrderByRelationAggregateInput = {
+  export type progressOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type RoutineOrderByRelationAggregateInput = {
+  export type routineOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type FavoriteOrderByRelationAggregateInput = {
+  export type favoriteOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type UserCountOrderByAggregateInput = {
+  export type userCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -9317,7 +9395,7 @@ export namespace Prisma {
     role?: SortOrder
   }
 
-  export type UserMaxOrderByAggregateInput = {
+  export type userMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -9329,7 +9407,7 @@ export namespace Prisma {
     role?: SortOrder
   }
 
-  export type UserMinOrderByAggregateInput = {
+  export type userMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
@@ -9359,6 +9437,20 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -9375,20 +9467,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -9438,53 +9516,53 @@ export namespace Prisma {
   }
 
   export type UserScalarRelationFilter = {
-    is?: UserWhereInput
-    isNot?: UserWhereInput
+    is?: userWhereInput
+    isNot?: userWhereInput
   }
 
   export type ExerciseScalarRelationFilter = {
-    is?: ExerciseWhereInput
-    isNot?: ExerciseWhereInput
+    is?: exerciseWhereInput
+    isNot?: exerciseWhereInput
   }
 
-  export type ProgressCountOrderByAggregateInput = {
+  export type progressCountOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
     date?: SortOrder
-    weight_used?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type ProgressAvgOrderByAggregateInput = {
+  export type progressAvgOrderByAggregateInput = {
     id?: SortOrder
-    exercise_id?: SortOrder
-    weight_used?: SortOrder
+    exerciseId?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type ProgressMaxOrderByAggregateInput = {
+  export type progressMaxOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
     date?: SortOrder
-    weight_used?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type ProgressMinOrderByAggregateInput = {
+  export type progressMinOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
     date?: SortOrder
-    weight_used?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type ProgressSumOrderByAggregateInput = {
+  export type progressSumOrderByAggregateInput = {
     id?: SortOrder
-    exercise_id?: SortOrder
-    weight_used?: SortOrder
+    exerciseId?: SortOrder
+    weightUsed?: SortOrder
     repetitions?: SortOrder
   }
 
@@ -9520,19 +9598,19 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type Exercise_routineListRelationFilter = {
-    every?: Exercise_routineWhereInput
-    some?: Exercise_routineWhereInput
-    none?: Exercise_routineWhereInput
+  export type ExerciseRoutineListRelationFilter = {
+    every?: exerciseRoutineWhereInput
+    some?: exerciseRoutineWhereInput
+    none?: exerciseRoutineWhereInput
   }
 
-  export type Exercise_routineOrderByRelationAggregateInput = {
+  export type exerciseRoutineOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type RoutineCountOrderByAggregateInput = {
+  export type routineCountOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
+    userId?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
@@ -9540,15 +9618,15 @@ export namespace Prisma {
     totalExercise?: SortOrder
   }
 
-  export type RoutineAvgOrderByAggregateInput = {
+  export type routineAvgOrderByAggregateInput = {
     id?: SortOrder
     duration?: SortOrder
     totalExercise?: SortOrder
   }
 
-  export type RoutineMaxOrderByAggregateInput = {
+  export type routineMaxOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
+    userId?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
@@ -9556,9 +9634,9 @@ export namespace Prisma {
     totalExercise?: SortOrder
   }
 
-  export type RoutineMinOrderByAggregateInput = {
+  export type routineMinOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
+    userId?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
@@ -9566,166 +9644,175 @@ export namespace Prisma {
     totalExercise?: SortOrder
   }
 
-  export type RoutineSumOrderByAggregateInput = {
+  export type routineSumOrderByAggregateInput = {
     id?: SortOrder
     duration?: SortOrder
     totalExercise?: SortOrder
   }
 
-  export type FavoriteCountOrderByAggregateInput = {
+  export type favoriteCountOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
   }
 
-  export type FavoriteAvgOrderByAggregateInput = {
+  export type favoriteAvgOrderByAggregateInput = {
     id?: SortOrder
-    exercise_id?: SortOrder
+    exerciseId?: SortOrder
   }
 
-  export type FavoriteMaxOrderByAggregateInput = {
+  export type favoriteMaxOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
   }
 
-  export type FavoriteMinOrderByAggregateInput = {
+  export type favoriteMinOrderByAggregateInput = {
     id?: SortOrder
-    user_id?: SortOrder
-    exercise_id?: SortOrder
+    userId?: SortOrder
+    exerciseId?: SortOrder
   }
 
-  export type FavoriteSumOrderByAggregateInput = {
+  export type favoriteSumOrderByAggregateInput = {
     id?: SortOrder
-    exercise_id?: SortOrder
+    exerciseId?: SortOrder
   }
 
-  export type ExerciseCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    muscle?: SortOrder
-    video_img_url?: SortOrder
-  }
-
-  export type ExerciseAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type ExerciseMaxOrderByAggregateInput = {
+  export type exerciseCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     muscle?: SortOrder
-    video_img_url?: SortOrder
+    videoImgUrl?: SortOrder
+    description?: SortOrder
+    executionSteps?: SortOrder
+    tips?: SortOrder
   }
 
-  export type ExerciseMinOrderByAggregateInput = {
+  export type exerciseAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type exerciseMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     muscle?: SortOrder
-    video_img_url?: SortOrder
+    videoImgUrl?: SortOrder
+    description?: SortOrder
+    executionSteps?: SortOrder
+    tips?: SortOrder
   }
 
-  export type ExerciseSumOrderByAggregateInput = {
+  export type exerciseMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    muscle?: SortOrder
+    videoImgUrl?: SortOrder
+    description?: SortOrder
+    executionSteps?: SortOrder
+    tips?: SortOrder
+  }
+
+  export type exerciseSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
   export type RoutineScalarRelationFilter = {
-    is?: RoutineWhereInput
-    isNot?: RoutineWhereInput
+    is?: routineWhereInput
+    isNot?: routineWhereInput
   }
 
-  export type Exercise_routineCountOrderByAggregateInput = {
+  export type exerciseRoutineCountOrderByAggregateInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type Exercise_routineAvgOrderByAggregateInput = {
+  export type exerciseRoutineAvgOrderByAggregateInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type Exercise_routineMaxOrderByAggregateInput = {
+  export type exerciseRoutineMaxOrderByAggregateInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type Exercise_routineMinOrderByAggregateInput = {
+  export type exerciseRoutineMinOrderByAggregateInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type Exercise_routineSumOrderByAggregateInput = {
+  export type exerciseRoutineSumOrderByAggregateInput = {
     id?: SortOrder
-    routine_id?: SortOrder
-    exercise_id?: SortOrder
+    routineId?: SortOrder
+    exerciseId?: SortOrder
     series?: SortOrder
     repetitions?: SortOrder
   }
 
-  export type ProgressCreateNestedManyWithoutUserInput = {
-    create?: XOR<ProgressCreateWithoutUserInput, ProgressUncheckedCreateWithoutUserInput> | ProgressCreateWithoutUserInput[] | ProgressUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutUserInput | ProgressCreateOrConnectWithoutUserInput[]
-    createMany?: ProgressCreateManyUserInputEnvelope
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
+  export type progressCreateNestedManyWithoutUserInput = {
+    create?: XOR<progressCreateWithoutUserInput, progressUncheckedCreateWithoutUserInput> | progressCreateWithoutUserInput[] | progressUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutUserInput | progressCreateOrConnectWithoutUserInput[]
+    createMany?: progressCreateManyUserInputEnvelope
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
   }
 
-  export type RoutineCreateNestedManyWithoutUserInput = {
-    create?: XOR<RoutineCreateWithoutUserInput, RoutineUncheckedCreateWithoutUserInput> | RoutineCreateWithoutUserInput[] | RoutineUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: RoutineCreateOrConnectWithoutUserInput | RoutineCreateOrConnectWithoutUserInput[]
-    createMany?: RoutineCreateManyUserInputEnvelope
-    connect?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
+  export type routineCreateNestedManyWithoutUserInput = {
+    create?: XOR<routineCreateWithoutUserInput, routineUncheckedCreateWithoutUserInput> | routineCreateWithoutUserInput[] | routineUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: routineCreateOrConnectWithoutUserInput | routineCreateOrConnectWithoutUserInput[]
+    createMany?: routineCreateManyUserInputEnvelope
+    connect?: routineWhereUniqueInput | routineWhereUniqueInput[]
   }
 
-  export type FavoriteCreateNestedManyWithoutUserInput = {
-    create?: XOR<FavoriteCreateWithoutUserInput, FavoriteUncheckedCreateWithoutUserInput> | FavoriteCreateWithoutUserInput[] | FavoriteUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutUserInput | FavoriteCreateOrConnectWithoutUserInput[]
-    createMany?: FavoriteCreateManyUserInputEnvelope
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
+  export type favoriteCreateNestedManyWithoutUserInput = {
+    create?: XOR<favoriteCreateWithoutUserInput, favoriteUncheckedCreateWithoutUserInput> | favoriteCreateWithoutUserInput[] | favoriteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutUserInput | favoriteCreateOrConnectWithoutUserInput[]
+    createMany?: favoriteCreateManyUserInputEnvelope
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
   }
 
-  export type ProgressUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<ProgressCreateWithoutUserInput, ProgressUncheckedCreateWithoutUserInput> | ProgressCreateWithoutUserInput[] | ProgressUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutUserInput | ProgressCreateOrConnectWithoutUserInput[]
-    createMany?: ProgressCreateManyUserInputEnvelope
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
+  export type progressUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<progressCreateWithoutUserInput, progressUncheckedCreateWithoutUserInput> | progressCreateWithoutUserInput[] | progressUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutUserInput | progressCreateOrConnectWithoutUserInput[]
+    createMany?: progressCreateManyUserInputEnvelope
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
   }
 
-  export type RoutineUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<RoutineCreateWithoutUserInput, RoutineUncheckedCreateWithoutUserInput> | RoutineCreateWithoutUserInput[] | RoutineUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: RoutineCreateOrConnectWithoutUserInput | RoutineCreateOrConnectWithoutUserInput[]
-    createMany?: RoutineCreateManyUserInputEnvelope
-    connect?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
+  export type routineUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<routineCreateWithoutUserInput, routineUncheckedCreateWithoutUserInput> | routineCreateWithoutUserInput[] | routineUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: routineCreateOrConnectWithoutUserInput | routineCreateOrConnectWithoutUserInput[]
+    createMany?: routineCreateManyUserInputEnvelope
+    connect?: routineWhereUniqueInput | routineWhereUniqueInput[]
   }
 
-  export type FavoriteUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<FavoriteCreateWithoutUserInput, FavoriteUncheckedCreateWithoutUserInput> | FavoriteCreateWithoutUserInput[] | FavoriteUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutUserInput | FavoriteCreateOrConnectWithoutUserInput[]
-    createMany?: FavoriteCreateManyUserInputEnvelope
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
+  export type favoriteUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<favoriteCreateWithoutUserInput, favoriteUncheckedCreateWithoutUserInput> | favoriteCreateWithoutUserInput[] | favoriteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutUserInput | favoriteCreateOrConnectWithoutUserInput[]
+    createMany?: favoriteCreateManyUserInputEnvelope
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-  }
-
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -9736,100 +9823,100 @@ export namespace Prisma {
     set?: $Enums.Rol
   }
 
-  export type ProgressUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ProgressCreateWithoutUserInput, ProgressUncheckedCreateWithoutUserInput> | ProgressCreateWithoutUserInput[] | ProgressUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutUserInput | ProgressCreateOrConnectWithoutUserInput[]
-    upsert?: ProgressUpsertWithWhereUniqueWithoutUserInput | ProgressUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ProgressCreateManyUserInputEnvelope
-    set?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    disconnect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    delete?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    update?: ProgressUpdateWithWhereUniqueWithoutUserInput | ProgressUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ProgressUpdateManyWithWhereWithoutUserInput | ProgressUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ProgressScalarWhereInput | ProgressScalarWhereInput[]
+  export type progressUpdateManyWithoutUserNestedInput = {
+    create?: XOR<progressCreateWithoutUserInput, progressUncheckedCreateWithoutUserInput> | progressCreateWithoutUserInput[] | progressUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutUserInput | progressCreateOrConnectWithoutUserInput[]
+    upsert?: progressUpsertWithWhereUniqueWithoutUserInput | progressUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: progressCreateManyUserInputEnvelope
+    set?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    disconnect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    delete?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    update?: progressUpdateWithWhereUniqueWithoutUserInput | progressUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: progressUpdateManyWithWhereWithoutUserInput | progressUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: progressScalarWhereInput | progressScalarWhereInput[]
   }
 
-  export type RoutineUpdateManyWithoutUserNestedInput = {
-    create?: XOR<RoutineCreateWithoutUserInput, RoutineUncheckedCreateWithoutUserInput> | RoutineCreateWithoutUserInput[] | RoutineUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: RoutineCreateOrConnectWithoutUserInput | RoutineCreateOrConnectWithoutUserInput[]
-    upsert?: RoutineUpsertWithWhereUniqueWithoutUserInput | RoutineUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: RoutineCreateManyUserInputEnvelope
-    set?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    disconnect?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    delete?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    connect?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    update?: RoutineUpdateWithWhereUniqueWithoutUserInput | RoutineUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: RoutineUpdateManyWithWhereWithoutUserInput | RoutineUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: RoutineScalarWhereInput | RoutineScalarWhereInput[]
+  export type routineUpdateManyWithoutUserNestedInput = {
+    create?: XOR<routineCreateWithoutUserInput, routineUncheckedCreateWithoutUserInput> | routineCreateWithoutUserInput[] | routineUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: routineCreateOrConnectWithoutUserInput | routineCreateOrConnectWithoutUserInput[]
+    upsert?: routineUpsertWithWhereUniqueWithoutUserInput | routineUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: routineCreateManyUserInputEnvelope
+    set?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    disconnect?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    delete?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    connect?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    update?: routineUpdateWithWhereUniqueWithoutUserInput | routineUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: routineUpdateManyWithWhereWithoutUserInput | routineUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: routineScalarWhereInput | routineScalarWhereInput[]
   }
 
-  export type FavoriteUpdateManyWithoutUserNestedInput = {
-    create?: XOR<FavoriteCreateWithoutUserInput, FavoriteUncheckedCreateWithoutUserInput> | FavoriteCreateWithoutUserInput[] | FavoriteUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutUserInput | FavoriteCreateOrConnectWithoutUserInput[]
-    upsert?: FavoriteUpsertWithWhereUniqueWithoutUserInput | FavoriteUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: FavoriteCreateManyUserInputEnvelope
-    set?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    disconnect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    delete?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    update?: FavoriteUpdateWithWhereUniqueWithoutUserInput | FavoriteUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: FavoriteUpdateManyWithWhereWithoutUserInput | FavoriteUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
+  export type favoriteUpdateManyWithoutUserNestedInput = {
+    create?: XOR<favoriteCreateWithoutUserInput, favoriteUncheckedCreateWithoutUserInput> | favoriteCreateWithoutUserInput[] | favoriteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutUserInput | favoriteCreateOrConnectWithoutUserInput[]
+    upsert?: favoriteUpsertWithWhereUniqueWithoutUserInput | favoriteUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: favoriteCreateManyUserInputEnvelope
+    set?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    disconnect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    delete?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    update?: favoriteUpdateWithWhereUniqueWithoutUserInput | favoriteUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: favoriteUpdateManyWithWhereWithoutUserInput | favoriteUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: favoriteScalarWhereInput | favoriteScalarWhereInput[]
   }
 
-  export type ProgressUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ProgressCreateWithoutUserInput, ProgressUncheckedCreateWithoutUserInput> | ProgressCreateWithoutUserInput[] | ProgressUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutUserInput | ProgressCreateOrConnectWithoutUserInput[]
-    upsert?: ProgressUpsertWithWhereUniqueWithoutUserInput | ProgressUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ProgressCreateManyUserInputEnvelope
-    set?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    disconnect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    delete?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    update?: ProgressUpdateWithWhereUniqueWithoutUserInput | ProgressUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ProgressUpdateManyWithWhereWithoutUserInput | ProgressUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ProgressScalarWhereInput | ProgressScalarWhereInput[]
+  export type progressUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<progressCreateWithoutUserInput, progressUncheckedCreateWithoutUserInput> | progressCreateWithoutUserInput[] | progressUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutUserInput | progressCreateOrConnectWithoutUserInput[]
+    upsert?: progressUpsertWithWhereUniqueWithoutUserInput | progressUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: progressCreateManyUserInputEnvelope
+    set?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    disconnect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    delete?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    update?: progressUpdateWithWhereUniqueWithoutUserInput | progressUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: progressUpdateManyWithWhereWithoutUserInput | progressUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: progressScalarWhereInput | progressScalarWhereInput[]
   }
 
-  export type RoutineUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<RoutineCreateWithoutUserInput, RoutineUncheckedCreateWithoutUserInput> | RoutineCreateWithoutUserInput[] | RoutineUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: RoutineCreateOrConnectWithoutUserInput | RoutineCreateOrConnectWithoutUserInput[]
-    upsert?: RoutineUpsertWithWhereUniqueWithoutUserInput | RoutineUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: RoutineCreateManyUserInputEnvelope
-    set?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    disconnect?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    delete?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    connect?: RoutineWhereUniqueInput | RoutineWhereUniqueInput[]
-    update?: RoutineUpdateWithWhereUniqueWithoutUserInput | RoutineUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: RoutineUpdateManyWithWhereWithoutUserInput | RoutineUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: RoutineScalarWhereInput | RoutineScalarWhereInput[]
+  export type routineUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<routineCreateWithoutUserInput, routineUncheckedCreateWithoutUserInput> | routineCreateWithoutUserInput[] | routineUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: routineCreateOrConnectWithoutUserInput | routineCreateOrConnectWithoutUserInput[]
+    upsert?: routineUpsertWithWhereUniqueWithoutUserInput | routineUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: routineCreateManyUserInputEnvelope
+    set?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    disconnect?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    delete?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    connect?: routineWhereUniqueInput | routineWhereUniqueInput[]
+    update?: routineUpdateWithWhereUniqueWithoutUserInput | routineUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: routineUpdateManyWithWhereWithoutUserInput | routineUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: routineScalarWhereInput | routineScalarWhereInput[]
   }
 
-  export type FavoriteUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<FavoriteCreateWithoutUserInput, FavoriteUncheckedCreateWithoutUserInput> | FavoriteCreateWithoutUserInput[] | FavoriteUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutUserInput | FavoriteCreateOrConnectWithoutUserInput[]
-    upsert?: FavoriteUpsertWithWhereUniqueWithoutUserInput | FavoriteUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: FavoriteCreateManyUserInputEnvelope
-    set?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    disconnect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    delete?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    update?: FavoriteUpdateWithWhereUniqueWithoutUserInput | FavoriteUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: FavoriteUpdateManyWithWhereWithoutUserInput | FavoriteUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
+  export type favoriteUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<favoriteCreateWithoutUserInput, favoriteUncheckedCreateWithoutUserInput> | favoriteCreateWithoutUserInput[] | favoriteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutUserInput | favoriteCreateOrConnectWithoutUserInput[]
+    upsert?: favoriteUpsertWithWhereUniqueWithoutUserInput | favoriteUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: favoriteCreateManyUserInputEnvelope
+    set?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    disconnect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    delete?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    update?: favoriteUpdateWithWhereUniqueWithoutUserInput | favoriteUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: favoriteUpdateManyWithWhereWithoutUserInput | favoriteUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: favoriteScalarWhereInput | favoriteScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutProgressInput = {
-    create?: XOR<UserCreateWithoutProgressInput, UserUncheckedCreateWithoutProgressInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProgressInput
-    connect?: UserWhereUniqueInput
+  export type userCreateNestedOneWithoutProgressInput = {
+    create?: XOR<userCreateWithoutProgressInput, userUncheckedCreateWithoutProgressInput>
+    connectOrCreate?: userCreateOrConnectWithoutProgressInput
+    connect?: userWhereUniqueInput
   }
 
-  export type ExerciseCreateNestedOneWithoutProgressInput = {
-    create?: XOR<ExerciseCreateWithoutProgressInput, ExerciseUncheckedCreateWithoutProgressInput>
-    connectOrCreate?: ExerciseCreateOrConnectWithoutProgressInput
-    connect?: ExerciseWhereUniqueInput
+  export type exerciseCreateNestedOneWithoutProgressInput = {
+    create?: XOR<exerciseCreateWithoutProgressInput, exerciseUncheckedCreateWithoutProgressInput>
+    connectOrCreate?: exerciseCreateOrConnectWithoutProgressInput
+    connect?: exerciseWhereUniqueInput
   }
 
   export type FloatFieldUpdateOperationsInput = {
@@ -9848,258 +9935,258 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type UserUpdateOneRequiredWithoutProgressNestedInput = {
-    create?: XOR<UserCreateWithoutProgressInput, UserUncheckedCreateWithoutProgressInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProgressInput
-    upsert?: UserUpsertWithoutProgressInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProgressInput, UserUpdateWithoutProgressInput>, UserUncheckedUpdateWithoutProgressInput>
+  export type userUpdateOneRequiredWithoutProgressNestedInput = {
+    create?: XOR<userCreateWithoutProgressInput, userUncheckedCreateWithoutProgressInput>
+    connectOrCreate?: userCreateOrConnectWithoutProgressInput
+    upsert?: userUpsertWithoutProgressInput
+    connect?: userWhereUniqueInput
+    update?: XOR<XOR<userUpdateToOneWithWhereWithoutProgressInput, userUpdateWithoutProgressInput>, userUncheckedUpdateWithoutProgressInput>
   }
 
-  export type ExerciseUpdateOneRequiredWithoutProgressNestedInput = {
-    create?: XOR<ExerciseCreateWithoutProgressInput, ExerciseUncheckedCreateWithoutProgressInput>
-    connectOrCreate?: ExerciseCreateOrConnectWithoutProgressInput
-    upsert?: ExerciseUpsertWithoutProgressInput
-    connect?: ExerciseWhereUniqueInput
-    update?: XOR<XOR<ExerciseUpdateToOneWithWhereWithoutProgressInput, ExerciseUpdateWithoutProgressInput>, ExerciseUncheckedUpdateWithoutProgressInput>
+  export type exerciseUpdateOneRequiredWithoutProgressNestedInput = {
+    create?: XOR<exerciseCreateWithoutProgressInput, exerciseUncheckedCreateWithoutProgressInput>
+    connectOrCreate?: exerciseCreateOrConnectWithoutProgressInput
+    upsert?: exerciseUpsertWithoutProgressInput
+    connect?: exerciseWhereUniqueInput
+    update?: XOR<XOR<exerciseUpdateToOneWithWhereWithoutProgressInput, exerciseUpdateWithoutProgressInput>, exerciseUncheckedUpdateWithoutProgressInput>
   }
 
-  export type UserCreateNestedOneWithoutRoutineInput = {
-    create?: XOR<UserCreateWithoutRoutineInput, UserUncheckedCreateWithoutRoutineInput>
-    connectOrCreate?: UserCreateOrConnectWithoutRoutineInput
-    connect?: UserWhereUniqueInput
+  export type userCreateNestedOneWithoutRoutineInput = {
+    create?: XOR<userCreateWithoutRoutineInput, userUncheckedCreateWithoutRoutineInput>
+    connectOrCreate?: userCreateOrConnectWithoutRoutineInput
+    connect?: userWhereUniqueInput
   }
 
-  export type Exercise_routineCreateNestedManyWithoutRoutineInput = {
-    create?: XOR<Exercise_routineCreateWithoutRoutineInput, Exercise_routineUncheckedCreateWithoutRoutineInput> | Exercise_routineCreateWithoutRoutineInput[] | Exercise_routineUncheckedCreateWithoutRoutineInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutRoutineInput | Exercise_routineCreateOrConnectWithoutRoutineInput[]
-    createMany?: Exercise_routineCreateManyRoutineInputEnvelope
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
+  export type exerciseRoutineCreateNestedManyWithoutRoutineInput = {
+    create?: XOR<exerciseRoutineCreateWithoutRoutineInput, exerciseRoutineUncheckedCreateWithoutRoutineInput> | exerciseRoutineCreateWithoutRoutineInput[] | exerciseRoutineUncheckedCreateWithoutRoutineInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutRoutineInput | exerciseRoutineCreateOrConnectWithoutRoutineInput[]
+    createMany?: exerciseRoutineCreateManyRoutineInputEnvelope
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
   }
 
-  export type Exercise_routineUncheckedCreateNestedManyWithoutRoutineInput = {
-    create?: XOR<Exercise_routineCreateWithoutRoutineInput, Exercise_routineUncheckedCreateWithoutRoutineInput> | Exercise_routineCreateWithoutRoutineInput[] | Exercise_routineUncheckedCreateWithoutRoutineInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutRoutineInput | Exercise_routineCreateOrConnectWithoutRoutineInput[]
-    createMany?: Exercise_routineCreateManyRoutineInputEnvelope
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
+  export type exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput = {
+    create?: XOR<exerciseRoutineCreateWithoutRoutineInput, exerciseRoutineUncheckedCreateWithoutRoutineInput> | exerciseRoutineCreateWithoutRoutineInput[] | exerciseRoutineUncheckedCreateWithoutRoutineInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutRoutineInput | exerciseRoutineCreateOrConnectWithoutRoutineInput[]
+    createMany?: exerciseRoutineCreateManyRoutineInputEnvelope
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
   }
 
-  export type UserUpdateOneRequiredWithoutRoutineNestedInput = {
-    create?: XOR<UserCreateWithoutRoutineInput, UserUncheckedCreateWithoutRoutineInput>
-    connectOrCreate?: UserCreateOrConnectWithoutRoutineInput
-    upsert?: UserUpsertWithoutRoutineInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutRoutineInput, UserUpdateWithoutRoutineInput>, UserUncheckedUpdateWithoutRoutineInput>
+  export type userUpdateOneRequiredWithoutRoutineNestedInput = {
+    create?: XOR<userCreateWithoutRoutineInput, userUncheckedCreateWithoutRoutineInput>
+    connectOrCreate?: userCreateOrConnectWithoutRoutineInput
+    upsert?: userUpsertWithoutRoutineInput
+    connect?: userWhereUniqueInput
+    update?: XOR<XOR<userUpdateToOneWithWhereWithoutRoutineInput, userUpdateWithoutRoutineInput>, userUncheckedUpdateWithoutRoutineInput>
   }
 
-  export type Exercise_routineUpdateManyWithoutRoutineNestedInput = {
-    create?: XOR<Exercise_routineCreateWithoutRoutineInput, Exercise_routineUncheckedCreateWithoutRoutineInput> | Exercise_routineCreateWithoutRoutineInput[] | Exercise_routineUncheckedCreateWithoutRoutineInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutRoutineInput | Exercise_routineCreateOrConnectWithoutRoutineInput[]
-    upsert?: Exercise_routineUpsertWithWhereUniqueWithoutRoutineInput | Exercise_routineUpsertWithWhereUniqueWithoutRoutineInput[]
-    createMany?: Exercise_routineCreateManyRoutineInputEnvelope
-    set?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    disconnect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    delete?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    update?: Exercise_routineUpdateWithWhereUniqueWithoutRoutineInput | Exercise_routineUpdateWithWhereUniqueWithoutRoutineInput[]
-    updateMany?: Exercise_routineUpdateManyWithWhereWithoutRoutineInput | Exercise_routineUpdateManyWithWhereWithoutRoutineInput[]
-    deleteMany?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
+  export type exerciseRoutineUpdateManyWithoutRoutineNestedInput = {
+    create?: XOR<exerciseRoutineCreateWithoutRoutineInput, exerciseRoutineUncheckedCreateWithoutRoutineInput> | exerciseRoutineCreateWithoutRoutineInput[] | exerciseRoutineUncheckedCreateWithoutRoutineInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutRoutineInput | exerciseRoutineCreateOrConnectWithoutRoutineInput[]
+    upsert?: exerciseRoutineUpsertWithWhereUniqueWithoutRoutineInput | exerciseRoutineUpsertWithWhereUniqueWithoutRoutineInput[]
+    createMany?: exerciseRoutineCreateManyRoutineInputEnvelope
+    set?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    disconnect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    delete?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    update?: exerciseRoutineUpdateWithWhereUniqueWithoutRoutineInput | exerciseRoutineUpdateWithWhereUniqueWithoutRoutineInput[]
+    updateMany?: exerciseRoutineUpdateManyWithWhereWithoutRoutineInput | exerciseRoutineUpdateManyWithWhereWithoutRoutineInput[]
+    deleteMany?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
   }
 
-  export type Exercise_routineUncheckedUpdateManyWithoutRoutineNestedInput = {
-    create?: XOR<Exercise_routineCreateWithoutRoutineInput, Exercise_routineUncheckedCreateWithoutRoutineInput> | Exercise_routineCreateWithoutRoutineInput[] | Exercise_routineUncheckedCreateWithoutRoutineInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutRoutineInput | Exercise_routineCreateOrConnectWithoutRoutineInput[]
-    upsert?: Exercise_routineUpsertWithWhereUniqueWithoutRoutineInput | Exercise_routineUpsertWithWhereUniqueWithoutRoutineInput[]
-    createMany?: Exercise_routineCreateManyRoutineInputEnvelope
-    set?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    disconnect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    delete?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    update?: Exercise_routineUpdateWithWhereUniqueWithoutRoutineInput | Exercise_routineUpdateWithWhereUniqueWithoutRoutineInput[]
-    updateMany?: Exercise_routineUpdateManyWithWhereWithoutRoutineInput | Exercise_routineUpdateManyWithWhereWithoutRoutineInput[]
-    deleteMany?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
+  export type exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput = {
+    create?: XOR<exerciseRoutineCreateWithoutRoutineInput, exerciseRoutineUncheckedCreateWithoutRoutineInput> | exerciseRoutineCreateWithoutRoutineInput[] | exerciseRoutineUncheckedCreateWithoutRoutineInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutRoutineInput | exerciseRoutineCreateOrConnectWithoutRoutineInput[]
+    upsert?: exerciseRoutineUpsertWithWhereUniqueWithoutRoutineInput | exerciseRoutineUpsertWithWhereUniqueWithoutRoutineInput[]
+    createMany?: exerciseRoutineCreateManyRoutineInputEnvelope
+    set?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    disconnect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    delete?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    update?: exerciseRoutineUpdateWithWhereUniqueWithoutRoutineInput | exerciseRoutineUpdateWithWhereUniqueWithoutRoutineInput[]
+    updateMany?: exerciseRoutineUpdateManyWithWhereWithoutRoutineInput | exerciseRoutineUpdateManyWithWhereWithoutRoutineInput[]
+    deleteMany?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutFavoriteInput = {
-    create?: XOR<UserCreateWithoutFavoriteInput, UserUncheckedCreateWithoutFavoriteInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFavoriteInput
-    connect?: UserWhereUniqueInput
+  export type userCreateNestedOneWithoutFavoriteInput = {
+    create?: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
+    connectOrCreate?: userCreateOrConnectWithoutFavoriteInput
+    connect?: userWhereUniqueInput
   }
 
-  export type ExerciseCreateNestedOneWithoutFavoriteInput = {
-    create?: XOR<ExerciseCreateWithoutFavoriteInput, ExerciseUncheckedCreateWithoutFavoriteInput>
-    connectOrCreate?: ExerciseCreateOrConnectWithoutFavoriteInput
-    connect?: ExerciseWhereUniqueInput
+  export type exerciseCreateNestedOneWithoutFavoriteInput = {
+    create?: XOR<exerciseCreateWithoutFavoriteInput, exerciseUncheckedCreateWithoutFavoriteInput>
+    connectOrCreate?: exerciseCreateOrConnectWithoutFavoriteInput
+    connect?: exerciseWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutFavoriteNestedInput = {
-    create?: XOR<UserCreateWithoutFavoriteInput, UserUncheckedCreateWithoutFavoriteInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFavoriteInput
-    upsert?: UserUpsertWithoutFavoriteInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFavoriteInput, UserUpdateWithoutFavoriteInput>, UserUncheckedUpdateWithoutFavoriteInput>
+  export type userUpdateOneRequiredWithoutFavoriteNestedInput = {
+    create?: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
+    connectOrCreate?: userCreateOrConnectWithoutFavoriteInput
+    upsert?: userUpsertWithoutFavoriteInput
+    connect?: userWhereUniqueInput
+    update?: XOR<XOR<userUpdateToOneWithWhereWithoutFavoriteInput, userUpdateWithoutFavoriteInput>, userUncheckedUpdateWithoutFavoriteInput>
   }
 
-  export type ExerciseUpdateOneRequiredWithoutFavoriteNestedInput = {
-    create?: XOR<ExerciseCreateWithoutFavoriteInput, ExerciseUncheckedCreateWithoutFavoriteInput>
-    connectOrCreate?: ExerciseCreateOrConnectWithoutFavoriteInput
-    upsert?: ExerciseUpsertWithoutFavoriteInput
-    connect?: ExerciseWhereUniqueInput
-    update?: XOR<XOR<ExerciseUpdateToOneWithWhereWithoutFavoriteInput, ExerciseUpdateWithoutFavoriteInput>, ExerciseUncheckedUpdateWithoutFavoriteInput>
+  export type exerciseUpdateOneRequiredWithoutFavoriteNestedInput = {
+    create?: XOR<exerciseCreateWithoutFavoriteInput, exerciseUncheckedCreateWithoutFavoriteInput>
+    connectOrCreate?: exerciseCreateOrConnectWithoutFavoriteInput
+    upsert?: exerciseUpsertWithoutFavoriteInput
+    connect?: exerciseWhereUniqueInput
+    update?: XOR<XOR<exerciseUpdateToOneWithWhereWithoutFavoriteInput, exerciseUpdateWithoutFavoriteInput>, exerciseUncheckedUpdateWithoutFavoriteInput>
   }
 
-  export type ProgressCreateNestedManyWithoutExerciseInput = {
-    create?: XOR<ProgressCreateWithoutExerciseInput, ProgressUncheckedCreateWithoutExerciseInput> | ProgressCreateWithoutExerciseInput[] | ProgressUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutExerciseInput | ProgressCreateOrConnectWithoutExerciseInput[]
-    createMany?: ProgressCreateManyExerciseInputEnvelope
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
+  export type progressCreateNestedManyWithoutExerciseInput = {
+    create?: XOR<progressCreateWithoutExerciseInput, progressUncheckedCreateWithoutExerciseInput> | progressCreateWithoutExerciseInput[] | progressUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutExerciseInput | progressCreateOrConnectWithoutExerciseInput[]
+    createMany?: progressCreateManyExerciseInputEnvelope
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
   }
 
-  export type FavoriteCreateNestedManyWithoutExerciseInput = {
-    create?: XOR<FavoriteCreateWithoutExerciseInput, FavoriteUncheckedCreateWithoutExerciseInput> | FavoriteCreateWithoutExerciseInput[] | FavoriteUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutExerciseInput | FavoriteCreateOrConnectWithoutExerciseInput[]
-    createMany?: FavoriteCreateManyExerciseInputEnvelope
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
+  export type favoriteCreateNestedManyWithoutExerciseInput = {
+    create?: XOR<favoriteCreateWithoutExerciseInput, favoriteUncheckedCreateWithoutExerciseInput> | favoriteCreateWithoutExerciseInput[] | favoriteUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutExerciseInput | favoriteCreateOrConnectWithoutExerciseInput[]
+    createMany?: favoriteCreateManyExerciseInputEnvelope
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
   }
 
-  export type Exercise_routineCreateNestedManyWithoutExerciseInput = {
-    create?: XOR<Exercise_routineCreateWithoutExerciseInput, Exercise_routineUncheckedCreateWithoutExerciseInput> | Exercise_routineCreateWithoutExerciseInput[] | Exercise_routineUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutExerciseInput | Exercise_routineCreateOrConnectWithoutExerciseInput[]
-    createMany?: Exercise_routineCreateManyExerciseInputEnvelope
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
+  export type exerciseRoutineCreateNestedManyWithoutExerciseInput = {
+    create?: XOR<exerciseRoutineCreateWithoutExerciseInput, exerciseRoutineUncheckedCreateWithoutExerciseInput> | exerciseRoutineCreateWithoutExerciseInput[] | exerciseRoutineUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutExerciseInput | exerciseRoutineCreateOrConnectWithoutExerciseInput[]
+    createMany?: exerciseRoutineCreateManyExerciseInputEnvelope
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
   }
 
-  export type ProgressUncheckedCreateNestedManyWithoutExerciseInput = {
-    create?: XOR<ProgressCreateWithoutExerciseInput, ProgressUncheckedCreateWithoutExerciseInput> | ProgressCreateWithoutExerciseInput[] | ProgressUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutExerciseInput | ProgressCreateOrConnectWithoutExerciseInput[]
-    createMany?: ProgressCreateManyExerciseInputEnvelope
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
+  export type progressUncheckedCreateNestedManyWithoutExerciseInput = {
+    create?: XOR<progressCreateWithoutExerciseInput, progressUncheckedCreateWithoutExerciseInput> | progressCreateWithoutExerciseInput[] | progressUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutExerciseInput | progressCreateOrConnectWithoutExerciseInput[]
+    createMany?: progressCreateManyExerciseInputEnvelope
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
   }
 
-  export type FavoriteUncheckedCreateNestedManyWithoutExerciseInput = {
-    create?: XOR<FavoriteCreateWithoutExerciseInput, FavoriteUncheckedCreateWithoutExerciseInput> | FavoriteCreateWithoutExerciseInput[] | FavoriteUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutExerciseInput | FavoriteCreateOrConnectWithoutExerciseInput[]
-    createMany?: FavoriteCreateManyExerciseInputEnvelope
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
+  export type favoriteUncheckedCreateNestedManyWithoutExerciseInput = {
+    create?: XOR<favoriteCreateWithoutExerciseInput, favoriteUncheckedCreateWithoutExerciseInput> | favoriteCreateWithoutExerciseInput[] | favoriteUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutExerciseInput | favoriteCreateOrConnectWithoutExerciseInput[]
+    createMany?: favoriteCreateManyExerciseInputEnvelope
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
   }
 
-  export type Exercise_routineUncheckedCreateNestedManyWithoutExerciseInput = {
-    create?: XOR<Exercise_routineCreateWithoutExerciseInput, Exercise_routineUncheckedCreateWithoutExerciseInput> | Exercise_routineCreateWithoutExerciseInput[] | Exercise_routineUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutExerciseInput | Exercise_routineCreateOrConnectWithoutExerciseInput[]
-    createMany?: Exercise_routineCreateManyExerciseInputEnvelope
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
+  export type exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput = {
+    create?: XOR<exerciseRoutineCreateWithoutExerciseInput, exerciseRoutineUncheckedCreateWithoutExerciseInput> | exerciseRoutineCreateWithoutExerciseInput[] | exerciseRoutineUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutExerciseInput | exerciseRoutineCreateOrConnectWithoutExerciseInput[]
+    createMany?: exerciseRoutineCreateManyExerciseInputEnvelope
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
   }
 
-  export type ProgressUpdateManyWithoutExerciseNestedInput = {
-    create?: XOR<ProgressCreateWithoutExerciseInput, ProgressUncheckedCreateWithoutExerciseInput> | ProgressCreateWithoutExerciseInput[] | ProgressUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutExerciseInput | ProgressCreateOrConnectWithoutExerciseInput[]
-    upsert?: ProgressUpsertWithWhereUniqueWithoutExerciseInput | ProgressUpsertWithWhereUniqueWithoutExerciseInput[]
-    createMany?: ProgressCreateManyExerciseInputEnvelope
-    set?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    disconnect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    delete?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    update?: ProgressUpdateWithWhereUniqueWithoutExerciseInput | ProgressUpdateWithWhereUniqueWithoutExerciseInput[]
-    updateMany?: ProgressUpdateManyWithWhereWithoutExerciseInput | ProgressUpdateManyWithWhereWithoutExerciseInput[]
-    deleteMany?: ProgressScalarWhereInput | ProgressScalarWhereInput[]
+  export type progressUpdateManyWithoutExerciseNestedInput = {
+    create?: XOR<progressCreateWithoutExerciseInput, progressUncheckedCreateWithoutExerciseInput> | progressCreateWithoutExerciseInput[] | progressUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutExerciseInput | progressCreateOrConnectWithoutExerciseInput[]
+    upsert?: progressUpsertWithWhereUniqueWithoutExerciseInput | progressUpsertWithWhereUniqueWithoutExerciseInput[]
+    createMany?: progressCreateManyExerciseInputEnvelope
+    set?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    disconnect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    delete?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    update?: progressUpdateWithWhereUniqueWithoutExerciseInput | progressUpdateWithWhereUniqueWithoutExerciseInput[]
+    updateMany?: progressUpdateManyWithWhereWithoutExerciseInput | progressUpdateManyWithWhereWithoutExerciseInput[]
+    deleteMany?: progressScalarWhereInput | progressScalarWhereInput[]
   }
 
-  export type FavoriteUpdateManyWithoutExerciseNestedInput = {
-    create?: XOR<FavoriteCreateWithoutExerciseInput, FavoriteUncheckedCreateWithoutExerciseInput> | FavoriteCreateWithoutExerciseInput[] | FavoriteUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutExerciseInput | FavoriteCreateOrConnectWithoutExerciseInput[]
-    upsert?: FavoriteUpsertWithWhereUniqueWithoutExerciseInput | FavoriteUpsertWithWhereUniqueWithoutExerciseInput[]
-    createMany?: FavoriteCreateManyExerciseInputEnvelope
-    set?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    disconnect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    delete?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    update?: FavoriteUpdateWithWhereUniqueWithoutExerciseInput | FavoriteUpdateWithWhereUniqueWithoutExerciseInput[]
-    updateMany?: FavoriteUpdateManyWithWhereWithoutExerciseInput | FavoriteUpdateManyWithWhereWithoutExerciseInput[]
-    deleteMany?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
+  export type favoriteUpdateManyWithoutExerciseNestedInput = {
+    create?: XOR<favoriteCreateWithoutExerciseInput, favoriteUncheckedCreateWithoutExerciseInput> | favoriteCreateWithoutExerciseInput[] | favoriteUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutExerciseInput | favoriteCreateOrConnectWithoutExerciseInput[]
+    upsert?: favoriteUpsertWithWhereUniqueWithoutExerciseInput | favoriteUpsertWithWhereUniqueWithoutExerciseInput[]
+    createMany?: favoriteCreateManyExerciseInputEnvelope
+    set?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    disconnect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    delete?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    update?: favoriteUpdateWithWhereUniqueWithoutExerciseInput | favoriteUpdateWithWhereUniqueWithoutExerciseInput[]
+    updateMany?: favoriteUpdateManyWithWhereWithoutExerciseInput | favoriteUpdateManyWithWhereWithoutExerciseInput[]
+    deleteMany?: favoriteScalarWhereInput | favoriteScalarWhereInput[]
   }
 
-  export type Exercise_routineUpdateManyWithoutExerciseNestedInput = {
-    create?: XOR<Exercise_routineCreateWithoutExerciseInput, Exercise_routineUncheckedCreateWithoutExerciseInput> | Exercise_routineCreateWithoutExerciseInput[] | Exercise_routineUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutExerciseInput | Exercise_routineCreateOrConnectWithoutExerciseInput[]
-    upsert?: Exercise_routineUpsertWithWhereUniqueWithoutExerciseInput | Exercise_routineUpsertWithWhereUniqueWithoutExerciseInput[]
-    createMany?: Exercise_routineCreateManyExerciseInputEnvelope
-    set?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    disconnect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    delete?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    update?: Exercise_routineUpdateWithWhereUniqueWithoutExerciseInput | Exercise_routineUpdateWithWhereUniqueWithoutExerciseInput[]
-    updateMany?: Exercise_routineUpdateManyWithWhereWithoutExerciseInput | Exercise_routineUpdateManyWithWhereWithoutExerciseInput[]
-    deleteMany?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
+  export type exerciseRoutineUpdateManyWithoutExerciseNestedInput = {
+    create?: XOR<exerciseRoutineCreateWithoutExerciseInput, exerciseRoutineUncheckedCreateWithoutExerciseInput> | exerciseRoutineCreateWithoutExerciseInput[] | exerciseRoutineUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutExerciseInput | exerciseRoutineCreateOrConnectWithoutExerciseInput[]
+    upsert?: exerciseRoutineUpsertWithWhereUniqueWithoutExerciseInput | exerciseRoutineUpsertWithWhereUniqueWithoutExerciseInput[]
+    createMany?: exerciseRoutineCreateManyExerciseInputEnvelope
+    set?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    disconnect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    delete?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    update?: exerciseRoutineUpdateWithWhereUniqueWithoutExerciseInput | exerciseRoutineUpdateWithWhereUniqueWithoutExerciseInput[]
+    updateMany?: exerciseRoutineUpdateManyWithWhereWithoutExerciseInput | exerciseRoutineUpdateManyWithWhereWithoutExerciseInput[]
+    deleteMany?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
   }
 
-  export type ProgressUncheckedUpdateManyWithoutExerciseNestedInput = {
-    create?: XOR<ProgressCreateWithoutExerciseInput, ProgressUncheckedCreateWithoutExerciseInput> | ProgressCreateWithoutExerciseInput[] | ProgressUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: ProgressCreateOrConnectWithoutExerciseInput | ProgressCreateOrConnectWithoutExerciseInput[]
-    upsert?: ProgressUpsertWithWhereUniqueWithoutExerciseInput | ProgressUpsertWithWhereUniqueWithoutExerciseInput[]
-    createMany?: ProgressCreateManyExerciseInputEnvelope
-    set?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    disconnect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    delete?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    connect?: ProgressWhereUniqueInput | ProgressWhereUniqueInput[]
-    update?: ProgressUpdateWithWhereUniqueWithoutExerciseInput | ProgressUpdateWithWhereUniqueWithoutExerciseInput[]
-    updateMany?: ProgressUpdateManyWithWhereWithoutExerciseInput | ProgressUpdateManyWithWhereWithoutExerciseInput[]
-    deleteMany?: ProgressScalarWhereInput | ProgressScalarWhereInput[]
+  export type progressUncheckedUpdateManyWithoutExerciseNestedInput = {
+    create?: XOR<progressCreateWithoutExerciseInput, progressUncheckedCreateWithoutExerciseInput> | progressCreateWithoutExerciseInput[] | progressUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: progressCreateOrConnectWithoutExerciseInput | progressCreateOrConnectWithoutExerciseInput[]
+    upsert?: progressUpsertWithWhereUniqueWithoutExerciseInput | progressUpsertWithWhereUniqueWithoutExerciseInput[]
+    createMany?: progressCreateManyExerciseInputEnvelope
+    set?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    disconnect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    delete?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    connect?: progressWhereUniqueInput | progressWhereUniqueInput[]
+    update?: progressUpdateWithWhereUniqueWithoutExerciseInput | progressUpdateWithWhereUniqueWithoutExerciseInput[]
+    updateMany?: progressUpdateManyWithWhereWithoutExerciseInput | progressUpdateManyWithWhereWithoutExerciseInput[]
+    deleteMany?: progressScalarWhereInput | progressScalarWhereInput[]
   }
 
-  export type FavoriteUncheckedUpdateManyWithoutExerciseNestedInput = {
-    create?: XOR<FavoriteCreateWithoutExerciseInput, FavoriteUncheckedCreateWithoutExerciseInput> | FavoriteCreateWithoutExerciseInput[] | FavoriteUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutExerciseInput | FavoriteCreateOrConnectWithoutExerciseInput[]
-    upsert?: FavoriteUpsertWithWhereUniqueWithoutExerciseInput | FavoriteUpsertWithWhereUniqueWithoutExerciseInput[]
-    createMany?: FavoriteCreateManyExerciseInputEnvelope
-    set?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    disconnect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    delete?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    update?: FavoriteUpdateWithWhereUniqueWithoutExerciseInput | FavoriteUpdateWithWhereUniqueWithoutExerciseInput[]
-    updateMany?: FavoriteUpdateManyWithWhereWithoutExerciseInput | FavoriteUpdateManyWithWhereWithoutExerciseInput[]
-    deleteMany?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
+  export type favoriteUncheckedUpdateManyWithoutExerciseNestedInput = {
+    create?: XOR<favoriteCreateWithoutExerciseInput, favoriteUncheckedCreateWithoutExerciseInput> | favoriteCreateWithoutExerciseInput[] | favoriteUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: favoriteCreateOrConnectWithoutExerciseInput | favoriteCreateOrConnectWithoutExerciseInput[]
+    upsert?: favoriteUpsertWithWhereUniqueWithoutExerciseInput | favoriteUpsertWithWhereUniqueWithoutExerciseInput[]
+    createMany?: favoriteCreateManyExerciseInputEnvelope
+    set?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    disconnect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    delete?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    connect?: favoriteWhereUniqueInput | favoriteWhereUniqueInput[]
+    update?: favoriteUpdateWithWhereUniqueWithoutExerciseInput | favoriteUpdateWithWhereUniqueWithoutExerciseInput[]
+    updateMany?: favoriteUpdateManyWithWhereWithoutExerciseInput | favoriteUpdateManyWithWhereWithoutExerciseInput[]
+    deleteMany?: favoriteScalarWhereInput | favoriteScalarWhereInput[]
   }
 
-  export type Exercise_routineUncheckedUpdateManyWithoutExerciseNestedInput = {
-    create?: XOR<Exercise_routineCreateWithoutExerciseInput, Exercise_routineUncheckedCreateWithoutExerciseInput> | Exercise_routineCreateWithoutExerciseInput[] | Exercise_routineUncheckedCreateWithoutExerciseInput[]
-    connectOrCreate?: Exercise_routineCreateOrConnectWithoutExerciseInput | Exercise_routineCreateOrConnectWithoutExerciseInput[]
-    upsert?: Exercise_routineUpsertWithWhereUniqueWithoutExerciseInput | Exercise_routineUpsertWithWhereUniqueWithoutExerciseInput[]
-    createMany?: Exercise_routineCreateManyExerciseInputEnvelope
-    set?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    disconnect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    delete?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    connect?: Exercise_routineWhereUniqueInput | Exercise_routineWhereUniqueInput[]
-    update?: Exercise_routineUpdateWithWhereUniqueWithoutExerciseInput | Exercise_routineUpdateWithWhereUniqueWithoutExerciseInput[]
-    updateMany?: Exercise_routineUpdateManyWithWhereWithoutExerciseInput | Exercise_routineUpdateManyWithWhereWithoutExerciseInput[]
-    deleteMany?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
+  export type exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput = {
+    create?: XOR<exerciseRoutineCreateWithoutExerciseInput, exerciseRoutineUncheckedCreateWithoutExerciseInput> | exerciseRoutineCreateWithoutExerciseInput[] | exerciseRoutineUncheckedCreateWithoutExerciseInput[]
+    connectOrCreate?: exerciseRoutineCreateOrConnectWithoutExerciseInput | exerciseRoutineCreateOrConnectWithoutExerciseInput[]
+    upsert?: exerciseRoutineUpsertWithWhereUniqueWithoutExerciseInput | exerciseRoutineUpsertWithWhereUniqueWithoutExerciseInput[]
+    createMany?: exerciseRoutineCreateManyExerciseInputEnvelope
+    set?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    disconnect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    delete?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    connect?: exerciseRoutineWhereUniqueInput | exerciseRoutineWhereUniqueInput[]
+    update?: exerciseRoutineUpdateWithWhereUniqueWithoutExerciseInput | exerciseRoutineUpdateWithWhereUniqueWithoutExerciseInput[]
+    updateMany?: exerciseRoutineUpdateManyWithWhereWithoutExerciseInput | exerciseRoutineUpdateManyWithWhereWithoutExerciseInput[]
+    deleteMany?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
   }
 
-  export type RoutineCreateNestedOneWithoutExercise_routineInput = {
-    create?: XOR<RoutineCreateWithoutExercise_routineInput, RoutineUncheckedCreateWithoutExercise_routineInput>
-    connectOrCreate?: RoutineCreateOrConnectWithoutExercise_routineInput
-    connect?: RoutineWhereUniqueInput
+  export type routineCreateNestedOneWithoutExerciseRoutineInput = {
+    create?: XOR<routineCreateWithoutExerciseRoutineInput, routineUncheckedCreateWithoutExerciseRoutineInput>
+    connectOrCreate?: routineCreateOrConnectWithoutExerciseRoutineInput
+    connect?: routineWhereUniqueInput
   }
 
-  export type ExerciseCreateNestedOneWithoutExercise_routineInput = {
-    create?: XOR<ExerciseCreateWithoutExercise_routineInput, ExerciseUncheckedCreateWithoutExercise_routineInput>
-    connectOrCreate?: ExerciseCreateOrConnectWithoutExercise_routineInput
-    connect?: ExerciseWhereUniqueInput
+  export type exerciseCreateNestedOneWithoutExerciseRoutineInput = {
+    create?: XOR<exerciseCreateWithoutExerciseRoutineInput, exerciseUncheckedCreateWithoutExerciseRoutineInput>
+    connectOrCreate?: exerciseCreateOrConnectWithoutExerciseRoutineInput
+    connect?: exerciseWhereUniqueInput
   }
 
-  export type RoutineUpdateOneRequiredWithoutExercise_routineNestedInput = {
-    create?: XOR<RoutineCreateWithoutExercise_routineInput, RoutineUncheckedCreateWithoutExercise_routineInput>
-    connectOrCreate?: RoutineCreateOrConnectWithoutExercise_routineInput
-    upsert?: RoutineUpsertWithoutExercise_routineInput
-    connect?: RoutineWhereUniqueInput
-    update?: XOR<XOR<RoutineUpdateToOneWithWhereWithoutExercise_routineInput, RoutineUpdateWithoutExercise_routineInput>, RoutineUncheckedUpdateWithoutExercise_routineInput>
+  export type routineUpdateOneRequiredWithoutExerciseRoutineNestedInput = {
+    create?: XOR<routineCreateWithoutExerciseRoutineInput, routineUncheckedCreateWithoutExerciseRoutineInput>
+    connectOrCreate?: routineCreateOrConnectWithoutExerciseRoutineInput
+    upsert?: routineUpsertWithoutExerciseRoutineInput
+    connect?: routineWhereUniqueInput
+    update?: XOR<XOR<routineUpdateToOneWithWhereWithoutExerciseRoutineInput, routineUpdateWithoutExerciseRoutineInput>, routineUncheckedUpdateWithoutExerciseRoutineInput>
   }
 
-  export type ExerciseUpdateOneRequiredWithoutExercise_routineNestedInput = {
-    create?: XOR<ExerciseCreateWithoutExercise_routineInput, ExerciseUncheckedCreateWithoutExercise_routineInput>
-    connectOrCreate?: ExerciseCreateOrConnectWithoutExercise_routineInput
-    upsert?: ExerciseUpsertWithoutExercise_routineInput
-    connect?: ExerciseWhereUniqueInput
-    update?: XOR<XOR<ExerciseUpdateToOneWithWhereWithoutExercise_routineInput, ExerciseUpdateWithoutExercise_routineInput>, ExerciseUncheckedUpdateWithoutExercise_routineInput>
+  export type exerciseUpdateOneRequiredWithoutExerciseRoutineNestedInput = {
+    create?: XOR<exerciseCreateWithoutExerciseRoutineInput, exerciseUncheckedCreateWithoutExerciseRoutineInput>
+    connectOrCreate?: exerciseCreateOrConnectWithoutExerciseRoutineInput
+    upsert?: exerciseUpsertWithoutExerciseRoutineInput
+    connect?: exerciseWhereUniqueInput
+    update?: XOR<XOR<exerciseUpdateToOneWithWhereWithoutExerciseRoutineInput, exerciseUpdateWithoutExerciseRoutineInput>, exerciseUncheckedUpdateWithoutExerciseRoutineInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -10116,6 +10203,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -10128,17 +10226,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -10187,6 +10274,31 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -10202,31 +10314,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -10296,164 +10383,164 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type ProgressCreateWithoutUserInput = {
+  export type progressCreateWithoutUserInput = {
     date?: Date | string
-    weight_used: number
+    weightUsed: number
     repetitions: number
-    exercise: ExerciseCreateNestedOneWithoutProgressInput
+    exercise: exerciseCreateNestedOneWithoutProgressInput
   }
 
-  export type ProgressUncheckedCreateWithoutUserInput = {
+  export type progressUncheckedCreateWithoutUserInput = {
     id?: number
-    exercise_id: number
+    exerciseId: number
     date?: Date | string
-    weight_used: number
+    weightUsed: number
     repetitions: number
   }
 
-  export type ProgressCreateOrConnectWithoutUserInput = {
-    where: ProgressWhereUniqueInput
-    create: XOR<ProgressCreateWithoutUserInput, ProgressUncheckedCreateWithoutUserInput>
+  export type progressCreateOrConnectWithoutUserInput = {
+    where: progressWhereUniqueInput
+    create: XOR<progressCreateWithoutUserInput, progressUncheckedCreateWithoutUserInput>
   }
 
-  export type ProgressCreateManyUserInputEnvelope = {
-    data: ProgressCreateManyUserInput | ProgressCreateManyUserInput[]
+  export type progressCreateManyUserInputEnvelope = {
+    data: progressCreateManyUserInput | progressCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
-  export type RoutineCreateWithoutUserInput = {
+  export type routineCreateWithoutUserInput = {
     name: string
     createdAt?: Date | string | null
     description: string
     duration: number
     totalExercise: number
-    Exercise_routine?: Exercise_routineCreateNestedManyWithoutRoutineInput
+    exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutRoutineInput
   }
 
-  export type RoutineUncheckedCreateWithoutUserInput = {
+  export type routineUncheckedCreateWithoutUserInput = {
     id?: number
     name: string
     createdAt?: Date | string | null
     description: string
     duration: number
     totalExercise: number
-    Exercise_routine?: Exercise_routineUncheckedCreateNestedManyWithoutRoutineInput
+    exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput
   }
 
-  export type RoutineCreateOrConnectWithoutUserInput = {
-    where: RoutineWhereUniqueInput
-    create: XOR<RoutineCreateWithoutUserInput, RoutineUncheckedCreateWithoutUserInput>
+  export type routineCreateOrConnectWithoutUserInput = {
+    where: routineWhereUniqueInput
+    create: XOR<routineCreateWithoutUserInput, routineUncheckedCreateWithoutUserInput>
   }
 
-  export type RoutineCreateManyUserInputEnvelope = {
-    data: RoutineCreateManyUserInput | RoutineCreateManyUserInput[]
+  export type routineCreateManyUserInputEnvelope = {
+    data: routineCreateManyUserInput | routineCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
-  export type FavoriteCreateWithoutUserInput = {
-    exercise: ExerciseCreateNestedOneWithoutFavoriteInput
+  export type favoriteCreateWithoutUserInput = {
+    exercise: exerciseCreateNestedOneWithoutFavoriteInput
   }
 
-  export type FavoriteUncheckedCreateWithoutUserInput = {
+  export type favoriteUncheckedCreateWithoutUserInput = {
     id?: number
-    exercise_id: number
+    exerciseId: number
   }
 
-  export type FavoriteCreateOrConnectWithoutUserInput = {
-    where: FavoriteWhereUniqueInput
-    create: XOR<FavoriteCreateWithoutUserInput, FavoriteUncheckedCreateWithoutUserInput>
+  export type favoriteCreateOrConnectWithoutUserInput = {
+    where: favoriteWhereUniqueInput
+    create: XOR<favoriteCreateWithoutUserInput, favoriteUncheckedCreateWithoutUserInput>
   }
 
-  export type FavoriteCreateManyUserInputEnvelope = {
-    data: FavoriteCreateManyUserInput | FavoriteCreateManyUserInput[]
+  export type favoriteCreateManyUserInputEnvelope = {
+    data: favoriteCreateManyUserInput | favoriteCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
-  export type ProgressUpsertWithWhereUniqueWithoutUserInput = {
-    where: ProgressWhereUniqueInput
-    update: XOR<ProgressUpdateWithoutUserInput, ProgressUncheckedUpdateWithoutUserInput>
-    create: XOR<ProgressCreateWithoutUserInput, ProgressUncheckedCreateWithoutUserInput>
+  export type progressUpsertWithWhereUniqueWithoutUserInput = {
+    where: progressWhereUniqueInput
+    update: XOR<progressUpdateWithoutUserInput, progressUncheckedUpdateWithoutUserInput>
+    create: XOR<progressCreateWithoutUserInput, progressUncheckedCreateWithoutUserInput>
   }
 
-  export type ProgressUpdateWithWhereUniqueWithoutUserInput = {
-    where: ProgressWhereUniqueInput
-    data: XOR<ProgressUpdateWithoutUserInput, ProgressUncheckedUpdateWithoutUserInput>
+  export type progressUpdateWithWhereUniqueWithoutUserInput = {
+    where: progressWhereUniqueInput
+    data: XOR<progressUpdateWithoutUserInput, progressUncheckedUpdateWithoutUserInput>
   }
 
-  export type ProgressUpdateManyWithWhereWithoutUserInput = {
-    where: ProgressScalarWhereInput
-    data: XOR<ProgressUpdateManyMutationInput, ProgressUncheckedUpdateManyWithoutUserInput>
+  export type progressUpdateManyWithWhereWithoutUserInput = {
+    where: progressScalarWhereInput
+    data: XOR<progressUpdateManyMutationInput, progressUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type ProgressScalarWhereInput = {
-    AND?: ProgressScalarWhereInput | ProgressScalarWhereInput[]
-    OR?: ProgressScalarWhereInput[]
-    NOT?: ProgressScalarWhereInput | ProgressScalarWhereInput[]
-    id?: IntFilter<"Progress"> | number
-    user_id?: StringFilter<"Progress"> | string
-    exercise_id?: IntFilter<"Progress"> | number
-    date?: DateTimeFilter<"Progress"> | Date | string
-    weight_used?: FloatFilter<"Progress"> | number
-    repetitions?: IntFilter<"Progress"> | number
+  export type progressScalarWhereInput = {
+    AND?: progressScalarWhereInput | progressScalarWhereInput[]
+    OR?: progressScalarWhereInput[]
+    NOT?: progressScalarWhereInput | progressScalarWhereInput[]
+    id?: IntFilter<"progress"> | number
+    userId?: StringFilter<"progress"> | string
+    exerciseId?: IntFilter<"progress"> | number
+    date?: DateTimeFilter<"progress"> | Date | string
+    weightUsed?: FloatFilter<"progress"> | number
+    repetitions?: IntFilter<"progress"> | number
   }
 
-  export type RoutineUpsertWithWhereUniqueWithoutUserInput = {
-    where: RoutineWhereUniqueInput
-    update: XOR<RoutineUpdateWithoutUserInput, RoutineUncheckedUpdateWithoutUserInput>
-    create: XOR<RoutineCreateWithoutUserInput, RoutineUncheckedCreateWithoutUserInput>
+  export type routineUpsertWithWhereUniqueWithoutUserInput = {
+    where: routineWhereUniqueInput
+    update: XOR<routineUpdateWithoutUserInput, routineUncheckedUpdateWithoutUserInput>
+    create: XOR<routineCreateWithoutUserInput, routineUncheckedCreateWithoutUserInput>
   }
 
-  export type RoutineUpdateWithWhereUniqueWithoutUserInput = {
-    where: RoutineWhereUniqueInput
-    data: XOR<RoutineUpdateWithoutUserInput, RoutineUncheckedUpdateWithoutUserInput>
+  export type routineUpdateWithWhereUniqueWithoutUserInput = {
+    where: routineWhereUniqueInput
+    data: XOR<routineUpdateWithoutUserInput, routineUncheckedUpdateWithoutUserInput>
   }
 
-  export type RoutineUpdateManyWithWhereWithoutUserInput = {
-    where: RoutineScalarWhereInput
-    data: XOR<RoutineUpdateManyMutationInput, RoutineUncheckedUpdateManyWithoutUserInput>
+  export type routineUpdateManyWithWhereWithoutUserInput = {
+    where: routineScalarWhereInput
+    data: XOR<routineUpdateManyMutationInput, routineUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type RoutineScalarWhereInput = {
-    AND?: RoutineScalarWhereInput | RoutineScalarWhereInput[]
-    OR?: RoutineScalarWhereInput[]
-    NOT?: RoutineScalarWhereInput | RoutineScalarWhereInput[]
-    id?: IntFilter<"Routine"> | number
-    user_id?: StringFilter<"Routine"> | string
-    name?: StringFilter<"Routine"> | string
-    createdAt?: DateTimeNullableFilter<"Routine"> | Date | string | null
-    description?: StringFilter<"Routine"> | string
-    duration?: IntFilter<"Routine"> | number
-    totalExercise?: IntFilter<"Routine"> | number
+  export type routineScalarWhereInput = {
+    AND?: routineScalarWhereInput | routineScalarWhereInput[]
+    OR?: routineScalarWhereInput[]
+    NOT?: routineScalarWhereInput | routineScalarWhereInput[]
+    id?: IntFilter<"routine"> | number
+    userId?: StringFilter<"routine"> | string
+    name?: StringFilter<"routine"> | string
+    createdAt?: DateTimeNullableFilter<"routine"> | Date | string | null
+    description?: StringFilter<"routine"> | string
+    duration?: IntFilter<"routine"> | number
+    totalExercise?: IntFilter<"routine"> | number
   }
 
-  export type FavoriteUpsertWithWhereUniqueWithoutUserInput = {
-    where: FavoriteWhereUniqueInput
-    update: XOR<FavoriteUpdateWithoutUserInput, FavoriteUncheckedUpdateWithoutUserInput>
-    create: XOR<FavoriteCreateWithoutUserInput, FavoriteUncheckedCreateWithoutUserInput>
+  export type favoriteUpsertWithWhereUniqueWithoutUserInput = {
+    where: favoriteWhereUniqueInput
+    update: XOR<favoriteUpdateWithoutUserInput, favoriteUncheckedUpdateWithoutUserInput>
+    create: XOR<favoriteCreateWithoutUserInput, favoriteUncheckedCreateWithoutUserInput>
   }
 
-  export type FavoriteUpdateWithWhereUniqueWithoutUserInput = {
-    where: FavoriteWhereUniqueInput
-    data: XOR<FavoriteUpdateWithoutUserInput, FavoriteUncheckedUpdateWithoutUserInput>
+  export type favoriteUpdateWithWhereUniqueWithoutUserInput = {
+    where: favoriteWhereUniqueInput
+    data: XOR<favoriteUpdateWithoutUserInput, favoriteUncheckedUpdateWithoutUserInput>
   }
 
-  export type FavoriteUpdateManyWithWhereWithoutUserInput = {
-    where: FavoriteScalarWhereInput
-    data: XOR<FavoriteUpdateManyMutationInput, FavoriteUncheckedUpdateManyWithoutUserInput>
+  export type favoriteUpdateManyWithWhereWithoutUserInput = {
+    where: favoriteScalarWhereInput
+    data: XOR<favoriteUpdateManyMutationInput, favoriteUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type FavoriteScalarWhereInput = {
-    AND?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
-    OR?: FavoriteScalarWhereInput[]
-    NOT?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
-    id?: IntFilter<"Favorite"> | number
-    user_id?: StringFilter<"Favorite"> | string
-    exercise_id?: IntFilter<"Favorite"> | number
+  export type favoriteScalarWhereInput = {
+    AND?: favoriteScalarWhereInput | favoriteScalarWhereInput[]
+    OR?: favoriteScalarWhereInput[]
+    NOT?: favoriteScalarWhereInput | favoriteScalarWhereInput[]
+    id?: IntFilter<"favorite"> | number
+    userId?: StringFilter<"favorite"> | string
+    exerciseId?: IntFilter<"favorite"> | number
   }
 
-  export type UserCreateWithoutProgressInput = {
+  export type userCreateWithoutProgressInput = {
     id?: string
-    name?: string | null
+    name: string
     email: string
     emailVerified?: Date | string | null
     password: string
@@ -10461,13 +10548,13 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     role?: $Enums.Rol
-    Routine?: RoutineCreateNestedManyWithoutUserInput
-    Favorite?: FavoriteCreateNestedManyWithoutUserInput
+    routine?: routineCreateNestedManyWithoutUserInput
+    favorite?: favoriteCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutProgressInput = {
+  export type userUncheckedCreateWithoutProgressInput = {
     id?: string
-    name?: string | null
+    name: string
     email: string
     emailVerified?: Date | string | null
     password: string
@@ -10475,577 +10562,499 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     role?: $Enums.Rol
-    Routine?: RoutineUncheckedCreateNestedManyWithoutUserInput
-    Favorite?: FavoriteUncheckedCreateNestedManyWithoutUserInput
+    routine?: routineUncheckedCreateNestedManyWithoutUserInput
+    favorite?: favoriteUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutProgressInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutProgressInput, UserUncheckedCreateWithoutProgressInput>
+  export type userCreateOrConnectWithoutProgressInput = {
+    where: userWhereUniqueInput
+    create: XOR<userCreateWithoutProgressInput, userUncheckedCreateWithoutProgressInput>
   }
 
-  export type ExerciseCreateWithoutProgressInput = {
+  export type exerciseCreateWithoutProgressInput = {
     name: string
     muscle: string
-    video_img_url: string
-    Favorite?: FavoriteCreateNestedManyWithoutExerciseInput
-    Exercise_routine?: Exercise_routineCreateNestedManyWithoutExerciseInput
-  }
-
-  export type ExerciseUncheckedCreateWithoutProgressInput = {
-    id?: number
-    name: string
-    muscle: string
-    video_img_url: string
-    Favorite?: FavoriteUncheckedCreateNestedManyWithoutExerciseInput
-    Exercise_routine?: Exercise_routineUncheckedCreateNestedManyWithoutExerciseInput
-  }
-
-  export type ExerciseCreateOrConnectWithoutProgressInput = {
-    where: ExerciseWhereUniqueInput
-    create: XOR<ExerciseCreateWithoutProgressInput, ExerciseUncheckedCreateWithoutProgressInput>
-  }
-
-  export type UserUpsertWithoutProgressInput = {
-    update: XOR<UserUpdateWithoutProgressInput, UserUncheckedUpdateWithoutProgressInput>
-    create: XOR<UserCreateWithoutProgressInput, UserUncheckedCreateWithoutProgressInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutProgressInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutProgressInput, UserUncheckedUpdateWithoutProgressInput>
-  }
-
-  export type UserUpdateWithoutProgressInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Routine?: RoutineUpdateManyWithoutUserNestedInput
-    Favorite?: FavoriteUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutProgressInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Routine?: RoutineUncheckedUpdateManyWithoutUserNestedInput
-    Favorite?: FavoriteUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type ExerciseUpsertWithoutProgressInput = {
-    update: XOR<ExerciseUpdateWithoutProgressInput, ExerciseUncheckedUpdateWithoutProgressInput>
-    create: XOR<ExerciseCreateWithoutProgressInput, ExerciseUncheckedCreateWithoutProgressInput>
-    where?: ExerciseWhereInput
-  }
-
-  export type ExerciseUpdateToOneWithWhereWithoutProgressInput = {
-    where?: ExerciseWhereInput
-    data: XOR<ExerciseUpdateWithoutProgressInput, ExerciseUncheckedUpdateWithoutProgressInput>
-  }
-
-  export type ExerciseUpdateWithoutProgressInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Favorite?: FavoriteUpdateManyWithoutExerciseNestedInput
-    Exercise_routine?: Exercise_routineUpdateManyWithoutExerciseNestedInput
-  }
-
-  export type ExerciseUncheckedUpdateWithoutProgressInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Favorite?: FavoriteUncheckedUpdateManyWithoutExerciseNestedInput
-    Exercise_routine?: Exercise_routineUncheckedUpdateManyWithoutExerciseNestedInput
-  }
-
-  export type UserCreateWithoutRoutineInput = {
-    id?: string
-    name?: string | null
-    email: string
-    emailVerified?: Date | string | null
-    password: string
-    avatar?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    role?: $Enums.Rol
-    Progress?: ProgressCreateNestedManyWithoutUserInput
-    Favorite?: FavoriteCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutRoutineInput = {
-    id?: string
-    name?: string | null
-    email: string
-    emailVerified?: Date | string | null
-    password: string
-    avatar?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    role?: $Enums.Rol
-    Progress?: ProgressUncheckedCreateNestedManyWithoutUserInput
-    Favorite?: FavoriteUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutRoutineInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutRoutineInput, UserUncheckedCreateWithoutRoutineInput>
-  }
-
-  export type Exercise_routineCreateWithoutRoutineInput = {
-    series: number
-    repetitions: number
-    exercise: ExerciseCreateNestedOneWithoutExercise_routineInput
-  }
-
-  export type Exercise_routineUncheckedCreateWithoutRoutineInput = {
-    id?: number
-    exercise_id: number
-    series: number
-    repetitions: number
-  }
-
-  export type Exercise_routineCreateOrConnectWithoutRoutineInput = {
-    where: Exercise_routineWhereUniqueInput
-    create: XOR<Exercise_routineCreateWithoutRoutineInput, Exercise_routineUncheckedCreateWithoutRoutineInput>
-  }
-
-  export type Exercise_routineCreateManyRoutineInputEnvelope = {
-    data: Exercise_routineCreateManyRoutineInput | Exercise_routineCreateManyRoutineInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type UserUpsertWithoutRoutineInput = {
-    update: XOR<UserUpdateWithoutRoutineInput, UserUncheckedUpdateWithoutRoutineInput>
-    create: XOR<UserCreateWithoutRoutineInput, UserUncheckedCreateWithoutRoutineInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutRoutineInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutRoutineInput, UserUncheckedUpdateWithoutRoutineInput>
-  }
-
-  export type UserUpdateWithoutRoutineInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Progress?: ProgressUpdateManyWithoutUserNestedInput
-    Favorite?: FavoriteUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutRoutineInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Progress?: ProgressUncheckedUpdateManyWithoutUserNestedInput
-    Favorite?: FavoriteUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type Exercise_routineUpsertWithWhereUniqueWithoutRoutineInput = {
-    where: Exercise_routineWhereUniqueInput
-    update: XOR<Exercise_routineUpdateWithoutRoutineInput, Exercise_routineUncheckedUpdateWithoutRoutineInput>
-    create: XOR<Exercise_routineCreateWithoutRoutineInput, Exercise_routineUncheckedCreateWithoutRoutineInput>
-  }
-
-  export type Exercise_routineUpdateWithWhereUniqueWithoutRoutineInput = {
-    where: Exercise_routineWhereUniqueInput
-    data: XOR<Exercise_routineUpdateWithoutRoutineInput, Exercise_routineUncheckedUpdateWithoutRoutineInput>
-  }
-
-  export type Exercise_routineUpdateManyWithWhereWithoutRoutineInput = {
-    where: Exercise_routineScalarWhereInput
-    data: XOR<Exercise_routineUpdateManyMutationInput, Exercise_routineUncheckedUpdateManyWithoutRoutineInput>
-  }
-
-  export type Exercise_routineScalarWhereInput = {
-    AND?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
-    OR?: Exercise_routineScalarWhereInput[]
-    NOT?: Exercise_routineScalarWhereInput | Exercise_routineScalarWhereInput[]
-    id?: IntFilter<"Exercise_routine"> | number
-    routine_id?: IntFilter<"Exercise_routine"> | number
-    exercise_id?: IntFilter<"Exercise_routine"> | number
-    series?: IntFilter<"Exercise_routine"> | number
-    repetitions?: IntFilter<"Exercise_routine"> | number
-  }
-
-  export type UserCreateWithoutFavoriteInput = {
-    id?: string
-    name?: string | null
-    email: string
-    emailVerified?: Date | string | null
-    password: string
-    avatar?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    role?: $Enums.Rol
-    Progress?: ProgressCreateNestedManyWithoutUserInput
-    Routine?: RoutineCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutFavoriteInput = {
-    id?: string
-    name?: string | null
-    email: string
-    emailVerified?: Date | string | null
-    password: string
-    avatar?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    role?: $Enums.Rol
-    Progress?: ProgressUncheckedCreateNestedManyWithoutUserInput
-    Routine?: RoutineUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutFavoriteInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutFavoriteInput, UserUncheckedCreateWithoutFavoriteInput>
-  }
-
-  export type ExerciseCreateWithoutFavoriteInput = {
-    name: string
-    muscle: string
-    video_img_url: string
-    Progress?: ProgressCreateNestedManyWithoutExerciseInput
-    Exercise_routine?: Exercise_routineCreateNestedManyWithoutExerciseInput
-  }
-
-  export type ExerciseUncheckedCreateWithoutFavoriteInput = {
-    id?: number
-    name: string
-    muscle: string
-    video_img_url: string
-    Progress?: ProgressUncheckedCreateNestedManyWithoutExerciseInput
-    Exercise_routine?: Exercise_routineUncheckedCreateNestedManyWithoutExerciseInput
-  }
-
-  export type ExerciseCreateOrConnectWithoutFavoriteInput = {
-    where: ExerciseWhereUniqueInput
-    create: XOR<ExerciseCreateWithoutFavoriteInput, ExerciseUncheckedCreateWithoutFavoriteInput>
-  }
-
-  export type UserUpsertWithoutFavoriteInput = {
-    update: XOR<UserUpdateWithoutFavoriteInput, UserUncheckedUpdateWithoutFavoriteInput>
-    create: XOR<UserCreateWithoutFavoriteInput, UserUncheckedCreateWithoutFavoriteInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutFavoriteInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutFavoriteInput, UserUncheckedUpdateWithoutFavoriteInput>
-  }
-
-  export type UserUpdateWithoutFavoriteInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Progress?: ProgressUpdateManyWithoutUserNestedInput
-    Routine?: RoutineUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutFavoriteInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
-    Progress?: ProgressUncheckedUpdateManyWithoutUserNestedInput
-    Routine?: RoutineUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type ExerciseUpsertWithoutFavoriteInput = {
-    update: XOR<ExerciseUpdateWithoutFavoriteInput, ExerciseUncheckedUpdateWithoutFavoriteInput>
-    create: XOR<ExerciseCreateWithoutFavoriteInput, ExerciseUncheckedCreateWithoutFavoriteInput>
-    where?: ExerciseWhereInput
-  }
-
-  export type ExerciseUpdateToOneWithWhereWithoutFavoriteInput = {
-    where?: ExerciseWhereInput
-    data: XOR<ExerciseUpdateWithoutFavoriteInput, ExerciseUncheckedUpdateWithoutFavoriteInput>
-  }
-
-  export type ExerciseUpdateWithoutFavoriteInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Progress?: ProgressUpdateManyWithoutExerciseNestedInput
-    Exercise_routine?: Exercise_routineUpdateManyWithoutExerciseNestedInput
-  }
-
-  export type ExerciseUncheckedUpdateWithoutFavoriteInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Progress?: ProgressUncheckedUpdateManyWithoutExerciseNestedInput
-    Exercise_routine?: Exercise_routineUncheckedUpdateManyWithoutExerciseNestedInput
-  }
-
-  export type ProgressCreateWithoutExerciseInput = {
-    date?: Date | string
-    weight_used: number
-    repetitions: number
-    user: UserCreateNestedOneWithoutProgressInput
-  }
-
-  export type ProgressUncheckedCreateWithoutExerciseInput = {
-    id?: number
-    user_id: string
-    date?: Date | string
-    weight_used: number
-    repetitions: number
-  }
-
-  export type ProgressCreateOrConnectWithoutExerciseInput = {
-    where: ProgressWhereUniqueInput
-    create: XOR<ProgressCreateWithoutExerciseInput, ProgressUncheckedCreateWithoutExerciseInput>
-  }
-
-  export type ProgressCreateManyExerciseInputEnvelope = {
-    data: ProgressCreateManyExerciseInput | ProgressCreateManyExerciseInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type FavoriteCreateWithoutExerciseInput = {
-    user: UserCreateNestedOneWithoutFavoriteInput
-  }
-
-  export type FavoriteUncheckedCreateWithoutExerciseInput = {
-    id?: number
-    user_id: string
-  }
-
-  export type FavoriteCreateOrConnectWithoutExerciseInput = {
-    where: FavoriteWhereUniqueInput
-    create: XOR<FavoriteCreateWithoutExerciseInput, FavoriteUncheckedCreateWithoutExerciseInput>
-  }
-
-  export type FavoriteCreateManyExerciseInputEnvelope = {
-    data: FavoriteCreateManyExerciseInput | FavoriteCreateManyExerciseInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type Exercise_routineCreateWithoutExerciseInput = {
-    series: number
-    repetitions: number
-    routine: RoutineCreateNestedOneWithoutExercise_routineInput
-  }
-
-  export type Exercise_routineUncheckedCreateWithoutExerciseInput = {
-    id?: number
-    routine_id: number
-    series: number
-    repetitions: number
-  }
-
-  export type Exercise_routineCreateOrConnectWithoutExerciseInput = {
-    where: Exercise_routineWhereUniqueInput
-    create: XOR<Exercise_routineCreateWithoutExerciseInput, Exercise_routineUncheckedCreateWithoutExerciseInput>
-  }
-
-  export type Exercise_routineCreateManyExerciseInputEnvelope = {
-    data: Exercise_routineCreateManyExerciseInput | Exercise_routineCreateManyExerciseInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ProgressUpsertWithWhereUniqueWithoutExerciseInput = {
-    where: ProgressWhereUniqueInput
-    update: XOR<ProgressUpdateWithoutExerciseInput, ProgressUncheckedUpdateWithoutExerciseInput>
-    create: XOR<ProgressCreateWithoutExerciseInput, ProgressUncheckedCreateWithoutExerciseInput>
-  }
-
-  export type ProgressUpdateWithWhereUniqueWithoutExerciseInput = {
-    where: ProgressWhereUniqueInput
-    data: XOR<ProgressUpdateWithoutExerciseInput, ProgressUncheckedUpdateWithoutExerciseInput>
-  }
-
-  export type ProgressUpdateManyWithWhereWithoutExerciseInput = {
-    where: ProgressScalarWhereInput
-    data: XOR<ProgressUpdateManyMutationInput, ProgressUncheckedUpdateManyWithoutExerciseInput>
-  }
-
-  export type FavoriteUpsertWithWhereUniqueWithoutExerciseInput = {
-    where: FavoriteWhereUniqueInput
-    update: XOR<FavoriteUpdateWithoutExerciseInput, FavoriteUncheckedUpdateWithoutExerciseInput>
-    create: XOR<FavoriteCreateWithoutExerciseInput, FavoriteUncheckedCreateWithoutExerciseInput>
-  }
-
-  export type FavoriteUpdateWithWhereUniqueWithoutExerciseInput = {
-    where: FavoriteWhereUniqueInput
-    data: XOR<FavoriteUpdateWithoutExerciseInput, FavoriteUncheckedUpdateWithoutExerciseInput>
-  }
-
-  export type FavoriteUpdateManyWithWhereWithoutExerciseInput = {
-    where: FavoriteScalarWhereInput
-    data: XOR<FavoriteUpdateManyMutationInput, FavoriteUncheckedUpdateManyWithoutExerciseInput>
-  }
-
-  export type Exercise_routineUpsertWithWhereUniqueWithoutExerciseInput = {
-    where: Exercise_routineWhereUniqueInput
-    update: XOR<Exercise_routineUpdateWithoutExerciseInput, Exercise_routineUncheckedUpdateWithoutExerciseInput>
-    create: XOR<Exercise_routineCreateWithoutExerciseInput, Exercise_routineUncheckedCreateWithoutExerciseInput>
-  }
-
-  export type Exercise_routineUpdateWithWhereUniqueWithoutExerciseInput = {
-    where: Exercise_routineWhereUniqueInput
-    data: XOR<Exercise_routineUpdateWithoutExerciseInput, Exercise_routineUncheckedUpdateWithoutExerciseInput>
-  }
-
-  export type Exercise_routineUpdateManyWithWhereWithoutExerciseInput = {
-    where: Exercise_routineScalarWhereInput
-    data: XOR<Exercise_routineUpdateManyMutationInput, Exercise_routineUncheckedUpdateManyWithoutExerciseInput>
-  }
-
-  export type RoutineCreateWithoutExercise_routineInput = {
-    name: string
-    createdAt?: Date | string | null
+    videoImgUrl: string
     description: string
-    duration: number
-    totalExercise: number
-    user: UserCreateNestedOneWithoutRoutineInput
+    executionSteps: string
+    tips: string
+    Favorite?: favoriteCreateNestedManyWithoutExerciseInput
+    exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutExerciseInput
   }
 
-  export type RoutineUncheckedCreateWithoutExercise_routineInput = {
+  export type exerciseUncheckedCreateWithoutProgressInput = {
     id?: number
-    user_id: string
     name: string
-    createdAt?: Date | string | null
+    muscle: string
+    videoImgUrl: string
     description: string
-    duration: number
-    totalExercise: number
+    executionSteps: string
+    tips: string
+    Favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
+    exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput
   }
 
-  export type RoutineCreateOrConnectWithoutExercise_routineInput = {
-    where: RoutineWhereUniqueInput
-    create: XOR<RoutineCreateWithoutExercise_routineInput, RoutineUncheckedCreateWithoutExercise_routineInput>
+  export type exerciseCreateOrConnectWithoutProgressInput = {
+    where: exerciseWhereUniqueInput
+    create: XOR<exerciseCreateWithoutProgressInput, exerciseUncheckedCreateWithoutProgressInput>
   }
 
-  export type ExerciseCreateWithoutExercise_routineInput = {
-    name: string
-    muscle: string
-    video_img_url: string
-    Progress?: ProgressCreateNestedManyWithoutExerciseInput
-    Favorite?: FavoriteCreateNestedManyWithoutExerciseInput
+  export type userUpsertWithoutProgressInput = {
+    update: XOR<userUpdateWithoutProgressInput, userUncheckedUpdateWithoutProgressInput>
+    create: XOR<userCreateWithoutProgressInput, userUncheckedCreateWithoutProgressInput>
+    where?: userWhereInput
   }
 
-  export type ExerciseUncheckedCreateWithoutExercise_routineInput = {
-    id?: number
-    name: string
-    muscle: string
-    video_img_url: string
-    Progress?: ProgressUncheckedCreateNestedManyWithoutExerciseInput
-    Favorite?: FavoriteUncheckedCreateNestedManyWithoutExerciseInput
+  export type userUpdateToOneWithWhereWithoutProgressInput = {
+    where?: userWhereInput
+    data: XOR<userUpdateWithoutProgressInput, userUncheckedUpdateWithoutProgressInput>
   }
 
-  export type ExerciseCreateOrConnectWithoutExercise_routineInput = {
-    where: ExerciseWhereUniqueInput
-    create: XOR<ExerciseCreateWithoutExercise_routineInput, ExerciseUncheckedCreateWithoutExercise_routineInput>
-  }
-
-  export type RoutineUpsertWithoutExercise_routineInput = {
-    update: XOR<RoutineUpdateWithoutExercise_routineInput, RoutineUncheckedUpdateWithoutExercise_routineInput>
-    create: XOR<RoutineCreateWithoutExercise_routineInput, RoutineUncheckedCreateWithoutExercise_routineInput>
-    where?: RoutineWhereInput
-  }
-
-  export type RoutineUpdateToOneWithWhereWithoutExercise_routineInput = {
-    where?: RoutineWhereInput
-    data: XOR<RoutineUpdateWithoutExercise_routineInput, RoutineUncheckedUpdateWithoutExercise_routineInput>
-  }
-
-  export type RoutineUpdateWithoutExercise_routineInput = {
+  export type userUpdateWithoutProgressInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    routine?: routineUpdateManyWithoutUserNestedInput
+    favorite?: favoriteUpdateManyWithoutUserNestedInput
+  }
+
+  export type userUncheckedUpdateWithoutProgressInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    routine?: routineUncheckedUpdateManyWithoutUserNestedInput
+    favorite?: favoriteUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type exerciseUpsertWithoutProgressInput = {
+    update: XOR<exerciseUpdateWithoutProgressInput, exerciseUncheckedUpdateWithoutProgressInput>
+    create: XOR<exerciseCreateWithoutProgressInput, exerciseUncheckedCreateWithoutProgressInput>
+    where?: exerciseWhereInput
+  }
+
+  export type exerciseUpdateToOneWithWhereWithoutProgressInput = {
+    where?: exerciseWhereInput
+    data: XOR<exerciseUpdateWithoutProgressInput, exerciseUncheckedUpdateWithoutProgressInput>
+  }
+
+  export type exerciseUpdateWithoutProgressInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
-    user?: UserUpdateOneRequiredWithoutRoutineNestedInput
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Favorite?: favoriteUpdateManyWithoutExerciseNestedInput
+    exerciseRoutine?: exerciseRoutineUpdateManyWithoutExerciseNestedInput
   }
 
-  export type RoutineUncheckedUpdateWithoutExercise_routineInput = {
+  export type exerciseUncheckedUpdateWithoutProgressInput = {
     id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
+    exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
-  export type ExerciseUpsertWithoutExercise_routineInput = {
-    update: XOR<ExerciseUpdateWithoutExercise_routineInput, ExerciseUncheckedUpdateWithoutExercise_routineInput>
-    create: XOR<ExerciseCreateWithoutExercise_routineInput, ExerciseUncheckedCreateWithoutExercise_routineInput>
-    where?: ExerciseWhereInput
+  export type userCreateWithoutRoutineInput = {
+    id?: string
+    name: string
+    email: string
+    emailVerified?: Date | string | null
+    password: string
+    avatar?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    role?: $Enums.Rol
+    progress?: progressCreateNestedManyWithoutUserInput
+    favorite?: favoriteCreateNestedManyWithoutUserInput
   }
 
-  export type ExerciseUpdateToOneWithWhereWithoutExercise_routineInput = {
-    where?: ExerciseWhereInput
-    data: XOR<ExerciseUpdateWithoutExercise_routineInput, ExerciseUncheckedUpdateWithoutExercise_routineInput>
+  export type userUncheckedCreateWithoutRoutineInput = {
+    id?: string
+    name: string
+    email: string
+    emailVerified?: Date | string | null
+    password: string
+    avatar?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    role?: $Enums.Rol
+    progress?: progressUncheckedCreateNestedManyWithoutUserInput
+    favorite?: favoriteUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type ExerciseUpdateWithoutExercise_routineInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Progress?: ProgressUpdateManyWithoutExerciseNestedInput
-    Favorite?: FavoriteUpdateManyWithoutExerciseNestedInput
+  export type userCreateOrConnectWithoutRoutineInput = {
+    where: userWhereUniqueInput
+    create: XOR<userCreateWithoutRoutineInput, userUncheckedCreateWithoutRoutineInput>
   }
 
-  export type ExerciseUncheckedUpdateWithoutExercise_routineInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    muscle?: StringFieldUpdateOperationsInput | string
-    video_img_url?: StringFieldUpdateOperationsInput | string
-    Progress?: ProgressUncheckedUpdateManyWithoutExerciseNestedInput
-    Favorite?: FavoriteUncheckedUpdateManyWithoutExerciseNestedInput
+  export type exerciseRoutineCreateWithoutRoutineInput = {
+    series: number
+    repetitions: number
+    exercise: exerciseCreateNestedOneWithoutExerciseRoutineInput
   }
 
-  export type ProgressCreateManyUserInput = {
+  export type exerciseRoutineUncheckedCreateWithoutRoutineInput = {
     id?: number
-    exercise_id: number
-    date?: Date | string
-    weight_used: number
+    exerciseId: number
+    series: number
     repetitions: number
   }
 
-  export type RoutineCreateManyUserInput = {
+  export type exerciseRoutineCreateOrConnectWithoutRoutineInput = {
+    where: exerciseRoutineWhereUniqueInput
+    create: XOR<exerciseRoutineCreateWithoutRoutineInput, exerciseRoutineUncheckedCreateWithoutRoutineInput>
+  }
+
+  export type exerciseRoutineCreateManyRoutineInputEnvelope = {
+    data: exerciseRoutineCreateManyRoutineInput | exerciseRoutineCreateManyRoutineInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type userUpsertWithoutRoutineInput = {
+    update: XOR<userUpdateWithoutRoutineInput, userUncheckedUpdateWithoutRoutineInput>
+    create: XOR<userCreateWithoutRoutineInput, userUncheckedCreateWithoutRoutineInput>
+    where?: userWhereInput
+  }
+
+  export type userUpdateToOneWithWhereWithoutRoutineInput = {
+    where?: userWhereInput
+    data: XOR<userUpdateWithoutRoutineInput, userUncheckedUpdateWithoutRoutineInput>
+  }
+
+  export type userUpdateWithoutRoutineInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    progress?: progressUpdateManyWithoutUserNestedInput
+    favorite?: favoriteUpdateManyWithoutUserNestedInput
+  }
+
+  export type userUncheckedUpdateWithoutRoutineInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    progress?: progressUncheckedUpdateManyWithoutUserNestedInput
+    favorite?: favoriteUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type exerciseRoutineUpsertWithWhereUniqueWithoutRoutineInput = {
+    where: exerciseRoutineWhereUniqueInput
+    update: XOR<exerciseRoutineUpdateWithoutRoutineInput, exerciseRoutineUncheckedUpdateWithoutRoutineInput>
+    create: XOR<exerciseRoutineCreateWithoutRoutineInput, exerciseRoutineUncheckedCreateWithoutRoutineInput>
+  }
+
+  export type exerciseRoutineUpdateWithWhereUniqueWithoutRoutineInput = {
+    where: exerciseRoutineWhereUniqueInput
+    data: XOR<exerciseRoutineUpdateWithoutRoutineInput, exerciseRoutineUncheckedUpdateWithoutRoutineInput>
+  }
+
+  export type exerciseRoutineUpdateManyWithWhereWithoutRoutineInput = {
+    where: exerciseRoutineScalarWhereInput
+    data: XOR<exerciseRoutineUpdateManyMutationInput, exerciseRoutineUncheckedUpdateManyWithoutRoutineInput>
+  }
+
+  export type exerciseRoutineScalarWhereInput = {
+    AND?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
+    OR?: exerciseRoutineScalarWhereInput[]
+    NOT?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
+    id?: IntFilter<"exerciseRoutine"> | number
+    routineId?: IntFilter<"exerciseRoutine"> | number
+    exerciseId?: IntFilter<"exerciseRoutine"> | number
+    series?: IntFilter<"exerciseRoutine"> | number
+    repetitions?: IntFilter<"exerciseRoutine"> | number
+  }
+
+  export type userCreateWithoutFavoriteInput = {
+    id?: string
+    name: string
+    email: string
+    emailVerified?: Date | string | null
+    password: string
+    avatar?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    role?: $Enums.Rol
+    progress?: progressCreateNestedManyWithoutUserInput
+    routine?: routineCreateNestedManyWithoutUserInput
+  }
+
+  export type userUncheckedCreateWithoutFavoriteInput = {
+    id?: string
+    name: string
+    email: string
+    emailVerified?: Date | string | null
+    password: string
+    avatar?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    role?: $Enums.Rol
+    progress?: progressUncheckedCreateNestedManyWithoutUserInput
+    routine?: routineUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type userCreateOrConnectWithoutFavoriteInput = {
+    where: userWhereUniqueInput
+    create: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
+  }
+
+  export type exerciseCreateWithoutFavoriteInput = {
+    name: string
+    muscle: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+    Progress?: progressCreateNestedManyWithoutExerciseInput
+    exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutExerciseInput
+  }
+
+  export type exerciseUncheckedCreateWithoutFavoriteInput = {
     id?: number
+    name: string
+    muscle: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+    Progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
+    exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput
+  }
+
+  export type exerciseCreateOrConnectWithoutFavoriteInput = {
+    where: exerciseWhereUniqueInput
+    create: XOR<exerciseCreateWithoutFavoriteInput, exerciseUncheckedCreateWithoutFavoriteInput>
+  }
+
+  export type userUpsertWithoutFavoriteInput = {
+    update: XOR<userUpdateWithoutFavoriteInput, userUncheckedUpdateWithoutFavoriteInput>
+    create: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
+    where?: userWhereInput
+  }
+
+  export type userUpdateToOneWithWhereWithoutFavoriteInput = {
+    where?: userWhereInput
+    data: XOR<userUpdateWithoutFavoriteInput, userUncheckedUpdateWithoutFavoriteInput>
+  }
+
+  export type userUpdateWithoutFavoriteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    progress?: progressUpdateManyWithoutUserNestedInput
+    routine?: routineUpdateManyWithoutUserNestedInput
+  }
+
+  export type userUncheckedUpdateWithoutFavoriteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
+    progress?: progressUncheckedUpdateManyWithoutUserNestedInput
+    routine?: routineUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type exerciseUpsertWithoutFavoriteInput = {
+    update: XOR<exerciseUpdateWithoutFavoriteInput, exerciseUncheckedUpdateWithoutFavoriteInput>
+    create: XOR<exerciseCreateWithoutFavoriteInput, exerciseUncheckedCreateWithoutFavoriteInput>
+    where?: exerciseWhereInput
+  }
+
+  export type exerciseUpdateToOneWithWhereWithoutFavoriteInput = {
+    where?: exerciseWhereInput
+    data: XOR<exerciseUpdateWithoutFavoriteInput, exerciseUncheckedUpdateWithoutFavoriteInput>
+  }
+
+  export type exerciseUpdateWithoutFavoriteInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Progress?: progressUpdateManyWithoutExerciseNestedInput
+    exerciseRoutine?: exerciseRoutineUpdateManyWithoutExerciseNestedInput
+  }
+
+  export type exerciseUncheckedUpdateWithoutFavoriteInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
+    exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput
+  }
+
+  export type progressCreateWithoutExerciseInput = {
+    date?: Date | string
+    weightUsed: number
+    repetitions: number
+    user: userCreateNestedOneWithoutProgressInput
+  }
+
+  export type progressUncheckedCreateWithoutExerciseInput = {
+    id?: number
+    userId: string
+    date?: Date | string
+    weightUsed: number
+    repetitions: number
+  }
+
+  export type progressCreateOrConnectWithoutExerciseInput = {
+    where: progressWhereUniqueInput
+    create: XOR<progressCreateWithoutExerciseInput, progressUncheckedCreateWithoutExerciseInput>
+  }
+
+  export type progressCreateManyExerciseInputEnvelope = {
+    data: progressCreateManyExerciseInput | progressCreateManyExerciseInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type favoriteCreateWithoutExerciseInput = {
+    user: userCreateNestedOneWithoutFavoriteInput
+  }
+
+  export type favoriteUncheckedCreateWithoutExerciseInput = {
+    id?: number
+    userId: string
+  }
+
+  export type favoriteCreateOrConnectWithoutExerciseInput = {
+    where: favoriteWhereUniqueInput
+    create: XOR<favoriteCreateWithoutExerciseInput, favoriteUncheckedCreateWithoutExerciseInput>
+  }
+
+  export type favoriteCreateManyExerciseInputEnvelope = {
+    data: favoriteCreateManyExerciseInput | favoriteCreateManyExerciseInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type exerciseRoutineCreateWithoutExerciseInput = {
+    series: number
+    repetitions: number
+    routine: routineCreateNestedOneWithoutExerciseRoutineInput
+  }
+
+  export type exerciseRoutineUncheckedCreateWithoutExerciseInput = {
+    id?: number
+    routineId: number
+    series: number
+    repetitions: number
+  }
+
+  export type exerciseRoutineCreateOrConnectWithoutExerciseInput = {
+    where: exerciseRoutineWhereUniqueInput
+    create: XOR<exerciseRoutineCreateWithoutExerciseInput, exerciseRoutineUncheckedCreateWithoutExerciseInput>
+  }
+
+  export type exerciseRoutineCreateManyExerciseInputEnvelope = {
+    data: exerciseRoutineCreateManyExerciseInput | exerciseRoutineCreateManyExerciseInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type progressUpsertWithWhereUniqueWithoutExerciseInput = {
+    where: progressWhereUniqueInput
+    update: XOR<progressUpdateWithoutExerciseInput, progressUncheckedUpdateWithoutExerciseInput>
+    create: XOR<progressCreateWithoutExerciseInput, progressUncheckedCreateWithoutExerciseInput>
+  }
+
+  export type progressUpdateWithWhereUniqueWithoutExerciseInput = {
+    where: progressWhereUniqueInput
+    data: XOR<progressUpdateWithoutExerciseInput, progressUncheckedUpdateWithoutExerciseInput>
+  }
+
+  export type progressUpdateManyWithWhereWithoutExerciseInput = {
+    where: progressScalarWhereInput
+    data: XOR<progressUpdateManyMutationInput, progressUncheckedUpdateManyWithoutExerciseInput>
+  }
+
+  export type favoriteUpsertWithWhereUniqueWithoutExerciseInput = {
+    where: favoriteWhereUniqueInput
+    update: XOR<favoriteUpdateWithoutExerciseInput, favoriteUncheckedUpdateWithoutExerciseInput>
+    create: XOR<favoriteCreateWithoutExerciseInput, favoriteUncheckedCreateWithoutExerciseInput>
+  }
+
+  export type favoriteUpdateWithWhereUniqueWithoutExerciseInput = {
+    where: favoriteWhereUniqueInput
+    data: XOR<favoriteUpdateWithoutExerciseInput, favoriteUncheckedUpdateWithoutExerciseInput>
+  }
+
+  export type favoriteUpdateManyWithWhereWithoutExerciseInput = {
+    where: favoriteScalarWhereInput
+    data: XOR<favoriteUpdateManyMutationInput, favoriteUncheckedUpdateManyWithoutExerciseInput>
+  }
+
+  export type exerciseRoutineUpsertWithWhereUniqueWithoutExerciseInput = {
+    where: exerciseRoutineWhereUniqueInput
+    update: XOR<exerciseRoutineUpdateWithoutExerciseInput, exerciseRoutineUncheckedUpdateWithoutExerciseInput>
+    create: XOR<exerciseRoutineCreateWithoutExerciseInput, exerciseRoutineUncheckedCreateWithoutExerciseInput>
+  }
+
+  export type exerciseRoutineUpdateWithWhereUniqueWithoutExerciseInput = {
+    where: exerciseRoutineWhereUniqueInput
+    data: XOR<exerciseRoutineUpdateWithoutExerciseInput, exerciseRoutineUncheckedUpdateWithoutExerciseInput>
+  }
+
+  export type exerciseRoutineUpdateManyWithWhereWithoutExerciseInput = {
+    where: exerciseRoutineScalarWhereInput
+    data: XOR<exerciseRoutineUpdateManyMutationInput, exerciseRoutineUncheckedUpdateManyWithoutExerciseInput>
+  }
+
+  export type routineCreateWithoutExerciseRoutineInput = {
+    name: string
+    createdAt?: Date | string | null
+    description: string
+    duration: number
+    totalExercise: number
+    user: userCreateNestedOneWithoutRoutineInput
+  }
+
+  export type routineUncheckedCreateWithoutExerciseRoutineInput = {
+    id?: number
+    userId: string
     name: string
     createdAt?: Date | string | null
     description: string
@@ -11053,55 +11062,62 @@ export namespace Prisma {
     totalExercise: number
   }
 
-  export type FavoriteCreateManyUserInput = {
+  export type routineCreateOrConnectWithoutExerciseRoutineInput = {
+    where: routineWhereUniqueInput
+    create: XOR<routineCreateWithoutExerciseRoutineInput, routineUncheckedCreateWithoutExerciseRoutineInput>
+  }
+
+  export type exerciseCreateWithoutExerciseRoutineInput = {
+    name: string
+    muscle: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+    Progress?: progressCreateNestedManyWithoutExerciseInput
+    Favorite?: favoriteCreateNestedManyWithoutExerciseInput
+  }
+
+  export type exerciseUncheckedCreateWithoutExerciseRoutineInput = {
     id?: number
-    exercise_id: number
+    name: string
+    muscle: string
+    videoImgUrl: string
+    description: string
+    executionSteps: string
+    tips: string
+    Progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
+    Favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
   }
 
-  export type ProgressUpdateWithoutUserInput = {
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-    exercise?: ExerciseUpdateOneRequiredWithoutProgressNestedInput
+  export type exerciseCreateOrConnectWithoutExerciseRoutineInput = {
+    where: exerciseWhereUniqueInput
+    create: XOR<exerciseCreateWithoutExerciseRoutineInput, exerciseUncheckedCreateWithoutExerciseRoutineInput>
   }
 
-  export type ProgressUncheckedUpdateWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
+  export type routineUpsertWithoutExerciseRoutineInput = {
+    update: XOR<routineUpdateWithoutExerciseRoutineInput, routineUncheckedUpdateWithoutExerciseRoutineInput>
+    create: XOR<routineCreateWithoutExerciseRoutineInput, routineUncheckedCreateWithoutExerciseRoutineInput>
+    where?: routineWhereInput
   }
 
-  export type ProgressUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
+  export type routineUpdateToOneWithWhereWithoutExerciseRoutineInput = {
+    where?: routineWhereInput
+    data: XOR<routineUpdateWithoutExerciseRoutineInput, routineUncheckedUpdateWithoutExerciseRoutineInput>
   }
 
-  export type RoutineUpdateWithoutUserInput = {
+  export type routineUpdateWithoutExerciseRoutineInput = {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
     totalExercise?: IntFieldUpdateOperationsInput | number
-    Exercise_routine?: Exercise_routineUpdateManyWithoutRoutineNestedInput
+    user?: userUpdateOneRequiredWithoutRoutineNestedInput
   }
 
-  export type RoutineUncheckedUpdateWithoutUserInput = {
+  export type routineUncheckedUpdateWithoutExerciseRoutineInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
-    Exercise_routine?: Exercise_routineUncheckedUpdateManyWithoutRoutineNestedInput
-  }
-
-  export type RoutineUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     description?: StringFieldUpdateOperationsInput | string
@@ -11109,120 +11125,227 @@ export namespace Prisma {
     totalExercise?: IntFieldUpdateOperationsInput | number
   }
 
-  export type FavoriteUpdateWithoutUserInput = {
-    exercise?: ExerciseUpdateOneRequiredWithoutFavoriteNestedInput
+  export type exerciseUpsertWithoutExerciseRoutineInput = {
+    update: XOR<exerciseUpdateWithoutExerciseRoutineInput, exerciseUncheckedUpdateWithoutExerciseRoutineInput>
+    create: XOR<exerciseCreateWithoutExerciseRoutineInput, exerciseUncheckedCreateWithoutExerciseRoutineInput>
+    where?: exerciseWhereInput
   }
 
-  export type FavoriteUncheckedUpdateWithoutUserInput = {
+  export type exerciseUpdateToOneWithWhereWithoutExerciseRoutineInput = {
+    where?: exerciseWhereInput
+    data: XOR<exerciseUpdateWithoutExerciseRoutineInput, exerciseUncheckedUpdateWithoutExerciseRoutineInput>
+  }
+
+  export type exerciseUpdateWithoutExerciseRoutineInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Progress?: progressUpdateManyWithoutExerciseNestedInput
+    Favorite?: favoriteUpdateManyWithoutExerciseNestedInput
+  }
+
+  export type exerciseUncheckedUpdateWithoutExerciseRoutineInput = {
     id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    muscle?: StringFieldUpdateOperationsInput | string
+    videoImgUrl?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    executionSteps?: StringFieldUpdateOperationsInput | string
+    tips?: StringFieldUpdateOperationsInput | string
+    Progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
+    Favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
-  export type FavoriteUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type Exercise_routineCreateManyRoutineInput = {
+  export type progressCreateManyUserInput = {
     id?: number
-    exercise_id: number
-    series: number
-    repetitions: number
-  }
-
-  export type Exercise_routineUpdateWithoutRoutineInput = {
-    series?: IntFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-    exercise?: ExerciseUpdateOneRequiredWithoutExercise_routineNestedInput
-  }
-
-  export type Exercise_routineUncheckedUpdateWithoutRoutineInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
-    series?: IntFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type Exercise_routineUncheckedUpdateManyWithoutRoutineInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    exercise_id?: IntFieldUpdateOperationsInput | number
-    series?: IntFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ProgressCreateManyExerciseInput = {
-    id?: number
-    user_id: string
+    exerciseId: number
     date?: Date | string
-    weight_used: number
+    weightUsed: number
     repetitions: number
   }
 
-  export type FavoriteCreateManyExerciseInput = {
+  export type routineCreateManyUserInput = {
     id?: number
-    user_id: string
+    name: string
+    createdAt?: Date | string | null
+    description: string
+    duration: number
+    totalExercise: number
   }
 
-  export type Exercise_routineCreateManyExerciseInput = {
+  export type favoriteCreateManyUserInput = {
     id?: number
-    routine_id: number
+    exerciseId: number
+  }
+
+  export type progressUpdateWithoutUserInput = {
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    weightUsed?: FloatFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+    exercise?: exerciseUpdateOneRequiredWithoutProgressNestedInput
+  }
+
+  export type progressUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    weightUsed?: FloatFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type progressUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    weightUsed?: FloatFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type routineUpdateWithoutUserInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    duration?: IntFieldUpdateOperationsInput | number
+    totalExercise?: IntFieldUpdateOperationsInput | number
+    exerciseRoutine?: exerciseRoutineUpdateManyWithoutRoutineNestedInput
+  }
+
+  export type routineUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    duration?: IntFieldUpdateOperationsInput | number
+    totalExercise?: IntFieldUpdateOperationsInput | number
+    exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput
+  }
+
+  export type routineUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    description?: StringFieldUpdateOperationsInput | string
+    duration?: IntFieldUpdateOperationsInput | number
+    totalExercise?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type favoriteUpdateWithoutUserInput = {
+    exercise?: exerciseUpdateOneRequiredWithoutFavoriteNestedInput
+  }
+
+  export type favoriteUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type favoriteUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type exerciseRoutineCreateManyRoutineInput = {
+    id?: number
+    exerciseId: number
     series: number
     repetitions: number
   }
 
-  export type ProgressUpdateWithoutExerciseInput = {
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-    user?: UserUpdateOneRequiredWithoutProgressNestedInput
-  }
-
-  export type ProgressUncheckedUpdateWithoutExerciseInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ProgressUncheckedUpdateManyWithoutExerciseInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    weight_used?: FloatFieldUpdateOperationsInput | number
-    repetitions?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type FavoriteUpdateWithoutExerciseInput = {
-    user?: UserUpdateOneRequiredWithoutFavoriteNestedInput
-  }
-
-  export type FavoriteUncheckedUpdateWithoutExerciseInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FavoriteUncheckedUpdateManyWithoutExerciseInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    user_id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type Exercise_routineUpdateWithoutExerciseInput = {
+  export type exerciseRoutineUpdateWithoutRoutineInput = {
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
-    routine?: RoutineUpdateOneRequiredWithoutExercise_routineNestedInput
+    exercise?: exerciseUpdateOneRequiredWithoutExerciseRoutineNestedInput
   }
 
-  export type Exercise_routineUncheckedUpdateWithoutExerciseInput = {
+  export type exerciseRoutineUncheckedUpdateWithoutRoutineInput = {
     id?: IntFieldUpdateOperationsInput | number
-    routine_id?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }
 
-  export type Exercise_routineUncheckedUpdateManyWithoutExerciseInput = {
+  export type exerciseRoutineUncheckedUpdateManyWithoutRoutineInput = {
     id?: IntFieldUpdateOperationsInput | number
-    routine_id?: IntFieldUpdateOperationsInput | number
+    exerciseId?: IntFieldUpdateOperationsInput | number
+    series?: IntFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type progressCreateManyExerciseInput = {
+    id?: number
+    userId: string
+    date?: Date | string
+    weightUsed: number
+    repetitions: number
+  }
+
+  export type favoriteCreateManyExerciseInput = {
+    id?: number
+    userId: string
+  }
+
+  export type exerciseRoutineCreateManyExerciseInput = {
+    id?: number
+    routineId: number
+    series: number
+    repetitions: number
+  }
+
+  export type progressUpdateWithoutExerciseInput = {
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    weightUsed?: FloatFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+    user?: userUpdateOneRequiredWithoutProgressNestedInput
+  }
+
+  export type progressUncheckedUpdateWithoutExerciseInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    weightUsed?: FloatFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type progressUncheckedUpdateManyWithoutExerciseInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    weightUsed?: FloatFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type favoriteUpdateWithoutExerciseInput = {
+    user?: userUpdateOneRequiredWithoutFavoriteNestedInput
+  }
+
+  export type favoriteUncheckedUpdateWithoutExerciseInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type favoriteUncheckedUpdateManyWithoutExerciseInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type exerciseRoutineUpdateWithoutExerciseInput = {
+    series?: IntFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+    routine?: routineUpdateOneRequiredWithoutExerciseRoutineNestedInput
+  }
+
+  export type exerciseRoutineUncheckedUpdateWithoutExerciseInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    routineId?: IntFieldUpdateOperationsInput | number
+    series?: IntFieldUpdateOperationsInput | number
+    repetitions?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type exerciseRoutineUncheckedUpdateManyWithoutExerciseInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    routineId?: IntFieldUpdateOperationsInput | number
     series?: IntFieldUpdateOperationsInput | number
     repetitions?: IntFieldUpdateOperationsInput | number
   }

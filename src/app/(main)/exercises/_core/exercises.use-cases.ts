@@ -43,6 +43,7 @@ export const getExercisesUseCase = async (
     skip: (page - 1) * limit,
     take: limit,
   });
+  console.log("Ejercicios", exercises);
   return { exercises, totalPages };
 };
 

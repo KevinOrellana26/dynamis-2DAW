@@ -18,9 +18,9 @@ enum Rol {
   ADMIN
 }
 
-model User {
+model user {
   id            String     @id @default(cuid())
-  name          String?
+  name          String
   email         String     @unique
   emailVerified DateTime?
   password      String
@@ -28,59 +28,62 @@ model User {
   createdAt     DateTime   @default(now())
   updatedAt     DateTime   @updatedAt
   role          Rol        @default(USER)
-  Progress      Progress[]
-  Routine       Routine[]
-  Favorite      Favorite[]
+  progress      progress[]
+  routine       routine[]
+  favorite      favorite[]
 }
 
-model Progress {
+model progress {
   id          Int      @id @default(autoincrement())
-  user_id     String // Cambiado a String
-  exercise_id Int
+  userId      String // Cambiado a String
+  exerciseId  Int
   date        DateTime @default(now()) @db.Date
-  weight_used Float
+  weightUsed  Float
   repetitions Int
-  user        User     @relation(fields: [user_id], references: [id])
-  exercise    Exercise @relation(fields: [exercise_id], references: [id])
+  user        user     @relation(fields: [userId], references: [id])
+  exercise    exercise @relation(fields: [exerciseId], references: [id])
 }
 
-model Routine {
-  id               Int                @id @default(autoincrement())
-  user_id          String
-  name             String
-  createdAt        DateTime?          @default(now()) @db.Date
-  description      String
-  duration         Int
-  totalExercise    Int
-  user             User               @relation(fields: [user_id], references: [id])
-  Exercise_routine Exercise_routine[]
+model routine {
+  id              Int               @id @default(autoincrement())
+  userId          String
+  name            String
+  createdAt       DateTime?         @default(now()) @db.Date
+  description     String
+  duration        Int
+  totalExercise   Int
+  user            user              @relation(fields: [userId], references: [id])
+  exerciseRoutine exerciseRoutine[]
 }
 
-model Favorite {
-  id          Int      @id @default(autoincrement())
-  user_id     String
-  exercise_id Int
+model favorite {
+  id         Int      @id @default(autoincrement())
+  userId     String
+  exerciseId Int
   // fecha_creacion DateTime? @default(now()) @db.Date
-  user        User     @relation(fields: [user_id], references: [id])
-  exercise    Exercise @relation(fields: [exercise_id], references: [id])
+  user       user     @relation(fields: [userId], references: [id])
+  exercise   exercise @relation(fields: [exerciseId], references: [id])
 }
 
-model Exercise {
-  id               Int                @id @default(autoincrement())
-  name             String             @unique
-  muscle           String
-  video_img_url    String
-  Progress         Progress[]
-  Favorite         Favorite[]
-  Exercise_routine Exercise_routine[]
+model exercise {
+  id              Int               @id @default(autoincrement())
+  name            String            @unique
+  muscle          String
+  videoImgUrl     String
+  description     String
+  executionSteps  String
+  tips            String
+  Progress        progress[]
+  Favorite        favorite[]
+  exerciseRoutine exerciseRoutine[]
 }
 
-model Exercise_routine {
+model exerciseRoutine {
   id          Int      @id @default(autoincrement())
-  routine_id  Int
-  exercise_id Int
+  routineId   Int
+  exerciseId  Int
   series      Int
   repetitions Int
-  routine     Routine  @relation(fields: [routine_id], references: [id])
-  exercise    Exercise @relation(fields: [exercise_id], references: [id])
+  routine     routine  @relation(fields: [routineId], references: [id])
+  exercise    exercise @relation(fields: [exerciseId], references: [id])
 }

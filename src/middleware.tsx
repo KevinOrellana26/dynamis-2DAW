@@ -3,7 +3,8 @@ import { getSession } from "./app/(auth)/_core/auth/auth.actions";
 
 //1. Esoecificar las rutas publicas y privadas
 const publicRoutes = ["/", "/login"];
-const protectedRoutes = ["/dashboard", "/progress", "/routine", "/exercise"];
+//! TODO: PROTEGER LAS RUTAS HIJAS (DE EXERCISE)
+const protectedRoutes = ["/dashboard", "/progress", "/routine", "/exercise/"];
 
 export default async function middleware(req: NextRequest) {
   //2. Revisar si la ruta está protegida
@@ -19,7 +20,7 @@ export default async function middleware(req: NextRequest) {
 
   //3. Revisar si la cookie de sesión es válida
   const session = await getSession();
-  console.log("Datos de la sesion:", session);
+  // console.log("Datos de la sesion:", session);
 
   //4. Redirigir a /login si la ruta es protegida y no hay sesión activa
   // -> si no hay session

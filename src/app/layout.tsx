@@ -1,17 +1,12 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../styles/globals.css";
-import Header from "@/components/Header";
-import UserNavbar from "./(main)/_components/UserNavbar";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
+import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/sonner";
+import { inter } from "@/styles/fonts";
+import type { Metadata } from "next";
+import "../styles/globals.css";
 import AdminNavbar from "./(admin)/_components/AdminNavbar";
+import UserNavbar from "./(main)/_components/UserNavbar";
 import Providers from "./Providers";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {

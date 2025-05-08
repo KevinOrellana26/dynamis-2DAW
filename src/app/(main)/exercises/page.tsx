@@ -1,13 +1,15 @@
+"use server";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 import { handleAsync } from "@/app/_shared/errors";
 import type { SearchParams } from "nuqs/server";
-import BackButton from "../_components/BackButton";
+import { Suspense } from "react";
+import ErrorMessage from "../_components/ErrorMessage";
 import ExerciseCard from "../_components/ExerciseCard";
 import Pagination from "../_components/Pagination";
 import ExercisesFilters from "./_components/ExercisesFilters";
+import SkeletonExerciseCard from "./_components/SkeletonExerciseCard";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
 import { getExercisesUseCase } from "./_core/exercises.use-cases";
-import ErrorMessage from "../_components/ErrorMessage";
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
@@ -72,9 +74,12 @@ export default async function ExercisePage({ ...props }: PageProps) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
         {exercises.length > 0 ? (
           exercises.map((exercise) => (
-            <div key={exercise.id}>
+            // <div key={exercise.id}>
+            //   <ExerciseCard exercise={exercise} />
+            // </div>
+            <Suspense key={exercise.id} fallback={<SkeletonExerciseCard />}>
               <ExerciseCard exercise={exercise} />
-            </div>
+            </Suspense>
           ))
         ) : (
           //Error: si no hay ejercicios y esta la variable page harcodeada en la URL

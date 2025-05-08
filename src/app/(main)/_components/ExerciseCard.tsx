@@ -12,6 +12,7 @@ import {
   removeExerciseFromFavoritesAction,
 } from "../exercises/exercises.actions";
 import { ExerciseT } from "../exercises/_core/exercises.definitions";
+import ExerciseDialog from "../exercises/_components/ExerciseDialog";
 
 type ExerciseCardProps = {
   exercise: ExerciseT;
@@ -51,8 +52,8 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
   };
 
   return (
-    <Card>
-      <div className="relative aspect-video overflow-hidden">
+    <Card key={exerciseId}>
+      <div className="relative aspect-video overflow-hidden shadow-md">
         <Image
           src={videoImgUrl}
           alt={name}
@@ -91,9 +92,10 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full" variant={"secondary"}>
+        {/* <Button className="w-full" variant={"secondary"}>
           Ver detalles
-        </Button>
+        </Button> */}
+        <ExerciseDialog exercise={exercise} className="w-full" />
       </CardFooter>
     </Card>
   );

@@ -1,24 +1,10 @@
-import { Card, CardContent } from "./ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
-import { Exercise } from "@/generated/prisma";
+import { Card, CardContent } from "./ui/card";
 
-import Image from "next/image";
 import { ExerciseT } from "@/app/(main)/exercises/_core/exercises.definitions";
+import Image from "next/image";
 
-// type Exercise = {
-//   id: number | string;
-//   nombre: string;
-//   musculo: string;
-//   img: string;
-// };
-
-export default function ExerciseCard({
-  name,
-  muscle,
-  videoImgUrl,
-}: ExerciseT) {
+export default function ExerciseCard({ name, muscle, videoImgUrl }: ExerciseT) {
   return (
     <Card>
       <div className="relative aspect-video overflow-hidden">
