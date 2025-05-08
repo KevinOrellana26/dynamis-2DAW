@@ -28,12 +28,8 @@ const options = [
   { value: "pantorrilla", label: "Pantorrilla" },
 ];
 
-export default function SelectMuscle({
-  value,
-  className,
-  onValueChange,
-  onClear,
-}: SelectMuscleT) {
+export default function SelectMuscle(params: SelectMuscleT) {
+  const { value, className, onValueChange, onClear } = params;
   return (
     <div className="flex gap-2 items-center">
       <Select

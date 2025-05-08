@@ -11,6 +11,7 @@ import { useDebouncedCallback } from "use-debounce";
 import SearchInput from "../../_components/SearchInput";
 import CheckboxFavorite from "./CheckboxFavorite";
 import SelectMuscle from "./SelectMuscle";
+import ComboboxMuscle from "./ComboboxMuscle";
 
 export default function ExercisesFilters() {
   const options = { ...DEFAULT_SEARCH_PARAMS_OPTIONS };
@@ -49,7 +50,7 @@ export default function ExercisesFilters() {
       />
 
       {/* Select con musculos */}
-      <SelectMuscle
+      {/* <SelectMuscle
         value={selectedMuscle}
         className="w-full flex-1"
         onValueChange={(value) => {
@@ -66,6 +67,17 @@ export default function ExercisesFilters() {
             page: 1,
           }))
         }
+      /> */}
+      <ComboboxMuscle
+        value={selectedMuscle}
+        className="w-full flex-1"
+        onValueChange={(value) => {
+          setExercisesFilters((prev) => ({
+            ...prev,
+            selectedMuscle: value,
+            page: 1,
+          }));
+        }}
       />
 
       {/* Checkbox Favorites */}

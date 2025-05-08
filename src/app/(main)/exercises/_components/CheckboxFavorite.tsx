@@ -23,7 +23,10 @@ export default function CheckboxFavorite({
           className
         )}
       />
-      <label htmlFor="favorites" className="font-medium text-muted-foreground">
+      <label
+        htmlFor="favorites"
+        className="font-medium text-muted-foreground"
+      >
         Favoritos
       </label>
     </div>

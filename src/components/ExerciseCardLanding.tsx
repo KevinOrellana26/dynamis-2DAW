@@ -1,10 +1,17 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "./ui/card";
-
 import { ExerciseT } from "@/app/(main)/exercises/_core/exercises.definitions";
 import Image from "next/image";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
 
-export default function ExerciseCard({ name, muscle, videoImgUrl }: ExerciseT) {
+type ExerciseCardProps = {
+  exercise: ExerciseT;
+};
+
+export default function ExerciseCardLanding({
+  name,
+  muscle,
+  videoImgUrl,
+}: ExerciseT) {
   return (
     <Card>
       <div className="relative aspect-video overflow-hidden">

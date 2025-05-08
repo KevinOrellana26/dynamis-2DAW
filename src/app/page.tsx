@@ -1,5 +1,5 @@
 import BenefitsCard from "@/components/BenefitsCard";
-import ExerciseCard from "@/components/ExerciseCard";
+import ExerciseCard from "@/components/ExerciseCardLanding";
 import { Button } from "@/components/ui/button";
 import Exercise from "@/mocks/exercise.json";
 import { ArrowRight, ChartLine, Dumbbell, ListChecks } from "lucide-react";

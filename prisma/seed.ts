@@ -10,7 +10,7 @@ async function seedExercises() {
         description:
           "Ejercicio compuesto para el desarrollo del pecho, tríceps y hombros.",
         executionSteps:
-          "1. Acuéstate en un banco plano con los pies apoyados en el suelo. \n2. Toma la barra con un agarre ligeramente más ancho que los hombros. \n3. Baja la barra hacia el pecho contolando el movimiento. \n4. Empuja hacia arriba hasta extender los brazos sin bloquear los codos.",
+          "Acuéstate en un banco plano con los pies apoyados en el suelo. \nToma la barra con un agarre ligeramente más ancho que los hombros. \nBaja la barra hacia el pecho contolando el movimiento. \nEmpuja hacia arriba hasta extender los brazos sin bloquear los codos.",
         tips: "Manten los pies apoyados en el suelo y evita arquear excesivamente la espalda.",
       },
       {
@@ -19,8 +19,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/sentadilla-barra.jpg",
         description: "Ejercicio base para trabajar piernas y glúteos.",
         executionSteps:
-          "1. Párate con los pies al ancho de tus hombros. Mantén la curvatura natural de tu espalda, apretando tus omóplatos y levantando tu pecho. \n2. Sujeta la barra a lo largo de tus hombros y apóyala en la parte superior de tu espalda. Desencaja la barra estirando las piernas y da un paso hacia atrás. \n3. Dobla tus rodillas mientras bajas el peso sin alterar la forma de tu espalda hasta que tus caderas estén por debajo de tus rodillas. \n4. Levanta la barra hasta la posición inicial, levanta con tus piernas y exhala en la parte superior.",
-        tips: "1. Evita cargar un peso que no controles, evita el riesgo a lesiones. \n2. Evita que las rodillas colapsen hacia dentro. \n3. Evita que la espalda se curve. \n4. Mantén la cabeza mirando hacia adelante y saca el pecho.",
+          "Párate con los pies al ancho de tus hombros. Mantén la curvatura natural de tu espalda, apretando tus omóplatos y levantando tu pecho. \nSujeta la barra a lo largo de tus hombros y apóyala en la parte superior de tu espalda. Desencaja la barra estirando las piernas y da un paso hacia atrás. \nDobla tus rodillas mientras bajas el peso sin alterar la forma de tu espalda hasta que tus caderas estén por debajo de tus rodillas. \nLevanta la barra hasta la posición inicial, levanta con tus piernas y exhala en la parte superior.",
+        tips: "Evita cargar un peso que no controles, evita el riesgo a lesiones. \nEvita que las rodillas colapsen hacia dentro. \nEvita que la espalda se curve. \nMantén la cabeza mirando hacia adelante y saca el pecho.",
       },
       {
         name: "Dominadas",
@@ -28,8 +28,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/dominadas.jpg",
         description: "Ejercicio básico para fortalecer la espalda y bíceps.",
         executionSteps:
-          "1. Agarra la barra con un agarre en pronación, los brazos y los hombros completamente extendidos. \n2. Levanta tu cuerpo hasta que tu barbilla esté por encima de la barra. \n3. Baja tu cuerpo lentamente hasta la posición inicial.",
-        tips: "1. Mantén el cuerpo recto y evita balancearte. \n2. Evita usar impulso para levantarte.",
+          "Agarra la barra con un agarre en pronación, los brazos y los hombros completamente extendidos. \nLevanta tu cuerpo hasta que tu barbilla esté por encima de la barra. \nBaja tu cuerpo lentamente hasta la posición inicial.",
+        tips: "Mantén el cuerpo recto y evita balancearte. \nEvita usar impulso para levantarte.",
       },
       {
         name: "Plancha abdominal",
@@ -37,8 +37,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/plancha-abdominal.jpg",
         description: "Ejercicio isométrico para fortalecer el core.",
         executionSteps:
-          "1. Coloca los antebrazos en el suelo con los codos doblados a un ángulo de 90 grados alineados debajo de los hombros, con tus brazos en paralelo al ancho de tus hombros. \n2. Tus pies deben estar juntos, con solo tus dedos tocando el suelo. \n3. Levanta tu cuerpo manteniendo una línea recta desde los talones hasta la cabeza. \n4. Mantén esa posición durante el tiempo deseado.",
-        tips: "1. Mantén el abdomen contraído y la espalda recta. \n2. Evita que las caderas se hundan o se levanten demasiado.",
+          "Coloca los antebrazos en el suelo con los codos doblados a un ángulo de 90 grados alineados debajo de los hombros, con tus brazos en paralelo al ancho de tus hombros. \nTus pies deben estar juntos, con solo tus dedos tocando el suelo. \nLevanta tu cuerpo manteniendo una línea recta desde los talones hasta la cabeza. \nMantén esa posición durante el tiempo deseado.",
+        tips: "Mantén el abdomen contraído y la espalda recta. \nEvita que las caderas se hundan o se levanten demasiado.",
       },
       {
         name: "Curl de bíceps con mancuernas",
@@ -46,8 +46,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/curl-biceps-mancuerna.jpg",
         description: "Ejercicio para trabajar los bíceps.",
         executionSteps:
-          "1. De pie, mantente erguido con una mancuerna en cada mano. \n2. Flexiona los codos y lleva las mancuernas hacia los hombros. \n3. Baja lentamente las mancuernas a la posición incial. \n4. Repite el movimiento. ",
-        tips: "1. Mantén los codos pegados al cuerpo durante el movimiento. \n2. Evita usar impulso para levantar las mancuernas.",
+          "De pie, mantente erguido con una mancuerna en cada mano. \nFlexiona los codos y lleva las mancuernas hacia los hombros. \nBaja lentamente las mancuernas a la posición incial. \nRepite el movimiento. ",
+        tips: "Mantén los codos pegados al cuerpo durante el movimiento. \nEvita usar impulso para levantar las mancuernas.",
       },
       {
         name: "Peso muerto",
@@ -55,8 +55,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/peso-muerto.jpg",
         description: "Ejercicio para trabajar la espalda baja y glúteos.",
         executionSteps:
-          "1. Coloca los pies al ancho de los hombros y la barra frente a tus espinillas. \n2. Agarra la barra con un agarre en pronación o mixto. \n3. Mantén la espalda recta y levanta la barra manteniéndola cerca de tu cuerpo. \n4. Baja la barra controlando el moviento. \n5. Repite el moviemiento.",
-        tips: "1. Mantén la espalda recta durante todo el movimiento. \n2. Evita que la barra se aleje de tu cuerpo al levantarla.",
+          "Coloca los pies al ancho de los hombros y la barra frente a tus espinillas. \nAgarra la barra con un agarre en pronación o mixto. \nMantén la espalda recta y levanta la barra manteniéndola cerca de tu cuerpo. \nBaja la barra controlando el moviento. \nRepite el moviemiento.",
+        tips: "Mantén la espalda recta durante todo el movimiento. \nEvita que la barra se aleje de tu cuerpo al levantarla.",
       },
       {
         name: "Elevaciones laterales con mancuernas",
@@ -64,8 +64,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/elevaciones-laterales-mancuernas.jpg",
         description: "Ejercicio para trabajar los hombros.",
         executionSteps:
-          " 1. De pie, sujeta una mancuerna en cada mano. \n2. Levanta los brazos hacia los lados hasta que estén paralelos al suelo. \n3. Baja lentamente las mancuernas a la posición inicial.",
-        tips: "1. Mantén una ligera flexión en los codos durante el movimiento. \n2. Evita usar impulso para levantar las mancuernas.",
+          " De pie, sujeta una mancuerna en cada mano. \nLevanta los brazos hacia los lados hasta que estén paralelos al suelo. \nBaja lentamente las mancuernas a la posición inicial.",
+        tips: "Mantén una ligera flexión en los codos durante el movimiento. \nEvita usar impulso para levantar las mancuernas.",
       },
       {
         name: "Fondos en paralelas",
@@ -73,8 +73,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/fondos-paralelas.jpg",
         description: "Ejercicio para trabajar trícpes.",
         executionSteps:
-          "1. Sujeta las barras paralelas con los brazos extendidos. \n2. Baja el cuerpo flexionando los codos hasta que los hombros estén por debajo de los codos. \n3. Empuja hacia arriba hasta la posición inicial.",
-        tips: "1. Mantén el cuerpo recto y evita balancearte. \n2. Evita que los codos se abran hacia los lados.",
+          "Sujeta las barras paralelas con los brazos extendidos. \nBaja el cuerpo flexionando los codos hasta que los hombros estén por debajo de los codos. \nEmpuja hacia arriba hasta la posición inicial.",
+        tips: "Mantén el cuerpo recto y evita balancearte. \nEvita que los codos se abran hacia los lados.",
       },
       {
         name: "Press militar con barra",
@@ -82,8 +82,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/press-militar-barra.jpg",
         description: "Ejercicio para trabajar los hombros.",
         executionSteps:
-          "1. De pie, sujeta la barra a la altura de los hombros con un agarre en pronación. \n2. Levanta la barra por encima de la cabeza hasta que los brazos estén completamente extendidos. \n3. Baja la barra a la posición inicial controlando el movimiento.",
-        tips: "1. Mantén la espalda recta y evita arquearla. \n2. Evita que la barra se desplace hacia adelante o hacia atrás.",
+          "De pie, sujeta la barra a la altura de los hombros con un agarre en pronación. \nLevanta la barra por encima de la cabeza hasta que los brazos estén completamente extendidos. \nBaja la barra a la posición inicial controlando el movimiento.",
+        tips: "Mantén la espalda recta y evita arquearla. \nEvita que la barra se desplace hacia adelante o hacia atrás.",
       },
       {
         name: "Remo con barra",
@@ -91,8 +91,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/remo-barra.jpg",
         description: "Ejericicio para trabajar la espalda.",
         executionSteps:
-          " 1. De pie, sujeta la barra con un agarre en pronación. \n2. Flexiona ligeramente las rodillas y mantén la espalda recta. \n3. Lleva la barra hacia el abdomen manteniendo los codos cerca del cuerpo. \n4. Baja la barra a la posición inicial controlando el movimiento.",
-        tips: "1. Mantén la espalda recta durante todo el movimiento. \n2. Evita que la barra se aleje de tu cuerpo al levantarla.",
+          " De pie, sujeta la barra con un agarre en pronación. \nFlexiona ligeramente las rodillas y mantén la espalda recta. \nLleva la barra hacia el abdomen manteniendo los codos cerca del cuerpo. \nBaja la barra a la posición inicial controlando el movimiento.",
+        tips: "Mantén la espalda recta durante todo el movimiento. \nEvita que la barra se aleje de tu cuerpo al levantarla.",
       },
       {
         name: "Zancadas con mancuernas",
@@ -100,8 +100,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/zancadas-mancuernas.jpg",
         description: "Ejercicio para trabajar piernas y glúteos.",
         executionSteps:
-          "1. De pie, sujeta una mancuerna en cada mano. \n2. Da un paso hacia adelante con una pierna y baja el cuerpo hasta que ambas rodillas estén dobladas a 90 grados. \n3. Empuja hacia atrás hasta la posición inicial y repite con la otra pierna.",
-        tips: "1. Mantén la espalda recta y el pecho hacia arriba. \n2. Evita que la rodilla de la pierna delantera sobrepase los dedos del pie.",
+          "De pie, sujeta una mancuerna en cada mano. \nDa un paso hacia adelante con una pierna y baja el cuerpo hasta que ambas rodillas estén dobladas a 90 grados. \nEmpuja hacia atrás hasta la posición inicial y repite con la otra pierna.",
+        tips: "Mantén la espalda recta y el pecho hacia arriba. \nEvita que la rodilla de la pierna delantera sobrepase los dedos del pie.",
       },
       {
         name: "Crunch abdominal",
@@ -109,8 +109,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/crunch-abdominal.jpg",
         description: "Ejercicio para trabajar el abdomen.",
         executionSteps:
-          "1. Acuéstate boca arriba con las rodillas dobladas. \n2. Coloca las manos detrás de la cabeza o cruzadas sobre el pecho. \n3. Levanta los hombros del suelo contrayendo los abdominales. \n4. Baja lentamente a la posición inicial.",
-        tips: "1. Evita tirar de la cabeza con las manos. \n2. Mantén la espalda baja en contacto con el suelo.",
+          "Acuéstate boca arriba con las rodillas dobladas. \nColoca las manos detrás de la cabeza o cruzadas sobre el pecho. \nLevanta los hombros del suelo contrayendo los abdominales. \nBaja lentamente a la posición inicial.",
+        tips: "Evita tirar de la cabeza con las manos. \nMantén la espalda baja en contacto con el suelo.",
       },
       {
         name: "Extensión de tríceps en polea",
@@ -118,8 +118,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/extension-triceps-polea.jpg",
         description: "Ejercicio para trabajar los trícpes.",
         executionSteps:
-          " 1. Coloca la polea en la parte alta. \n2. Sujeta la cuerda con ambas manos. \n3. Flexiona los codos y lleva la cuerda hacia abajo hasta que los brazos estén completamente extendidos. \n4. Baja lentamente la cuerda a la posición inicial.",
-        tips: "1. Mantén los codos pegados al cuerpo durante el movimiento. \n2. Evita usar impulso para levantar la cuerda.",
+          " Coloca la polea en la parte alta. \nSujeta la cuerda con ambas manos. \nFlexiona los codos y lleva la cuerda hacia abajo hasta que los brazos estén completamente extendidos. \nBaja lentamente la cuerda a la posición inicial.",
+        tips: "Mantén los codos pegados al cuerpo durante el movimiento. \nEvita usar impulso para levantar la cuerda.",
       },
       {
         name: "Curl femoral tumbado",
@@ -127,8 +127,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/curl-femoral-tumbado.jpg",
         description: "Ejercicio para trabajar los isquiotibiales.",
         executionSteps:
-          " 1. Acuéstate boca abajo en la máquina de curl femoral. \n2. Coloca los tobillos debajo de la almohadilla. \n3. Flexiona las rodillas llevando los talones hacia los glúteos. \n4. Baja lentamente a la posición inicial.",
-        tips: "1. Mantén la espalda pegada al banco durante el movimiento. \n2. Evita usar impulso para levantar el peso.",
+          " Acuéstate boca abajo en la máquina de curl femoral. \nColoca los tobillos debajo de la almohadilla. \nFlexiona las rodillas llevando los talones hacia los glúteos. \nBaja lentamente a la posición inicial.",
+        tips: "Mantén la espalda pegada al banco durante el movimiento. \nEvita usar impulso para levantar el peso.",
       },
       {
         name: "Elevación de talones de pie",
@@ -136,8 +136,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/elevacion-talones.jpg",
         description: "Ejercicio para trabajar las pantorrillas.",
         executionSteps:
-          "1. De pie, coloca los pies al ancho de los hombros. \n2. Levanta los talones del suelo manteniendo el equilibrio. \n3. Baja lentamente los talones a la posición inicial.",
-        tips: "1. Mantén la espalda recta durante todo el movimiento. \n2. Evita balancearte hacia adelante o hacia atrás.",
+          "De pie, coloca los pies al ancho de los hombros. \nLevanta los talones del suelo manteniendo el equilibrio. \nBaja lentamente los talones a la posición inicial.",
+        tips: "Mantén la espalda recta durante todo el movimiento. \nEvita balancearte hacia adelante o hacia atrás.",
       },
       {
         name: "Face Pull en polea",
@@ -146,8 +146,8 @@ async function seedExercises() {
         description:
           "Ejercicio para trabajar el deltoides postrerior y la espalda alta.",
         executionSteps:
-          "1. Coloca la polea a la altura de la cara. \n2. Sujeta la cuerda con ambas manos. \n3. Tira de la cuerda hacia la cara manteniendo los codos altos. \n4. Baja lentamente la cuerda a la posición inicial.",
-        tips: "1. Mantén la espalda recta durante todo el movimiento. \n2. Evita usar impulso para levantar la cuerda.",
+          "Coloca la polea a la altura de la cara. \nSujeta la cuerda con ambas manos. \nTira de la cuerda hacia la cara manteniendo los codos altos. \nBaja lentamente la cuerda a la posición inicial.",
+        tips: "Mantén la espalda recta durante todo el movimiento. \nEvita usar impulso para levantar la cuerda.",
       },
       {
         name: "Press banca inclinado con mancuernas",
@@ -155,8 +155,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/press-banca-inclinada.jpg",
         description: "Ejercicio para trabajar la parte superior del pecho.",
         executionSteps:
-          "1. Acuéstate en un banco inclinado con una mancuerna en cada mano. \n2. Baja las mancuernas hacia los lados del pecho. \n3. Empuja las mancuernas hacia arriba hasta que los brazos estén completamente extendidos. \n4. Baja lentamente las mancuernas a la posición inicial.",
-        tips: "1. Mantén los pies apoyados en el suelo durante todo el movimiento. \n2. Evita que las muñecas se doblen hacia atrás.",
+          "Acuéstate en un banco inclinado con una mancuerna en cada mano. \nBaja las mancuernas hacia los lados del pecho. \nEmpuja las mancuernas hacia arriba hasta que los brazos estén completamente extendidos. \nBaja lentamente las mancuernas a la posición inicial.",
+        tips: "Mantén los pies apoyados en el suelo durante todo el movimiento. \nEvita que las muñecas se doblen hacia atrás.",
       },
       {
         name: "Prensa",
@@ -164,8 +164,8 @@ async function seedExercises() {
         videoImgUrl: "/exercise/prensa.jpg",
         description: "Ejercicio para trabajar piernas y glúteos.",
         executionSteps:
-          "1. Siéntate en la máquina de prensa con la espalda apoyada. \n2. Coloca los pies en la plataforma al ancho de los hombros. \n3. Baja el peso flexionando las rodillas hasta que estén a 90 grados. \n4. Empuja hacia arriba hasta la posición inicial.",
-        tips: "1. Mantén la espalda apoyada en el respaldo durante todo el movimiento. \n2. Evita que las rodillas se desplacen hacia adentro.",
+          "Siéntate en la máquina de prensa con la espalda apoyada. \nColoca los pies en la plataforma al ancho de los hombros. \nBaja el peso flexionando las rodillas hasta que estén a 90 grados. \nEmpuja hacia arriba hasta la posición inicial.",
+        tips: "Mantén la espalda apoyada en el respaldo durante todo el movimiento. \nEvita que las rodillas se desplacen hacia adentro.",
       },
     ],
   });
