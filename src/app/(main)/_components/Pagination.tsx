@@ -6,18 +6,19 @@ import {
   PaginationItem,
   PaginationLink,
   PaginationNext,
-  PaginationPrevious
+  PaginationPrevious,
 } from "@/components/ui/pagination";
 import { DEFAULT_SEARCH_PARAMS_OPTIONS } from "@/config/params.config";
 import { parseAsInteger, useQueryStates } from "nuqs";
 
 type PaginationProps = {
   totalPages: number;
+  showPage?: number;
   classname?: string;
 };
 
 export default function PaginationComponent(params: PaginationProps) {
-  const { totalPages, classname } = params;
+  const { totalPages, classname, showPage=3 } = params;
   const options = { ...DEFAULT_SEARCH_PARAMS_OPTIONS };
   //nuqs sincroniza el estado de la página actual en la URL
   const [pageState, setPageState] = useQueryStates(
@@ -37,7 +38,7 @@ export default function PaginationComponent(params: PaginationProps) {
   return (
     <Pagination className={classname}>
       <PaginationContent>
-        {/* Botón anterior */}
+        {/* Botón anterior con renderizado condicional */}
         {currentPage > 1 && (
           <PaginationItem>
             <PaginationPrevious
@@ -47,7 +48,7 @@ export default function PaginationComponent(params: PaginationProps) {
         )}
 
         {/* Números de páginas, solo muestra las primeras 5 páginas */}
-        {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+        {Array.from({ length: Math.min(totalPages, showPage) }, (_, i) => {
           const pageNumber = i + 1;
           return (
             <PaginationItem key={pageNumber}>
@@ -61,7 +62,7 @@ export default function PaginationComponent(params: PaginationProps) {
           );
         })}
 
-        {/* Botón siguiente */}
+        {/* Botón siguiente con renderizado condicional */}
         {currentPage < totalPages && (
           <PaginationItem>
             <PaginationNext onClick={() => handlePageChange(currentPage + 1)} />

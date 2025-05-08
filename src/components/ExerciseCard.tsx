@@ -5,6 +5,7 @@ import { Star } from "lucide-react";
 import { Exercise } from "@/generated/prisma";
 
 import Image from "next/image";
+import { ExerciseT } from "@/app/(main)/exercises/_core/exercises.definitions";
 
 // type Exercise = {
 //   id: number | string;
@@ -16,13 +17,13 @@ import Image from "next/image";
 export default function ExerciseCard({
   name,
   muscle,
-  video_img_url,
-}: Exercise) {
+  videoImgUrl,
+}: ExerciseT) {
   return (
     <Card>
       <div className="relative aspect-video overflow-hidden">
         <Image
-          src={video_img_url}
+          src={videoImgUrl}
           alt={name}
           fill //Ocupa todo el espacio del contenedor padre (div)
           priority

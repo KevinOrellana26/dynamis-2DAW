@@ -69,7 +69,7 @@ export default async function ExercisePage({ ...props }: PageProps) {
       <ExercisesFilters />
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
         {exercises.length > 0 ? (
           exercises.map((exercise) => (
             <div key={exercise.id}>
@@ -83,7 +83,7 @@ export default async function ExercisePage({ ...props }: PageProps) {
       </div>
 
       {/* Paginación */}
-      {isValidPage && <Pagination classname="mt-7" totalPages={totalPages} />}
+      {isValidPage && <Pagination totalPages={totalPages} showPage={2} />}
     </div>
   );
 }

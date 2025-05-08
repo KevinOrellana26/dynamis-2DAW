@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { LoginButton } from "./LoginButton";
+import LoginButton from "./LoginButton";
 import Logo from "./Logo";
 import LogoutButton from "./LogoutButton";
 import { ModeToggle } from "./theme-toggle-button";
