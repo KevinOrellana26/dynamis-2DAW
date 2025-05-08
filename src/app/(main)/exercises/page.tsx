@@ -1,15 +1,12 @@
-"use server";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
+import ErrorMessage from "@/app/(main)/_components/ErrorMessage";
 import { handleAsync } from "@/app/_shared/errors";
 import type { SearchParams } from "nuqs/server";
-import { Suspense } from "react";
-import ErrorMessage from "../_components/ErrorMessage";
-import ExerciseCard from "../_components/ExerciseCard";
-import Pagination from "../_components/Pagination";
 import ExercisesFilters from "./_components/ExercisesFilters";
-import SkeletonExerciseCard from "./_components/SkeletonExerciseCard";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
 import { getExercisesUseCase } from "./_core/exercises.use-cases";
+import Pagination from "../_components/Pagination";
+import ExerciseCard from "../_components/ExerciseCard";
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
@@ -19,13 +16,14 @@ export default async function ExercisePage({ ...props }: PageProps) {
   //Obtener la sesión del usuario
   const session = await getSession();
   const userId = session.userId;
+  const searchParamsResolved = await props.searchParams;
+  const limit = 8;
 
   //Obtener los parámetros de búsqueda de la URL
   const searchParams = await props.searchParams;
   const parsedSearchParams = exercisesSearchParamsCache.parse(searchParams);
   const { query, selectedMuscle, showFavorites, page = 1 } = parsedSearchParams;
 
-  const limit: number = 8;
   //Pasar los parámetros al caso de uso
   const [data, error] = await handleAsync(() =>
     getExercisesUseCase({
@@ -51,6 +49,11 @@ export default async function ExercisePage({ ...props }: PageProps) {
 
   // verificar si la página actual no sea mayor al total de páginas
   const isValidPage = page > 0 && page <= totalPages;
+
+  if (exercises.length === 0) {
+    return <ErrorMessage message="No se encontraron ejercicios." />;
+  }
+
   if (!isValidPage) {
     return <ErrorMessage message={`La página ${page} no existe.`} />;
   }
@@ -72,19 +75,11 @@ export default async function ExercisePage({ ...props }: PageProps) {
 
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
-        {exercises.length > 0 ? (
-          exercises.map((exercise) => (
-            // <div key={exercise.id}>
-            //   <ExerciseCard exercise={exercise} />
-            // </div>
-            <Suspense key={exercise.id} fallback={<SkeletonExerciseCard />}>
-              <ExerciseCard exercise={exercise} />
-            </Suspense>
-          ))
-        ) : (
-          //Error: si no hay ejercicios y esta la variable page harcodeada en la URL
-          <ErrorMessage message="No se encontraron ejercicios." />
-        )}
+        {exercises.map((exercise) => (
+          <div key={exercise.id}>
+            <ExerciseCard exercise={exercise} />
+          </div>
+        ))}
       </div>
 
       {/* Paginación */}

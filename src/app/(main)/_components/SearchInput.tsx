@@ -10,11 +10,7 @@ export default function SearchInput({ className, ...props }: SearchInputT) {
     //lo establexco en relativo, para que los hijos con absolute se posicionen en relación al contenedor
     <div className="relative w-full">
       <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform opacity-50" />
-      <Input
-        type="search"
-        {...props}
-        className={cn("pl-9", className)}
-      />
+      <Input type="search" {...props} className={cn("pl-9", className)} />
     </div>
   );
 }

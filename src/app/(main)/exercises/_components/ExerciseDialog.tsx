@@ -39,7 +39,7 @@ export default function ExerciseDialog({
           </DialogTitle>
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        <div className="relative aspect-video rounded-lg overflow-hidden my-4 shadow-md">
+        {/* <div className="relative aspect-video rounded-lg overflow-hidden my-4 shadow-md">
           <Image
             alt={`Ejercicio ${name}`}
             src={videoImgUrl}
@@ -47,7 +47,7 @@ export default function ExerciseDialog({
             className="object-cover"
             priority
           />
-        </div>
+        </div> */}
         <ScrollArea className="px-4 h-[200px]">
           {/* AÑADIR ESTRELLA */}
           {/* <Button

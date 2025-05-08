@@ -10,7 +10,6 @@ import {
 import { useDebouncedCallback } from "use-debounce";
 import SearchInput from "../../_components/SearchInput";
 import CheckboxFavorite from "./CheckboxFavorite";
-import SelectMuscle from "./SelectMuscle";
 import ComboboxMuscle from "./ComboboxMuscle";
 
 export default function ExercisesFilters() {
