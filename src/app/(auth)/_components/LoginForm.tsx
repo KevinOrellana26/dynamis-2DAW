@@ -13,12 +13,10 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { RiLoader2Fill } from "react-icons/ri";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
 import { LoginSchema, LoginT } from "../_core/auth/user.types";
 import { loginUserAction } from "../_core/user/user.actions";
-import { CheckCircle } from "lucide-react";
 
 //Validación (Esquema)
 export default function LoginForm() {

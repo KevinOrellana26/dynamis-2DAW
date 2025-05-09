@@ -10,10 +10,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Spinner } from "@/config/theme.config";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ComponentProps } from "react";
 import { useForm } from "react-hook-form";
-import { RiLoader2Fill } from "react-icons/ri";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
 import { RegisterSchema, RegisterT } from "../_core/auth/user.types";
@@ -125,7 +125,7 @@ export default function RegisterForm({
           className="w-full cursor-pointer"
           disabled={isPending}
         >
-          {isPending && <RiLoader2Fill className="mr-2 h-4 2-4 animate-spin" />}
+          {isPending && <Spinner className="mr-2 h-4 2-4 animate-spin" />}
           {isPending ? "Registrando" : "Registrarse"}
         </Button>
       </form>

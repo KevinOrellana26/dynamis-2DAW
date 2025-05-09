@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { handleAsync } from "@/app/_shared/errors";
 import { exercisesSearchParamsCache } from "../_core/exercises.search-params";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
+import ExerciseCardSkeleton from "./ExerciseCardSkeleton";
 
 export default async function ExerciseList() {
   const searchParams = exercisesSearchParamsCache.all();
@@ -65,9 +66,7 @@ export default async function ExerciseList() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
         {sortedExercises.map((exercise) => (
-          <div key={exercise.id}>
-            <ExerciseCard exercise={exercise} />
-          </div>
+          <ExerciseCard exercise={exercise} key={exercise.id}/>
         ))}
       </div>
 
@@ -81,13 +80,10 @@ export function ExerciseListSkeleton() {
   const array = Array.from({ length: count });
 
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
-        {array.map((_, index) => {
-          return <Skeleton className="bg-red-500" key={index} />;
-        })}
-      </div>
-      <Skeleton className="bg-red-500" />;
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
+      {array.map((_, index) => {
+        return <ExerciseCardSkeleton key={index} />;
+      })}
+    </div>
   );
 }

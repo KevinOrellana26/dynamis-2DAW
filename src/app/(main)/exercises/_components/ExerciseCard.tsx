@@ -3,17 +3,17 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Spinner } from "@/config/theme.config";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
+import { ExerciseT } from "../_core/exercises.definitions";
 import {
   addExerciseToFavoritesAction,
   removeExerciseFromFavoritesAction,
 } from "../exercises.actions";
-import { ExerciseT } from "../_core/exercises.definitions";
 import ExerciseDialog from "./ExerciseDialog";
-import { RiLoader2Fill } from "react-icons/ri";
 
 type ExerciseCardProps = {
   exercise: ExerciseT;
@@ -56,14 +56,14 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
   };
 
   return (
-    <Card key={exerciseId}>
+    <Card>
       <div className="relative aspect-video overflow-hidden shadow-md">
         <Image
           src={videoImgUrl}
           alt={name}
           fill //Ocupa todo el espacio del contenedor padre (div)
           priority
-          className="rounded-t-2xl object-cover"
+          className="rounded-t-xl object-cover"
         />
       </div>
       <CardContent>
@@ -82,7 +82,7 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
             className={"h-8 w-8 hover:text-accent-blue"}
           >
             {isAdding || isRemoving ? (
-              <RiLoader2Fill className="h-8 w-8 animate-spin text-accent-blue" />
+              <Spinner className="h-8 w-8 animate-spin text-accent-blue" />
             ) : (
               <Star
                 className={`h-5 w-5 ${

@@ -32,8 +32,8 @@ export default async function ExercisePage({ ...props }: PageProps) {
       {/* Cards */}
       <Suspense
         fallback={<ExerciseListSkeleton />}
-        key={`${query}${selectedMuscle}${showFavorites}${page}`}
-        // key={new Date().toString()}
+        // key={`${query}${selectedMuscle}${showFavorites}${page}`}
+        key={new Date().toString()}
       >
         <ExerciseList />
       </Suspense>

@@ -8,6 +8,7 @@ import {
   removeExerciseFromFavoritesT,
 } from "./exercises.types";
 import { exerciseAdapter } from "./exercises.definitions";
+import { delay } from "@/lib/utils";
 
 export type GetExercisesOptionsT = {
   query?: string;
@@ -29,6 +30,7 @@ export type ExerciseWithFavoriteT = Prisma.exerciseGetPayload<{
 export const getExercises = async (
   options: GetExercisesOptionsT & { skip: number; take: number }
 ) => {
+  await delay(500);
   const { query, selectedMuscle, showFavorites, userId, skip, take } = options;
   let exercises: ExerciseWithFavoriteT[];
 

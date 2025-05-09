@@ -4,8 +4,8 @@ import {
   addExerciseToFavorites,
   getExercises,
   GetExercisesOptionsT,
-  removeExerciseFromFavorites,
   getTotalItems,
+  removeExerciseFromFavorites,
 } from "./exercises.db";
 import {
   addExerciseToFavoritesT,
