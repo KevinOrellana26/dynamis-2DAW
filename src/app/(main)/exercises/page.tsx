@@ -1,8 +1,6 @@
 import type { SearchParams } from "nuqs/server";
 import { Suspense } from "react";
-import ExerciseList, {
-  ExerciseListSkeleton,
-} from "../_components/ExerciseList";
+import ExerciseList, { ExerciseListSkeleton } from "./_components/ExerciseList";
 import ExercisesFilters from "./_components/ExercisesFilters";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
 

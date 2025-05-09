@@ -1,11 +1,11 @@
 import React from "react";
-import { getExercisesUseCase } from "../exercises/_core/exercises.use-cases";
+import { getExercisesUseCase } from "../_core/exercises.use-cases";
 import ExerciseCard from "./ExerciseCard";
-import ErrorMessage from "./ErrorMessage";
-import Pagination from "./Pagination";
+import ErrorMessage from "../../_components/ErrorMessage";
+import Pagination from "../../_components/Pagination";
 import { Skeleton } from "@/components/ui/skeleton";
 import { handleAsync } from "@/app/_shared/errors";
-import { exercisesSearchParamsCache } from "../exercises/_core/exercises.search-params";
+import { exercisesSearchParamsCache } from "../_core/exercises.search-params";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 
 export default async function ExerciseList() {

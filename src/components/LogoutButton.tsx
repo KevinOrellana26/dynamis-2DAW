@@ -29,7 +29,7 @@ export default function LogoutButton() {
       onClick={handleLogoutButton}
       isPending={isPending}
     >
-      {isPending ? "Cerrando sesión..." : "Cerrar sesión"}
+      {isPending ? "Cerrando sesión" : "Cerrar sesión"}
     </Button>
   );
 }

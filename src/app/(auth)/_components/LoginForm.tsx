@@ -18,6 +18,7 @@ import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
 import { LoginSchema, LoginT } from "../_core/auth/user.types";
 import { loginUserAction } from "../_core/user/user.actions";
+import { CheckCircle } from "lucide-react";
 
 //Validación (Esquema)
 export default function LoginForm() {
@@ -94,7 +95,7 @@ export default function LoginForm() {
           isPending={isPending}
         >
           {/* {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />} */}
-          {isPending ? "Iniciando sesión..." : "Iniciar sesión"}
+          {isPending ? "Iniciando sesión" : "Iniciar sesión"}
         </Button>
       </form>
     </Form>

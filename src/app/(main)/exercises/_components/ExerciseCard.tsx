@@ -10,9 +10,9 @@ import { useServerAction } from "zsa-react";
 import {
   addExerciseToFavoritesAction,
   removeExerciseFromFavoritesAction,
-} from "../exercises/exercises.actions";
-import { ExerciseT } from "../exercises/_core/exercises.definitions";
-import ExerciseDialog from "../exercises/_components/ExerciseDialog";
+} from "../exercises.actions";
+import { ExerciseT } from "../_core/exercises.definitions";
+import ExerciseDialog from "./ExerciseDialog";
 import { RiLoader2Fill } from "react-icons/ri";
 
 type ExerciseCardProps = {
@@ -78,11 +78,11 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
             variant={"link"}
             size="icon"
             onClick={handleFavoriteClick}
-            disabled={isAdding || isRemoving}
+            // disabled={isAdding || isRemoving}
             className={"h-8 w-8 hover:text-accent-blue"}
           >
             {isAdding || isRemoving ? (
-              <RiLoader2Fill className="h-5 w-5 animate-spin" />
+              <RiLoader2Fill className="h-8 w-8 animate-spin text-accent-blue" />
             ) : (
               <Star
                 className={`h-5 w-5 ${

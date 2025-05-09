@@ -20,7 +20,7 @@ export default function LoginButton() {
         isPending={isPending}
         onClick={handleLogin}
       >
-        {isPending ? "Iniciando sesión..." : "Iniciar sesión"}
+        {isPending ? "Iniciando sesión" : "Iniciar sesión"}
       </Button>
     </Link>
   );
