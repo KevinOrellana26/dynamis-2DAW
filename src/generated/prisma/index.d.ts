@@ -1344,13 +1344,13 @@ export namespace Prisma {
   export type UserCountOutputType = {
     progress: number
     routine: number
-    favorite: number
+    favorites: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     progress?: boolean | UserCountOutputTypeCountProgressArgs
     routine?: boolean | UserCountOutputTypeCountRoutineArgs
-    favorite?: boolean | UserCountOutputTypeCountFavoriteArgs
+    favorites?: boolean | UserCountOutputTypeCountFavoritesArgs
   }
 
   // Custom InputTypes
@@ -1381,7 +1381,7 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountFavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserCountOutputTypeCountFavoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: favoriteWhereInput
   }
 
@@ -1422,14 +1422,14 @@ export namespace Prisma {
    */
 
   export type ExerciseCountOutputType = {
-    Progress: number
-    Favorite: number
+    progress: number
+    favorite: number
     exerciseRoutine: number
   }
 
   export type ExerciseCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Progress?: boolean | ExerciseCountOutputTypeCountProgressArgs
-    Favorite?: boolean | ExerciseCountOutputTypeCountFavoriteArgs
+    progress?: boolean | ExerciseCountOutputTypeCountProgressArgs
+    favorite?: boolean | ExerciseCountOutputTypeCountFavoriteArgs
     exerciseRoutine?: boolean | ExerciseCountOutputTypeCountExerciseRoutineArgs
   }
 
@@ -1668,7 +1668,7 @@ export namespace Prisma {
     role?: boolean
     progress?: boolean | user$progressArgs<ExtArgs>
     routine?: boolean | user$routineArgs<ExtArgs>
-    favorite?: boolean | user$favoriteArgs<ExtArgs>
+    favorites?: boolean | user$favoritesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1712,7 +1712,7 @@ export namespace Prisma {
   export type userInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     progress?: boolean | user$progressArgs<ExtArgs>
     routine?: boolean | user$routineArgs<ExtArgs>
-    favorite?: boolean | user$favoriteArgs<ExtArgs>
+    favorites?: boolean | user$favoritesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type userIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1723,7 +1723,7 @@ export namespace Prisma {
     objects: {
       progress: Prisma.$progressPayload<ExtArgs>[]
       routine: Prisma.$routinePayload<ExtArgs>[]
-      favorite: Prisma.$favoritePayload<ExtArgs>[]
+      favorites: Prisma.$favoritePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2131,7 +2131,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     progress<T extends user$progressArgs<ExtArgs> = {}>(args?: Subset<T, user$progressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     routine<T extends user$routineArgs<ExtArgs> = {}>(args?: Subset<T, user$routineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$routinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    favorite<T extends user$favoriteArgs<ExtArgs> = {}>(args?: Subset<T, user$favoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favorites<T extends user$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, user$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2606,9 +2606,9 @@ export namespace Prisma {
   }
 
   /**
-   * user.favorite
+   * user.favorites
    */
-  export type user$favoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type user$favoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the favorite
      */
@@ -6221,8 +6221,8 @@ export namespace Prisma {
     description?: boolean
     executionSteps?: boolean
     tips?: boolean
-    Progress?: boolean | exercise$ProgressArgs<ExtArgs>
-    Favorite?: boolean | exercise$FavoriteArgs<ExtArgs>
+    progress?: boolean | exercise$progressArgs<ExtArgs>
+    favorite?: boolean | exercise$favoriteArgs<ExtArgs>
     exerciseRoutine?: boolean | exercise$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | ExerciseCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["exercise"]>
@@ -6259,8 +6259,8 @@ export namespace Prisma {
 
   export type exerciseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "muscle" | "videoImgUrl" | "description" | "executionSteps" | "tips", ExtArgs["result"]["exercise"]>
   export type exerciseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Progress?: boolean | exercise$ProgressArgs<ExtArgs>
-    Favorite?: boolean | exercise$FavoriteArgs<ExtArgs>
+    progress?: boolean | exercise$progressArgs<ExtArgs>
+    favorite?: boolean | exercise$favoriteArgs<ExtArgs>
     exerciseRoutine?: boolean | exercise$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | ExerciseCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -6270,8 +6270,8 @@ export namespace Prisma {
   export type $exercisePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "exercise"
     objects: {
-      Progress: Prisma.$progressPayload<ExtArgs>[]
-      Favorite: Prisma.$favoritePayload<ExtArgs>[]
+      progress: Prisma.$progressPayload<ExtArgs>[]
+      favorite: Prisma.$favoritePayload<ExtArgs>[]
       exerciseRoutine: Prisma.$exerciseRoutinePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -6676,8 +6676,8 @@ export namespace Prisma {
    */
   export interface Prisma__exerciseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Progress<T extends exercise$ProgressArgs<ExtArgs> = {}>(args?: Subset<T, exercise$ProgressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Favorite<T extends exercise$FavoriteArgs<ExtArgs> = {}>(args?: Subset<T, exercise$FavoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    progress<T extends exercise$progressArgs<ExtArgs> = {}>(args?: Subset<T, exercise$progressArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favorite<T extends exercise$favoriteArgs<ExtArgs> = {}>(args?: Subset<T, exercise$favoriteArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$favoritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     exerciseRoutine<T extends exercise$exerciseRoutineArgs<ExtArgs> = {}>(args?: Subset<T, exercise$exerciseRoutineArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$exerciseRoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -7103,9 +7103,9 @@ export namespace Prisma {
   }
 
   /**
-   * exercise.Progress
+   * exercise.progress
    */
-  export type exercise$ProgressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exercise$progressArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the progress
      */
@@ -7127,9 +7127,9 @@ export namespace Prisma {
   }
 
   /**
-   * exercise.Favorite
+   * exercise.favorite
    */
-  export type exercise$FavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type exercise$favoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the favorite
      */
@@ -8513,7 +8513,7 @@ export namespace Prisma {
     role?: EnumRolFilter<"user"> | $Enums.Rol
     progress?: ProgressListRelationFilter
     routine?: RoutineListRelationFilter
-    favorite?: FavoriteListRelationFilter
+    favorites?: FavoriteListRelationFilter
   }
 
   export type userOrderByWithRelationInput = {
@@ -8528,7 +8528,7 @@ export namespace Prisma {
     role?: SortOrder
     progress?: progressOrderByRelationAggregateInput
     routine?: routineOrderByRelationAggregateInput
-    favorite?: favoriteOrderByRelationAggregateInput
+    favorites?: favoriteOrderByRelationAggregateInput
   }
 
   export type userWhereUniqueInput = Prisma.AtLeast<{
@@ -8546,7 +8546,7 @@ export namespace Prisma {
     role?: EnumRolFilter<"user"> | $Enums.Rol
     progress?: ProgressListRelationFilter
     routine?: RoutineListRelationFilter
-    favorite?: FavoriteListRelationFilter
+    favorites?: FavoriteListRelationFilter
   }, "id" | "email">
 
   export type userOrderByWithAggregationInput = {
@@ -8735,6 +8735,7 @@ export namespace Prisma {
 
   export type favoriteWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    userId_exerciseId?: favoriteUserIdExerciseIdCompoundUniqueInput
     AND?: favoriteWhereInput | favoriteWhereInput[]
     OR?: favoriteWhereInput[]
     NOT?: favoriteWhereInput | favoriteWhereInput[]
@@ -8742,7 +8743,7 @@ export namespace Prisma {
     exerciseId?: IntFilter<"favorite"> | number
     user?: XOR<UserScalarRelationFilter, userWhereInput>
     exercise?: XOR<ExerciseScalarRelationFilter, exerciseWhereInput>
-  }, "id">
+  }, "id" | "userId_exerciseId">
 
   export type favoriteOrderByWithAggregationInput = {
     id?: SortOrder
@@ -8775,8 +8776,8 @@ export namespace Prisma {
     description?: StringFilter<"exercise"> | string
     executionSteps?: StringFilter<"exercise"> | string
     tips?: StringFilter<"exercise"> | string
-    Progress?: ProgressListRelationFilter
-    Favorite?: FavoriteListRelationFilter
+    progress?: ProgressListRelationFilter
+    favorite?: FavoriteListRelationFilter
     exerciseRoutine?: ExerciseRoutineListRelationFilter
   }
 
@@ -8788,8 +8789,8 @@ export namespace Prisma {
     description?: SortOrder
     executionSteps?: SortOrder
     tips?: SortOrder
-    Progress?: progressOrderByRelationAggregateInput
-    Favorite?: favoriteOrderByRelationAggregateInput
+    progress?: progressOrderByRelationAggregateInput
+    favorite?: favoriteOrderByRelationAggregateInput
     exerciseRoutine?: exerciseRoutineOrderByRelationAggregateInput
   }
 
@@ -8804,8 +8805,8 @@ export namespace Prisma {
     description?: StringFilter<"exercise"> | string
     executionSteps?: StringFilter<"exercise"> | string
     tips?: StringFilter<"exercise"> | string
-    Progress?: ProgressListRelationFilter
-    Favorite?: FavoriteListRelationFilter
+    progress?: ProgressListRelationFilter
+    favorite?: FavoriteListRelationFilter
     exerciseRoutine?: ExerciseRoutineListRelationFilter
   }, "id" | "name">
 
@@ -8909,7 +8910,7 @@ export namespace Prisma {
     role?: $Enums.Rol
     progress?: progressCreateNestedManyWithoutUserInput
     routine?: routineCreateNestedManyWithoutUserInput
-    favorite?: favoriteCreateNestedManyWithoutUserInput
+    favorites?: favoriteCreateNestedManyWithoutUserInput
   }
 
   export type userUncheckedCreateInput = {
@@ -8924,7 +8925,7 @@ export namespace Prisma {
     role?: $Enums.Rol
     progress?: progressUncheckedCreateNestedManyWithoutUserInput
     routine?: routineUncheckedCreateNestedManyWithoutUserInput
-    favorite?: favoriteUncheckedCreateNestedManyWithoutUserInput
+    favorites?: favoriteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type userUpdateInput = {
@@ -8939,7 +8940,7 @@ export namespace Prisma {
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     progress?: progressUpdateManyWithoutUserNestedInput
     routine?: routineUpdateManyWithoutUserNestedInput
-    favorite?: favoriteUpdateManyWithoutUserNestedInput
+    favorites?: favoriteUpdateManyWithoutUserNestedInput
   }
 
   export type userUncheckedUpdateInput = {
@@ -8954,7 +8955,7 @@ export namespace Prisma {
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     progress?: progressUncheckedUpdateManyWithoutUserNestedInput
     routine?: routineUncheckedUpdateManyWithoutUserNestedInput
-    favorite?: favoriteUncheckedUpdateManyWithoutUserNestedInput
+    favorites?: favoriteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type userCreateManyInput = {
@@ -9122,7 +9123,7 @@ export namespace Prisma {
   }
 
   export type favoriteCreateInput = {
-    user: userCreateNestedOneWithoutFavoriteInput
+    user: userCreateNestedOneWithoutFavoritesInput
     exercise: exerciseCreateNestedOneWithoutFavoriteInput
   }
 
@@ -9133,7 +9134,7 @@ export namespace Prisma {
   }
 
   export type favoriteUpdateInput = {
-    user?: userUpdateOneRequiredWithoutFavoriteNestedInput
+    user?: userUpdateOneRequiredWithoutFavoritesNestedInput
     exercise?: exerciseUpdateOneRequiredWithoutFavoriteNestedInput
   }
 
@@ -9166,8 +9167,8 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Progress?: progressCreateNestedManyWithoutExerciseInput
-    Favorite?: favoriteCreateNestedManyWithoutExerciseInput
+    progress?: progressCreateNestedManyWithoutExerciseInput
+    favorite?: favoriteCreateNestedManyWithoutExerciseInput
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutExerciseInput
   }
 
@@ -9179,8 +9180,8 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
-    Favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
+    progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
+    favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput
   }
 
@@ -9191,8 +9192,8 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Progress?: progressUpdateManyWithoutExerciseNestedInput
-    Favorite?: favoriteUpdateManyWithoutExerciseNestedInput
+    progress?: progressUpdateManyWithoutExerciseNestedInput
+    favorite?: favoriteUpdateManyWithoutExerciseNestedInput
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutExerciseNestedInput
   }
 
@@ -9204,8 +9205,8 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
-    Favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
+    progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
+    favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
@@ -9650,6 +9651,11 @@ export namespace Prisma {
     totalExercise?: SortOrder
   }
 
+  export type favoriteUserIdExerciseIdCompoundUniqueInput = {
+    userId: string
+    exerciseId: number
+  }
+
   export type favoriteCountOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
@@ -10007,9 +10013,9 @@ export namespace Prisma {
     deleteMany?: exerciseRoutineScalarWhereInput | exerciseRoutineScalarWhereInput[]
   }
 
-  export type userCreateNestedOneWithoutFavoriteInput = {
-    create?: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
-    connectOrCreate?: userCreateOrConnectWithoutFavoriteInput
+  export type userCreateNestedOneWithoutFavoritesInput = {
+    create?: XOR<userCreateWithoutFavoritesInput, userUncheckedCreateWithoutFavoritesInput>
+    connectOrCreate?: userCreateOrConnectWithoutFavoritesInput
     connect?: userWhereUniqueInput
   }
 
@@ -10019,12 +10025,12 @@ export namespace Prisma {
     connect?: exerciseWhereUniqueInput
   }
 
-  export type userUpdateOneRequiredWithoutFavoriteNestedInput = {
-    create?: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
-    connectOrCreate?: userCreateOrConnectWithoutFavoriteInput
-    upsert?: userUpsertWithoutFavoriteInput
+  export type userUpdateOneRequiredWithoutFavoritesNestedInput = {
+    create?: XOR<userCreateWithoutFavoritesInput, userUncheckedCreateWithoutFavoritesInput>
+    connectOrCreate?: userCreateOrConnectWithoutFavoritesInput
+    upsert?: userUpsertWithoutFavoritesInput
     connect?: userWhereUniqueInput
-    update?: XOR<XOR<userUpdateToOneWithWhereWithoutFavoriteInput, userUpdateWithoutFavoriteInput>, userUncheckedUpdateWithoutFavoriteInput>
+    update?: XOR<XOR<userUpdateToOneWithWhereWithoutFavoritesInput, userUpdateWithoutFavoritesInput>, userUncheckedUpdateWithoutFavoritesInput>
   }
 
   export type exerciseUpdateOneRequiredWithoutFavoriteNestedInput = {
@@ -10549,7 +10555,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     role?: $Enums.Rol
     routine?: routineCreateNestedManyWithoutUserInput
-    favorite?: favoriteCreateNestedManyWithoutUserInput
+    favorites?: favoriteCreateNestedManyWithoutUserInput
   }
 
   export type userUncheckedCreateWithoutProgressInput = {
@@ -10563,7 +10569,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     role?: $Enums.Rol
     routine?: routineUncheckedCreateNestedManyWithoutUserInput
-    favorite?: favoriteUncheckedCreateNestedManyWithoutUserInput
+    favorites?: favoriteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type userCreateOrConnectWithoutProgressInput = {
@@ -10578,7 +10584,7 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Favorite?: favoriteCreateNestedManyWithoutExerciseInput
+    favorite?: favoriteCreateNestedManyWithoutExerciseInput
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutExerciseInput
   }
 
@@ -10590,7 +10596,7 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
+    favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput
   }
 
@@ -10621,7 +10627,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     routine?: routineUpdateManyWithoutUserNestedInput
-    favorite?: favoriteUpdateManyWithoutUserNestedInput
+    favorites?: favoriteUpdateManyWithoutUserNestedInput
   }
 
   export type userUncheckedUpdateWithoutProgressInput = {
@@ -10635,7 +10641,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     routine?: routineUncheckedUpdateManyWithoutUserNestedInput
-    favorite?: favoriteUncheckedUpdateManyWithoutUserNestedInput
+    favorites?: favoriteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type exerciseUpsertWithoutProgressInput = {
@@ -10656,7 +10662,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Favorite?: favoriteUpdateManyWithoutExerciseNestedInput
+    favorite?: favoriteUpdateManyWithoutExerciseNestedInput
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutExerciseNestedInput
   }
 
@@ -10668,7 +10674,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
+    favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
@@ -10683,7 +10689,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     role?: $Enums.Rol
     progress?: progressCreateNestedManyWithoutUserInput
-    favorite?: favoriteCreateNestedManyWithoutUserInput
+    favorites?: favoriteCreateNestedManyWithoutUserInput
   }
 
   export type userUncheckedCreateWithoutRoutineInput = {
@@ -10697,7 +10703,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     role?: $Enums.Rol
     progress?: progressUncheckedCreateNestedManyWithoutUserInput
-    favorite?: favoriteUncheckedCreateNestedManyWithoutUserInput
+    favorites?: favoriteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type userCreateOrConnectWithoutRoutineInput = {
@@ -10750,7 +10756,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     progress?: progressUpdateManyWithoutUserNestedInput
-    favorite?: favoriteUpdateManyWithoutUserNestedInput
+    favorites?: favoriteUpdateManyWithoutUserNestedInput
   }
 
   export type userUncheckedUpdateWithoutRoutineInput = {
@@ -10764,7 +10770,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     role?: EnumRolFieldUpdateOperationsInput | $Enums.Rol
     progress?: progressUncheckedUpdateManyWithoutUserNestedInput
-    favorite?: favoriteUncheckedUpdateManyWithoutUserNestedInput
+    favorites?: favoriteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type exerciseRoutineUpsertWithWhereUniqueWithoutRoutineInput = {
@@ -10794,7 +10800,7 @@ export namespace Prisma {
     repetitions?: IntFilter<"exerciseRoutine"> | number
   }
 
-  export type userCreateWithoutFavoriteInput = {
+  export type userCreateWithoutFavoritesInput = {
     id?: string
     name: string
     email: string
@@ -10808,7 +10814,7 @@ export namespace Prisma {
     routine?: routineCreateNestedManyWithoutUserInput
   }
 
-  export type userUncheckedCreateWithoutFavoriteInput = {
+  export type userUncheckedCreateWithoutFavoritesInput = {
     id?: string
     name: string
     email: string
@@ -10822,9 +10828,9 @@ export namespace Prisma {
     routine?: routineUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type userCreateOrConnectWithoutFavoriteInput = {
+  export type userCreateOrConnectWithoutFavoritesInput = {
     where: userWhereUniqueInput
-    create: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
+    create: XOR<userCreateWithoutFavoritesInput, userUncheckedCreateWithoutFavoritesInput>
   }
 
   export type exerciseCreateWithoutFavoriteInput = {
@@ -10834,7 +10840,7 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Progress?: progressCreateNestedManyWithoutExerciseInput
+    progress?: progressCreateNestedManyWithoutExerciseInput
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutExerciseInput
   }
 
@@ -10846,7 +10852,7 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
+    progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutExerciseInput
   }
 
@@ -10855,18 +10861,18 @@ export namespace Prisma {
     create: XOR<exerciseCreateWithoutFavoriteInput, exerciseUncheckedCreateWithoutFavoriteInput>
   }
 
-  export type userUpsertWithoutFavoriteInput = {
-    update: XOR<userUpdateWithoutFavoriteInput, userUncheckedUpdateWithoutFavoriteInput>
-    create: XOR<userCreateWithoutFavoriteInput, userUncheckedCreateWithoutFavoriteInput>
+  export type userUpsertWithoutFavoritesInput = {
+    update: XOR<userUpdateWithoutFavoritesInput, userUncheckedUpdateWithoutFavoritesInput>
+    create: XOR<userCreateWithoutFavoritesInput, userUncheckedCreateWithoutFavoritesInput>
     where?: userWhereInput
   }
 
-  export type userUpdateToOneWithWhereWithoutFavoriteInput = {
+  export type userUpdateToOneWithWhereWithoutFavoritesInput = {
     where?: userWhereInput
-    data: XOR<userUpdateWithoutFavoriteInput, userUncheckedUpdateWithoutFavoriteInput>
+    data: XOR<userUpdateWithoutFavoritesInput, userUncheckedUpdateWithoutFavoritesInput>
   }
 
-  export type userUpdateWithoutFavoriteInput = {
+  export type userUpdateWithoutFavoritesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
@@ -10880,7 +10886,7 @@ export namespace Prisma {
     routine?: routineUpdateManyWithoutUserNestedInput
   }
 
-  export type userUncheckedUpdateWithoutFavoriteInput = {
+  export type userUncheckedUpdateWithoutFavoritesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
@@ -10912,7 +10918,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Progress?: progressUpdateManyWithoutExerciseNestedInput
+    progress?: progressUpdateManyWithoutExerciseNestedInput
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutExerciseNestedInput
   }
 
@@ -10924,7 +10930,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
+    progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
@@ -10954,7 +10960,7 @@ export namespace Prisma {
   }
 
   export type favoriteCreateWithoutExerciseInput = {
-    user: userCreateNestedOneWithoutFavoriteInput
+    user: userCreateNestedOneWithoutFavoritesInput
   }
 
   export type favoriteUncheckedCreateWithoutExerciseInput = {
@@ -11074,8 +11080,8 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Progress?: progressCreateNestedManyWithoutExerciseInput
-    Favorite?: favoriteCreateNestedManyWithoutExerciseInput
+    progress?: progressCreateNestedManyWithoutExerciseInput
+    favorite?: favoriteCreateNestedManyWithoutExerciseInput
   }
 
   export type exerciseUncheckedCreateWithoutExerciseRoutineInput = {
@@ -11086,8 +11092,8 @@ export namespace Prisma {
     description: string
     executionSteps: string
     tips: string
-    Progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
-    Favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
+    progress?: progressUncheckedCreateNestedManyWithoutExerciseInput
+    favorite?: favoriteUncheckedCreateNestedManyWithoutExerciseInput
   }
 
   export type exerciseCreateOrConnectWithoutExerciseRoutineInput = {
@@ -11143,8 +11149,8 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Progress?: progressUpdateManyWithoutExerciseNestedInput
-    Favorite?: favoriteUpdateManyWithoutExerciseNestedInput
+    progress?: progressUpdateManyWithoutExerciseNestedInput
+    favorite?: favoriteUpdateManyWithoutExerciseNestedInput
   }
 
   export type exerciseUncheckedUpdateWithoutExerciseRoutineInput = {
@@ -11155,8 +11161,8 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     executionSteps?: StringFieldUpdateOperationsInput | string
     tips?: StringFieldUpdateOperationsInput | string
-    Progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
-    Favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
+    progress?: progressUncheckedUpdateManyWithoutExerciseNestedInput
+    favorite?: favoriteUncheckedUpdateManyWithoutExerciseNestedInput
   }
 
   export type progressCreateManyUserInput = {
@@ -11317,7 +11323,7 @@ export namespace Prisma {
   }
 
   export type favoriteUpdateWithoutExerciseInput = {
-    user?: userUpdateOneRequiredWithoutFavoriteNestedInput
+    user?: userUpdateOneRequiredWithoutFavoritesNestedInput
   }
 
   export type favoriteUncheckedUpdateWithoutExerciseInput = {

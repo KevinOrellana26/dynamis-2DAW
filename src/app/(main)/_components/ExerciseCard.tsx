@@ -13,6 +13,7 @@ import {
 } from "../exercises/exercises.actions";
 import { ExerciseT } from "../exercises/_core/exercises.definitions";
 import ExerciseDialog from "../exercises/_components/ExerciseDialog";
+import { RiLoader2Fill } from "react-icons/ri";
 
 type ExerciseCardProps = {
   exercise: ExerciseT;
@@ -21,18 +22,17 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
   const { id: exerciseId, name, muscle, videoImgUrl, isFavorite } = exercise;
 
   /*AÑADIR  FAVORITO*/
-  const { execute, isPending } = useServerAction(addExerciseToFavoritesAction, {
-    onSuccess: ({ data: message }) => {
-      toast.success(message);
-    },
-    onError: ({ err }) => {
-      toast.error(err.message);
-    },
-  });
-
-  const handleExerciseToFavorites = async (exerciseId: number) => {
-    execute({ exerciseId });
-  };
+  const { execute, isPending: isAdding } = useServerAction(
+    addExerciseToFavoritesAction,
+    {
+      onSuccess: ({ data: message }) => {
+        toast.success(message);
+      },
+      onError: ({ err }) => {
+        toast.error(err.message);
+      },
+    }
+  );
 
   /* ELIMINAR FAVORITO*/
   const { execute: executeRemove, isPending: isRemoving } = useServerAction(
@@ -47,8 +47,12 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
     }
   );
 
-  const handleRemoveExerciseFromFavorites = async (exerciseId: number) => {
-    executeRemove({ exerciseId });
+  const handleFavoriteClick = async () => {
+    if (isFavorite) {
+      await executeRemove({ exerciseId });
+    } else {
+      await execute({ exerciseId });
+    }
   };
 
   return (
@@ -73,18 +77,20 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
           <Button
             variant={"link"}
             size="icon"
-            onClick={() =>
-              isFavorite
-                ? handleRemoveExerciseFromFavorites(exerciseId)
-                : handleExerciseToFavorites(exerciseId)
-            }
+            onClick={handleFavoriteClick}
+            disabled={isAdding || isRemoving}
             className={"h-8 w-8 hover:text-accent-blue"}
           >
-            <Star
-              className={`h-5 w-5 ${
-                isFavorite ? "text-accent-blue fill-accent-blue" : ""
-              }`}
-            />
+            {isAdding || isRemoving ? (
+              <RiLoader2Fill className="h-5 w-5 animate-spin" />
+            ) : (
+              <Star
+                className={`h-5 w-5 ${
+                  isFavorite ? "text-accent-blue fill-accent-blue" : ""
+                }`}
+              />
+            )}
+
             <span className="sr-only">
               {isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
             </span>
@@ -92,10 +98,11 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        {/* <Button className="w-full" variant={"secondary"}>
-          Ver detalles
-        </Button> */}
-        <ExerciseDialog exercise={exercise} className="w-full" />
+        <ExerciseDialog
+          exercise={exercise}
+          className="w-full"
+          disabled={isAdding || isRemoving}
+        />
       </CardFooter>
     </Card>
   );

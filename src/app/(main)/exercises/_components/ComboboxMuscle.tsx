@@ -29,6 +29,10 @@ const options = [
   { value: "pantorrilla", label: "Pantorrilla" },
 ];
 
+const sortedOptions = options.toSorted((a, b) =>
+  a.label.localeCompare(b.label)
+);
+
 type ComboboxMuscleProps = {
   value: string;
   className?: string;
@@ -52,7 +56,7 @@ export default function ComboboxMuscle(params: ComboboxMuscleProps) {
           )}
         >
           {value
-            ? options.find((option) => option.value === value)?.label
+            ? sortedOptions.find((option) => option.value === value)?.label
             : "Selecciona Músculo"}
           <ChevronsUpDown className="opacity-50" />
         </Button>
@@ -63,7 +67,7 @@ export default function ComboboxMuscle(params: ComboboxMuscleProps) {
           <CommandList>
             <CommandEmpty>Músculo no encontrado.</CommandEmpty>
             <CommandGroup>
-              {options.map((option) => (
+              {sortedOptions.map((option) => (
                 <CommandItem
                   className="cursor-pointer"
                   key={option.value}

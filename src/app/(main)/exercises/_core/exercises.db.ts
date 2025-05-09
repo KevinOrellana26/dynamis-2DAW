@@ -17,7 +17,7 @@ export type GetExercisesOptionsT = {
 };
 
 export type ExerciseWithFavoriteT = Prisma.exerciseGetPayload<{
-  include: { Favorite: true };
+  include: { favorite: true };
 }>;
 
 // * AND: combina múltiples condiciones, solo se devolverán los
@@ -40,7 +40,7 @@ export const getExercises = async (
           { muscle: { contains: selectedMuscle, mode: "insensitive" } },
           showFavorites && userId
             ? {
-                Favorite: {
+                favorite: {
                   some: {
                     userId: userId, // Filtra por el userId en la tabla de favoritos
                   },
@@ -50,7 +50,7 @@ export const getExercises = async (
         ],
       },
       include: {
-        Favorite: true,
+        favorite: true,
       },
       skip, // página los resultados
       take, //numero de resultados por página
@@ -60,7 +60,9 @@ export const getExercises = async (
       const message = "No se han encontrado ejercicios.";
       throw new NotFoundError(message);
     }
-    const parsedExercises = exercises.map(exerciseAdapter);
+    const parsedExercises = exercises.map((exercises) =>
+      exerciseAdapter(exercises)
+    );
 
     return parsedExercises;
   } catch (error) {
@@ -83,7 +85,7 @@ export const getTotalItems = async (
           { muscle: { contains: selectedMuscle, mode: "insensitive" } },
           showFavorites && userId
             ? {
-                Favorite: {
+                favorite: {
                   some: {
                     userId: userId,
                   },

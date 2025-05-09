@@ -4,7 +4,7 @@ import PaginationComponent from "@/app/(main)/_components/Pagination";
 import RoutineCard from "@/app/(main)/_components/RoutineCard";
 import Routine from "@/mocks/routines.json";
 import React, { useState } from "react";
-import SearchButton from "../_components/SearchButton";
+// import SearchButton from "../_components/SearchButton";
 import SearchInput from "../_components/SearchInput";
 
 export default function RutinaPage() {
@@ -51,12 +51,12 @@ export default function RutinaPage() {
         onSubmit={handleSubmit}
         className="flex flex-row justify-between gap-2 my-8"
       >
-        <SearchInput
+        {/* <SearchInput
           placeholder="full body, upper body, lower body..."
           value={inputSearch}
           onChange={setInputSearch}
-        />
-        <SearchButton />
+        /> */}
+        {/* <SearchButton /> */}
       </form>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -66,7 +66,7 @@ export default function RutinaPage() {
       </div>
 
       <footer className="mt-4">
-        <PaginationComponent />
+        {/* <PaginationComponent /> */}
       </footer>
     </div>
   );

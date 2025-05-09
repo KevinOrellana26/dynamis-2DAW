@@ -14,7 +14,12 @@ import {
 
 export const getExercisesUseCase = async (
   options: GetExercisesOptionsT & { page: number; limit: number }
-): Promise<{ exercises: ExerciseT[]; totalPages: number }> => {
+): Promise<{
+  exercises: ExerciseT[];
+  totalPages: number;
+  page: number;
+  pageSize: number;
+}> => {
   const { query, selectedMuscle, showFavorites, userId, page, limit } = options;
 
   const totalItems = await getTotalItems({
@@ -32,6 +37,8 @@ export const getExercisesUseCase = async (
     return {
       exercises: [],
       totalPages,
+      page,
+      pageSize: limit,
     };
   }
 
@@ -43,14 +50,9 @@ export const getExercisesUseCase = async (
     skip: (page - 1) * limit,
     take: limit,
   });
-  console.log("Ejercicios", exercises);
-  return { exercises, totalPages };
+  // console.log("Ejercicios", exercises);
+  return { exercises, totalPages, page, pageSize: limit };
 };
-
-// export const getExercisesUseCase = async (options: GetExercisesOptionsT) => {
-//   const exercises = await getExercises(options);
-//   return exercises;
-// };
 
 // * Caso de uso que añade un ejercicio a la lista de favoritos del usuario.
 export const addExerciseToFavoritesUseCase = async (

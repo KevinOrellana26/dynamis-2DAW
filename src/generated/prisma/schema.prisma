@@ -30,7 +30,7 @@ model user {
   role          Rol        @default(USER)
   progress      progress[]
   routine       routine[]
-  favorite      favorite[]
+  favorites     favorite[]
 }
 
 model progress {
@@ -63,6 +63,8 @@ model favorite {
   // fecha_creacion DateTime? @default(now()) @db.Date
   user       user     @relation(fields: [userId], references: [id])
   exercise   exercise @relation(fields: [exerciseId], references: [id])
+
+  @@unique([userId, exerciseId]) //para evitar duplicados en la relación
 }
 
 model exercise {
@@ -73,8 +75,8 @@ model exercise {
   description     String
   executionSteps  String
   tips            String
-  Progress        progress[]
-  Favorite        favorite[]
+  progress        progress[]
+  favorite        favorite[]
   exerciseRoutine exerciseRoutine[]
 }
 

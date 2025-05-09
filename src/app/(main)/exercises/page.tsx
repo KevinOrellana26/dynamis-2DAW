@@ -1,62 +1,20 @@
-import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
-import ErrorMessage from "@/app/(main)/_components/ErrorMessage";
-import { handleAsync } from "@/app/_shared/errors";
 import type { SearchParams } from "nuqs/server";
+import { Suspense } from "react";
+import ExerciseList, {
+  ExerciseListSkeleton,
+} from "../_components/ExerciseList";
 import ExercisesFilters from "./_components/ExercisesFilters";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
-import { getExercisesUseCase } from "./_core/exercises.use-cases";
-import Pagination from "../_components/Pagination";
-import ExerciseCard from "../_components/ExerciseCard";
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
 };
 
 export default async function ExercisePage({ ...props }: PageProps) {
-  //Obtener la sesión del usuario
-  const session = await getSession();
-  const userId = session.userId;
-  const searchParamsResolved = await props.searchParams;
-  const limit = 8;
-
   //Obtener los parámetros de búsqueda de la URL
   const searchParams = await props.searchParams;
   const parsedSearchParams = exercisesSearchParamsCache.parse(searchParams);
-  const { query, selectedMuscle, showFavorites, page = 1 } = parsedSearchParams;
-
-  //Pasar los parámetros al caso de uso
-  const [data, error] = await handleAsync(() =>
-    getExercisesUseCase({
-      query,
-      selectedMuscle,
-      showFavorites,
-      userId: showFavorites ? userId : undefined,
-      page: Number(page),
-      limit, //numero de resultados por página
-    })
-  );
-
-  // Verifica si data es null, el mensaje de error lo trae desde la BD.
-  if (!data) {
-    return (
-      <ErrorMessage
-        message={error?.message || "Ocurrió un error al cargar los ejercicios."}
-      />
-    );
-  }
-
-  const { exercises, totalPages } = data;
-
-  // verificar si la página actual no sea mayor al total de páginas
-  const isValidPage = page > 0 && page <= totalPages;
-
-  if (exercises.length === 0) {
-    return <ErrorMessage message="No se encontraron ejercicios." />;
-  }
-
-  if (!isValidPage) {
-    return <ErrorMessage message={`La página ${page} no existe.`} />;
-  }
+  const { query, selectedMuscle, showFavorites, page } = parsedSearchParams;
 
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
@@ -74,16 +32,13 @@ export default async function ExercisePage({ ...props }: PageProps) {
       <ExercisesFilters />
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
-        {exercises.map((exercise) => (
-          <div key={exercise.id}>
-            <ExerciseCard exercise={exercise} />
-          </div>
-        ))}
-      </div>
-
-      {/* Paginación */}
-      {isValidPage && <Pagination totalPages={totalPages} showPage={2} />}
+      <Suspense
+        fallback={<ExerciseListSkeleton />}
+        key={`${query}${selectedMuscle}${showFavorites}${page}`}
+        // key={new Date().toString()}
+      >
+        <ExerciseList />
+      </Suspense>
     </div>
   );
 }

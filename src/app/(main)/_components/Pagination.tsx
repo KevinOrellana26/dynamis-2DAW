@@ -18,7 +18,7 @@ type PaginationProps = {
 };
 
 export default function PaginationComponent(params: PaginationProps) {
-  const { totalPages, classname, showPage=3 } = params;
+  const { totalPages, classname, showPage = 3 } = params;
   const options = { ...DEFAULT_SEARCH_PARAMS_OPTIONS };
   //nuqs sincroniza el estado de la página actual en la URL
   const [pageState, setPageState] = useQueryStates(
@@ -35,6 +35,8 @@ export default function PaginationComponent(params: PaginationProps) {
     setPageState({ page: newPage });
   };
 
+  const array = Array.from({ length: Math.min(totalPages, showPage) });
+
   return (
     <Pagination className={classname}>
       <PaginationContent>
@@ -47,8 +49,8 @@ export default function PaginationComponent(params: PaginationProps) {
           </PaginationItem>
         )}
 
-        {/* Números de páginas, solo muestra las primeras 5 páginas */}
-        {Array.from({ length: Math.min(totalPages, showPage) }, (_, i) => {
+        {/* Números de páginas, solo muestra las primeras 3 páginas */}
+        {array.map((_, i) => {
           const pageNumber = i + 1;
           return (
             <PaginationItem key={pageNumber}>
