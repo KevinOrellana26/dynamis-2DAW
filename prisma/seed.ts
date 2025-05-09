@@ -276,7 +276,7 @@ async function seedRoutines() {
         name: "Rutina Full Body",
         description: "Entrenamiento completo para todo el cuerpo",
         duration: 60,
-        totalExercise: 4,
+        totalExercises: 4,
       },
     ],
   });

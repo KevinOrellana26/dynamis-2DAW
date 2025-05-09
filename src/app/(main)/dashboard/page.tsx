@@ -1,6 +1,6 @@
-import RoutineCard from "@/app/(main)/_components/RoutineCard";
+import RoutineCard from "@/app/(main)/routines/_components/RoutineCard";
 import ExerciseCard from "@/app/(main)/exercises/_components/ExerciseCard";
-import NewRoutineButton from "@/components/NewRoutineButton";
+import NewRoutineButton from "@/app/(main)/routines/_components/NewRoutineButton";
 import Exercise from "@/mocks/exercise.json";
 import Routines from "@/mocks/routines.json";
 import RegisterCard from "../_components/RegisterCard";
@@ -81,9 +81,9 @@ export default async function DashboardPage() {
       </h1>
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {latestRoutines.map((routine) => (
+        {/* {latestRoutines.map((routine) => (
           <RoutineCard key={routine.id} {...routine} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

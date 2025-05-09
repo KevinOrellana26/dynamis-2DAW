@@ -1,6 +1,5 @@
 import {
-  DEFAULT_SEARCH_PARAMS_OPTIONS,
-  SearchParamsOptionsT,
+  DEFAULT_SEARCH_PARAMS_OPTIONS
 } from "@/config/params.config";
 import {
   createSearchParamsCache,

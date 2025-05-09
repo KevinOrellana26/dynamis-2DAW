@@ -48,10 +48,10 @@ model routine {
   id              Int               @id @default(autoincrement())
   userId          String
   name            String
-  createdAt       DateTime?         @default(now()) @db.Date
+  createdAt       DateTime          @default(now()) @db.Date
   description     String
   duration        Int
-  totalExercise   Int
+  totalExercises  Int
   user            user              @relation(fields: [userId], references: [id])
   exerciseRoutine exerciseRoutine[]
 }

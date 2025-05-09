@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,27 +8,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Routine } from "@/generated/prisma";
-import { Clock, Dumbbell, Calendar } from "lucide-react";
+import { Calendar, Clock, Dumbbell } from "lucide-react";
+import { RoutineT } from "../_core/routines.definitions";
 
-interface RoutineCardProps
-  extends Pick<
-    Routine,
-    "name" | "description" | "totalExercise" | "duration" | "createdAt"
-  > {
-  onEdit?: () => void;
-  onView?: () => void;
-}
+type RoutineCardProps = {
+  routine: RoutineT;
+};
 
-export default function ({
-  name,
-  description,
-  totalExercise,
-  duration,
-  createdAt,
-  onEdit,
-  onView,
-}: RoutineCardProps) {
+export default function ({ routine }: RoutineCardProps) {
+  const {
+    id: routineId,
+    name,
+    duration,
+    createdAt,
+    description,
+    totalExercises,
+  } = routine;
+
   const formattedDate = createdAt
     ? new Date(createdAt).toLocaleDateString("es-ES", {
         day: "numeric",
@@ -36,10 +33,15 @@ export default function ({
       })
     : "Fecha no disponible";
 
+  //Añadir a rutina
+  //Eliminar de rutina
+  {
+    console.log("total: ", totalExercises);
+  }
   return (
     <Card className="h-full flex flex-col gap-5 pt-6">
       <CardHeader>
-        <CardTitle className="text-lg">{name}</CardTitle>
+        <CardTitle className="text-3xl">{name}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
 
@@ -47,7 +49,7 @@ export default function ({
         <div className="flex items-center gap-2">
           <Dumbbell className="h-4 w-4 text-blue-900" />
           <span>
-            {totalExercise} ejercicio{totalExercise !== 1 ? "s" : ""}
+            {totalExercises} ejercicio{totalExercises !== 1 ? "s" : ""}
           </span>
         </div>
 
@@ -55,7 +57,7 @@ export default function ({
           <Clock className="h-4 w-4 text-blue-900" />
           <span>{duration}</span>
         </div>
-        
+
         <div className="flex items-center gap-2">
           <Calendar className="h-4 w-4 text-blue-900" />
           <span>Creado el: {formattedDate}</span>
@@ -66,17 +68,17 @@ export default function ({
           variant={"secondary"}
           size="sm"
           className="cursor-pointer"
-          onClick={onEdit}
+          // onClick={onEdit}
         >
-          Editar
+          Editar rutina
         </Button>
         <Button
           variant="dynamis"
           size="sm"
-          onClick={onView}
+          // onClick={onView}
           className=" cursor-pointer"
         >
-          Ver detalles
+          Ver ejercicios
         </Button>
       </CardFooter>
     </Card>

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rutina",
+  title: "Rutinas",
 };
 
 export default function RoutineLayout({

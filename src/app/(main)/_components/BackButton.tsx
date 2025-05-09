@@ -29,7 +29,7 @@ export default function BackButton(params: BackButtonProps) {
       onClick={handleBackButton}
       isPending={isPending}
     >
-      {isPending ? "Volviendo..." : "Volver"}
+      {isPending ? "Volviendo" : "Volver"}
     </Button>
   );
 }

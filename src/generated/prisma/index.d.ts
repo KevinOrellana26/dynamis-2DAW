@@ -3788,13 +3788,13 @@ export namespace Prisma {
   export type RoutineAvgAggregateOutputType = {
     id: number | null
     duration: number | null
-    totalExercise: number | null
+    totalExercises: number | null
   }
 
   export type RoutineSumAggregateOutputType = {
     id: number | null
     duration: number | null
-    totalExercise: number | null
+    totalExercises: number | null
   }
 
   export type RoutineMinAggregateOutputType = {
@@ -3804,7 +3804,7 @@ export namespace Prisma {
     createdAt: Date | null
     description: string | null
     duration: number | null
-    totalExercise: number | null
+    totalExercises: number | null
   }
 
   export type RoutineMaxAggregateOutputType = {
@@ -3814,7 +3814,7 @@ export namespace Prisma {
     createdAt: Date | null
     description: string | null
     duration: number | null
-    totalExercise: number | null
+    totalExercises: number | null
   }
 
   export type RoutineCountAggregateOutputType = {
@@ -3824,7 +3824,7 @@ export namespace Prisma {
     createdAt: number
     description: number
     duration: number
-    totalExercise: number
+    totalExercises: number
     _all: number
   }
 
@@ -3832,13 +3832,13 @@ export namespace Prisma {
   export type RoutineAvgAggregateInputType = {
     id?: true
     duration?: true
-    totalExercise?: true
+    totalExercises?: true
   }
 
   export type RoutineSumAggregateInputType = {
     id?: true
     duration?: true
-    totalExercise?: true
+    totalExercises?: true
   }
 
   export type RoutineMinAggregateInputType = {
@@ -3848,7 +3848,7 @@ export namespace Prisma {
     createdAt?: true
     description?: true
     duration?: true
-    totalExercise?: true
+    totalExercises?: true
   }
 
   export type RoutineMaxAggregateInputType = {
@@ -3858,7 +3858,7 @@ export namespace Prisma {
     createdAt?: true
     description?: true
     duration?: true
-    totalExercise?: true
+    totalExercises?: true
   }
 
   export type RoutineCountAggregateInputType = {
@@ -3868,7 +3868,7 @@ export namespace Prisma {
     createdAt?: true
     description?: true
     duration?: true
-    totalExercise?: true
+    totalExercises?: true
     _all?: true
   }
 
@@ -3962,10 +3962,10 @@ export namespace Prisma {
     id: number
     userId: string
     name: string
-    createdAt: Date | null
+    createdAt: Date
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
     _count: RoutineCountAggregateOutputType | null
     _avg: RoutineAvgAggregateOutputType | null
     _sum: RoutineSumAggregateOutputType | null
@@ -3994,7 +3994,7 @@ export namespace Prisma {
     createdAt?: boolean
     description?: boolean
     duration?: boolean
-    totalExercise?: boolean
+    totalExercises?: boolean
     user?: boolean | userDefaultArgs<ExtArgs>
     exerciseRoutine?: boolean | routine$exerciseRoutineArgs<ExtArgs>
     _count?: boolean | RoutineCountOutputTypeDefaultArgs<ExtArgs>
@@ -4007,7 +4007,7 @@ export namespace Prisma {
     createdAt?: boolean
     description?: boolean
     duration?: boolean
-    totalExercise?: boolean
+    totalExercises?: boolean
     user?: boolean | userDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
 
@@ -4018,7 +4018,7 @@ export namespace Prisma {
     createdAt?: boolean
     description?: boolean
     duration?: boolean
-    totalExercise?: boolean
+    totalExercises?: boolean
     user?: boolean | userDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
 
@@ -4029,10 +4029,10 @@ export namespace Prisma {
     createdAt?: boolean
     description?: boolean
     duration?: boolean
-    totalExercise?: boolean
+    totalExercises?: boolean
   }
 
-  export type routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "createdAt" | "description" | "duration" | "totalExercise", ExtArgs["result"]["routine"]>
+  export type routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "createdAt" | "description" | "duration" | "totalExercises", ExtArgs["result"]["routine"]>
   export type routineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | userDefaultArgs<ExtArgs>
     exerciseRoutine?: boolean | routine$exerciseRoutineArgs<ExtArgs>
@@ -4055,10 +4055,10 @@ export namespace Prisma {
       id: number
       userId: string
       name: string
-      createdAt: Date | null
+      createdAt: Date
       description: string
       duration: number
-      totalExercise: number
+      totalExercises: number
     }, ExtArgs["result"]["routine"]>
     composites: {}
   }
@@ -4490,7 +4490,7 @@ export namespace Prisma {
     readonly createdAt: FieldRef<"routine", 'DateTime'>
     readonly description: FieldRef<"routine", 'String'>
     readonly duration: FieldRef<"routine", 'Int'>
-    readonly totalExercise: FieldRef<"routine", 'Int'>
+    readonly totalExercises: FieldRef<"routine", 'Int'>
   }
     
 
@@ -8357,7 +8357,7 @@ export namespace Prisma {
     createdAt: 'createdAt',
     description: 'description',
     duration: 'duration',
-    totalExercise: 'totalExercise'
+    totalExercises: 'totalExercises'
   };
 
   export type RoutineScalarFieldEnum = (typeof RoutineScalarFieldEnum)[keyof typeof RoutineScalarFieldEnum]
@@ -8651,10 +8651,10 @@ export namespace Prisma {
     id?: IntFilter<"routine"> | number
     userId?: StringFilter<"routine"> | string
     name?: StringFilter<"routine"> | string
-    createdAt?: DateTimeNullableFilter<"routine"> | Date | string | null
+    createdAt?: DateTimeFilter<"routine"> | Date | string
     description?: StringFilter<"routine"> | string
     duration?: IntFilter<"routine"> | number
-    totalExercise?: IntFilter<"routine"> | number
+    totalExercises?: IntFilter<"routine"> | number
     user?: XOR<UserScalarRelationFilter, userWhereInput>
     exerciseRoutine?: ExerciseRoutineListRelationFilter
   }
@@ -8663,10 +8663,10 @@ export namespace Prisma {
     id?: SortOrder
     userId?: SortOrder
     name?: SortOrder
-    createdAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
     description?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
     user?: userOrderByWithRelationInput
     exerciseRoutine?: exerciseRoutineOrderByRelationAggregateInput
   }
@@ -8678,10 +8678,10 @@ export namespace Prisma {
     NOT?: routineWhereInput | routineWhereInput[]
     userId?: StringFilter<"routine"> | string
     name?: StringFilter<"routine"> | string
-    createdAt?: DateTimeNullableFilter<"routine"> | Date | string | null
+    createdAt?: DateTimeFilter<"routine"> | Date | string
     description?: StringFilter<"routine"> | string
     duration?: IntFilter<"routine"> | number
-    totalExercise?: IntFilter<"routine"> | number
+    totalExercises?: IntFilter<"routine"> | number
     user?: XOR<UserScalarRelationFilter, userWhereInput>
     exerciseRoutine?: ExerciseRoutineListRelationFilter
   }, "id">
@@ -8690,10 +8690,10 @@ export namespace Prisma {
     id?: SortOrder
     userId?: SortOrder
     name?: SortOrder
-    createdAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
     description?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
     _count?: routineCountOrderByAggregateInput
     _avg?: routineAvgOrderByAggregateInput
     _max?: routineMaxOrderByAggregateInput
@@ -8708,10 +8708,10 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"routine"> | number
     userId?: StringWithAggregatesFilter<"routine"> | string
     name?: StringWithAggregatesFilter<"routine"> | string
-    createdAt?: DateTimeNullableWithAggregatesFilter<"routine"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"routine"> | Date | string
     description?: StringWithAggregatesFilter<"routine"> | string
     duration?: IntWithAggregatesFilter<"routine"> | number
-    totalExercise?: IntWithAggregatesFilter<"routine"> | number
+    totalExercises?: IntWithAggregatesFilter<"routine"> | number
   }
 
   export type favoriteWhereInput = {
@@ -9054,10 +9054,10 @@ export namespace Prisma {
 
   export type routineCreateInput = {
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
     user: userCreateNestedOneWithoutRoutineInput
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutRoutineInput
   }
@@ -9066,19 +9066,19 @@ export namespace Prisma {
     id?: number
     userId: string
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput
   }
 
   export type routineUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
     user?: userUpdateOneRequiredWithoutRoutineNestedInput
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutRoutineNestedInput
   }
@@ -9087,10 +9087,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput
   }
 
@@ -9098,28 +9098,28 @@ export namespace Prisma {
     id?: number
     userId: string
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
   }
 
   export type routineUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
   export type routineUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
   export type favoriteCreateInput = {
@@ -9616,13 +9616,13 @@ export namespace Prisma {
     createdAt?: SortOrder
     description?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
   }
 
   export type routineAvgOrderByAggregateInput = {
     id?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
   }
 
   export type routineMaxOrderByAggregateInput = {
@@ -9632,7 +9632,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     description?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
   }
 
   export type routineMinOrderByAggregateInput = {
@@ -9642,13 +9642,13 @@ export namespace Prisma {
     createdAt?: SortOrder
     description?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
   }
 
   export type routineSumOrderByAggregateInput = {
     id?: SortOrder
     duration?: SortOrder
-    totalExercise?: SortOrder
+    totalExercises?: SortOrder
   }
 
   export type favoriteUserIdExerciseIdCompoundUniqueInput = {
@@ -10416,20 +10416,20 @@ export namespace Prisma {
 
   export type routineCreateWithoutUserInput = {
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutRoutineInput
   }
 
   export type routineUncheckedCreateWithoutUserInput = {
     id?: number
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput
   }
 
@@ -10513,10 +10513,10 @@ export namespace Prisma {
     id?: IntFilter<"routine"> | number
     userId?: StringFilter<"routine"> | string
     name?: StringFilter<"routine"> | string
-    createdAt?: DateTimeNullableFilter<"routine"> | Date | string | null
+    createdAt?: DateTimeFilter<"routine"> | Date | string
     description?: StringFilter<"routine"> | string
     duration?: IntFilter<"routine"> | number
-    totalExercise?: IntFilter<"routine"> | number
+    totalExercises?: IntFilter<"routine"> | number
   }
 
   export type favoriteUpsertWithWhereUniqueWithoutUserInput = {
@@ -11051,10 +11051,10 @@ export namespace Prisma {
 
   export type routineCreateWithoutExerciseRoutineInput = {
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
     user: userCreateNestedOneWithoutRoutineInput
   }
 
@@ -11062,10 +11062,10 @@ export namespace Prisma {
     id?: number
     userId: string
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
   }
 
   export type routineCreateOrConnectWithoutExerciseRoutineInput = {
@@ -11114,10 +11114,10 @@ export namespace Prisma {
 
   export type routineUpdateWithoutExerciseRoutineInput = {
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
     user?: userUpdateOneRequiredWithoutRoutineNestedInput
   }
 
@@ -11125,10 +11125,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
   export type exerciseUpsertWithoutExerciseRoutineInput = {
@@ -11176,10 +11176,10 @@ export namespace Prisma {
   export type routineCreateManyUserInput = {
     id?: number
     name: string
-    createdAt?: Date | string | null
+    createdAt?: Date | string
     description: string
     duration: number
-    totalExercise: number
+    totalExercises: number
   }
 
   export type favoriteCreateManyUserInput = {
@@ -11212,30 +11212,30 @@ export namespace Prisma {
 
   export type routineUpdateWithoutUserInput = {
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutRoutineNestedInput
   }
 
   export type routineUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput
   }
 
   export type routineUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
     duration?: IntFieldUpdateOperationsInput | number
-    totalExercise?: IntFieldUpdateOperationsInput | number
+    totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
   export type favoriteUpdateWithoutUserInput = {

@@ -4,7 +4,7 @@ import { getSession } from "./app/(auth)/_core/auth/auth.actions";
 //1. Esoecificar las rutas publicas y privadas
 const publicRoutes = ["/", "/login"];
 //! TODO: PROTEGER LAS RUTAS HIJAS (DE EXERCISE)
-const protectedRoutes = ["/dashboard", "/progress", "/routine", "/exercises"];
+const protectedRoutes = ["/dashboard", "/progress", "/routines", "/exercises"];
 
 export default async function middleware(req: NextRequest) {
   //2. Revisar si la ruta está protegida
