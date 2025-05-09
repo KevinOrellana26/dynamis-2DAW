@@ -8,6 +8,7 @@ import { handleAsync } from "@/app/_shared/errors";
 import { exercisesSearchParamsCache } from "../_core/exercises.search-params";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 import ExerciseCardSkeleton from "./ExerciseCardSkeleton";
+import PaginationSkeleton from "../../_components/PaginationSkeleton";
 
 export default async function ExerciseList() {
   const searchParams = exercisesSearchParamsCache.all();
@@ -66,7 +67,7 @@ export default async function ExerciseList() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
         {sortedExercises.map((exercise) => (
-          <ExerciseCard exercise={exercise} key={exercise.id}/>
+          <ExerciseCard exercise={exercise} key={exercise.id} />
         ))}
       </div>
 
@@ -75,15 +76,20 @@ export default async function ExerciseList() {
     </>
   );
 }
+
 export function ExerciseListSkeleton() {
   const count = 8;
   const array = Array.from({ length: count });
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
-      {array.map((_, index) => {
-        return <ExerciseCardSkeleton key={index} />;
-      })}
-    </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">
+        {array.map((_, index) => {
+          return <ExerciseCardSkeleton key={index} />;
+        })}
+      </div>
+
+      <PaginationSkeleton />
+    </>
   );
 }
