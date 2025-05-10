@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +10,8 @@ import {
 import { Calendar, Clock, Dumbbell } from "lucide-react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
 import RoutineDialog from "./RoutineDialog";
+import { Delete } from "@/config/theme.config";
+import DeleteRoutineDialog from "./DeleteRoutineDialog";
 
 type RoutineCardProps = {
   routine: RoutineWithExerciseT;
@@ -34,14 +35,14 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
       })
     : "Fecha no disponible";
 
-  //Añadir a rutina
-  //Eliminar de rutina
-
   return (
     <Card className="h-full flex flex-col gap-5 pt-6">
-      <CardHeader>
-        <CardTitle className="text-3xl">{name}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+      <CardHeader className="flex flex-row items-start justify-between gap-4">
+        <div className="space-y-2">
+          <CardTitle className="text-3xl">{name}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </div>
+        <DeleteRoutineDialog />
       </CardHeader>
 
       <CardContent className="grid gap-3">
@@ -62,17 +63,9 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
           <span>Creado el: {formattedDate}</span>
         </div>
       </CardContent>
-      <CardFooter className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <CardFooter>
         {/* <EditRoutineDialog/> */}
-        <RoutineDialog className="cursor-pointer" routine={routine} />
-        <Button
-          variant="dynamis"
-          size="sm"
-          // onClick={onView}
-          className=" cursor-pointer"
-        >
-          Ver ejercicios
-        </Button>
+        <RoutineDialog className="w-full" routine={routine} />
       </CardFooter>
     </Card>
   );

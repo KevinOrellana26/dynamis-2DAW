@@ -5,6 +5,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Delete } from "@/config/theme.config";
 import { Calendar, Clock, Dumbbell } from "lucide-react";
 import React from "react";
 
@@ -12,12 +13,14 @@ export default function RoutineCardSkeleton() {
   return (
     <Card className="h-full flex flex-col gap-5 pt-6">
       {/* Header */}
-      <CardHeader className="space-y-2">
+      <CardHeader className="flex flex-row items-start justify-between gap-4">
         {/* Título */}
-        <Skeleton className="h-8 w-3/4" />
-
-        {/* Descripción */}
-        <Skeleton className="h-4 w-2/4" />
+        <div className="space-y-2 w-full">
+          <Skeleton className="h-9 w-3/4" />
+          {/* Descripción */}
+          <Skeleton className="h-4 w-2/4" />
+        </div>
+        <Delete className="size-6 text-accent" />
       </CardHeader>
 
       {/* Content */}
@@ -43,11 +46,9 @@ export default function RoutineCardSkeleton() {
       </CardContent>
 
       {/* Footer */}
-      <CardFooter className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {/* Botón Editar */}
+      <CardFooter>
+        {/* Botón Ver ejercicios */}
         <Skeleton className="h-9 w-full rounded-md" />
-        {/* Botón Ver detalles */}
-        <Skeleton className="h-9 w-full rounded-md" />{" "}
       </CardFooter>
     </Card>
   );

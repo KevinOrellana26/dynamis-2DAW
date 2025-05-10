@@ -58,7 +58,7 @@ export default async function RoutineList() {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-7">
         {sortedRoutines.map((routine) => (
           <RoutineCard routine={routine} key={routine.id} />
         ))}
@@ -75,7 +75,7 @@ export function RoutineListSkeleton() {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-7">
         {array.map((_, index) => {
           return <RoutineCardSkeleton key={index} />;
         })}
