@@ -31,7 +31,7 @@ export default function RemoveExerciseInRoutineDialog() {
         <AlertDialogHeader>
           <AlertDialogTitle className="text-accent-blue">¿Estas seguro?</AlertDialogTitle>
           <AlertDialogDescription>
-            Esta acción no se puede deshacer. Si decides continuar, eliminarías
+            Esta acción no se puede deshacer. Si decides continuar, eliminarás
             el ejercicio de la rutina.
           </AlertDialogDescription>
         </AlertDialogHeader>

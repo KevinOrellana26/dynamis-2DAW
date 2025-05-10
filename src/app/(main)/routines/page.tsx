@@ -17,7 +17,7 @@ export default async function RoutinePage({ ...props }: PageProps) {
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
       {/* Titulo y botón añadir rutina */}
-      <header className="flex flex-col items-center md:flex-row md:justify-between">
+      <header className="flex flex-col items-center md:flex-row md:justify-between gap-4">
         <div className="text-center md:text-left">
           <h1 className="font-semibold text-4xl md:text-6xl text-accent-blue dark:text-accent-blue">
             Mis Rutinas

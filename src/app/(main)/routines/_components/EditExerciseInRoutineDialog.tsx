@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import React from "react";
+import React, { useState } from "react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -22,8 +23,10 @@ import { Edit } from "@/config/theme.config";
 // };
 
 export default function EditExerciseInRoutineDialog() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="dynamis" size={"icon"}>
           <Edit className="size-4" />
@@ -60,7 +63,11 @@ export default function EditExerciseInRoutineDialog() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" variant={"dynamis"}>
+          <Button
+            type="submit"
+            variant={"dynamis"}
+            onClick={() => setIsDialogOpen(false)}
+          >
             Guardar los cambios
           </Button>
         </DialogFooter>
