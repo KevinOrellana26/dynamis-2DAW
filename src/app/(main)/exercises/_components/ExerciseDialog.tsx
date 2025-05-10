@@ -46,7 +46,6 @@ export default function ExerciseDialog({
           </DialogTitle>
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        {/* <DialogOverlay/> */}
         <div className="relative aspect-video rounded-lg overflow-hidden my-4 shadow-md">
           <Image
             alt={`Ejercicio ${name}`}
@@ -57,26 +56,6 @@ export default function ExerciseDialog({
           />
         </div>
         <ScrollArea className="px-6 h-[250px]">
-          {/* AÑADIR ESTRELLA */}
-          {/* <Button
-              variant={"link"}
-              size="icon"
-              onClick={() =>
-              isFavorite
-              ? handleRemoveExerciseFromFavorites(exerciseId)
-              : handleExerciseToFavorites(exerciseId)
-              }
-              className={"h-8 w-8 hover:text-accent-blue"}
-              >
-              <Star
-              className={`h-5 w-5 ${
-                isFavorite ? "text-accent-blue fill-accent-blue" : ""
-                }`}
-                />
-                <span className="sr-only">
-                {isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
-                </span>
-                </Button> */}
           <div className="mb-2">
             <strong className="text-accent-blue">Músculo:</strong>{" "}
             <span>{muscle}</span>

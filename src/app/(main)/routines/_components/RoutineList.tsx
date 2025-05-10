@@ -1,4 +1,3 @@
-import React from "react";
 import { routinesSearchParamsCache } from "../_core/routines.search-params";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
 import { handleAsync } from "@/app/_shared/errors";

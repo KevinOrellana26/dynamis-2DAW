@@ -47,26 +47,8 @@ export default function ExercisesFilters() {
           }));
         }}
       />
-
-      {/* Select con musculos */}
-      {/* <SelectMuscle
-        value={selectedMuscle}
-        className="w-full flex-1"
-        onValueChange={(value) => {
-          setExercisesFilters((prev) => ({
-            ...prev,
-            selectedMuscle: value,
-            page: 1,
-          }));
-        }}
-        onClear={() =>
-          setExercisesFilters((prev) => ({
-            ...prev,
-            selectedMuscle: "",
-            page: 1,
-          }))
-        }
-      /> */}
+      
+      {/* ComboBox */}
       <ComboboxMuscle
         value={selectedMuscle}
         className="w-full flex-1"

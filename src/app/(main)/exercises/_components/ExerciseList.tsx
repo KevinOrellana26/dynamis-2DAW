@@ -1,14 +1,12 @@
-import React from "react";
-import { getExercisesUseCase } from "../_core/exercises.use-cases";
-import ExerciseCard from "./ExerciseCard";
+import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
+import { handleAsync } from "@/app/_shared/errors";
 import ErrorMessage from "../../_components/ErrorMessage";
 import Pagination from "../../_components/Pagination";
-import { Skeleton } from "@/components/ui/skeleton";
-import { handleAsync } from "@/app/_shared/errors";
-import { exercisesSearchParamsCache } from "../_core/exercises.search-params";
-import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
-import ExerciseCardSkeleton from "./ExerciseCardSkeleton";
 import PaginationSkeleton from "../../_components/PaginationSkeleton";
+import { exercisesSearchParamsCache } from "../_core/exercises.search-params";
+import { getExercisesUseCase } from "../_core/exercises.use-cases";
+import ExerciseCard from "./ExerciseCard";
+import ExerciseCardSkeleton from "./ExerciseCardSkeleton";
 
 export default async function ExerciseList() {
   const searchParams = exercisesSearchParamsCache.all();

@@ -9,13 +9,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Calendar, Clock, Dumbbell } from "lucide-react";
-import { RoutineT } from "../_core/routines.definitions";
+import { RoutineWithExerciseT } from "../_core/routines.db";
+import RoutineDialog from "./RoutineDialog";
 
 type RoutineCardProps = {
-  routine: RoutineT;
+  routine: RoutineWithExerciseT;
 };
 
-export default function ({ routine }: RoutineCardProps) {
+export default function RoutineCard({ routine }: RoutineCardProps) {
   const {
     id: routineId,
     name,
@@ -35,9 +36,7 @@ export default function ({ routine }: RoutineCardProps) {
 
   //Añadir a rutina
   //Eliminar de rutina
-  {
-    console.log("total: ", totalExercises);
-  }
+
   return (
     <Card className="h-full flex flex-col gap-5 pt-6">
       <CardHeader>
@@ -64,14 +63,8 @@ export default function ({ routine }: RoutineCardProps) {
         </div>
       </CardContent>
       <CardFooter className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <Button
-          variant={"secondary"}
-          size="sm"
-          className="cursor-pointer"
-          // onClick={onEdit}
-        >
-          Editar rutina
-        </Button>
+        {/* <EditRoutineDialog/> */}
+        <RoutineDialog className="cursor-pointer" routine={routine} />
         <Button
           variant="dynamis"
           size="sm"

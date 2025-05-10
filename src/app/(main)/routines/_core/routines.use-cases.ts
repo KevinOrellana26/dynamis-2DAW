@@ -1,14 +1,19 @@
 import {
+  // addExerciseToRoutine,
   getRoutines,
   GetRoutinesOptionsT,
   getTotalRoutines,
+  removeExerciseFromRoutine,
+  RoutineWithExerciseT,
 } from "./routines.db";
-import { RoutineT } from "./routines.definitions";
+import {
+  removeExercisesToRoutineT
+} from "./routines.types";
 
 export const getRoutinesUseCase = async (
   options: GetRoutinesOptionsT & { page: number; limit: number }
 ): Promise<{
-  routines: RoutineT[];
+  routines: RoutineWithExerciseT[];
   totalPages: number;
   page: number;
   pageSize: number;
@@ -20,7 +25,7 @@ export const getRoutinesUseCase = async (
     userId,
   });
   console.log(`El usuario tiene ${totalRoutines} rutinas.`);
-  
+
   const totalPages = Math.ceil(totalRoutines / limit);
   if (page < 1 || page > totalPages) {
     return {
@@ -43,4 +48,17 @@ export const getRoutinesUseCase = async (
 };
 
 //* Caso de uso que añade un ejercicio a la rutina del usuario.
+// export const addExerciseToRoutineUseCase = async (
+//   options: addExercisesToRoutineT
+// ): Promise<string> => {
+//   const message = await addExerciseToRoutine(options);
+//   return message;
+// };
+
 //* Caso de uso que elimina un ejercicio de la rutina del usuario.
+export const removeExerciseFromRoutineUseCase = async (
+  options: removeExercisesToRoutineT
+): Promise<string> => {
+  const message = await removeExerciseFromRoutine(options);
+  return message;
+};
