@@ -2,7 +2,7 @@ import { NotFoundError } from "@/app/_shared/errors";
 import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
 import { delay } from "@/lib/utils";
-import { CreateRoutineUseCaseInput } from "./routines.types";
+import { CreateRoutineUseCaseInput, RemoveRoutineT } from "./routines.types";
 
 export const createRoutine = async (params: CreateRoutineUseCaseInput) => {
   const { name, userId, description } = params;
@@ -124,6 +124,30 @@ export const getTotalRoutines = async (
   } catch (error) {
     console.log("Error al obtener rutinas para este usuario: ", error);
     const message = "No se han encontrado rutinas para este usuario.";
+    throw new Error(message);
+  }
+};
+
+export const removeRoutine = async (params: RemoveRoutineT) => {
+  const { userId, routineId } = params;
+  try {
+    const routine = await prisma.routine.delete({
+      where: {
+        id: routineId,
+        userId: userId,
+      },
+    });
+
+    if (!routine) {
+      const message = "No se ha podido eliminar la rutina.";
+      return message;
+    }
+
+    const message = "Rutina eliminada correctamente.";
+    return message;
+  } catch (error) {
+    console.log("Error", error);
+    const message = "No se ha podido eliminar la rutina.";
     throw new Error(message);
   }
 };

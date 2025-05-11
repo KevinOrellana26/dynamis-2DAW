@@ -4,10 +4,12 @@ import { authedProcedure } from "@/app/(auth)/_core/user/user.procedures";
 import { revalidatePath } from "next/cache";
 import {
   CreateRoutineFormSchema,
+  RemoveRoutineSchema,
   UpdateExerciseToRoutineSchema,
 } from "./_core/routines.types";
 import {
   createRoutineUseCase,
+  removeRoutineUseCase,
   updateExerciseToRoutineUseCase,
 } from "./_core/routines.use-cases";
 
@@ -24,6 +26,17 @@ export const createRoutineAction = authedProcedure
 
     revalidatePath("/routines");
 
+    return response;
+  });
+
+export const removeRoutineAction = authedProcedure
+  .createServerAction()
+  .input(RemoveRoutineSchema.omit({ userId: true }))
+  .handler(async ({ ctx, input }) => {
+    const { user } = ctx;
+    const { userId } = user;
+    const response = await removeRoutineUseCase({ ...input, userId });
+    revalidatePath("/routines");
     return response;
   });
 

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,9 +8,8 @@ import {
 } from "@/components/ui/card";
 import { Calendar, Clock, Dumbbell } from "lucide-react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
-import RoutineDialog from "./RoutineDialog";
-import { Delete } from "@/config/theme.config";
 import DeleteRoutineDialog from "./DeleteRoutineDialog";
+import RoutineDialog from "./RoutineDialog";
 
 type RoutineCardProps = {
   routine: RoutineWithExerciseT;
@@ -42,7 +40,7 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
           <CardTitle className="text-3xl">{name}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </div>
-        <DeleteRoutineDialog />
+        <DeleteRoutineDialog routine={routine} />
       </CardHeader>
 
       <CardContent className="grid gap-3">
@@ -64,7 +62,6 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        {/* <EditRoutineDialog/> */}
         <RoutineDialog className="w-full" routine={routine} />
       </CardFooter>
     </Card>

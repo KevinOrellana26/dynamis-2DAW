@@ -12,11 +12,32 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Delete } from "@/config/theme.config";
+import { RemoveRoutineSchema } from "../_core/routines.types";
+import { useServerAction } from "zsa-react";
+import { toast } from "sonner";
+import { removeRoutineAction } from "../routines.actions";
+import { RoutineT } from "../_core/routines.definitions";
 
-export default function DeleteRoutineDialog() {
-  const handleDelete = () => {
+type DeleteRoutineDialogParams = {
+  routine: RoutineT;
+};
+
+export default function DeleteRoutineDialog(params: DeleteRoutineDialogParams) {
+  const { id: routineId } = params.routine;
+  const { execute, isPending } = useServerAction(removeRoutineAction, {
+    onSuccess: ({ data: message }) => {
+      toast.success(message);
+    },
+    onError: ({ err }) => {
+      toast.error(err.message);
+    },
+  });
+
+  const handleDeleteRoutine = async () => {
     console.log("Borrando rutina");
+    await execute({ routineId });
   };
+
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -42,7 +63,7 @@ export default function DeleteRoutineDialog() {
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction
             className="bg-accent-blue hover:bg-blue-800"
-            onClick={handleDelete}
+            onClick={handleDeleteRoutine}
           >
             Continuar
           </AlertDialogAction>

@@ -39,6 +39,14 @@ export type CreateRoutineUseCaseInput = CreateRoutineFormT & {
 };
 
 //--------------------------------------------------------------------------------------------------------------
+//Eliminar rutina
+export const RemoveRoutineSchema = z.object({
+  userId: z.string(),
+  routineId: z.number(),
+});
+export type RemoveRoutineT = z.infer<typeof RemoveRoutineSchema>;
+
+//--------------------------------------------------------------------------------------------------------------
 //Añadir ejercicio a rutina
 export const AddExerciseToRoutineSchema = z.object({
   userId: z.string(),

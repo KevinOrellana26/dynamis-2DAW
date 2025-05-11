@@ -4,10 +4,11 @@ import {
   getRoutines,
   GetRoutinesOptionsT,
   getTotalRoutines,
+  removeRoutine,
   // removeExerciseFromRoutine,
   RoutineWithExerciseT,
 } from "./routines.db";
-import { CreateRoutineUseCaseInput } from "./routines.types";
+import { CreateRoutineUseCaseInput, RemoveRoutineT } from "./routines.types";
 
 export const createRoutineUseCase = async (
   params: CreateRoutineUseCaseInput
@@ -51,6 +52,13 @@ export const getRoutinesUseCase = async (
 
   console.log("Rutinas", JSON.stringify(routines, null, 2));
   return { routines, totalPages, page, pageSize: limit };
+};
+
+export const removeRoutineUseCase = async (
+  options: RemoveRoutineT
+): Promise<string> => {
+  const message = await removeRoutine(options);
+  return message;
 };
 
 //* Caso de uso que añade un ejercicio a la rutina del usuario.
