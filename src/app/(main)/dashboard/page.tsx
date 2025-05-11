@@ -1,6 +1,6 @@
 import RoutineCard from "@/app/(main)/routines/_components/RoutineCard";
 import ExerciseCard from "@/app/(main)/exercises/_components/ExerciseCard";
-import NewRoutineButton from "@/app/(main)/routines/_components/NewRoutineButton";
+import NewRoutineButton from "@/app/(main)/routines/_components/CreateRoutineButtonDialog";
 import Exercise from "@/mocks/exercise.json";
 import Routines from "@/mocks/routines.json";
 import RegisterCard from "../_components/RegisterCard";

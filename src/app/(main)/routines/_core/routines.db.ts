@@ -1,13 +1,46 @@
-import { prisma } from "@/lib/prisma";
 import { NotFoundError } from "@/app/_shared/errors";
 import { Prisma } from "@/generated/prisma";
-// import {
-//   addExercisesToRoutineT,
-//   removeExercisesToRoutineT,
-// } from "@/app/(main)/routines/_core/routines.types";
+import { prisma } from "@/lib/prisma";
 import { delay } from "@/lib/utils";
-import { addExerciseToFavoritesT } from "../../exercises/_core/exercises.types";
-import { removeExercisesToRoutineT } from "./routines.types";
+import { CreateRoutineUseCaseInput } from "./routines.types";
+
+export const createRoutine = async (params: CreateRoutineUseCaseInput) => {
+  const { name, userId, description } = params;
+  try {
+    const existingRoutine = await prisma.routine.findFirst({
+      where: {
+        name,
+        userId,
+      },
+    });
+
+    if (existingRoutine) {
+      const message = "Ya existe una rutina con ese nombre.";
+      throw new Error(message);
+    }
+
+    const routine = await prisma.routine.create({
+      data: {
+        userId: userId,
+        name: name,
+        description: description || "",
+        duration: 0,
+        totalExercises: 0,
+      },
+    });
+
+    if (!routine) {
+      const message = "No se ha podido crear la rutina.";
+      throw new Error(message);
+    }
+    const message = `Rutina "${routine.name}" creada correctamente.`;
+    return message;
+  } catch (error) {
+    console.log("Error", error);
+    const message = "No se ha podido crear la rutina.";
+    throw new Error(message);
+  }
+};
 
 export type GetRoutinesOptionsT = {
   query?: string;
@@ -119,27 +152,27 @@ export const getTotalRoutines = async (
 // };
 
 //Eliminar ejercicio de rutina
-export const removeExerciseFromRoutine = async (
-  params: removeExercisesToRoutineT
-) => {
-  const { exerciseId, userId } = params;
-  try {
-    const exercise = await prisma.exerciseRoutine.deleteMany({
-      where: {
-        exerciseId: exerciseId,
-      },
-    });
+// export const removeExerciseFromRoutine = async (
+//   params: removeExercisesToRoutineT
+// ) => {
+//   const { exerciseId, userId } = params;
+//   try {
+//     const exercise = await prisma.exerciseRoutine.deleteMany({
+//       where: {
+//         exerciseId: exerciseId,
+//       },
+//     });
 
-    if (!exercise) {
-      const message = "No se ha podido eliminar el ejercicio de favoritos.";
-      return message;
-    }
+//     if (!exercise) {
+//       const message = "No se ha podido eliminar el ejercicio de favoritos.";
+//       return message;
+//     }
 
-    const message = "Ejercicio eliminado de la rutina.";
-    return message;
-  } catch (error) {
-    console.log("Error", error);
-    const message = "No se ha podido eliminar el ejercicio de la rutina.";
-    throw new Error(message);
-  }
-};
+//     const message = "Ejercicio eliminado de la rutina.";
+//     return message;
+//   } catch (error) {
+//     console.log("Error", error);
+//     const message = "No se ha podido eliminar el ejercicio de la rutina.";
+//     throw new Error(message);
+//   }
+// };

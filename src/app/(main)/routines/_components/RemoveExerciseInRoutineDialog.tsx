@@ -14,10 +14,26 @@ import {
 import { Button } from "@/components/ui/button";
 import { Delete } from "@/config/theme.config";
 import React from "react";
+import { useServerAction } from "zsa-react";
+// import { removeExerciseFromRoutineAction } from "../routines.actions";
+import { toast } from "sonner";
 
 export default function RemoveExerciseInRoutineDialog() {
-  const handleDelete = () => {
-    console.log("borrando ejercicio");
+  // ELIMINAR EJERCICIO DE LA RUTINA
+  // const { execute: removeExercise, isPending: isDeleting } = useServerAction(
+  //   removeExerciseFromRoutineAction,
+  //   {
+  //     onSuccess: ({ data: message }) => {
+  //       toast.success(message);
+  //     },
+  //     onError: ({ err }) => {
+  //       toast.error(err.message);
+  //     },
+  //   }
+  // );
+
+  const handleRemoveExerciseToRoutine = async () => {
+    // await execute({ exerciseId });
   };
 
   return (
@@ -29,7 +45,9 @@ export default function RemoveExerciseInRoutineDialog() {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-accent-blue">¿Estas seguro?</AlertDialogTitle>
+          <AlertDialogTitle className="text-accent-blue">
+            ¿Estas seguro?
+          </AlertDialogTitle>
           <AlertDialogDescription>
             Esta acción no se puede deshacer. Si decides continuar, eliminarás
             el ejercicio de la rutina.
@@ -37,7 +55,10 @@ export default function RemoveExerciseInRoutineDialog() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
-          <AlertDialogAction className="bg-accent-blue hover:bg-blue-800" onClick={handleDelete}>
+          <AlertDialogAction
+            className="bg-accent-blue hover:bg-blue-800"
+            onClick={handleRemoveExerciseToRoutine}
+          >
             Continuar
           </AlertDialogAction>
         </AlertDialogFooter>

@@ -29,11 +29,3 @@ export const exercisesSearchParams = {
 export const exercisesSearchParamsCache = createSearchParamsCache( 
   exercisesSearchParams
 );
-
-//MANEJAR LA PAGINACION
-// export const paginationSearchParams = {
-//   page: parseAsInteger.withDefault(1).withOptions(options),
-// };
-// export const paginationSearchParamsCache = createSearchParamsCache(
-//   paginationSearchParams
-// );

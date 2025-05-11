@@ -18,9 +18,6 @@ export const UserSchema = z.object({
     )
 })
 
-// export const SignInSchema = UserSchema.pick({ email: true, password: true });
-// export type SignInT = z.infer<typeof SignInSchema>;
-
 // ESQUEMA Y TIPO PARA REGISTRO
 export const RegisterSchema = UserSchema.pick({
     email: true,

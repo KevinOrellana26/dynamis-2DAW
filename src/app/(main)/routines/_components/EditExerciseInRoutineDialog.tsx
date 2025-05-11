@@ -2,20 +2,21 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogOverlay,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import React, { useState } from "react";
-import { RoutineWithExerciseT } from "../_core/routines.db";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Edit } from "@/config/theme.config";
+import { toast } from "sonner";
+import { useServerAction } from "zsa-react";
+import {
+  updateExerciseToRoutineAction
+} from "../routines.actions";
 
 // type EditExerciseInRoutineDialogParams = {
 //   className?: string;
@@ -23,10 +24,28 @@ import { Edit } from "@/config/theme.config";
 // };
 
 export default function EditExerciseInRoutineDialog() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  // const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  // EDITAR DATOS DEL EJERCICIO EN LA RUTINA
+  const { execute, isPending: isUpdating } = useServerAction(
+    updateExerciseToRoutineAction,
+    {
+      onSuccess: ({ data: message }) => {
+        toast.success(message);
+      },
+      onError: ({ err }) => {
+        toast.error(err.message);
+      },
+    }
+  );
+
+  const handleUpdateExerciseData = async () => {
+    // await execute({ exerciseId });
+  };
 
   return (
-    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+    // <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+    <Dialog>
       <DialogTrigger asChild>
         <Button variant="dynamis" size={"icon"}>
           <Edit className="size-4" />
@@ -66,9 +85,10 @@ export default function EditExerciseInRoutineDialog() {
           <Button
             type="submit"
             variant={"dynamis"}
-            onClick={() => setIsDialogOpen(false)}
+            onClick={() => handleUpdateExerciseData}
+            disabled={isUpdating}
           >
-            Guardar los cambios
+            {isUpdating ? "Guardando los cambios" : "Guardar los cambios"}
           </Button>
         </DialogFooter>
       </DialogContent>

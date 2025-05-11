@@ -37,7 +37,7 @@ export default function ExerciseDialog({
       </DialogTrigger>
 
       {/* Implementación del DialogOverlay */}
-      <DialogOverlay className="bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+      <DialogOverlay />
 
       <DialogContent>
         <DialogHeader className="text-center items-center">

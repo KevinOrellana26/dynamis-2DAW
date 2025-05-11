@@ -33,7 +33,7 @@ export default function RoutineDialog({
       </DialogTrigger>
 
       {/* Implementación del DialogOverlay */}
-      <DialogOverlay className="bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+      <DialogOverlay />
 
       <DialogContent className="w-full sm:max-w-3xl">
         <DialogHeader className="text-center items-center">

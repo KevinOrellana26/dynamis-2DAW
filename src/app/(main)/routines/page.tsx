@@ -1,9 +1,9 @@
+import CreateRoutineButtonDialog from "@/app/(main)/routines/_components/CreateRoutineButtonDialog";
 import { SearchParams } from "nuqs/server";
 import { Suspense } from "react";
 import RoutineFilters from "./_components/RoutineFilters";
 import RoutineList, { RoutineListSkeleton } from "./_components/RoutineList";
 import { routinesSearchParamsCache } from "./_core/routines.search-params";
-import NewRoutineButton from "@/app/(main)/routines/_components/NewRoutineButton";
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
@@ -28,7 +28,7 @@ export default async function RoutinePage({ ...props }: PageProps) {
         </div>
         {/* Solo para ADMIN */}
         <div>
-          <NewRoutineButton />
+          <CreateRoutineButtonDialog />
         </div>
       </header>
 
