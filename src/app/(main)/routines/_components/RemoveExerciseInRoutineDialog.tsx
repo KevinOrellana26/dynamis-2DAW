@@ -13,27 +13,35 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Delete } from "@/config/theme.config";
-import React from "react";
-import { useServerAction } from "zsa-react";
-// import { removeExerciseFromRoutineAction } from "../routines.actions";
 import { toast } from "sonner";
+import { useServerAction } from "zsa-react";
+import { deleteExerciseToRoutineAction } from "../routines.actions";
 
-export default function RemoveExerciseInRoutineDialog() {
+type RemoveExerciseInRoutineDialogProps = {
+  exerciseId: number;
+  routineId: number;
+};
+
+export default function RemoveExerciseInRoutineDialog(
+  params: RemoveExerciseInRoutineDialogProps
+) {
+  const { exerciseId, routineId } = params;
+
   // ELIMINAR EJERCICIO DE LA RUTINA
-  // const { execute: removeExercise, isPending: isDeleting } = useServerAction(
-  //   removeExerciseFromRoutineAction,
-  //   {
-  //     onSuccess: ({ data: message }) => {
-  //       toast.success(message);
-  //     },
-  //     onError: ({ err }) => {
-  //       toast.error(err.message);
-  //     },
-  //   }
-  // );
+  const { execute, isPending } = useServerAction(
+    deleteExerciseToRoutineAction,
+    {
+      onSuccess: ({ data: message }) => {
+        toast.success(message);
+      },
+      onError: ({ err }) => {
+        toast.error(err.message);
+      },
+    }
+  );
 
   const handleRemoveExerciseToRoutine = async () => {
-    // await execute({ exerciseId });
+    await execute({ exerciseId, routineId });
   };
 
   return (

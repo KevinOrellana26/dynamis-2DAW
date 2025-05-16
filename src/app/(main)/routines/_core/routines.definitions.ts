@@ -41,8 +41,31 @@ export type RemoveRoutineT = z.infer<typeof RemoveRoutineSchema>;
 //ESQUEMA Y TIPO PARA ACTUALIZAR UNA RUTINA
 export const UpdateExerciseToRoutineSchema = z.object({
   userId: z.string(),
-  exerciseId: z.string(),
+  exerciseId: z.number(),
+  routineId: z.number(),
+  series: z.number().min(1, { message: "La serie debe ser mayor a 0." }),
+  repetitions: z
+    .number()
+    .min(1, { message: "Las repeticiones deben ser mayores a 0." }),
 });
 export type UpdateExerciseToRoutineT = z.infer<
   typeof UpdateExerciseToRoutineSchema
+>;
+export const UpdateExerciseToRoutineFormSchema =
+  UpdateExerciseToRoutineSchema.omit({
+    userId: true,
+    exerciseId: true,
+    routineId: true,
+  });
+export type UpdateExerciseToRoutineFormT = z.infer<
+  typeof UpdateExerciseToRoutineFormSchema
+>;
+
+export const DeleteExerciseToRoutineSchema = z.object({
+  userId: z.string(),
+  exerciseId: z.number(),
+  routineId: z.number(),
+});
+export type DeleteExerciseToRoutineT = z.infer<
+  typeof DeleteExerciseToRoutineSchema
 >;

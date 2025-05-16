@@ -1,16 +1,20 @@
 import {
   createRoutine,
+  deleteExerciseToRoutine,
   getExercises,
   getRoutines,
   GetRoutinesOptionsT,
   getTotalRoutines,
   removeRoutine,
   RoutineWithExerciseT,
+  updateExerciseToRoutine,
 } from "./routines.db";
 import {
   CreateRoutineT,
+  DeleteExerciseToRoutineT,
   ExerciseT,
   RemoveRoutineT,
+  UpdateExerciseToRoutineT,
 } from "./routines.definitions";
 
 export const getExercisesUseCase = async (): Promise<ExerciseT[]> => {
@@ -79,9 +83,20 @@ export const removeRoutineUseCase = async (
 // };
 
 //* Caso de uso que edita los datos de un ejercicio en una rutina
-export const updateExerciseToRoutineUseCase = async () => {};
+export const updateExerciseToRoutineUseCase = async (
+  params: UpdateExerciseToRoutineT
+): Promise<string> => {
+  const message = await updateExerciseToRoutine(params);
+  return message;
+};
 
 //* Caso de uso que elimina un ejercicio de la rutina del usuario.
+export const deleteExerciseToRoutineUseCase = async (
+  params: DeleteExerciseToRoutineT
+): Promise<string> => {
+  const message = await deleteExerciseToRoutine(params);
+  return message;
+}
 // export const removeExerciseFromRoutineUseCase = async (
 //   options: RemoveExercisesToRoutineT
 // ): Promise<string> => {

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Card,
   CardContent,
@@ -11,19 +11,13 @@ import { Calendar, Dumbbell } from "lucide-react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
 import DeleteRoutineDialog from "./DeleteRoutineDialog";
 import RoutineDialog from "./RoutineDialog";
-import { useState } from "react";
 
 type RoutineCardProps = {
   routine: RoutineWithExerciseT;
 };
 
 export default function RoutineCard({ routine }: RoutineCardProps) {
-  const {
-    name,
-    createdAt,
-    description,
-    totalExercises,
-  } = routine;
+  const { name, createdAt, description, exerciseRoutine } = routine;
 
   const formattedDate = createdAt
     ? new Date(createdAt).toLocaleDateString("es-ES", {
@@ -46,9 +40,8 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
       <CardContent className="grid gap-3">
         <div className="flex items-center gap-2">
           <Dumbbell className="h-4 w-4 text-blue-900" />
-          <span>
-            {totalExercises} ejercicio{totalExercises !== 1 ? "s" : ""}
-          </span>
+          {exerciseRoutine.length}{" "}
+          <span>ejercicio{exerciseRoutine.length !== 1 ? "s" : ""}</span>
         </div>
         <div className="flex items-center gap-2">
           <Calendar className="h-4 w-4 text-blue-900" />
@@ -56,7 +49,7 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <RoutineDialog className="w-full" routine={routine}/>
+        <RoutineDialog className="w-full" routine={routine} />
       </CardFooter>
     </Card>
   );

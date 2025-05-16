@@ -8,11 +8,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { RoutineWithExerciseT } from "../_core/routines.db";
-import { Button } from "@/components/ui/button";
 import EditExerciseInRoutineDialog from "./EditExerciseInRoutineDialog";
 import RemoveExerciseInRoutineDialog from "./RemoveExerciseInRoutineDialog";
-import { Delete, Edit } from "@/config/theme.config";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 type ExercisesInRoutinesProps = {
   routine: RoutineWithExerciseT;
@@ -21,10 +18,10 @@ type ExercisesInRoutinesProps = {
 export default function ExercisesInRoutines({
   routine,
 }: ExercisesInRoutinesProps) {
-  const { exerciseRoutine, totalExercises } = routine;
+  const { exerciseRoutine } = routine;
   return (
     <Table>
-      <TableCaption>Total de Ejercicios: {totalExercises}</TableCaption>
+      <TableCaption>Total de Ejercicios: {exerciseRoutine.length}</TableCaption>
       <TableHeader className="sticky top-0 z-10 bg-background">
         <TableRow>
           <TableHead className="w-[100px] text-accent-blue font-bold">
@@ -60,8 +57,13 @@ export default function ExercisesInRoutines({
             </TableCell>
             <TableCell>
               <div className="flex flex-row gap-2 items-center justify-center">
-                <EditExerciseInRoutineDialog />
-                <RemoveExerciseInRoutineDialog />
+                <EditExerciseInRoutineDialog
+                  exerciseId={exerciseItem.exercise.id}
+                  series={exerciseItem.series}
+                  repetitions={exerciseItem.repetitions}
+                  routineId={routine.id}
+                />
+                <RemoveExerciseInRoutineDialog exerciseId={exerciseItem.exercise.id} routineId={routine.id}/>
               </div>
             </TableCell>
           </TableRow>
