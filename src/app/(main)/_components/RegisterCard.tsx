@@ -3,7 +3,7 @@ import React from "react";
 
 type RegisterCardT = {
   title: string;
-  num: number;
+  num: number | string;
 }
 
 function RegisterCard({ title, num }: RegisterCardT) {

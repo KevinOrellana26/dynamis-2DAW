@@ -53,37 +53,6 @@ export default function EditExerciseInRoutineDialog(
           series={series}
           routineId={routineId}
         />
-        {/* <div className="grid gap-4 py-2"> */}
-        {/* CONTROLAR QUE NO SEA UN NÚMERO NEGATIVO */}
-        {/* <div className="grid grid-cols-4 items-center gap-2">
-            <Label
-              htmlFor="name"
-              className="text-right text-accent-blue font-bold"
-            >
-              Series
-            </Label>
-            <Input id="name" type="number" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-2">
-            <Label
-              htmlFor="repetitions"
-              className="text-right text-accent-blue font-bold"
-            >
-              Repeticiones
-            </Label>
-            <Input id="repetitions" type="number" className="col-span-3" />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button
-            type="submit"
-            variant={"dynamis"}
-            onClick={() => handleUpdateExerciseData}
-            disabled={isUpdating}
-          >
-            {isUpdating ? "Guardando los cambios" : "Guardar los cambios"}
-          </Button>
-        </DialogFooter> */}
       </DialogContent>
     </Dialog>
   );

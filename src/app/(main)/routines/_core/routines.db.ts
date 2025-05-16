@@ -119,7 +119,7 @@ export const getRoutines = async (
     });
 
     if (routines.length <= 0) {
-      const message = "No se han encontrado ejercicios.";
+      const message = "No se han encontrado rutinas para este usuario.";
       throw new NotFoundError(message);
     }
     return routines;
