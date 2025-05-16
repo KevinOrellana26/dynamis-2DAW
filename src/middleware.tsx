@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "./app/(auth)/_core/auth/auth.actions";
 
-//1. Esoecificar las rutas publicas y privadas
+//1. Especificar las rutas publicas y privadas
 const publicRoutes = ["/", "/login"];
-//! TODO: PROTEGER LAS RUTAS HIJAS (DE EXERCISE)
 const protectedRoutes = ["/dashboard", "/progress", "/routines", "/exercises"];
 
 export default async function middleware(req: NextRequest) {

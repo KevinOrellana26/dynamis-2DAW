@@ -124,7 +124,6 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
-  emailVerified: 'emailVerified',
   password: 'password',
   avatar: 'avatar',
   createdAt: 'createdAt',
@@ -147,7 +146,6 @@ exports.Prisma.RoutineScalarFieldEnum = {
   name: 'name',
   createdAt: 'createdAt',
   description: 'description',
-  duration: 'duration',
   totalExercises: 'totalExercises'
 };
 
@@ -190,7 +188,6 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 exports.Rol = exports.$Enums.Rol = {
-  GUEST: 'GUEST',
   USER: 'USER',
   ADMIN: 'ADMIN'
 };

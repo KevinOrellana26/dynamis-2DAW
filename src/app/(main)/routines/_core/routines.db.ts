@@ -2,10 +2,27 @@ import { NotFoundError } from "@/app/_shared/errors";
 import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
 import { delay } from "@/lib/utils";
-import { CreateRoutineUseCaseInput, RemoveRoutineT } from "./routines.types";
+import {
+  CreateRoutineT,
+  ExerciseT,
+  RemoveRoutineT,
+} from "./routines.definitions";
 
-export const createRoutine = async (params: CreateRoutineUseCaseInput) => {
-  const { name, userId, description } = params;
+export const getExercises = async (): Promise<ExerciseT[]> => {
+  try {
+    const exercises = await prisma.exercise.findMany();
+    const exercisesList = exercises.map((exercise) => ({
+      id: exercise.id,
+      name: exercise.name,
+    }));
+    return exercisesList;
+  } catch (error) {
+    throw new Error("Error al obtener los ejercicios");
+  }
+};
+
+export const createRoutine = async (params: CreateRoutineT) => {
+  const { name, userId, description, exercises } = params;
   try {
     const existingRoutine = await prisma.routine.findFirst({
       where: {
@@ -24,8 +41,14 @@ export const createRoutine = async (params: CreateRoutineUseCaseInput) => {
         userId: userId,
         name: name,
         description: description || "",
-        duration: 0,
-        totalExercises: 0,
+        totalExercises: exercises.length,
+        exerciseRoutine: {
+          create: exercises.map((exercise) => ({
+            exerciseId: exercise.exerciseId,
+            series: exercise.series,
+            repetitions: exercise.repetitions,
+          })),
+        },
       },
     });
 
@@ -33,7 +56,7 @@ export const createRoutine = async (params: CreateRoutineUseCaseInput) => {
       const message = "No se ha podido crear la rutina.";
       throw new Error(message);
     }
-    const message = `Rutina "${routine.name}" creada correctamente.`;
+    const message = `Rutina "${routine.name}" creada correctamente con ejercicios.`;
     return message;
   } catch (error) {
     console.log("Error", error);
@@ -82,6 +105,10 @@ export const getRoutines = async (
                 id: true,
                 name: true,
                 muscle: true,
+                description: true,
+                videoImgUrl: true,
+                executionSteps: true,
+                tips: true,
               },
             },
           },
@@ -110,10 +137,6 @@ export const getTotalRoutines = async (
     const totalRoutines = await prisma.routine.count({
       where: {
         userId: userId,
-        // AND: [
-        // { userId: userId },
-        // { name: { contains: query, mode: "insensitive" } },
-        // ],
       },
     });
     if (totalRoutines <= 0) {
@@ -148,6 +171,23 @@ export const removeRoutine = async (params: RemoveRoutineT) => {
   } catch (error) {
     console.log("Error", error);
     const message = "No se ha podido eliminar la rutina.";
+    throw new Error(message);
+  }
+};
+
+export const getTotalExercises = async (): Promise<number> => {
+  try {
+    const totalExercises = await prisma.exercise.count();
+
+    if (totalExercises <= 0) {
+      const message = "No se han encontrado ejercicios.";
+      throw new NotFoundError(message);
+    }
+
+    return totalExercises;
+  } catch (error) {
+    console.log("Error", error);
+    const message = "No se han encontrado ejercicios.";
     throw new Error(message);
   }
 };

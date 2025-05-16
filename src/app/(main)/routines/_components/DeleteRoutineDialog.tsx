@@ -11,15 +11,14 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Delete } from "@/config/theme.config";
-import { RemoveRoutineSchema } from "../_core/routines.types";
-import { useServerAction } from "zsa-react";
+import { Delete, Spinner } from "@/config/theme.config";
 import { toast } from "sonner";
+import { useServerAction } from "zsa-react";
+import { RoutineWithExerciseT } from "../_core/routines.db";
 import { removeRoutineAction } from "../routines.actions";
-import { RoutineT } from "../_core/routines.definitions";
 
 type DeleteRoutineDialogParams = {
-  routine: RoutineT;
+  routine: RoutineWithExerciseT;
 };
 
 export default function DeleteRoutineDialog(params: DeleteRoutineDialogParams) {
@@ -45,8 +44,13 @@ export default function DeleteRoutineDialog(params: DeleteRoutineDialogParams) {
           variant={"link"}
           size={"icon"}
           className="size-8 hover:text-red-500"
+          disabled={isPending}
         >
-          <Delete className="size-6 " />
+          {isPending ? (
+            <Spinner className="h-8 w-8 animate-spin text-accent-blue" />
+          ) : (
+            <Delete className="size-6 " />
+          )}
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>

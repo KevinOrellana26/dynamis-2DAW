@@ -12,11 +12,6 @@ export type SessionData = {
   isLoggedIn: boolean;
 };
 
-// export const defaultSession: SessionData= {
-//     isLoggedIn: false,
-//     role: "GUEST"
-// }
-
 export const sessionOptions: SessionOptions = {
   password: process.env.IRON_SESSION_SECRET_KEY!,
   cookieName: "dynamis-user-session",

@@ -1,18 +1,27 @@
 import {
   createRoutine,
-  // addExerciseToRoutine,
+  getExercises,
   getRoutines,
   GetRoutinesOptionsT,
   getTotalRoutines,
   removeRoutine,
-  // removeExerciseFromRoutine,
   RoutineWithExerciseT,
 } from "./routines.db";
-import { CreateRoutineUseCaseInput, RemoveRoutineT } from "./routines.types";
+import {
+  CreateRoutineT,
+  ExerciseT,
+  RemoveRoutineT,
+} from "./routines.definitions";
+
+export const getExercisesUseCase = async (): Promise<ExerciseT[]> => {
+  const exercises = await getExercises();
+  return exercises;
+};
 
 export const createRoutineUseCase = async (
-  params: CreateRoutineUseCaseInput
+  params: CreateRoutineT
 ): Promise<string> => {
+  console.log("Datos enviados al caso de uso:", params);
   const message = await createRoutine(params);
   return message;
 };

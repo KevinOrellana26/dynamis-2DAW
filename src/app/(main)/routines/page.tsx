@@ -1,6 +1,6 @@
-import CreateRoutineButtonDialog from "@/app/(main)/routines/_components/CreateRoutineButtonDialog";
 import { SearchParams } from "nuqs/server";
 import { Suspense } from "react";
+import ExerciseList from "./_components/ExerciseList";
 import RoutineFilters from "./_components/RoutineFilters";
 import RoutineList, { RoutineListSkeleton } from "./_components/RoutineList";
 import { routinesSearchParamsCache } from "./_core/routines.search-params";
@@ -28,7 +28,8 @@ export default async function RoutinePage({ ...props }: PageProps) {
         </div>
         {/* Solo para ADMIN */}
         <div>
-          <CreateRoutineButtonDialog />
+          {/* Lista de ejercicios y formulario */}
+          <ExerciseList />
         </div>
       </header>
 

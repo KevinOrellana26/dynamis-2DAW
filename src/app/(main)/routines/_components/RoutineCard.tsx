@@ -1,3 +1,4 @@
+"use client"
 import {
   Card,
   CardContent,
@@ -6,10 +7,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Calendar, Clock, Dumbbell } from "lucide-react";
+import { Calendar, Dumbbell } from "lucide-react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
 import DeleteRoutineDialog from "./DeleteRoutineDialog";
 import RoutineDialog from "./RoutineDialog";
+import { useState } from "react";
 
 type RoutineCardProps = {
   routine: RoutineWithExerciseT;
@@ -17,9 +19,7 @@ type RoutineCardProps = {
 
 export default function RoutineCard({ routine }: RoutineCardProps) {
   const {
-    id: routineId,
     name,
-    duration,
     createdAt,
     description,
     totalExercises,
@@ -50,19 +50,13 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
             {totalExercises} ejercicio{totalExercises !== 1 ? "s" : ""}
           </span>
         </div>
-
-        <div className="flex items-center gap-2">
-          <Clock className="h-4 w-4 text-blue-900" />
-          <span>{duration}</span>
-        </div>
-
         <div className="flex items-center gap-2">
           <Calendar className="h-4 w-4 text-blue-900" />
           <span>Creado el: {formattedDate}</span>
         </div>
       </CardContent>
       <CardFooter>
-        <RoutineDialog className="w-full" routine={routine} />
+        <RoutineDialog className="w-full" routine={routine}/>
       </CardFooter>
     </Card>
   );

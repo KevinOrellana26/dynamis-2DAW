@@ -49,7 +49,6 @@ export type exerciseRoutine = $Result.DefaultSelection<Prisma.$exerciseRoutinePa
  */
 export namespace $Enums {
   export const Rol: {
-  GUEST: 'GUEST',
   USER: 'USER',
   ADMIN: 'ADMIN'
 };
@@ -1484,7 +1483,6 @@ export namespace Prisma {
     id: string | null
     name: string | null
     email: string | null
-    emailVerified: Date | null
     password: string | null
     avatar: string | null
     createdAt: Date | null
@@ -1496,7 +1494,6 @@ export namespace Prisma {
     id: string | null
     name: string | null
     email: string | null
-    emailVerified: Date | null
     password: string | null
     avatar: string | null
     createdAt: Date | null
@@ -1508,7 +1505,6 @@ export namespace Prisma {
     id: number
     name: number
     email: number
-    emailVerified: number
     password: number
     avatar: number
     createdAt: number
@@ -1522,7 +1518,6 @@ export namespace Prisma {
     id?: true
     name?: true
     email?: true
-    emailVerified?: true
     password?: true
     avatar?: true
     createdAt?: true
@@ -1534,7 +1529,6 @@ export namespace Prisma {
     id?: true
     name?: true
     email?: true
-    emailVerified?: true
     password?: true
     avatar?: true
     createdAt?: true
@@ -1546,7 +1540,6 @@ export namespace Prisma {
     id?: true
     name?: true
     email?: true
-    emailVerified?: true
     password?: true
     avatar?: true
     createdAt?: true
@@ -1631,7 +1624,6 @@ export namespace Prisma {
     id: string
     name: string
     email: string
-    emailVerified: Date | null
     password: string
     avatar: string | null
     createdAt: Date
@@ -1660,7 +1652,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    emailVerified?: boolean
     password?: boolean
     avatar?: boolean
     createdAt?: boolean
@@ -1676,7 +1667,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    emailVerified?: boolean
     password?: boolean
     avatar?: boolean
     createdAt?: boolean
@@ -1688,7 +1678,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    emailVerified?: boolean
     password?: boolean
     avatar?: boolean
     createdAt?: boolean
@@ -1700,7 +1689,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    emailVerified?: boolean
     password?: boolean
     avatar?: boolean
     createdAt?: boolean
@@ -1708,7 +1696,7 @@ export namespace Prisma {
     role?: boolean
   }
 
-  export type userOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "password" | "avatar" | "createdAt" | "updatedAt" | "role", ExtArgs["result"]["user"]>
+  export type userOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "avatar" | "createdAt" | "updatedAt" | "role", ExtArgs["result"]["user"]>
   export type userInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     progress?: boolean | user$progressArgs<ExtArgs>
     routine?: boolean | user$routineArgs<ExtArgs>
@@ -1729,7 +1717,6 @@ export namespace Prisma {
       id: string
       name: string
       email: string
-      emailVerified: Date | null
       password: string
       avatar: string | null
       createdAt: Date
@@ -2164,7 +2151,6 @@ export namespace Prisma {
     readonly id: FieldRef<"user", 'String'>
     readonly name: FieldRef<"user", 'String'>
     readonly email: FieldRef<"user", 'String'>
-    readonly emailVerified: FieldRef<"user", 'DateTime'>
     readonly password: FieldRef<"user", 'String'>
     readonly avatar: FieldRef<"user", 'String'>
     readonly createdAt: FieldRef<"user", 'DateTime'>
@@ -3787,13 +3773,11 @@ export namespace Prisma {
 
   export type RoutineAvgAggregateOutputType = {
     id: number | null
-    duration: number | null
     totalExercises: number | null
   }
 
   export type RoutineSumAggregateOutputType = {
     id: number | null
-    duration: number | null
     totalExercises: number | null
   }
 
@@ -3803,7 +3787,6 @@ export namespace Prisma {
     name: string | null
     createdAt: Date | null
     description: string | null
-    duration: number | null
     totalExercises: number | null
   }
 
@@ -3813,7 +3796,6 @@ export namespace Prisma {
     name: string | null
     createdAt: Date | null
     description: string | null
-    duration: number | null
     totalExercises: number | null
   }
 
@@ -3823,7 +3805,6 @@ export namespace Prisma {
     name: number
     createdAt: number
     description: number
-    duration: number
     totalExercises: number
     _all: number
   }
@@ -3831,13 +3812,11 @@ export namespace Prisma {
 
   export type RoutineAvgAggregateInputType = {
     id?: true
-    duration?: true
     totalExercises?: true
   }
 
   export type RoutineSumAggregateInputType = {
     id?: true
-    duration?: true
     totalExercises?: true
   }
 
@@ -3847,7 +3826,6 @@ export namespace Prisma {
     name?: true
     createdAt?: true
     description?: true
-    duration?: true
     totalExercises?: true
   }
 
@@ -3857,7 +3835,6 @@ export namespace Prisma {
     name?: true
     createdAt?: true
     description?: true
-    duration?: true
     totalExercises?: true
   }
 
@@ -3867,7 +3844,6 @@ export namespace Prisma {
     name?: true
     createdAt?: true
     description?: true
-    duration?: true
     totalExercises?: true
     _all?: true
   }
@@ -3964,7 +3940,6 @@ export namespace Prisma {
     name: string
     createdAt: Date
     description: string
-    duration: number
     totalExercises: number
     _count: RoutineCountAggregateOutputType | null
     _avg: RoutineAvgAggregateOutputType | null
@@ -3993,7 +3968,6 @@ export namespace Prisma {
     name?: boolean
     createdAt?: boolean
     description?: boolean
-    duration?: boolean
     totalExercises?: boolean
     user?: boolean | userDefaultArgs<ExtArgs>
     exerciseRoutine?: boolean | routine$exerciseRoutineArgs<ExtArgs>
@@ -4006,7 +3980,6 @@ export namespace Prisma {
     name?: boolean
     createdAt?: boolean
     description?: boolean
-    duration?: boolean
     totalExercises?: boolean
     user?: boolean | userDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
@@ -4017,7 +3990,6 @@ export namespace Prisma {
     name?: boolean
     createdAt?: boolean
     description?: boolean
-    duration?: boolean
     totalExercises?: boolean
     user?: boolean | userDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["routine"]>
@@ -4028,11 +4000,10 @@ export namespace Prisma {
     name?: boolean
     createdAt?: boolean
     description?: boolean
-    duration?: boolean
     totalExercises?: boolean
   }
 
-  export type routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "createdAt" | "description" | "duration" | "totalExercises", ExtArgs["result"]["routine"]>
+  export type routineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "createdAt" | "description" | "totalExercises", ExtArgs["result"]["routine"]>
   export type routineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | userDefaultArgs<ExtArgs>
     exerciseRoutine?: boolean | routine$exerciseRoutineArgs<ExtArgs>
@@ -4057,7 +4028,6 @@ export namespace Prisma {
       name: string
       createdAt: Date
       description: string
-      duration: number
       totalExercises: number
     }, ExtArgs["result"]["routine"]>
     composites: {}
@@ -4489,7 +4459,6 @@ export namespace Prisma {
     readonly name: FieldRef<"routine", 'String'>
     readonly createdAt: FieldRef<"routine", 'DateTime'>
     readonly description: FieldRef<"routine", 'String'>
-    readonly duration: FieldRef<"routine", 'Int'>
     readonly totalExercises: FieldRef<"routine", 'Int'>
   }
     
@@ -8327,7 +8296,6 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     email: 'email',
-    emailVerified: 'emailVerified',
     password: 'password',
     avatar: 'avatar',
     createdAt: 'createdAt',
@@ -8356,7 +8324,6 @@ export namespace Prisma {
     name: 'name',
     createdAt: 'createdAt',
     description: 'description',
-    duration: 'duration',
     totalExercises: 'totalExercises'
   };
 
@@ -8505,7 +8472,6 @@ export namespace Prisma {
     id?: StringFilter<"user"> | string
     name?: StringFilter<"user"> | string
     email?: StringFilter<"user"> | string
-    emailVerified?: DateTimeNullableFilter<"user"> | Date | string | null
     password?: StringFilter<"user"> | string
     avatar?: StringNullableFilter<"user"> | string | null
     createdAt?: DateTimeFilter<"user"> | Date | string
@@ -8520,7 +8486,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    emailVerified?: SortOrderInput | SortOrder
     password?: SortOrder
     avatar?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -8538,7 +8503,6 @@ export namespace Prisma {
     OR?: userWhereInput[]
     NOT?: userWhereInput | userWhereInput[]
     name?: StringFilter<"user"> | string
-    emailVerified?: DateTimeNullableFilter<"user"> | Date | string | null
     password?: StringFilter<"user"> | string
     avatar?: StringNullableFilter<"user"> | string | null
     createdAt?: DateTimeFilter<"user"> | Date | string
@@ -8553,7 +8517,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    emailVerified?: SortOrderInput | SortOrder
     password?: SortOrder
     avatar?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -8571,7 +8534,6 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"user"> | string
     name?: StringWithAggregatesFilter<"user"> | string
     email?: StringWithAggregatesFilter<"user"> | string
-    emailVerified?: DateTimeNullableWithAggregatesFilter<"user"> | Date | string | null
     password?: StringWithAggregatesFilter<"user"> | string
     avatar?: StringNullableWithAggregatesFilter<"user"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"user"> | Date | string
@@ -8653,7 +8615,6 @@ export namespace Prisma {
     name?: StringFilter<"routine"> | string
     createdAt?: DateTimeFilter<"routine"> | Date | string
     description?: StringFilter<"routine"> | string
-    duration?: IntFilter<"routine"> | number
     totalExercises?: IntFilter<"routine"> | number
     user?: XOR<UserScalarRelationFilter, userWhereInput>
     exerciseRoutine?: ExerciseRoutineListRelationFilter
@@ -8665,7 +8626,6 @@ export namespace Prisma {
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
     user?: userOrderByWithRelationInput
     exerciseRoutine?: exerciseRoutineOrderByRelationAggregateInput
@@ -8680,7 +8640,6 @@ export namespace Prisma {
     name?: StringFilter<"routine"> | string
     createdAt?: DateTimeFilter<"routine"> | Date | string
     description?: StringFilter<"routine"> | string
-    duration?: IntFilter<"routine"> | number
     totalExercises?: IntFilter<"routine"> | number
     user?: XOR<UserScalarRelationFilter, userWhereInput>
     exerciseRoutine?: ExerciseRoutineListRelationFilter
@@ -8692,7 +8651,6 @@ export namespace Prisma {
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
     _count?: routineCountOrderByAggregateInput
     _avg?: routineAvgOrderByAggregateInput
@@ -8710,7 +8668,6 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"routine"> | string
     createdAt?: DateTimeWithAggregatesFilter<"routine"> | Date | string
     description?: StringWithAggregatesFilter<"routine"> | string
-    duration?: IntWithAggregatesFilter<"routine"> | number
     totalExercises?: IntWithAggregatesFilter<"routine"> | number
   }
 
@@ -8902,7 +8859,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -8917,7 +8873,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -8932,7 +8887,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8947,7 +8901,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8962,7 +8915,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -8974,7 +8926,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8986,7 +8937,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9056,7 +9006,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
     user: userCreateNestedOneWithoutRoutineInput
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutRoutineInput
@@ -9068,7 +9017,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput
   }
@@ -9077,7 +9025,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
     user?: userUpdateOneRequiredWithoutRoutineNestedInput
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutRoutineNestedInput
@@ -9089,7 +9036,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput
   }
@@ -9100,7 +9046,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
   }
 
@@ -9108,7 +9053,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
@@ -9118,7 +9062,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
@@ -9305,17 +9248,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -9388,7 +9320,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    emailVerified?: SortOrder
     password?: SortOrder
     avatar?: SortOrder
     createdAt?: SortOrder
@@ -9400,7 +9331,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    emailVerified?: SortOrder
     password?: SortOrder
     avatar?: SortOrder
     createdAt?: SortOrder
@@ -9412,7 +9342,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    emailVerified?: SortOrder
     password?: SortOrder
     avatar?: SortOrder
     createdAt?: SortOrder
@@ -9436,20 +9365,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -9615,13 +9530,11 @@ export namespace Prisma {
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
   }
 
   export type routineAvgOrderByAggregateInput = {
     id?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
   }
 
@@ -9631,7 +9544,6 @@ export namespace Prisma {
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
   }
 
@@ -9641,13 +9553,11 @@ export namespace Prisma {
     name?: SortOrder
     createdAt?: SortOrder
     description?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
   }
 
   export type routineSumOrderByAggregateInput = {
     id?: SortOrder
-    duration?: SortOrder
     totalExercises?: SortOrder
   }
 
@@ -9811,10 +9721,6 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -10209,17 +10115,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -10280,31 +10175,6 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -10320,6 +10190,17 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -10418,7 +10299,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
     exerciseRoutine?: exerciseRoutineCreateNestedManyWithoutRoutineInput
   }
@@ -10428,7 +10308,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
     exerciseRoutine?: exerciseRoutineUncheckedCreateNestedManyWithoutRoutineInput
   }
@@ -10515,7 +10394,6 @@ export namespace Prisma {
     name?: StringFilter<"routine"> | string
     createdAt?: DateTimeFilter<"routine"> | Date | string
     description?: StringFilter<"routine"> | string
-    duration?: IntFilter<"routine"> | number
     totalExercises?: IntFilter<"routine"> | number
   }
 
@@ -10548,7 +10426,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -10562,7 +10439,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -10620,7 +10496,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10634,7 +10509,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10682,7 +10556,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -10696,7 +10569,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -10749,7 +10621,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10763,7 +10634,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10804,7 +10674,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -10818,7 +10687,6 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    emailVerified?: Date | string | null
     password: string
     avatar?: string | null
     createdAt?: Date | string
@@ -10876,7 +10744,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10890,7 +10757,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11053,7 +10919,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
     user: userCreateNestedOneWithoutRoutineInput
   }
@@ -11064,7 +10929,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
   }
 
@@ -11116,7 +10980,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
     user?: userUpdateOneRequiredWithoutRoutineNestedInput
   }
@@ -11127,7 +10990,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
   }
 
@@ -11178,7 +11040,6 @@ export namespace Prisma {
     name: string
     createdAt?: Date | string
     description: string
-    duration: number
     totalExercises: number
   }
 
@@ -11214,7 +11075,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
     exerciseRoutine?: exerciseRoutineUpdateManyWithoutRoutineNestedInput
   }
@@ -11224,7 +11084,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
     exerciseRoutine?: exerciseRoutineUncheckedUpdateManyWithoutRoutineNestedInput
   }
@@ -11234,7 +11093,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: StringFieldUpdateOperationsInput | string
-    duration?: IntFieldUpdateOperationsInput | number
     totalExercises?: IntFieldUpdateOperationsInput | number
   }
 

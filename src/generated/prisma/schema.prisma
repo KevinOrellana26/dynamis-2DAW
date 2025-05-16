@@ -1,7 +1,6 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
-  // output   = "/node_modules/@prisma/client"
 }
 
 datasource db {
@@ -9,28 +8,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//1-invitado
-//2-usuario
-//3-admin
 enum Rol {
-  GUEST
   USER
   ADMIN
 }
 
 model user {
-  id            String     @id @default(cuid())
-  name          String
-  email         String     @unique
-  emailVerified DateTime?
-  password      String
-  avatar        String?
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
-  role          Rol        @default(USER)
-  progress      progress[]
-  routine       routine[]
-  favorites     favorite[]
+  id        String     @id @default(cuid())
+  name      String
+  email     String     @unique
+  password  String
+  avatar    String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  role      Rol        @default(USER)
+  progress  progress[]
+  routine   routine[]
+  favorites favorite[]
 }
 
 model progress {
@@ -40,8 +34,8 @@ model progress {
   date        DateTime @default(now()) @db.Date
   weightUsed  Float
   repetitions Int
-  user        user     @relation(fields: [userId], references: [id])
-  exercise    exercise @relation(fields: [exerciseId], references: [id])
+  user        user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercise    exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
 }
 
 model routine {
@@ -50,9 +44,9 @@ model routine {
   name            String
   createdAt       DateTime          @default(now()) @db.Date
   description     String
-  duration        Int
+  // duration        Int
   totalExercises  Int
-  user            user              @relation(fields: [userId], references: [id])
+  user            user              @relation(fields: [userId], references: [id], onDelete: Cascade)
   exerciseRoutine exerciseRoutine[]
 }
 
@@ -60,9 +54,8 @@ model favorite {
   id         Int      @id @default(autoincrement())
   userId     String
   exerciseId Int
-  // fecha_creacion DateTime? @default(now()) @db.Date
-  user       user     @relation(fields: [userId], references: [id])
-  exercise   exercise @relation(fields: [exerciseId], references: [id])
+  user       user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercise   exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
 
   @@unique([userId, exerciseId]) //para evitar duplicados en la relación
 }
@@ -86,6 +79,6 @@ model exerciseRoutine {
   exerciseId  Int
   series      Int
   repetitions Int
-  routine     routine  @relation(fields: [routineId], references: [id])
-  exercise    exercise @relation(fields: [exerciseId], references: [id])
+  routine     routine  @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  exercise    exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
 }

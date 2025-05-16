@@ -1,7 +1,4 @@
 "use client";
-import React, { useState } from "react";
-import { Button } from "../../../../components/ui/button";
-import { Plus } from "@/config/theme.config";
 import {
   Dialog,
   DialogContent,
@@ -11,9 +8,21 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Plus } from "@/config/theme.config";
+import { useState } from "react";
+import { Button } from "../../../../components/ui/button";
+import { ExerciseT } from "../_core/routines.definitions";
 import CreateRoutineForm from "./CreateRoutineForm";
 
-export default function CreateRoutineButtonDialog() {
+type CreateRoutineButtonDialogProps = {
+  exercisesList: ExerciseT[];
+  className?: string;
+};
+
+export default function CreateRoutineButtonDialog(
+  props: CreateRoutineButtonDialogProps
+) {
+  const { exercisesList, className } = props;
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleClose = () => {
@@ -22,7 +31,6 @@ export default function CreateRoutineButtonDialog() {
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-      {/* // <Dialog> */}
       <DialogTrigger asChild>
         <Button variant="dynamis" className="gap-2">
           <Plus className="h-4 w-4" />
@@ -35,29 +43,13 @@ export default function CreateRoutineButtonDialog() {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Crear nueva rutina de ejercicios</DialogTitle>
-          <DialogDescription>Rutina</DialogDescription>
+          <DialogDescription>
+            Selecciona los ejercicios para tu rutina.
+          </DialogDescription>
         </DialogHeader>
 
-        {/* Le paso el estado de cierre al formulario */}
-        <CreateRoutineForm onCloseDialog={handleClose} />
-        {/* <CreateRoutineForm /> */}
-
-        {/* <div className="flex justify-end gap-2"> */}
-        {/* <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-            Cancelar
-          </Button> */}
-        {/* <Button
-            variant="dynamis"
-            // disabled={selectedExercises.length === 0}
-            onClick={() => {
-              // Lógica para guardar la rutina
-              // console.log("Guardar rutina con:", selectedExercises);
-              setIsDialogOpen(false);
-            }}
-          >
-            Guardar rutina
-          </Button> */}
-        {/* </div> */}
+        {/* renderizo el formulario */}
+        <CreateRoutineForm exercisesList={exercisesList} onCloseDialog={handleClose} />
       </DialogContent>
     </Dialog>
   );

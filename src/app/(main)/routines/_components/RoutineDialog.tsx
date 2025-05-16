@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { useState } from "react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
 import ExercisesInRoutines from "./ExercisesInRoutines";
 
@@ -24,6 +24,7 @@ export default function RoutineDialog({
   routine,
 }: RoutineDialogParams) {
   const { name, description } = routine;
+
   return (
     <Dialog>
       <DialogTrigger asChild>
