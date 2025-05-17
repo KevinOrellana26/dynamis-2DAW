@@ -56,7 +56,6 @@ export default async function DashboardPage() {
 
   const { exercises } = exercisesList;
   // const favoriteCount = exercises.filter((ex) => ex.isFavorite).length;
-
   // const routineCount = routineList.length;
 
   return (
