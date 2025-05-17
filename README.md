@@ -1,5 +1,9 @@
 # 🏋🏽‍♂️Dýnamis - Fitness Web App
-Este proyecto es una aplicación web para gestionar rutinas de entrenamiento, ejercicios y progreso personal, diseñada con tecnologías modernas.
+Dýnamis **(δύναμις)** es una aplicación web desarrollada para ayudar a las personas a gestionar sus entrenamientos, crear rutinas personalizadas y obtener información clara y detallada sobre ejercicios de gimnasio. Su objetivo es centralizar todo lo necesario para que cualquier usuario —ya sea principiante o con experiencia previa— pueda progresar.
+
+El nombre de la aplicación proviene del término griego **dýnamis**, traducido como *capacidad*, *potencia* o *poder*. En la filosofía aristotélica, dýnamis representa la potencia latente en los seres: la posibilidad de transformarse y alcanzar una forma superior a través del movimiento y el cambio. Esta idea conecta profundamente con la motivación principal de esta aplicación: brindar las herramientas necesarias para pasar de la intención al logro, del deseo al resultado.
+
+Así, Dýnamis no solo es una aplicación web: es un símbolo del proceso de evolución personal que vive cada persona al decidir mejorar su cuerpo, su salud y su autoestima.
 
 ## 📘 Índice
   - [📌 Tecnologías y liberías utilizadas](#-tecnologías-y-liberías-utilizadas)
