@@ -6,6 +6,8 @@ El nombre de la aplicación proviene del término griego **dýnamis**, traducido
 Así, Dýnamis no solo es una aplicación web: es un símbolo del proceso de evolución personal que vive cada persona al decidir mejorar su cuerpo, su salud y su autoestima.
 
 ## 📘 Índice
+- [🏋🏽‍♂️Dýnamis - Fitness Web App](#️dýnamis---fitness-web-app)
+  - [📘 Índice](#-índice)
   - [📌 Tecnologías y liberías utilizadas](#-tecnologías-y-liberías-utilizadas)
   - [🛠️ Pasos para levantar la aplicación localmente](#️-pasos-para-levantar-la-aplicación-localmente)
   - [📂 Estructura principal del proyecto](#-estructura-principal-del-proyecto)
@@ -48,7 +50,8 @@ Así, Dýnamis no solo es una aplicación web: es un símbolo del proceso de evo
 
         # Secrets
         IRON_SESSION_SECRET_KEY=[key]
-
+        
+        NEXT_PUBLIC_APP_URL=http://localhost:3000
     ```
 5. Prepara la base de datos
 Ejecuta los siguientes comandos para instalar las dependencias, ejecutar las migraciones, generar el cliente de Prisma e insertar los datos:
