@@ -73,36 +73,6 @@ function Button({
       )}
     </Comp>
   );
-
-  // const Comp = asChild ? Slot : "button";
-
-  // return asChild ? (
-  //   <Slot
-  //     data-slot="button"
-  //     className={cn(
-  //       buttonVariants({ variant, size, className }),
-  //       isPending && "pointer-events-none opacity-80 cursor-progress"
-  //     )}
-  //     {...props}
-  //   >
-  //     {children}
-  //   </Slot>
-  // ) : (
-  //   <button
-  //     data-slot="button"
-  //     className={cn(
-  //       buttonVariants({ variant, size, className }),
-  //       isPending && "pointer-events-none opacity-80 cursor-progress"
-  //     )}
-  //     disabled={disabled || isPending}
-  //     {...props}
-  //   >
-  //     <>
-  //       {children}
-  //       {isPending && <RiLoader2Fill className="mr-2 h-4 w-4 animate-spin" />}
-  //     </>
-  //   </button>
-  // );
 }
 
 export { Button, buttonVariants };

@@ -128,7 +128,17 @@ exports.Prisma.UserScalarFieldEnum = {
   avatar: 'avatar',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  role: 'role'
+  role: 'role',
+  isEmailVerified: 'isEmailVerified'
+};
+
+exports.Prisma.TokenScalarFieldEnum = {
+  id: 'id',
+  token: 'token',
+  userId: 'userId',
+  type: 'type',
+  createdAt: 'createdAt',
+  expiresAt: 'expiresAt'
 };
 
 exports.Prisma.ProgressScalarFieldEnum = {
@@ -191,8 +201,14 @@ exports.Rol = exports.$Enums.Rol = {
   ADMIN: 'ADMIN'
 };
 
+exports.TokenType = exports.$Enums.TokenType = {
+  emailVerification: 'emailVerification',
+  passwordReset: 'passwordReset'
+};
+
 exports.Prisma.ModelName = {
   user: 'user',
+  token: 'token',
   progress: 'progress',
   routine: 'routine',
   favorite: 'favorite',

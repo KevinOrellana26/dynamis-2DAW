@@ -1,5 +1,8 @@
 "use server";
-import { sessionOptions, SessionData } from "@/app/(auth)/_core/auth/auth.lib";
+import {
+  SessionData,
+  sessionOptions
+} from "@/app/(auth)/_core/auth/auth.lib";
 import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 

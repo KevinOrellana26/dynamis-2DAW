@@ -13,18 +13,35 @@ enum Rol {
   ADMIN
 }
 
+enum TokenType {
+  emailVerification
+  passwordReset
+}
+
 model user {
-  id        String     @id @default(cuid())
-  name      String
-  email     String     @unique
-  password  String
-  avatar    String?
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  role      Rol        @default(USER)
-  progress  progress[]
-  routine   routine[]
-  favorites favorite[]
+  id                   String     @id @default(cuid())
+  name                 String
+  email                String     @unique
+  password             String
+  avatar               String?
+  createdAt            DateTime   @default(now())
+  updatedAt            DateTime   @updatedAt
+  role                 Rol        @default(USER)
+  isEmailVerified      Boolean    @default(false)
+  progress             progress[]
+  routine              routine[]
+  favorites            favorite[]
+  token                token[]
+}
+
+model token {
+  id        String   @id @default(cuid())
+  token     String
+  userId    String
+  user      user     @relation(fields: [userId], references: [id])
+  type      TokenType //"emailVerification" | "passwordRest"
+  createdAt DateTime @default(now())
+  expiresAt DateTime
 }
 
 model progress {
@@ -56,6 +73,7 @@ model favorite {
   exerciseId Int
   user       user     @relation(fields: [userId], references: [id], onDelete: Cascade)
   exercise   exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+
   @@unique([userId, exerciseId]) //para evitar duplicados en la relación
 }
 

@@ -17,6 +17,7 @@ import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
 import { LoginSchema, LoginT } from "../_core/auth/user.types";
 import { loginUserAction } from "../_core/user/user.actions";
+import Link from "next/link";
 
 //Validación (Esquema)
 export default function LoginForm() {
@@ -77,7 +78,15 @@ export default function LoginForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Contraseña</FormLabel>
+              <div className="flex justify-between">
+                <FormLabel>Contraseña</FormLabel>
+                <Link
+                  href={"/reset-password"}
+                  className="text-sm text-accent-blue underline hover:no-underline"
+                >
+                  ¿Olvidaste tu contraseña?
+                </Link>
+              </div>
               <FormControl>
                 <Input {...field} type="password" />
               </FormControl>

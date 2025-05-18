@@ -5,11 +5,12 @@ const allowedDomains = ["gmail.com", "outlook.com"];
 // ESQUEMA -> QUE ES LO QUE YO ESPERO RECIBIR DEL USUARIO.
 export const UserSchema = z.object({
   id: z.string().optional(),
-  name: z.string().min(3, {
+  name: z.string().trim().min(3, {
     message: "El nombre de usuario debe tener al menos tres caracteres.",
   }),
   email: z
     .string()
+    .trim()
     .email({
       message: "Dirección de correo electrónico inválida.",
     })
@@ -23,7 +24,7 @@ export const UserSchema = z.object({
           "Dominio de correo no permitido. Usa un dominio válido como @gmail.com o @outlook.com.",
       }
     ),
-  password: z.string().min(8, {
+  password: z.string().trim().min(8, {
     message: "La contraseña debe ser mayor a 8.",
   }),
   role: z.enum(["ADMIN", "USER"], {
@@ -38,7 +39,7 @@ export const RegisterSchema = UserSchema.pick({
   name: true,
 })
   .extend({
-    confirmPassword: z.string().min(8, {
+    confirmPassword: z.string().trim().min(8, {
       message: "La contraseña debe ser mayor a 8.",
     }),
   })

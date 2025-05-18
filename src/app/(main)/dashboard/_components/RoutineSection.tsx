@@ -1,10 +1,7 @@
-import { handleAsync } from "@/app/_shared/errors";
-import RoutineCardDashboard from "./RoutineCardDashboard";
-import ErrorMessage from "../../_components/ErrorMessage";
-import RoutineCard from "../../routines/_components/RoutineCard";
-import { RoutineWithExerciseT } from "../../routines/_core/routines.db";
-import RoutineCardSkeleton from "../../routines/_components/RoutineCardSkeleton";
 import { Suspense } from "react";
+import RoutineCardSkeleton from "../../routines/_components/RoutineCardSkeleton";
+import { RoutineWithExerciseT } from "../../routines/_core/routines.db";
+import RoutineCardDashboard from "./RoutineCardDashboard";
 
 type RoutineSectionProps = {
   routines: RoutineWithExerciseT[];
@@ -21,7 +18,7 @@ export default function RoutineSection({ routines }: RoutineSectionProps) {
       </h1>
 
       <Suspense fallback={<RoutineListSkeleton />}>
-        <RoutineCardDashboard routines={sortedRoutines}/>
+        <RoutineCardDashboard routines={sortedRoutines} />
       </Suspense>
     </>
   );
