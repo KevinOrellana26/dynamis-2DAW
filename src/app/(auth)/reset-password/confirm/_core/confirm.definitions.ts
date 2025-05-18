@@ -18,8 +18,13 @@ export const ResetPasswordFormSchema = UserSchema.pick({
 export type ResetPasswordFormT = z.infer<typeof ResetPasswordFormSchema>;
 
 export const ResetPasswordBackendSchema = z.object({
-  password: z.string().min(8),
-  email: z.string().email(),
-  token: z.string(),
+  password: z.string().trim().min(8, {
+    message: "La contraseña debe ser mayor a 8.",
+  }),
+  email: z
+    .string()
+    .trim()
+    .email({ message: "Debe ser un correo electrónico válido." }),
+  token: z.string({ message: "Token inválido" }).trim(),
 });
 export type ResetPasswordBackendT = z.infer<typeof ResetPasswordBackendSchema>;
