@@ -1,4 +1,4 @@
-import { ExerciseT } from "./exercises.definitions";
+import { addExerciseToFavoritesT, ExerciseT, removeExerciseFromFavoritesT } from "./exercises.definitions";
 //Interactura con exercises.db.ts para obtener los datos.
 import {
   addExerciseToFavorites,
@@ -7,10 +7,6 @@ import {
   getTotalItems,
   removeExerciseFromFavorites,
 } from "./exercises.db";
-import {
-  addExerciseToFavoritesT,
-  removeExerciseFromFavoritesT,
-} from "./exercises.types";
 
 export const getExercisesUseCase = async (
   options: GetExercisesOptionsT & { page: number; limit: number }

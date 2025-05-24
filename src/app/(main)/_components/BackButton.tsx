@@ -10,14 +10,10 @@ type BackButtonProps = {
 
 export default function BackButton(params: BackButtonProps) {
   const { path, className } = params;
-  //const [isPending, startTransition] = useTransition();
   const [isPending, setIsPending] = useState(false);
   const router = useRouter();
 
   const handleBackButton = () => {
-    // startTransition(() => {
-    //   router.push(path);
-    // });
     setIsPending(true);
     router.push(path);
   };

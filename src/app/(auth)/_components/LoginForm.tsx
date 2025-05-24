@@ -78,11 +78,11 @@ export default function LoginForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <div className="flex justify-between">
+              <div className="flex flex-row justify-between">
                 <FormLabel>Contraseña</FormLabel>
                 <Link
                   href={"/reset-password"}
-                  className="text-sm text-accent-blue underline hover:no-underline"
+                  className="ml-6 text-sm text-accent-blue underline hover:no-underline"
                 >
                   ¿Olvidaste tu contraseña?
                 </Link>

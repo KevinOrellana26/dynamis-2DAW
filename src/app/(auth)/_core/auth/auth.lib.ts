@@ -8,7 +8,7 @@ export type SessionData = {
   name: string;
   email: string;
   avatar: string;
-  role: "USER" | "ADMIN" | "GUEST";
+  role: "USER" | "ADMIN";
   isLoggedIn: boolean;
 };
 

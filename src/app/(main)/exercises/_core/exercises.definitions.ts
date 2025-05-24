@@ -13,9 +13,7 @@ export const ExerciseSchema = z.object({
 });
 export type ExerciseT = z.infer<typeof ExerciseSchema>;
 
-export const exerciseAdapter = (
-  exercise: ExerciseWithFavoriteT,
-) => {
+export const exerciseAdapter = (exercise: ExerciseWithFavoriteT) => {
   return {
     id: exercise.id,
     name: exercise.name,
@@ -27,3 +25,17 @@ export const exerciseAdapter = (
     isFavorite: exercise.favorite.length > 0 ? true : false,
   };
 };
+
+export const addExerciseToFavoritesSchema = z.object({
+  userId: z.string(),
+  exerciseId: z.number(),
+});
+
+export type addExerciseToFavoritesT = z.infer<
+  typeof addExerciseToFavoritesSchema
+>;
+
+export const removeErxerciseFromFavoriteSchema = addExerciseToFavoritesSchema;
+export type removeExerciseFromFavoritesT = z.infer<
+  typeof removeErxerciseFromFavoriteSchema
+>;

@@ -28,6 +28,7 @@ export default async function Header({ children }: HeaderT) {
             <>
               <LogoutButton />
               <UserAvatar
+                userId={session.userId ?? ""}
                 avatar={session.avatar ?? ""}
                 name={session.name ?? ""}
                 className="h-8 w-8"

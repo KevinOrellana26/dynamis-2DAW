@@ -2,14 +2,12 @@
 
 import { authedProcedure } from "@/app/(auth)/_core/user/user.procedures";
 import { revalidatePath } from "next/cache";
-import {
-  addExerciseToFavoritesSchema,
-  removeErxerciseFromFavoriteSchema,
-} from "./_core/exercises.types";
+
 import {
   addExerciseToFavoritesUseCase,
   removeExerciseFromFavoritesUseCase,
 } from "./_core/exercises.use-cases";
+import { addExerciseToFavoritesSchema, removeErxerciseFromFavoriteSchema } from "./_core/exercises.definitions";
 
 export const addExerciseToFavoritesAction = authedProcedure
   .createServerAction()

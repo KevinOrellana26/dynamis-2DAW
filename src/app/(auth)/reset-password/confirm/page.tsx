@@ -18,7 +18,7 @@ export default async function ConfirmResetPasswordPage({
       <Card className="p-8 md:p-14 w-full max-w-xl mx-auto">
         <CardHeader>
           <CardTitle className="text-center font-bold text-2xl text-accent-blue">
-            ¿Olvidaste tu contraseña?
+            Restablecer contraseña
           </CardTitle>
         </CardHeader>
         <CardContent>

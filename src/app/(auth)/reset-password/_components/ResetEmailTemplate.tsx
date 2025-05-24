@@ -73,12 +73,6 @@ const section = {
   textAlign: "center" as const,
 };
 
-const headline = {
-  fontSize: "28px",
-  fontWeight: "bold",
-  marginBottom: "16px",
-};
-
 const paragraph = {
   fontSize: "16px",
   marginBottom: "24px",

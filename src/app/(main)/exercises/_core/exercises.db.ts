@@ -3,11 +3,9 @@
 import { NotFoundError } from "@/app/_shared/errors";
 import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
-import {
-  addExerciseToFavoritesT,
-  removeExerciseFromFavoritesT,
-} from "./exercises.types";
-import { exerciseAdapter } from "./exercises.definitions";
+
+
+import { addExerciseToFavoritesT, exerciseAdapter, removeExerciseFromFavoritesT } from "./exercises.definitions";
 import { delay } from "@/lib/utils";
 
 export type GetExercisesOptionsT = {

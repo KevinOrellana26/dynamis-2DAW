@@ -11,6 +11,7 @@ import { Calendar, Dumbbell } from "lucide-react";
 import { RoutineWithExerciseT } from "../_core/routines.db";
 import DeleteRoutineDialog from "./DeleteRoutineDialog";
 import RoutineDialog from "./RoutineDialog";
+import { formatDate } from "@/lib/utils";
 
 type RoutineCardProps = {
   routine: RoutineWithExerciseT;
@@ -19,13 +20,7 @@ type RoutineCardProps = {
 export default function RoutineCard({ routine }: RoutineCardProps) {
   const { name, createdAt, description, exerciseRoutine } = routine;
 
-  const formattedDate = createdAt
-    ? new Date(createdAt).toLocaleDateString("es-ES", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      })
-    : "Fecha no disponible";
+  const formattedDate = formatDate(createdAt);
 
   return (
     <Card className="h-full flex flex-col gap-5 pt-6">
