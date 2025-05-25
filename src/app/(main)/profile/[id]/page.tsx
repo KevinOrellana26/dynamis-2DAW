@@ -1,12 +1,20 @@
-import { handleAsync } from "@/app/_shared/errors";
-import { getUserProfile } from "./_core/profile.db";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
-import ErrorMessage from "../../_components/ErrorMessage";
+import { handleAsync } from "@/app/_shared/errors";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
-import EditProfileDialog from "./_components/EditProfileDialog";
+import ErrorMessage from "../../_components/ErrorMessage";
 import DeleteProfileDialog from "./_components/DeleteProfileDialog";
+import EditPasswordProfileDialog from "./_components/EditPasswordProfileDialog";
+import EditProfileDialog from "./_components/EditProfileDialog";
+import { getUserProfile } from "./_core/profile.db";
 
 type Props = {
   params: {
@@ -40,42 +48,49 @@ export default async function ProfilePage({ params }: Props) {
   };
 
   return (
-    <div className="container mx-auto mt-6 py-8 px-4 bg-amber-500">
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex flex-col items-center md:items-start gap-4 md:w-1/3">
-          <Avatar>
+    <div className="min-h-screen flex items-center justify-center mx-3">
+      <Card className="w-full max-w-3xl mx-auto">
+        <CardHeader className="flex flex-col items-center gap-3 mt-5 border-b md:gap-8 md:items-start md:flex-row">
+          <Avatar className="size-28">
             <AvatarImage src={userDetails.avatar || undefined} />
-            <AvatarFallback>
+            <AvatarFallback className="text-3xl">
               {serializedUser.name.charAt(0).toLocaleUpperCase()}
             </AvatarFallback>
           </Avatar>
-          <div className="text-center md:text-left">
-            <h1 className="text-2xl font-bold">{serializedUser.name}</h1>
-            <p className="text-muted-foreground">{serializedUser.email}</p>
-
-            {serializedUser.isEmailVerified && (
-              <Badge variant={"outline"} className="mt-2">
-                Email verificado
+          <div className="flex-1 text-center md:text-left space-y-2 mt-4 md:mt-0">
+            <div className="flex justify-between">
+              <CardTitle className="text-3xl font-extrabold">
+                {serializedUser.name}
+              </CardTitle>
+              {isCurrentUser && <DeleteProfileDialog userId={userId} />}
+            </div>
+            <CardDescription className="text-lg">
+              {serializedUser.email}
+            </CardDescription>
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start mt-2">
+              {serializedUser.isEmailVerified && (
+                <Badge variant={"outline"}>Email verificado</Badge>
+              )}
+              <Badge
+                variant={
+                  serializedUser.role === "ADMIN" ? "default" : "outline"
+                }
+              >
+                {serializedUser.role === "ADMIN" ? "Administrador" : "Usuario"}
               </Badge>
-            )}
-
-            <Badge
-              variant={serializedUser.role === "ADMIN" ? "default" : "outline"}
-              className="mt-2 ml-2"
-            >
-              {serializedUser.role === "ADMIN" ? "Administrador" : "Usuario"}
-            </Badge>
-
-            <p className="text-sm text-muted-foreground">
-              {" "}
+            </div>
+            <p className="text-sm text-muted-foreground mt-2">
               Miembro desde el: {formatDate(serializedUser.createdAt)}
             </p>
-
-            <EditProfileDialog user={serializedUser} />
-            {isCurrentUser && <DeleteProfileDialog userId={userId} />}
           </div>
-        </div>
-      </div>
+        </CardHeader>
+        <CardContent>
+          <div className="flex gap-2 justify-center md:justify-end">
+            <EditProfileDialog user={serializedUser} />
+            <EditPasswordProfileDialog />
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

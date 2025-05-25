@@ -25,9 +25,13 @@ import { editUserAction } from "../users.actions";
 
 type EditUserFormProps = {
   user: EditUserFormT;
+  onCloseDialog?: () => void;
 };
 
-export default function EditUserForm({ user }: EditUserFormProps) {
+export default function EditUserForm({
+  user,
+  onCloseDialog,
+}: EditUserFormProps) {
   const { id, name, role } = user;
   const form = useForm<EditUserFormT>({
     resolver: zodResolver(EditUserFormSchema),
@@ -41,6 +45,7 @@ export default function EditUserForm({ user }: EditUserFormProps) {
   const { isPending, execute } = useServerAction(editUserAction, {
     onSuccess: ({ data: message }) => {
       toast.success(message);
+      onCloseDialog?.();
     },
     onError: ({ err }) => {
       console.log(err), toast.error(err.message);

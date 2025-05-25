@@ -1,9 +1,12 @@
 "use server";
-import { prisma } from "@/lib/prisma";
-import { NotFoundError } from "@/app/_shared/errors";
 import { deleteSession } from "@/app/(auth)/_core/auth/auth.actions";
-import { revalidatePath } from "next/cache";
-import { EditProfileT } from "./profile.definitions";
+import { NotFoundError } from "@/app/_shared/errors";
+import { prisma } from "@/lib/prisma";
+import {
+  EditProfileUserT,
+  UpdatePasswordProfileUserT,
+} from "./profile.definitions";
+import bcrypt from "bcryptjs";
 
 type UserProfileProps = {
   userId: string;
@@ -36,10 +39,61 @@ export async function getUserProfile(props: UserProfileProps) {
   }
 }
 
-export async function updateProfile(props: EditProfileT & { userId: string }) {
+export async function updateProfile(
+  props: EditProfileUserT & { userId: string }
+) {
   try {
     console.log("data", props);
-  } catch (error) {}
+    const { userId, name } = props;
+
+    await prisma.user.update({
+      where: { id: userId },
+      data: {
+        name: name,
+      },
+    });
+
+    const message = "Perfil actualizado correctamente.";
+    return message;
+  } catch (error) {
+    console.error("Error:", error);
+    const message = "No se pudo actualizar el perfil.";
+    throw new Error(message);
+  }
+}
+
+export async function updatePasswordProfile(
+  props: UpdatePasswordProfileUserT & { userId: string }
+) {
+  try {
+    const { userId, currentPassword, newPassword } = props;
+
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+    });
+    if (!user) {
+      const message = "Usuario no encontrado";
+      throw new NotFoundError(message);
+    }
+
+    const isValid = await bcrypt.compare(currentPassword, user.password);
+    if (!isValid) {
+      const message = "Contraseña actual incorrecta.";
+      throw new Error(message);
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await prisma.user.update({
+      where: { id: userId },
+      data: { password: hashedPassword },
+    });
+    const message = "Contraseña actualizada correctamente.";
+    return message;
+  } catch (error) {
+    console.error("Error:", error);
+    const message = "No se pudo actualizar la contraseña.";
+    throw new Error(message);
+  }
 }
 
 export async function deleteProfile({ userId }: UserProfileProps) {
@@ -53,6 +107,6 @@ export async function deleteProfile({ userId }: UserProfileProps) {
   } catch (error) {
     console.error("Error: ", error);
     const message = "No se pudo eliminar el usuario";
-    return message;
+    throw new Error(message);
   }
 }

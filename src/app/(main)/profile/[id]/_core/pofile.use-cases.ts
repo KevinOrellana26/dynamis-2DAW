@@ -1,10 +1,17 @@
-import { deleteProfile, updateProfile } from "./profile.db";
-import { EditProfileT } from "./profile.definitions";
+import { deleteProfile, updatePasswordProfile, updateProfile } from "./profile.db";
+import { EditProfileUserT, UpdatePasswordProfileUserT } from "./profile.definitions";
 
 export const updateProfileUseCase = async (
-  props: EditProfileT & { userId: string }
+  props: EditProfileUserT & { userId: string }
 ) => {
   const message = await updateProfile(props);
+  return message;
+};
+
+export const updatePasswordProfileUseCase = async (
+  props: UpdatePasswordProfileUserT & { userId: string }
+) => {
+  const message = await updatePasswordProfile(props);
   return message;
 };
 

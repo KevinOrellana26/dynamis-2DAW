@@ -7,7 +7,7 @@ function UserNavbar() {
   const path = usePathname();
 
   const navItems = [
-    { name: "Inicio", href: "/" },
+    // { name: "Inicio", href: "/" },
     { name: "Dashboard", href: "/dashboard" },
     { name: "Ejercicios", href: "/exercises" },
     { name: "Rutinas", href: "/routines" },

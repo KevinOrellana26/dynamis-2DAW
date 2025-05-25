@@ -7,23 +7,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import EditProfileForm from "./EditProfileForm";
-import { EditProfileUserT } from "../_core/profile.definitions";
 import { useState } from "react";
+import EditPasswordProfileForm from "./EditPasswordProfileForm";
 
-type EditProfileDialogProps = {
+type EditPasswordProfileDialogProps = {
   className?: string;
   disabled?: boolean;
-  user: EditProfileUserT;
 };
 
-export default function EditProfileDialog({
+export default function EditPasswordProfileDialog({
   className,
   disabled,
-  user,
-}: EditProfileDialogProps) {
+}: EditPasswordProfileDialogProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-
   const handleClose = () => {
     setIsDialogOpen(false);
   };
@@ -31,14 +27,14 @@ export default function EditProfileDialog({
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button variant={"dynamis"} className={className} disabled={disabled}>
-          Editar Perfil
+          Cambiar contraseña
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xs md:max-w-2xl lg:max-w-3xl">
         <DialogHeader>
-          <DialogTitle>Editar Perfil</DialogTitle>
+          <DialogTitle>Cambiar contraseña</DialogTitle>
         </DialogHeader>
-        <EditProfileForm user={user} onCloseDialog={handleClose} />
+        <EditPasswordProfileForm onCloseDialog={handleClose} />
       </DialogContent>
     </Dialog>
   );

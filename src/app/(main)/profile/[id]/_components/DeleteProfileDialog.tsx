@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Spinner, Trash } from "@/config/theme.config";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
 import { deleteProfileAction } from "../profile.actions";
-import { useRouter } from "next/navigation";
 
 type DeleteProfileDialogProps = {
   userId: string;
@@ -24,6 +24,7 @@ export default function DeleteProfileDialog({
   userId,
 }: DeleteProfileDialogProps) {
   const router = useRouter();
+
   const { execute, isPending } = useServerAction(deleteProfileAction, {
     onSuccess: ({ data: message }) => {
       toast.success(message);
@@ -45,7 +46,7 @@ export default function DeleteProfileDialog({
         <Button
           variant={"link"}
           size={"icon"}
-          className="size-8 hover:text-red-500"
+          className="text-red-700 hover:text-red-500"
           disabled={isPending}
         >
           {isPending ? (

@@ -1,3 +1,4 @@
+"use client";
 import { AlertDialogHeader } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,13 +8,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { AddPerson, Edit } from "@/config/theme.config";
-import { UserTableT } from "../_core/users.definitions";
+import { AddPerson } from "@/config/theme.config";
 import AddUserForm from "./AddUserForm";
+import { useState } from "react";
 
 export default function AddUserDialog() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsDialogOpen(false);
+  };
   return (
-    <Dialog>
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="dynamis">
           <AddPerson className="size-4" />
@@ -27,7 +33,7 @@ export default function AddUserDialog() {
         </AlertDialogHeader>
 
         {/* CREAR UNA SERVER ACTION CON UN FORMULARIO */}
-        <AddUserForm/>
+        <AddUserForm onCloseDialog={handleClose} />
       </DialogContent>
     </Dialog>
   );

@@ -23,7 +23,11 @@ import { useServerAction } from "zsa-react";
 import { AddUserFormSchema, AddUserFormT } from "../_core/users.definitions";
 import { addUserAction } from "../users.actions";
 
-export default function AddUserForm() {
+type AddUserFormProps = {
+  onCloseDialog?: () => void;
+};
+
+export default function AddUserForm({ onCloseDialog }: AddUserFormProps) {
   const form = useForm<Omit<AddUserFormT, "id">>({
     resolver: zodResolver(AddUserFormSchema),
     defaultValues: {
@@ -38,6 +42,7 @@ export default function AddUserForm() {
   const { isPending, execute } = useServerAction(addUserAction, {
     onSuccess: ({ data: message }) => {
       toast.success(message);
+      onCloseDialog?.();
     },
     onError: ({ err }) => {
       console.log(err);

@@ -1,7 +1,5 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { EditProfileUserT } from "./EditProfileDialog";
-import { EditProfileSchema, EditProfileT } from "../_core/profile.definitions";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useServerAction } from "zsa-react";
 import { updateProfileAction } from "../profile.actions";
@@ -16,24 +14,24 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {
+  EditProfileUserSchema,
+  EditProfileUserT,
+} from "../_core/profile.definitions";
 
 type EditProfileFormProps = {
   user: EditProfileUserT;
-  onSuccess?: () => void;
+  onCloseDialog?: () => void;
 };
 
 export default function EditProfileForm({
   user,
-  onSuccess,
+  onCloseDialog,
 }: EditProfileFormProps) {
-  const form = useForm<EditProfileT>({
-    resolver: zodResolver(EditProfileSchema),
+  const form = useForm<EditProfileUserT>({
+    resolver: zodResolver(EditProfileUserSchema),
     defaultValues: {
-      // userId: "",
       name: user.name,
-      currentPassword: "",
-      newPassword: "",
-      confirmPassword: "",
     },
   });
 
@@ -41,13 +39,14 @@ export default function EditProfileForm({
     onSuccess: ({ data: message }) => {
       toast.success(message);
       form.reset();
+      onCloseDialog?.();
     },
     onError: ({ err }) => {
       toast.error(err.message);
     },
   });
 
-  const handleSubmit = async (values: EditProfileT) => {
+  const handleSubmit = async (values: EditProfileUserT) => {
     execute(values);
   };
 
@@ -67,50 +66,11 @@ export default function EditProfileForm({
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="currentPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Contraseña actual</FormLabel>
-              <FormControl>
-                <Input {...field} type="password" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="newPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Nueva Contraseña</FormLabel>
-              <FormControl>
-                <Input {...field} type="password" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="confirmPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Confirmar nueva contraseña</FormLabel>
-              <FormControl>
-                <Input {...field} type="password" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <Button
           type="submit"
           variant={"dynamis"}
           className="w-full"
-          disabled={isPending}
+          isPending={isPending}
         >
           {isPending ? "Guardando" : "Guardar cambios"}
         </Button>

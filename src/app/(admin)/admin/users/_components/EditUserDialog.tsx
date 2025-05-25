@@ -1,3 +1,4 @@
+"use client";
 import { AlertDialogHeader } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +11,7 @@ import {
 import { Edit } from "@/config/theme.config";
 import { UserTableT } from "../_core/users.definitions";
 import EditUserForm from "./EditUserForm";
+import { useState } from "react";
 
 type EditUserDialogProps = {
   user: UserTableT;
@@ -17,8 +19,13 @@ type EditUserDialogProps = {
 
 export default function EditUserDialog(params: EditUserDialogProps) {
   const { user } = params;
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsDialogOpen(false);
+  };
   return (
-    <Dialog>
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="dynamis" size={"icon"}>
           <Edit className="size-4" />
@@ -35,6 +42,7 @@ export default function EditUserDialog(params: EditUserDialogProps) {
         {/* CREAR UNA SERVER ACTION CON UN FORMULARIO */}
         <EditUserForm
           user={{ id: user.id, name: user.name, role: user.role }}
+          onCloseDialog={handleClose}
         />
       </DialogContent>
     </Dialog>
