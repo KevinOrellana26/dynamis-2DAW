@@ -33,9 +33,11 @@ export default function LoginForm() {
   });
 
   const { isPending, execute } = useServerAction(loginUserAction, {
-    onSuccess: ({ data: message }) => {
-      toast.success(message);
-      router.push("/dashboard");
+    onSuccess: ({ data }) => {
+      toast.success(data.message);
+      data.role === "ADMIN"
+        ? router.push("/admin/dashboard")
+        : router.push("/dashboard");
     },
     onError: ({ err }) => {
       console.log(err);

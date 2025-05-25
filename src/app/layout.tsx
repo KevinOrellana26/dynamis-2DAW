@@ -4,9 +4,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { inter } from "@/styles/fonts";
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import AdminNavbar from "./(admin)/_components/AdminNavbar";
 import UserNavbar from "./(main)/_components/UserNavbar";
 import Providers from "./Providers";
+import AdminNavbar from "./(admin)/admin/dashboard/_components/AdminNavbar";
 
 export const metadata: Metadata = {
   title: {

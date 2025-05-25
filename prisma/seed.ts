@@ -182,7 +182,7 @@ async function seedUsers() {
         role: "USER",
         password:
           "$2b$10$H5T1Ki4rqz3WQbsZuhuVvOb9KKJySD8VgZbjwRZnCeLUBwxu7DAem",
-        // emailVerified: null,
+        isEmailVerified: true,
       },
       {
         name: "Admin",
@@ -191,7 +191,7 @@ async function seedUsers() {
         role: "ADMIN",
         password:
           "$2b$10$jeGlBsxks02ZY2EkBNU9k.IQLlTlNg7yJRK92fsFZKmvrOhdEx32G",
-        // emailVerified: null,
+        isEmailVerified: true,
       },
     ],
   });
@@ -276,7 +276,7 @@ async function seedRoutines() {
         name: "Rutina Full Body",
         description: "Entrenamiento completo para todo el cuerpo",
         // duration: 60,
-        totalExercises: 4,
+        // totalExercises: 4,
       },
     ],
   });

@@ -10,11 +10,13 @@ export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const isProtectedRoute = protectedRoutes.includes(path);
   const isPublicRoute = publicRoutes.includes(path);
+  const isAdminRoute = path.startsWith("/admin");
 
   console.log("---------------------------------------------");
   console.log("Middleware ejecutándose para la ruta:", path);
   console.log("Es ruta protegida:", isProtectedRoute);
   console.log("Es ruta pública:", isPublicRoute);
+  console.log("Es ruta de administración:", isAdminRoute);
   console.log("---------------------------------------------");
 
   //3. Revisar si la cookie de sesión es válida
@@ -25,12 +27,17 @@ export default async function middleware(req: NextRequest) {
   // -> si no hay session
   // -> la session no está marcada como activa
   // -> no hay un userId en la session
-  if (isProtectedRoute && (!session || !session.isLoggedIn)) {
+  if ((isProtectedRoute || isAdminRoute) && (!session || !session.isLoggedIn)) {
     console.log("redirigiendo a /login");
     return NextResponse.redirect(new URL("/login", req.nextUrl));
   }
 
-  //5. Redirigir a /dashboard si la ruta es pública y el usuario está autenticado
+  //5. Redirigir a /dashboard si un usuario con rol USER intenta acceder a /admin
+  if (isAdminRoute && session.role !== "ADMIN") {
+    return NextResponse.redirect(new URL("/dashboard", req.nextUrl));
+  }
+
+  //5. Redirigir a /dashboard si intenta ir a login estando logueado
   if (isPublicRoute && session?.isLoggedIn) {
     console.log("redirigiendo a /dashboard");
     return NextResponse.redirect(new URL("/dashboard", req.nextUrl));

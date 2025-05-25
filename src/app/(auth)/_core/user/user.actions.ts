@@ -1,7 +1,7 @@
 "use server";
 import { IS_DEV } from "@/config/env.config";
 import { createServerAction, } from "zsa";
-import { deleteSession } from "../auth/auth.actions";
+import { deleteSession, getSession } from "../auth/auth.actions";
 import { LoginSchema, RegisterSchema } from "../auth/user.types";
 import { loginUser, registerUser } from "./user.db";
 

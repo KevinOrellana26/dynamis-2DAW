@@ -79,7 +79,7 @@ export async function loginUser(values: LoginT) {
 
     const message = "Se ha iniciado sesión correctamente";
 
-    return message;
+    return { message, role: user.role};
   } catch (error) {
     IS_DEV && console.log(error);
     const message = "Error al iniciar sesión";

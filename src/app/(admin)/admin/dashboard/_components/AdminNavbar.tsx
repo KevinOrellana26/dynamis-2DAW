@@ -7,10 +7,10 @@ function AdminNavbar() {
   const path = usePathname();
 
   const navItems = [
-    { name: "Inicio", href: "/" },
-    { name: "Añadir Ejercicio", href: "/exercise" },
-    { name: "Añadir Rutinas", href: "/routine" },
-    { name: "Listar Usuario", href: "/test" }, //!EJEMPLO
+    { name: "Inicio", href: "/admin/dashboard" },
+    { name: "Ejercicios", href: "/admin/exercises" },
+    { name: "Rutinas", href: "/admin/routines" },
+    { name: "Usuarios", href: "/admin/users" },
   ];
 
   return (
