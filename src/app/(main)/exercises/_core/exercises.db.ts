@@ -4,8 +4,11 @@ import { NotFoundError } from "@/app/_shared/errors";
 import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
 
-
-import { addExerciseToFavoritesT, exerciseAdapter, removeExerciseFromFavoritesT } from "./exercises.definitions";
+import {
+  addExerciseToFavoritesT,
+  exerciseAdapter,
+  removeExerciseFromFavoritesT,
+} from "./exercises.definitions";
 import { delay } from "@/lib/utils";
 
 export type GetExercisesOptionsT = {
@@ -61,7 +64,7 @@ export const getExercises = async (
       throw new NotFoundError(message);
     }
     const parsedExercises = exercises.map((exercises) =>
-      exerciseAdapter(exercises)
+      exerciseAdapter(exercises, userId)
     );
 
     return parsedExercises;

@@ -23,7 +23,7 @@ export default async function ExerciseList() {
       query,
       selectedMuscle,
       showFavorites,
-      userId: showFavorites ? userId : undefined,
+      userId,
       page: Number(page),
       limit, //numero de resultados por página
     })
