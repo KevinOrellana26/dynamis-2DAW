@@ -1,4 +1,8 @@
+import { Metadata } from "next";
 import TabsComponent from "./_components/TabsComponent";
+export const metadata: Metadata = {
+  title: "Progreso",
+};
 
 export default function ProgressPage() {
   return (

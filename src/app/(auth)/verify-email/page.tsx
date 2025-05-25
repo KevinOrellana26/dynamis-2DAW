@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { verifyEmailTokenAction } from "./_core/verify-email.actions";
 import { tokenSearchParamsCache } from "./_core/verify-email.search-params";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Verificar Correo",
+};
 
 type VerifyEmailPageProps = {
   searchParams: Promise<SearchParams>;

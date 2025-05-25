@@ -1,5 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ForgotPasswordForm from "./_components/ForgotPasswordForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Restablecer contraseña",
+};
 
 export default function ResetPasswordPage() {
   return (

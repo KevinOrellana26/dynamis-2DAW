@@ -3,6 +3,11 @@ import { Suspense } from "react";
 import ExerciseList, { ExerciseListSkeleton } from "./_components/ExerciseList";
 import ExercisesFilters from "./_components/ExercisesFilters";
 import { exercisesSearchParamsCache } from "./_core/exercises.search-params";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ejercicios",
+};
 
 type PageProps = {
   searchParams: Promise<SearchParams>;

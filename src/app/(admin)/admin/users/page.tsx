@@ -5,11 +5,12 @@ import { handleAsync } from "@/app/_shared/errors";
 import ErrorMessage from "@/app/(main)/_components/ErrorMessage";
 import { getUsersListUseCase } from "./_core/users.use-cases";
 import AddUserDialog from "./_components/AddUserDialog";
+
 export const metadata: Metadata = {
   title: "Admin Usuarios",
 };
 
-export default async function UserListPage() {
+export default async function UserPage() {
   const [users, error] = await handleAsync(() => getUsersListUseCase());
 
   if (error || !users) {

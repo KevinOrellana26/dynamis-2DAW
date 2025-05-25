@@ -11,6 +11,11 @@ import {
   getRoutinesCountUseCase,
   getRoutinesDashboardUseCase,
 } from "./_core/dashboard.use-cases";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 export default async function DashboardPage() {
   //! SE PUEDE VERIFICAR SI HAY SESIÓN, PERO ES OPCIONAL PORQUE EL MIDDLEWARE YA LO HARÁ

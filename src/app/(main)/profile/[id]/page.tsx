@@ -15,6 +15,11 @@ import DeleteProfileDialog from "./_components/DeleteProfileDialog";
 import EditPasswordProfileDialog from "./_components/EditPasswordProfileDialog";
 import EditProfileDialog from "./_components/EditProfileDialog";
 import { getUserProfile } from "./_core/profile.db";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Perfil",
+};
 
 type Props = {
   params: {

@@ -4,6 +4,11 @@ import ExerciseList from "./_components/ExerciseList";
 import RoutineFilters from "./_components/RoutineFilters";
 import RoutineList, { RoutineListSkeleton } from "./_components/RoutineList";
 import { routinesSearchParamsCache } from "./_core/routines.search-params";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Rutinas",
+};
 
 type PageProps = {
   searchParams: Promise<SearchParams>;
