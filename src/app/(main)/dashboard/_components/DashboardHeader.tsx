@@ -12,8 +12,8 @@ export default function DashboardHeader(props: DashboardHeaderProps) {
           Dashboard
         </h1>
         <p className="font-semibold text-muted-foreground text-xl mt-2">
-          Bienvenido de nuevo <span className="font-bold text-2xl">{name}</span>{" "}
-          con rol {role}, aquí está tu resumen de actividad.
+          Bienvenido de nuevo <span className="font-bold text-2xl">{name}</span>
+          , aquí está tu resumen de actividad.
         </p>
       </div>
       <div className="my-3">{/* <NewRoutineButton /> */}</div>
