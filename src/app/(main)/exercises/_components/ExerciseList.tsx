@@ -7,6 +7,7 @@ import { exercisesSearchParamsCache } from "../_core/exercises.search-params";
 import { getExercisesUseCase } from "../_core/exercises.use-cases";
 import ExerciseCard from "./ExerciseCard";
 import ExerciseCardSkeleton from "./ExerciseCardSkeleton";
+import { sortExercisesByName } from "@/lib/utils";
 
 export default async function ExerciseList() {
   const searchParams = exercisesSearchParamsCache.all();
@@ -58,9 +59,11 @@ export default async function ExerciseList() {
     );
   }
 
-  const sortedExercises = exercises.toSorted((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  // const sortedExercises = exercises.toSorted((a, b) =>
+  //   a.name.localeCompare(b.name)
+  // );
+  const sortedExercises = sortExercisesByName(exercises);
+  
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-7">

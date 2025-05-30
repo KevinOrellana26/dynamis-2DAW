@@ -37,6 +37,11 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/dashboard", req.nextUrl));
   }
 
+  //5. Redirigir al /dashboard de admin si un usuario con rol ADMUIN intenta acceder a /dashboard
+  if (isProtectedRoute && session.role === "ADMIN") {
+    return NextResponse.redirect(new URL("/admin/dashboard", req.nextUrl));
+  }
+
   //5. Redirigir a /dashboard si intenta ir a login estando logueado
   if (isPublicRoute && session?.isLoggedIn) {
     console.log("redirigiendo a /dashboard");
