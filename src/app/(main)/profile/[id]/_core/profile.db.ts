@@ -110,3 +110,30 @@ export async function deleteProfile({ userId }: UserProfileProps) {
     throw new Error(message);
   }
 }
+
+export async function updateAvatarProfile({
+  userId,
+  avatar,
+}: {
+  userId: string;
+  avatar: string;
+}) {
+  try {
+    const updateAvatar = await prisma.user.update({
+      where: { id: userId },
+      data: { avatar: avatar },
+    });
+
+    if (!updateAvatar) {
+      const message = "No se pudo actualizar el avatar.";
+      throw new Error(message);
+    }
+
+    const message = "Avatar actualizado correctamente.";
+    return message;
+  } catch (error) {
+    console.error("Error: ", error);
+    const message = "No se pudo actualizar el avatar.";
+    throw new Error(message);
+  }
+}

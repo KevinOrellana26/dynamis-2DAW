@@ -16,6 +16,7 @@ import EditPasswordProfileDialog from "./_components/EditPasswordProfileDialog";
 import EditProfileDialog from "./_components/EditProfileDialog";
 import { getUserProfile } from "./_core/profile.db";
 import { Metadata } from "next";
+import UploadAvatarProfile from "./_components/UploadAvatarProfile";
 
 export const metadata: Metadata = {
   title: "Perfil",
@@ -27,8 +28,12 @@ type Props = {
   };
 };
 
-export default async function ProfilePage({ params }: Props) {
-  const userId = params.id;
+export default async function ProfilePage(props: Props) {
+  const { params } = props;
+  // Extrae el userId de los parámetros de la URL
+  const resolvedParams = await Promise.resolve(params);
+
+  const userId = resolvedParams.id;
   const [userDetails, userError] = await handleAsync(() =>
     getUserProfile({ userId })
   );
@@ -57,17 +62,20 @@ export default async function ProfilePage({ params }: Props) {
       <Card className="w-full max-w-3xl mx-auto">
         <CardHeader className="flex flex-col items-center gap-3 mt-5 border-b md:gap-8 md:items-start md:flex-row">
           <Avatar className="size-28">
-            <AvatarImage src={userDetails.avatar || undefined} />
+            <AvatarImage src={userDetails.avatar ?? "/default-avatar.png"} />
             <AvatarFallback className="text-3xl">
               {serializedUser.name.charAt(0).toLocaleUpperCase()}
             </AvatarFallback>
           </Avatar>
           <div className="flex-1 text-center md:text-left space-y-2 mt-4 md:mt-0">
-            <div className="flex justify-between">
+            <div className="md:flex md:justify-between">
               <CardTitle className="text-3xl font-extrabold">
                 {serializedUser.name}
               </CardTitle>
-              {isCurrentUser && <DeleteProfileDialog userId={userId} />}
+              <DeleteProfileDialog
+                userId={userId}
+                className="hidden md:block"
+              />
             </div>
             <CardDescription className="text-lg">
               {serializedUser.email}
@@ -90,9 +98,13 @@ export default async function ProfilePage({ params }: Props) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="flex gap-2 justify-center md:justify-end">
+          <div className="flex flex-wrap gap-2 justify-center md:justify-end">
             <EditProfileDialog user={serializedUser} />
             <EditPasswordProfileDialog />
+            <UploadAvatarProfile />
+          </div>
+          <div className="flex justify-end">
+            <DeleteProfileDialog userId={userId} className="md:hidden" />
           </div>
         </CardContent>
       </Card>

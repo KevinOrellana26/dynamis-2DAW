@@ -34,3 +34,10 @@ export const UpdatePasswordProfileUserSchema = z
 export type UpdatePasswordProfileUserT = z.infer<
   typeof UpdatePasswordProfileUserSchema
 >;
+
+export const UpdateAvatarProfileUserSchema = z.object({
+  avatar: z.string().url(),
+});
+export type UpdateAvatarProfileUserT = z.infer<
+  typeof UpdateAvatarProfileUserSchema
+>;

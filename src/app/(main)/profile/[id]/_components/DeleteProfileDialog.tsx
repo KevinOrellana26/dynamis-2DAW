@@ -19,9 +19,11 @@ import { deleteProfileAction } from "../profile.actions";
 
 type DeleteProfileDialogProps = {
   userId: string;
+  className?: string;
 };
 export default function DeleteProfileDialog({
   userId,
+  className,
 }: DeleteProfileDialogProps) {
   const router = useRouter();
 
@@ -42,7 +44,7 @@ export default function DeleteProfileDialog({
   };
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
+      <AlertDialogTrigger asChild className={className}>
         <Button
           variant={"link"}
           size={"icon"}
