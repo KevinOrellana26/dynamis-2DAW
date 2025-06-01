@@ -21,7 +21,7 @@ export default function UploadAvatarProfile() {
       className="ut-button:bg-accent-blue ut-button:hover:bg-blue-800 ut-button:ut-label:text-white ut-button:h-[37px] ut-button:text-sm"
       content={{
         button: ({ isUploading }) =>
-          isUploading ? "Subiendo..." : "Añadir avatar",
+          isUploading ? "Subiendo..." : "Actualizar avatar",
       }}
       onClientUploadComplete={(res) => {
         const avatarUrl = res[0]?.ufsUrl;

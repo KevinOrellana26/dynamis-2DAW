@@ -6,6 +6,7 @@ import { FiTrash2 } from "react-icons/fi";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { CgMenu } from "react-icons/cg";
 import { FaDumbbell } from "react-icons/fa6";
+import { BsFillPersonVcardFill } from "react-icons/bs";
 
 export const Spinner = RiLoader2Fill;
 export const Plus = HiMiniPlus;
@@ -15,3 +16,4 @@ export const Trash = FiTrash2;
 export const AddPerson = IoPersonAddOutline;
 export const Menu = CgMenu;
 export const Dumbell = FaDumbbell;
+export const PersonDetails = BsFillPersonVcardFill;

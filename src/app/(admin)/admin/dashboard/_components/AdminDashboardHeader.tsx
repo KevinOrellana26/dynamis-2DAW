@@ -1,9 +1,10 @@
-type DashboardHeaderProps = {
+type AdminDashboardHeaderProps = {
   name: string;
 };
 
-export default function DashboardHeader(props: DashboardHeaderProps) {
-  const { name } = props;
+export default function AdminDashboardHeader({
+  name,
+}: AdminDashboardHeaderProps) {
   return (
     <div className="flex flex-col items-center md:flex-row md:justify-between">
       <div className="text-center md:text-left">
@@ -15,7 +16,6 @@ export default function DashboardHeader(props: DashboardHeaderProps) {
           , aquí está tu resumen de actividad.
         </p>
       </div>
-      <div className="my-3">{/* <NewRoutineButton /> */}</div>
     </div>
   );
 }

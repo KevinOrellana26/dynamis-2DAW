@@ -66,7 +66,7 @@ export default async function DashboardPage() {
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
       {/* Titulo y botón añadir rutina */}
-      <DashboardHeader name={name} role={role} />
+      <DashboardHeader name={name} />
       <ActivitySumary
         favoriteCount={favoriteCount ?? 0}
         routineCount={routineCount ?? 0}

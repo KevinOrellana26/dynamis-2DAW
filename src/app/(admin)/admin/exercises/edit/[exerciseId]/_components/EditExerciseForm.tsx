@@ -201,7 +201,7 @@ export default function EditExerciseForm({ exercise }: EditExerciseFormProps) {
               className="ut-button:bg-accent-blue ut-button:hover:bg-blue-800 ut-button:ut-label:text-white ut-button:h-[37px] ut-button:text-sm"
               content={{
                 button: ({ isUploading }) =>
-                  isUploading ? "Subiendo imagen..." : "Subir imagen",
+                  isUploading ? "Subiendo imagen..." : "Actualizar imagen",
               }}
               onClientUploadComplete={(res) => {
                 const url = res[0].ufsUrl;

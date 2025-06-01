@@ -77,9 +77,9 @@ export async function loginUser(values: LoginT) {
       avatar: user.avatar as string,
     });
 
-    const message = "Se ha iniciado sesión correctamente";
+    const message = `Se ha iniciado sesión correctamente.\nBienvenido ${user.name}`;
 
-    return { message, role: user.role};
+    return { message, role: user.role };
   } catch (error) {
     IS_DEV && console.log(error);
     const message = "Error al iniciar sesión";
