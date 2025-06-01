@@ -11,6 +11,7 @@ import { UserTableT } from "../_core/users.definitions";
 import { Button } from "@/components/ui/button";
 import EditUserDialog from "./EditUserDialog";
 import RemoveUserDialog from "./RemoveUserDialog";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 type UserListTableProps = {
   users: UserTableT[];
@@ -21,7 +22,7 @@ export default function UserListTable(params: UserListTableProps) {
   const { users, totalUsers } = params;
   return (
     <Table>
-      <TableCaption>Lista de usuarios.</TableCaption>
+      <TableCaption>Lista de usuarios</TableCaption>
       <TableHeader>
         <TableRow className="text-center">
           <TableCell>ID</TableCell>
@@ -38,8 +39,15 @@ export default function UserListTable(params: UserListTableProps) {
           <TableRow key={user.id} className="text-center">
             <TableCell>{index}</TableCell>
             <TableCell>
-              {user.name}
-              {/* {user.avatar} */}
+              <div className="flex items-center justify-center gap-3">
+                <Avatar className="size-10">
+                  <AvatarImage src={user.avatar ?? "/default-avatar.png"} />
+                  <AvatarFallback className="text-sm">
+                    {user.name.charAt(0).toLocaleUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <span>{user.name}</span>
+              </div>
             </TableCell>
             <TableCell>{user.email}</TableCell>
             <TableCell>{user.createdAt.toLocaleDateString()}</TableCell>
@@ -51,7 +59,6 @@ export default function UserListTable(params: UserListTableProps) {
               <div className="flex flex-row gap-2 items-center justify-center">
                 <EditUserDialog user={user} />
                 <RemoveUserDialog userId={user.id} />
-                {/* BOTON PARA RESTABLECER CONTRASEÑA */}
               </div>
             </TableCell>
           </TableRow>

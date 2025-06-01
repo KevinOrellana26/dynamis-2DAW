@@ -7,6 +7,8 @@ import { SearchParams } from "nuqs/server";
 import { adminExercisesSearchParamsCache } from "./_core/admin.exercises.search-params";
 import { Suspense } from "react";
 import AdminExercisesFilters from "./_components/AdminExercisesFilters";
+import Link from "next/link";
+import { Dumbell } from "@/config/theme.config";
 
 export const metadata: Metadata = {
   title: "Admin Ejercicios",
@@ -30,7 +32,11 @@ export default async function AdminExercisesPage({
         <h1 className="font-semibold text-4xl md:text-6xl text-accent-blue dark:text-accent-blue">
           Ejercicios
         </h1>
-        <Button variant={"dynamis"}>Añadir ejercicio</Button>
+        <Link href={"/admin/exercises/new"}>
+          <Button variant={"dynamis"}>
+            <Dumbell size={4}/>
+            Añadir ejercicio</Button>
+        </Link>
       </header>
       <AdminExercisesFilters />
 

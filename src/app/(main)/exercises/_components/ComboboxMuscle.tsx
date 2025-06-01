@@ -17,7 +17,7 @@ import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/components.lib";
 import { useState } from "react";
 
-const options = [
+export const options = [
   // { value: "", label: "-- Seleccionar músculo --" }, //opción por defecto, no se acepta un valor ""
   { value: "pecho", label: "Pecho" },
   { value: "pierna", label: "Pierna" },

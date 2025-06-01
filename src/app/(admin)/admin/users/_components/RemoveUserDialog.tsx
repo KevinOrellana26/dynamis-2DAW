@@ -37,7 +37,7 @@ export default function RemoveUserDialog({ userId }: RemoveUserDialogProps) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant={"destructive"} size={"icon"}>
+        <Button className="bg-red-600 hover:bg-red-700 text-white" size={"icon"}>
           <Delete className="size-4" />
         </Button>
       </AlertDialogTrigger>

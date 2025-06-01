@@ -22,18 +22,13 @@ export const metadata: Metadata = {
   title: "Perfil",
 };
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
+export default async function ProfilePage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const userId = params.id;
 
-export default async function ProfilePage(props: Props) {
-  const { params } = props;
-  // Extrae el userId de los parámetros de la URL
-  const resolvedParams = await Promise.resolve(params);
-
-  const userId = resolvedParams.id;
   const [userDetails, userError] = await handleAsync(() =>
     getUserProfile({ userId })
   );

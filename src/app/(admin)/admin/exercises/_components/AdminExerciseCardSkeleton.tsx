@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Trash } from "@/config/theme.config";
+import { Trash, Edit } from "@/config/theme.config";
 import React from "react";
 
 export default function AdminExerciseCardSkeleton() {
@@ -17,7 +17,10 @@ export default function AdminExerciseCardSkeleton() {
           </div>
           {/* Botón de favoritos */}
           {/* <Skeleton className="size-8"> */}
-          <Trash className="size-6 text-accent" />
+          <div className="flex gap-2 justify-end items-center">
+            <Edit className="size-6 text-accent" />
+            <Trash className="size-6 text-accent" />
+          </div>
           {/* </Skeleton> */}
         </div>
       </CardContent>

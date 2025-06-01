@@ -16,3 +16,4 @@ export function formatDate(date: Date | string): string {
 export function sortExercisesByName(exercises: ExerciseT[]) {
   return exercises.toSorted((a, b) => a.name.localeCompare(b.name));
 }
+

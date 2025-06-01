@@ -16,7 +16,7 @@ type SelectMuscleT = {
   onClear?: () => void;
 };
 
-const options = [
+export const options = [
   // { value: "", label: "-- Seleccionar músculo --" }, //opción por defecto, no se acepta un valor ""
   { value: "pecho", label: "Pecho" },
   { value: "pierna", label: "Pierna" },
