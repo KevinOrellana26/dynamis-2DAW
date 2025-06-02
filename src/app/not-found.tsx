@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ErrorMessage from "./(main)/_components/ErrorMessage";
+import BackButton from "./(main)/_components/BackButton";
 
 export default function NotFoundPage() {
   return (
@@ -20,10 +22,7 @@ export default function NotFoundPage() {
         (O quizás Homero se la comió... 🍩)
       </p>
 
-      {/* Botón para volver */}
-      <Link href="/">
-        <Button variant={"dynamis"}>Volver al inicio</Button>
-      </Link>
+      <BackButton path="/" />
     </div>
   );
 }
