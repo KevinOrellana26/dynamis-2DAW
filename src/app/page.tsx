@@ -1,14 +1,13 @@
 import BenefitsCard from "@/components/BenefitsCard";
-import ExerciseCard from "@/components/ExerciseCardLanding";
+import ExerciseCardLanding from "@/components/ExerciseCardLanding";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, SearchLine } from "@/config/theme.config";
 import Exercise from "@/mocks/exercise.json";
-import { ArrowRight, ChartLine, Dumbbell, ListChecks } from "lucide-react";
-import { Metadata } from "next";
+import { ChartLine, Dumbbell, ListChecks } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 function Home() {
-  // ! CAMBIAR CUANDO HAGA CONSULTAS A LA BD
   const mockExercises = Exercise;
   const latestExercise = mockExercises.slice(0, 4);
 
@@ -29,14 +28,21 @@ function Home() {
               personalizadas y seguimiento de tu progreso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant={"dynamis"} size={"lg"} asChild>
-                <Link href={"/login"}>
-                  Empezar ahora <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant={"secondary"} size={"lg"} asChild>
-                <Link href={"/exercise"}>Explorar ejercicios</Link>
-              </Button>
+              <Link href={"/login"}>
+                <Button variant={"dynamis"} size={"lg"}>
+                  Empezar ahora <ArrowRight className="size-4" />
+                </Button>
+              </Link>
+
+              <Link href={"/login"}>
+                <Button
+                  variant="outline"
+                  size={"lg"}
+                  className="hover:text-accent-blue hover:underline"
+                >
+                  Explorar ejercicios <SearchLine className="size-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -47,7 +53,7 @@ function Home() {
               height={500}
               src={"/portada.png"}
               alt="persona entrenando"
-              className="object-cover w-full h-full rounded-4xl"
+              className="object-cover w-full rounded-4xl"
             />
           </div>
         </main>
@@ -64,16 +70,14 @@ function Home() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <Button variant="outline" asChild>
-                <Link href="/login">Ver todos</Link>
-              </Button>
+              <Link href="/login">
+                <Button variant="outline">Ver todos</Button>
+              </Link>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {latestExercise.map((exercise) => (
-              <div key={exercise.id}>
-                <ExerciseCard {...exercise} />
-              </div>
+              <ExerciseCardLanding key={exercise.id} exercise={exercise} />
             ))}
           </div>
         </section>
@@ -121,9 +125,9 @@ function Home() {
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <Button variant={"secondary"} asChild>
-              <Link href={"/login"}>Crear cuenta</Link>
-            </Button>
+            <Link href={"/login"}>
+              <Button variant={"outline"} className="text-black dark:text-white">Crear cuenta</Button>
+            </Link>
           </div>
         </footer>
       </div>

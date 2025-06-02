@@ -5,6 +5,7 @@ import ExerciseCardDashboard, {
   ExerciseCardDashboardSkeleton,
 } from "./ExerciseCardDashboard";
 import { ExerciseT } from "../../exercises/_core/exercises.definitions";
+import { ArrowRight } from "@/config/theme.config";
 
 type ExerciseSectionProps = {
   exercises: ExerciseT[];
@@ -22,9 +23,11 @@ export default function ExerciseSection({ exercises }: ExerciseSectionProps) {
           Ejercicios recientes
         </h1>
 
-        <Button variant={"secondary"} className="cursor-pointer" asChild>
-          <Link href={"/exercises"}>Ver más</Link>
-        </Button>
+        <Link href={"/exercises"}>
+          <Button variant={"secondary"} className="cursor-pointer group">
+            Ver más <ArrowRight className="group-hover:text-accent-blue ml-1"/>
+          </Button>
+        </Link>
       </div>
 
       <Suspense fallback={<ExerciseCardDashboardSkeleton />}>

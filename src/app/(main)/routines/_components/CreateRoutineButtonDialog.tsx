@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus } from "@/config/theme.config";
+import { PlusCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { ExerciseT } from "../_core/routines.definitions";
@@ -33,8 +33,8 @@ export default function CreateRoutineButtonDialog(
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="dynamis" className="gap-2">
-          <Plus className="h-4 w-4" />
-          Crear nueva rutina
+          <PlusCircle className="h-4 w-4" />
+          Crear rutina
         </Button>
       </DialogTrigger>
 
@@ -42,14 +42,17 @@ export default function CreateRoutineButtonDialog(
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Crear nueva rutina de ejercicios</DialogTitle>
+          <DialogTitle className="text-accent-blue">Crear nueva rutina de ejercicios</DialogTitle>
           <DialogDescription>
             Selecciona los ejercicios para tu rutina.
           </DialogDescription>
         </DialogHeader>
 
         {/* renderizo el formulario */}
-        <CreateRoutineForm exercisesList={exercisesList} onCloseDialog={handleClose} />
+        <CreateRoutineForm
+          exercisesList={exercisesList}
+          onCloseDialog={handleClose}
+        />
       </DialogContent>
     </Dialog>
   );

@@ -2,6 +2,9 @@ import { Suspense } from "react";
 import RoutineCardSkeleton from "../../routines/_components/RoutineCardSkeleton";
 import { RoutineWithExerciseT } from "../../routines/_core/routines.db";
 import RoutineCardDashboard from "./RoutineCardDashboard";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { PlusCircle } from "lucide-react";
 
 type RoutineSectionProps = {
   routines: RoutineWithExerciseT[];
@@ -17,9 +20,21 @@ export default function RoutineSection({ routines }: RoutineSectionProps) {
         Mis rutinas
       </h1>
 
-      <Suspense fallback={<RoutineListSkeleton />}>
-        <RoutineCardDashboard routines={sortedRoutines} />
-      </Suspense>
+      {sortedRoutines.length === 0 ? (
+        <div className="flex flex-col justify-center text-center my-8 gap-2">
+          <p>No tienes rutinas aún.</p>
+          <Link href={"/routines"}>
+            <Button variant={"dynamis"}>
+              <PlusCircle />
+              Crear rutina
+            </Button>
+          </Link>
+        </div>
+      ) : (
+        <Suspense fallback={<RoutineListSkeleton />}>
+          <RoutineCardDashboard routines={sortedRoutines} />
+        </Suspense>
+      )}
     </>
   );
 }

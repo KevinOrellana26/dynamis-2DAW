@@ -62,7 +62,7 @@ export const getExercises = async (userId: string) => {
     }
 
     const parsedExercises = allExercises.map((exercises) =>
-      exerciseAdapter(exercises)
+      exerciseAdapter(exercises, userId)
     );
 
     return parsedExercises;
@@ -101,10 +101,6 @@ export const getRoutines = async (userId: string) => {
       take: 3,
     });
 
-    if (routines.length <= 0) {
-      const message = "No se han encontrado rutinas para este usuario.";
-      throw new NotFoundError(message);
-    }
     return routines;
   } catch (error) {
     console.log("Error", error);

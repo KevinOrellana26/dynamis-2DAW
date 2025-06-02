@@ -3,15 +3,12 @@ import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 
-type ExerciseCardProps = {
-  exercise: ExerciseT;
+type ExerciseCardLandingProps = {
+  exercise: Pick<ExerciseT, "name" | "muscle" | "videoImgUrl">;
 };
 
-export default function ExerciseCardLanding({
-  name,
-  muscle,
-  videoImgUrl,
-}: ExerciseT) {
+export default function ExerciseCardLanding(props: ExerciseCardLandingProps) {
+  const { name, muscle, videoImgUrl } = props.exercise;
   return (
     <Card>
       <div className="relative aspect-video overflow-hidden">
@@ -31,21 +28,7 @@ export default function ExerciseCardLanding({
               {muscle}
             </Badge>
           </div>
-          {/* <Button
-            variant="ghost"
-            size="icon"
-            className={`h-8 w-8 hover:text-accent-yellow`}
-          >
-            <Star className={`h-5 w-5`} />
-            <span className="sr-only">Favorito</span>
-          </Button> */}
         </div>
-
-        {/* <CardTitle>{nombre}</CardTitle>
-        <Badge variant="outline">{musculo}</Badge>
-        <Button variant={"destructive"}>
-          <Image src="/icons/star.svg" alt="star" width={20} height={20} />
-        </Button> */}
       </CardContent>
     </Card>
   );

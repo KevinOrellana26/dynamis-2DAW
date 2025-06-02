@@ -37,31 +37,51 @@ export default async function DashboardPage() {
     getRoutinesCountUseCase(userId)
   );
 
-  if (!exercisesList || exercisesList.exercises.length === 0) {
+  // if (!exercisesList || exercisesList.exercises.length === 0) {
+  //   return (
+  //     <ErrorMessage
+  //       message={
+  //         exerciseError?.message || "Ocurrio un error al cargar los ejercicios."
+  //       }
+  //       path="/dashboard"
+  //     />
+  //   );
+  // }
+
+  // if (!routineList || routineList.length === 0) {
+  //   return (
+  //     <ErrorMessage
+  //       message={
+  //         routineError?.message || "Ocurrio un error al cargar las rutinas."
+  //       }
+  //       path="/dashboard"
+  //     />
+  //   );
+  // }
+  if (exerciseError) {
     return (
       <ErrorMessage
         message={
-          exerciseError?.message || "Ocurrio un error al cargar los ejercicios."
+          exerciseError.message || "Ocurrió un error al cargar los ejercicios."
         }
         path="/dashboard"
       />
     );
   }
 
-  if (!routineList || routineList.length === 0) {
+  if (routineError) {
     return (
       <ErrorMessage
         message={
-          routineError?.message || "Ocurrio un error al cargar las rutinas."
+          routineError.message || "Ocurrió un error al cargar las rutinas."
         }
         path="/dashboard"
       />
     );
   }
 
-  const { exercises } = exercisesList;
-  // const favoriteCount = exercises.filter((ex) => ex.isFavorite).length;
-  // const routineCount = routineList.length;
+  const { exercises = [] } = exercisesList ?? {};
+  const routines = routineList ?? [];
 
   return (
     <div className="mx-3 px-6 md:px-8 my-8">
@@ -72,7 +92,7 @@ export default async function DashboardPage() {
         routineCount={routineCount ?? 0}
       />
       <ExerciseSection exercises={exercises} />
-      <RoutineSection routines={routineList} />
+      <RoutineSection routines={routines} />
     </div>
   );
 }

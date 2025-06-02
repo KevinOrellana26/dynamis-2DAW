@@ -96,7 +96,7 @@ export default function CreateRoutineForm(params: CreateRoutineFormProps) {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nombre</FormLabel>
+              <FormLabel className="text-accent-blue">Nombre</FormLabel>
               <FormControl>
                 <Input
                   {...field}
@@ -113,7 +113,7 @@ export default function CreateRoutineForm(params: CreateRoutineFormProps) {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Descripción</FormLabel>
+              <FormLabel className="text-accent-blue">Descripción</FormLabel>
               <FormControl>
                 <Input
                   {...field}
@@ -127,7 +127,7 @@ export default function CreateRoutineForm(params: CreateRoutineFormProps) {
         />
 
         {/* Lista de ejercicios */}
-        <FormLabel>Ejercicios</FormLabel>
+        <FormLabel className="text-accent-blue">Ejercicios</FormLabel>
         <ScrollArea className="px-6 h-[350px]">
           <div className="space-y-4">
             {exercisesList.map((exercise) => {
