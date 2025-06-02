@@ -18,10 +18,9 @@ export const metadata: Metadata = {
 };
 
 export default async function DashboardPage() {
-  //! SE PUEDE VERIFICAR SI HAY SESIÓN, PERO ES OPCIONAL PORQUE EL MIDDLEWARE YA LO HARÁ
-
   const session = await getSession();
   const { userId, name, role } = session;
+  
   const [exercisesList, exerciseError] = await handleAsync(() =>
     getExercisesDashboardUseCase(userId)
   );
@@ -37,27 +36,6 @@ export default async function DashboardPage() {
     getRoutinesCountUseCase(userId)
   );
 
-  // if (!exercisesList || exercisesList.exercises.length === 0) {
-  //   return (
-  //     <ErrorMessage
-  //       message={
-  //         exerciseError?.message || "Ocurrio un error al cargar los ejercicios."
-  //       }
-  //       path="/dashboard"
-  //     />
-  //   );
-  // }
-
-  // if (!routineList || routineList.length === 0) {
-  //   return (
-  //     <ErrorMessage
-  //       message={
-  //         routineError?.message || "Ocurrio un error al cargar las rutinas."
-  //       }
-  //       path="/dashboard"
-  //     />
-  //   );
-  // }
   if (exerciseError) {
     return (
       <ErrorMessage
