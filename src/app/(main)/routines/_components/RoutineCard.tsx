@@ -12,12 +12,14 @@ import { RoutineWithExerciseT } from "../_core/routines.db";
 import DeleteRoutineDialog from "./DeleteRoutineDialog";
 import RoutineDialog from "./RoutineDialog";
 import { formatDate } from "@/lib/utils";
+import { User } from "@/config/theme.config";
 
 type RoutineCardProps = {
   routine: RoutineWithExerciseT;
+  role?: string;
 };
 
-export default function RoutineCard({ routine }: RoutineCardProps) {
+export default function RoutineCard({ routine, role }: RoutineCardProps) {
   const { name, createdAt, description, exerciseRoutine } = routine;
 
   const formattedDate = formatDate(createdAt);
@@ -35,13 +37,22 @@ export default function RoutineCard({ routine }: RoutineCardProps) {
       <CardContent className="grid gap-3">
         <div className="flex items-center gap-2">
           <Dumbbell className="h-4 w-4 text-blue-900" />
-          {exerciseRoutine.length}{" "}
+          {exerciseRoutine.length}
           <span>ejercicio{exerciseRoutine.length !== 1 ? "s" : ""}</span>
         </div>
         <div className="flex items-center gap-2">
           <Calendar className="h-4 w-4 text-blue-900" />
           <span>Creado el: {formattedDate}</span>
         </div>
+        {role === "ADMIN" ? (
+          <div className="flex items-center gap-2">
+            <User className="h-4 w-4 text-blue-900" />
+            <span>
+              Creado por: {" "}
+              <span className="text-accent-blue underline">{routine.user.email}</span>
+            </span>
+          </div>
+        ) : null}
       </CardContent>
       <CardFooter>
         <RoutineDialog className="w-full" routine={routine} />

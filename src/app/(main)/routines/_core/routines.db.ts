@@ -74,6 +74,7 @@ export type GetRoutinesOptionsT = {
 
 export type RoutineWithExerciseT = Prisma.routineGetPayload<{
   include: {
+    user: { select: { email: true } };
     exerciseRoutine: {
       include: {
         exercise: true;
@@ -100,6 +101,11 @@ export const getRoutines = async (
       skip,
       take,
       include: {
+        user: {
+          select: {
+            email: true,
+          },
+        },
         exerciseRoutine: {
           include: {
             exercise: {
@@ -253,19 +259,19 @@ export const deleteExerciseToRoutine = async (
         exerciseId: exerciseId,
         routineId: routineId,
         routine: {
-          userId
-        }
-      }
-    })
-    if(exercise.count === 0) {
-      const message = "No se ha podido eliminar el ejercicio."
+          userId,
+        },
+      },
+    });
+    if (exercise.count === 0) {
+      const message = "No se ha podido eliminar el ejercicio.";
       return message;
     }
-    const message = "Ejercicio eliminado de rutina correctamente."
+    const message = "Ejercicio eliminado de rutina correctamente.";
     return message;
   } catch (error) {
     console.error("Error", error);
-    const message = "No se ha podido eliminar ejercicio de la rutina."
+    const message = "No se ha podido eliminar ejercicio de la rutina.";
     return message;
   }
 };

@@ -1,25 +1,24 @@
-import { routinesSearchParamsCache } from "../_core/routines.search-params";
 import { getSession } from "@/app/(auth)/_core/auth/auth.actions";
+import ErrorMessage from "@/app/(main)/_components/ErrorMessage";
+import PaginationComponent from "@/app/(main)/_components/Pagination";
+import PaginationSkeleton from "@/app/(main)/_components/PaginationSkeleton";
+import RoutineCard from "@/app/(main)/routines/_components/RoutineCard";
+import RoutineCardSkeleton from "@/app/(main)/routines/_components/RoutineCardSkeleton";
+import { routinesSearchParamsCache } from "@/app/(main)/routines/_core/routines.search-params";
 import { handleAsync } from "@/app/_shared/errors";
-import { getRoutinesUseCase } from "../_core/routines.use-cases";
-import ErrorMessage from "../../_components/ErrorMessage";
-import RoutineCard from "./RoutineCard";
-import Pagination from "../../_components/Pagination";
-import PaginationSkeleton from "../../_components/PaginationSkeleton";
-import RoutineCardSkeleton from "./RoutineCardSkeleton";
+import { getAllRoutinesUseCase } from "../_core/admin.routines.use-cases";
 
-export default async function RoutineList() {
+export default async function AdminRoutineList() {
   const searchParams = routinesSearchParamsCache.all();
   const { query, page } = searchParams;
 
   const session = await getSession();
-  const { userId } = session;
+  const { role, userId } = session;
   const limit = 6;
 
   const [routinesPaginatedData, error] = await handleAsync(() =>
-    getRoutinesUseCase({
+    getAllRoutinesUseCase({
       query,
-      userId: userId,
       page: Number(page),
       limit,
     })
@@ -60,11 +59,17 @@ export default async function RoutineList() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-7">
         {sortedRoutines.map((routine) => (
-          <RoutineCard routine={routine} key={routine.id} />
+          <RoutineCard
+            routine={routine}
+            key={routine.id}
+            role={role}
+          />
         ))}
       </div>
 
-      {isValidPage && <Pagination totalPages={totalPages} showPage={2} />}
+      {isValidPage && (
+        <PaginationComponent totalPages={totalPages} showPage={2} />
+      )}
     </>
   );
 }

@@ -9,7 +9,7 @@ import { FaDumbbell } from "react-icons/fa6";
 import { BsFillPersonVcardFill } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 import { RiSearchLine } from "react-icons/ri";
-
+import { FiUser } from "react-icons/fi";
 
 export const Spinner = RiLoader2Fill;
 export const Plus = HiMiniPlus;
@@ -22,3 +22,4 @@ export const Dumbell = FaDumbbell;
 export const PersonDetails = BsFillPersonVcardFill;
 export const ArrowRight = BsArrowRight;
 export const SearchLine = RiSearchLine;
+export const User = FiUser;

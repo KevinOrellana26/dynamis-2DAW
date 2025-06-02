@@ -1,6 +1,5 @@
 import { handleAsync } from "@/app/_shared/errors";
 import { getExercisesUseCase } from "../_core/routines.use-cases";
-import CreateRoutineForm from "./CreateRoutineForm";
 import ErrorMessage from "../../_components/ErrorMessage";
 import CreateRoutineButtonDialog from "./CreateRoutineButtonDialog";
 
