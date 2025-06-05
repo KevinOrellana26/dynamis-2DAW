@@ -42,7 +42,7 @@ export default function CreateRoutineButtonDialog(
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-accent-blue">Crear nueva rutina de ejercicios</DialogTitle>
+          <DialogTitle className="text-accent-blue text-2xl">Crear nueva rutina de ejercicios</DialogTitle>
           <DialogDescription>
             Selecciona los ejercicios para tu rutina.
           </DialogDescription>

@@ -48,10 +48,12 @@ export default function CreateRoutineForm(params: CreateRoutineFormProps) {
   const selected = watch("exercises") || [];
 
   const toggleExercise = (exercise: ExerciseT) => {
+    // Posició del primer elemento que coincida, si no, devuelve -1.
     const index = selected.findIndex(
       (e: SelectedExerciseT) => e.exerciseId === exercise.id
     );
     if (index === -1) {
+      // SI NO está seleccionado, lo añadimos con valores por defecto.
       const newExercise = {
         exerciseId: exercise.id,
         series: 3, //valor por defecto
@@ -59,12 +61,14 @@ export default function CreateRoutineForm(params: CreateRoutineFormProps) {
       };
       setValue("exercises", [...selected, newExercise]);
     } else {
+      // SI YA está seleccionado, lo eliminamos del array.
       const newSelected = [...selected];
       newSelected.splice(index, 1);
       setValue("exercises", newSelected);
     }
   };
 
+  // true si el ejercicio con ese id está en el array de ejercicios seleccionados.
   const isSelected = (id: number): boolean => {
     return selected.some((e: SelectedExerciseT) => e.exerciseId === id);
   };
@@ -159,10 +163,12 @@ export default function CreateRoutineForm(params: CreateRoutineFormProps) {
                         </FormLabel>
                       </div>
 
+                      {/* Si el checkbox está seleccionado, se renderiza los inputs de series y repeticiones */}
                       {isChecked && (
                         <div className="grid grid-cols-2 gap-4 mt-2">
                           <FormField
                             control={form.control}
+                            // name=exercises.0.series
                             name={`exercises.${selected.findIndex(
                               (e) => e.exerciseId === exercise.id
                             )}.series`}
