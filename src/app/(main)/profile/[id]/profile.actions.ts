@@ -23,6 +23,9 @@ export const updateProfileAction = authedProcedure
     const { user } = ctx;
     const { userId } = user;
     const response = await updateProfileUseCase({ ...input, userId });
+    //Actualizar la cookie de sesión con el nuevo avatar
+    ctx.user.name = input.name;
+    await ctx.user.save();
     revalidatePath(`/profile/${userId}`);
     return response;
   });
